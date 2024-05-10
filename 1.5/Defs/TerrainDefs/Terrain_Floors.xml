@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>VFEI2_Creep</defName>
+    <label>creep</label>
+    <description>A unique form of cracked soil, devoid of any minerals and nutrition, created around the insectoid infested areas. Supports insectoid structures and significantly hinders non-insectoid movement.</description>
+    <texturePath>Terrain/Creep</texturePath>
+    <color>(140,140,140)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>70</renderPrecedence>
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-2</Cleanliness>
+	  <FilthMultiplier>1.5</FilthMultiplier>
+      <WorkToBuild>1000</WorkToBuild>
+      <CleaningTimeFactor>0.5</CleaningTimeFactor>
+	  <Flammability>0</Flammability>
+    </statBases>
+	<fertility>0.05</fertility>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <uiOrder>2020</uiOrder>
+  </TerrainDef>
+
+</Defs>
