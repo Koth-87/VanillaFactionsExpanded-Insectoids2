@@ -74,7 +74,7 @@
   </ThingDef>
 
   <ThingDef ParentName="VFEI2_InsectoidWallBase">
-    <defName>VFEI2_HiveWall</defName>
+    <defName>VFEI_HiveWall</defName>
     <label>hive wall</label>
     <description>An impassable wall made from insectoid goop. Capable of holding up a roof.</description>
     <graphicData>
