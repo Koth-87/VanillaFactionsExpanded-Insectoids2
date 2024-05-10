@@ -17,6 +17,8 @@
     <autoFlee>false</autoFlee>
     <canUseAvoidGrid>false</canUseAvoidGrid>
     <techLevel>Animal</techLevel>
+    <canSiege>false</canSiege>
+    <canStageAttacks>true</canStageAttacks>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -55,6 +57,7 @@
     <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
+	<settlementGenerationWeight>1</settlementGenerationWeight>
     <configurationListOrderPriority>1001</configurationListOrderPriority>
   </FactionDef>
   
