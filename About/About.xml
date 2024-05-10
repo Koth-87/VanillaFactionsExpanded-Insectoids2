@@ -5,9 +5,8 @@
   <supportedVersions>
 	<li>1.5</li>
   </supportedVersions>
-  <packageId>OskarPotocki.VFE.Insectoid</packageId>
-  <description>Todo
-  </description>
+  <packageId>OskarPotocki.VFE.Insectoid2</packageId>
+  <description>Todo</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
