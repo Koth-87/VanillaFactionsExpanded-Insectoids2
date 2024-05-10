@@ -49,9 +49,6 @@
       <isPlaceOverableWall>true</isPlaceOverableWall>
       <ai_chillDestination>false</ai_chillDestination>
       <supportsWallAttachments>true</supportsWallAttachments>
-      <blueprintGraphicData>
-        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-      </blueprintGraphicData>
     </building>
     <comps>
       <li Class="CompProperties_MeditationFocus">
@@ -86,6 +83,11 @@
       <WorkToBuild>2000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallHive_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
     <uiOrder>2000</uiOrder>
   </ThingDef>
   
@@ -102,6 +104,11 @@
       <WorkToBuild>2000</WorkToBuild>
       <Flammability>0.5</Flammability>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
@@ -125,6 +132,11 @@
       <Flammability>0</Flammability>
 	  <Beauty>3</Beauty>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
