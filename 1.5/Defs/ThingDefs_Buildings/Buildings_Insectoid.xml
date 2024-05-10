@@ -104,7 +104,7 @@
     </statBases>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
-	<costList>
+	</costList>
     <killedLeavings>
       <InsectJelly>2</InsectJelly>
     </killedLeavings>
@@ -127,7 +127,7 @@
     </statBases>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
-	<costList>
+	</costList>
     <killedLeavings>
       <InsectJelly>2</InsectJelly>
     </killedLeavings>
