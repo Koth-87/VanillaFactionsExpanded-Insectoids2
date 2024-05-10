@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEI2_HiveWall</defName>
-    <label>hive wall</label>
-    <description>An impassable wall made from insectoid goop. Capable of holding up a roof.</description>
+  <ThingDef ParentName="BuildingBase" Name="VFEI2_InsectoidWallBase" Abstract="true">
     <thingClass>Building</thingClass>
     <category>Building</category>
+    <statBases>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
     <graphicData>
-      <texPath>Things/Building/Linked/Wall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>CornerFiller</linkType>
       <linkFlags>
@@ -26,14 +25,6 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
-    <statBases>
-      <MaxHitPoints>60</MaxHitPoints>
-      <WorkToBuild>2000</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <MeditationFocusStrength>0.22</MeditationFocusStrength>
-    </statBases>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
@@ -47,12 +38,11 @@
     <neverMultiSelect>true</neverMultiSelect>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
-    <uiOrder>2000</uiOrder>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <fertility>0</fertility>
+	<designationCategory>VFEI2_Insectoids</designationCategory>
     <building>
       <paintable>false</paintable>
       <isInert>true</isInert>
@@ -62,12 +52,6 @@
       <blueprintGraphicData>
         <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
-      <relatedBuildCommands>
-        <li>Door</li>
-        <li>Autodoor</li>
-        <li>OrnateDoor</li>
-        <li MayRequire="Ludeon.RimWorld.Anomaly">SecurityDoor</li>
-      </relatedBuildCommands>
     </building>
     <comps>
       <li Class="CompProperties_MeditationFocus">
@@ -87,6 +71,67 @@
         <multiplier>2</multiplier>
       </li>
     </damageMultipliers>
+  </ThingDef>
+
+  <ThingDef ParentName="VFEI2_InsectoidWallBase">
+    <defName>VFEI2_HiveWall</defName>
+    <label>hive wall</label>
+    <description>An impassable wall made from insectoid goop. Capable of holding up a roof.</description>
+    <graphicData>
+      <texPath>Structures/Linked/WallHive_Atlas</texPath>
+    </graphicData>
+    <uiIconPath>Structures/Linked/WallHive_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <uiOrder>2000</uiOrder>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_InsectoidWallBase">
+    <defName>VFEI2_InsectJellyWall</defName>
+    <label>insect jelly wall</label>
+    <description>An impassable wall made from insect jelly, constructed by the worker caste of an insectoid geneline. Capable of holding up a roof.</description>
+    <graphicData>
+      <texPath>Structures/Linked/WallInsectJelly_Atlas</texPath>
+    </graphicData>
+    <uiIconPath>Structures/Linked/WallInsectJelly_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+	<costList>
+	    <InsectJelly>4</InsectJelly>
+	<costList>
+    <killedLeavings>
+      <InsectJelly>2</InsectJelly>
+    </killedLeavings>
+    <uiOrder>2001</uiOrder>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_InsectoidWallBase">
+    <defName>VFEI2_RoyalJellyWall</defName>
+    <label>royal jelly wall</label>
+    <description>An impassable, hard wall made from royal jelly, constructed by the worker caste of an insectoid geneline. Capable of holding up a roof.</description>
+    <graphicData>
+      <texPath>Structures/Linked/WallRoyalJelly_Atlas</texPath>
+    </graphicData>
+    <uiIconPath>Structures/Linked/WallRoyalJelly_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0</Flammability>
+	  <Beauty>3</Beauty>
+    </statBases>
+	<costList>
+	    <InsectJelly>4</InsectJelly>
+	<costList>
+    <killedLeavings>
+      <InsectJelly>2</InsectJelly>
+    </killedLeavings>
+    <uiOrder>2002</uiOrder>
   </ThingDef>
 
 </Defs>
