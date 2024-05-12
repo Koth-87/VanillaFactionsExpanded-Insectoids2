@@ -17,6 +17,12 @@
       <CleaningTimeFactor>0.5</CleaningTimeFactor>
 	  <Flammability>0</Flammability>
     </statBases>
+    <affordances>
+      <li>Light</li>
+	  <li>VFEI2_Creep</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+    </affordances>
 	<fertility>0.05</fertility>
     <designationCategory>VFEI2_Insectoids</designationCategory>
 	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
