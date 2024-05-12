@@ -58,6 +58,7 @@
         </focusTypes>
       </li>
     </comps>
+	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
     <damageMultipliers>
       <li>
         <damageDef>Bomb</damageDef>
@@ -88,6 +89,9 @@
         <texPath>Structures/Linked/WallHive_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
     <uiOrder>2000</uiOrder>
   </ThingDef>
   
@@ -109,6 +113,9 @@
         <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
@@ -137,6 +144,9 @@
         <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
