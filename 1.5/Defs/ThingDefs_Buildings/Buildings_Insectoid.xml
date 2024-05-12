@@ -155,5 +155,70 @@
     </killedLeavings>
     <uiOrder>2002</uiOrder>
   </ThingDef>
+  
+  <!-- ========================================================= -->
+  
+  <ThingDef Name="VFEI2_BuildingInsectoidBase" Abstract="True">
+    <category>Building</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <filthLeaving>Filth_RubbleRock</filthLeaving>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <building>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VFEI2_LargeGlowPod</defName>
+    <label>large glow pod</label>
+    <description>A large bioluminescent pod produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>40</MarketValue>
+	  <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8.09</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>20</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+    <graphicData>
+      <texPath>Things/Building/Natural/GlowPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+  </ThingDef>
 
 </Defs>
