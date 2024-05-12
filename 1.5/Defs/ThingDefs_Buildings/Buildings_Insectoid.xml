@@ -173,6 +173,17 @@
     <defName>VFEI2_LargeGlowPod</defName>
     <label>large glow pod</label>
     <description>A large bioluminescent pod produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
     <thingClass>Building</thingClass>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -208,17 +219,7 @@
     <researchPrerequisites>
         <li>VFEI2_BasicHivetech</li>
     </researchPrerequisites>
-    <graphicData>
-      <texPath>Things/Building/Natural/GlowPod</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shadowData>
-        <volume>(0.3, 0.6, 0.3)</volume>
-        <offset>(0,0,-0.1)</offset>
-      </shadowData>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-    </graphicData>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
 
 </Defs>
