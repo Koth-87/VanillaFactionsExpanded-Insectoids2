@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="GlowPod"]</xpath>
+      <value>
+         <costList>
+            <InsectJelly>10</InsectJelly>
+         </costList>
+         <designationCategory>VFEI2_Insectoids</designationCategory>
+         <researchPrerequisites>
+            <li>VFEI2_BasicHivetech</li>
+         </researchPrerequisites>
+      </value>
+   </Operation>
+   
+</Patch>
