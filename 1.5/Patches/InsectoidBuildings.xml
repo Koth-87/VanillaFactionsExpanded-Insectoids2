@@ -14,4 +14,11 @@
       </value>
    </Operation>
    
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="GlowPod"]/statBases</xpath>
+      <value>
+        <WorkToBuild>1000</WorkToBuild>
+      </value>
+   </Operation>
+   
 </Patch>
