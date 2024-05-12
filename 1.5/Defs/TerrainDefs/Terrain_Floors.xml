@@ -19,7 +19,7 @@
     </statBases>
 	<fertility>0.05</fertility>
     <designationCategory>VFEI2_Insectoids</designationCategory>
-	<constructEffect>ConstructDirt</constructEffect>
+	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
     <uiOrder>2020</uiOrder>
   </TerrainDef>
 
