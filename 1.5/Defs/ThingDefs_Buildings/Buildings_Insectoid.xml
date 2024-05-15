@@ -227,7 +227,7 @@
     <label>glow pod formation</label>
     <description>A large cluster of bioluminescent pods produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
     <graphicData>
-      <texPath>Structures/GlowPodLarge</texPath>
+      <texPath>Structures/GlowPodFormation</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(1.3, 1.6, 1.3)</volume>
@@ -324,6 +324,131 @@
     <designationCategory>VFEI2_Insectoids</designationCategory>
     <researchPrerequisites>
         <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VFEI2_StaticPod</defName>
+    <label>staticpod</label>
+    <description>A medium-sized hive structure capable of generating small amounts of electricity, produced by giant insects. Needs to be constructed on the creep and connected via conduits to batteries.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>50</MarketValue>
+	  <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2.09</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-50</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>40</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VFEI2_FoamPod</defName>
+    <label>foampod</label>
+    <description>An organic, firefoam pod produced by giant insects. When it senses fire, the pod pops and sprays a fire-retardant foam in a circular field around itself. Can also be triggered manually. After some time has passed, it dies.</description>
+    <graphicData>
+      <texPath>Structures/FoamPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>50</MarketValue>
+	  <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3.48</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>Extinguish</explosiveDamageType>
+        <startWickHitPointsPercent>-1</startWickHitPointsPercent>
+        <startWickOnDamageTaken>
+          <li>Flame</li>
+        </startWickOnDamageTaken>
+        <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <explosionSound>Explosion_FirefoamPopper</explosionSound>
+      </li>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>1200000</lifespanTicks>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>25</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
     </researchPrerequisites>
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
