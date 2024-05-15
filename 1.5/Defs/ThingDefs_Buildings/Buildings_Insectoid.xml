@@ -58,7 +58,7 @@
         </focusTypes>
       </li>
     </comps>
-	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
+	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <damageMultipliers>
       <li>
         <damageDef>Bomb</damageDef>
@@ -167,7 +167,7 @@
     <building>
       <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
     </building>
-	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
+	<constructEffect>VFEI2_ConstructSlime</constructEffect>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
@@ -410,7 +410,7 @@
     <fillPercent>0.20</fillPercent>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <rotatable>false</rotatable>
-    <tickerType>Rare</tickerType>
+    <tickerType>Normal</tickerType>
     <thingCategories>
       <li>BuildingsSpecial</li>
     </thingCategories>

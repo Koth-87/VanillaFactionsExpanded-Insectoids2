@@ -10,7 +10,7 @@
       <li>
         <muteWhenPaused>True</muteWhenPaused>      
         <grains>
-          <li Class="AudioGrain_Folder">
+          <li Class="AudioGrain_Clip">
             <clipFolderPath>Construct/InsectBuildA</clipFolderPath>
           </li>
         </grains>      
