@@ -11,7 +11,7 @@
         <muteWhenPaused>True</muteWhenPaused>      
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipFolderPath>Construct/InsectBuildA</clipFolderPath>
+            <clipPath>Construct/InsectBuildA</clipPath>
           </li>
         </grains>      
         <volumeRange>12~50</volumeRange>      
