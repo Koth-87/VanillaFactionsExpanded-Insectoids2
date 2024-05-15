@@ -21,4 +21,11 @@
       </value>
    </Operation>
    
+   <Operation Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="GlowPod"]/statBases/MarketValue</xpath>
+      <value>
+        <MarketValue>20</MarketValue>
+      </value>
+   </Operation>
+   
 </Patch>
