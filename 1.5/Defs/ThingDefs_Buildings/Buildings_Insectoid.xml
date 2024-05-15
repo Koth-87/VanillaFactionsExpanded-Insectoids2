@@ -167,9 +167,10 @@
     <building>
       <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
     </building>
+	<constructEffect>VFEI2_Interact_ConstructSlime</constructEffect>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingNaturalBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_LargeGlowPod</defName>
     <label>large glow pod</label>
     <description>A large bioluminescent pod produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
@@ -205,7 +206,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_Glower">
-        <glowRadius>8.09</glowRadius>
+        <glowRadius>8.9</glowRadius>
         <glowColor>(113,141,117,0)</glowColor>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
@@ -222,7 +223,7 @@
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingNaturalBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_GlowPodFormation</defName>
     <label>glow pod formation</label>
     <description>A large cluster of bioluminescent pods produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
@@ -257,7 +258,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_Glower">
-        <glowRadius>15.09</glowRadius>
+        <glowRadius>15.9</glowRadius>
         <glowColor>(113,141,117,0)</glowColor>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
@@ -274,7 +275,7 @@
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingNaturalBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_GlowPodSpire</defName>
     <label>glow pod spire</label>
     <description>An incredibly tall spire of bioluminescent pods produced by giant insects. Lights an area brightly enough to grow crops and does not perish with time. Needs to be constructed on the creep.</description>
@@ -311,7 +312,7 @@
     <comps>
       <li Class="CompProperties_Glower">
 	    <overlightRadius>16.9</overlightRadius>
-        <glowRadius>22.09</glowRadius>
+        <glowRadius>22.9</glowRadius>
         <glowColor>(113,141,117,0)</glowColor>
       </li>
       <li Class="CompProperties_SelfhealHitpoints">
@@ -328,7 +329,7 @@
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingNaturalBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_StaticPod</defName>
     <label>staticpod</label>
     <description>A medium-sized hive structure capable of generating small amounts of electricity, produced by giant insects. Needs to be constructed on the creep and connected via conduits to batteries.</description>
@@ -364,7 +365,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_Glower">
-        <glowRadius>2.09</glowRadius>
+        <glowRadius>2.9</glowRadius>
         <glowColor>(113,141,117,0)</glowColor>
       </li>
       <li Class="CompProperties_Power">
@@ -386,7 +387,7 @@
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingNaturalBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_FoamPod</defName>
     <label>foampod</label>
     <description>An organic, firefoam pod produced by giant insects. When it senses fire, the pod pops and sprays a fire-retardant foam in a circular field around itself. Can also be triggered manually. After some time has passed, it dies.</description>
@@ -445,6 +446,52 @@
     </comps>
     <costList>
         <InsectJelly>25</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_TendrilFarm</defName>
+    <label>tendril farm</label>
+    <description>A pillar that slowly grows clusters of insectoid tendrilmoss. Needs to be constructed on the creep. While tendrilmoss generally acts as good and strong cover, it can be harvested and eaten.</description>
+    <graphicData>
+      <texPath>Structures/TendrilFarm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.30</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>80</MarketValue>
+	  <WorkToBuild>2000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>60</InsectJelly>
     </costList>
     <designationCategory>VFEI2_Insectoids</designationCategory>
     <researchPrerequisites>
