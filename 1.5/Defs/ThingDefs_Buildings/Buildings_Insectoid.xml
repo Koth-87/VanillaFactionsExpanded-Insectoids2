@@ -499,5 +499,109 @@
     </researchPrerequisites>
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_Creeper</defName>
+    <label>creeper</label>
+    <description>A hive-like structure created by giant insects. It continuously extracts minerals and nutrition from the ground around it, feeding the hive and creating creep in surrounding area that greatly hinders the movement of anything that’s not an insectoid. If all area around a creeper is turned into creep, it will begin expunging insect jelly in regular intervals.</description>
+    <graphicData>
+      <texPath>Structures/TendrilFarm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>20</InsectJelly>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <fillPercent>0.50</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>2000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>100</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_JellyFarm</defName>
+    <label>jelly farm</label>
+    <description>A deep organic bioreactor constantly generating insect jelly from nearby minerals and nutrition, produced by giant insects. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/JellyFarm</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(1.3, 1.6, 1.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+	  <drawSize>(2, 2)</drawSize>
+      <damageData>
+        <rect>(1.2,1.2,1.6,1.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <fillPercent>0.30</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+	<size>(2, 2)</size>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>2200</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>13000~21000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>80</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
 
 </Defs>
