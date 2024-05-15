@@ -14,7 +14,7 @@
 	
 	<ResearchProjectDef>
 		<defName>VFEI2_StandardHivetech</defName>
-		<label>standard restoration</label>
+		<label>standard hivetech</label>
 		<tab>VanillaExpanded</tab>
 		<description>The technology needed for your colony to create standard-tier hives. The construction of various thumpers will allow you to summon powerful insectoid bosses.</description>
 		<baseCost>1000</baseCost>
@@ -28,7 +28,7 @@
 
 	<ResearchProjectDef>
 		<defName>VFEI2_ExoticHivetech</defName>
-		<label>exotic restoration</label>
+		<label>exotic hivetech</label>
 		<tab>VanillaExpanded</tab>
 		<description>The technology needed for your colony to create exotic-tier hives.</description>
 		<baseCost>2000</baseCost>
