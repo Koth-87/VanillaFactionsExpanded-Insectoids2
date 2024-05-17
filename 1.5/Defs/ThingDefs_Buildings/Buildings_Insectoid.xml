@@ -590,7 +590,7 @@
         <spawnCount>20</spawnCount>
         <spawnIntervalRange>13000~21000</spawnIntervalRange>
         <spawnMaxAdjacent>40</spawnMaxAdjacent>
-        <spawnForbidden>true</spawnForbidden>
+        <spawnForbidden>false</spawnForbidden>
         <saveKeysPrefix>jelly</saveKeysPrefix>
       </li>
     </comps>
@@ -602,6 +602,109 @@
         <li>VFEI2_BasicHivetech</li>
     </researchPrerequisites>
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipChunk</defName>
+    <label>infested ship chunk</label>
+    <description>A chunk of a spacecraft covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. Can be deconstructed to yield useful steel and components. If left alone, it is impossible to tell when the insects will emerge from within.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/InfestedShipChunk</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-20</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>10</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ComponentIndustrial>11</ComponentIndustrial>
+      <Steel>40</Steel>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipPart</defName>
+    <label>infested ship part</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one seems to be covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.\n\nA mysterious crashed piece of a spaceship. It may contain exotic materials, computers, even AI personas. This kind of technology can be dangerous.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/CrashedInfestedShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <damageData>
+        <rect>(5.8,5.8,2.1,2.1)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(5.25,0.65,2.39)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <size>(6,3)</size>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-200</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+	  <Steel>60</Steel>
+	  <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+	  <Steel>60</Steel>
+	  <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>40</InsectJelly>
+    </costList>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
   </ThingDef>
 
 </Defs>
