@@ -706,5 +706,59 @@
     <drawerType>MapMeshOnly</drawerType>
     <repairEffect>ConstructMetal</repairEffect>
   </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipModule</defName>
+    <label>infested ship module</label>
+    <description>A mysterious segment of a long destroyed spaceship. It may contain exotic materials, computers, even AI personas. It seems to be completely covered in biomass and lumps of insectoid jelly. It is fairly certain that this old wreckage may contain great dangers. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/CrashedInfestedShipPart_Large</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,4)</drawSize>
+      <damageData>
+        <rect>(4.8,4.8,3.1,3.1)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(4.25,0.65,3.39)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <fillPercent>0.50</fillPercent>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <size>(5,4)</size>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-200</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+	  <Steel>80</Steel>
+	  <Plasteel>20</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+	  <InsectJelly>80</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+	  <Steel>80</Steel>
+	  <Plasteel>20</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+	  <InsectJelly>80</InsectJelly>
+    </costList>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+  </ThingDef>
 
 </Defs>
