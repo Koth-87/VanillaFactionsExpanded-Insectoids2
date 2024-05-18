@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Supports hive structures -->
+  <TerrainAffordanceDef>
+    <defName>VFEI2_Creep</defName>
+    <label>creep</label>
+    <order>1201</order>
+  </TerrainAffordanceDef>
+
+</Defs>

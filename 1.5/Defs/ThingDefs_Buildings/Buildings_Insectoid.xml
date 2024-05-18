@@ -49,9 +49,6 @@
       <isPlaceOverableWall>true</isPlaceOverableWall>
       <ai_chillDestination>false</ai_chillDestination>
       <supportsWallAttachments>true</supportsWallAttachments>
-      <blueprintGraphicData>
-        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-      </blueprintGraphicData>
     </building>
     <comps>
       <li Class="CompProperties_MeditationFocus">
@@ -61,6 +58,7 @@
         </focusTypes>
       </li>
     </comps>
+	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <damageMultipliers>
       <li>
         <damageDef>Bomb</damageDef>
@@ -74,7 +72,7 @@
   </ThingDef>
 
   <ThingDef ParentName="VFEI2_InsectoidWallBase">
-    <defName>VFEI2_HiveWall</defName>
+    <defName>VFEI_HiveWall</defName>
     <label>hive wall</label>
     <description>An impassable wall made from insectoid goop. Capable of holding up a roof.</description>
     <graphicData>
@@ -86,6 +84,14 @@
       <WorkToBuild>2000</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallHive_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
     <uiOrder>2000</uiOrder>
   </ThingDef>
   
@@ -102,6 +108,14 @@
       <WorkToBuild>2000</WorkToBuild>
       <Flammability>0.5</Flammability>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
@@ -125,6 +139,14 @@
       <Flammability>0</Flammability>
 	  <Beauty>3</Beauty>
     </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
 	<costList>
 	    <InsectJelly>4</InsectJelly>
 	</costList>
@@ -132,6 +154,611 @@
       <InsectJelly>2</InsectJelly>
     </killedLeavings>
     <uiOrder>2002</uiOrder>
+  </ThingDef>
+  
+  <!-- ========================================================= -->
+  
+  <ThingDef Name="VFEI2_BuildingInsectoidBase" Abstract="True">
+    <category>Building</category>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <filthLeaving>Filth_RubbleRock</filthLeaving>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <building>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+	<constructEffect>VFEI2_ConstructSlime</constructEffect>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_LargeGlowPod</defName>
+    <label>large glow pod</label>
+    <description>A large bioluminescent pod produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>40</MarketValue>
+	  <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8.9</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>20</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_GlowPodFormation</defName>
+    <label>glow pod formation</label>
+    <description>A large cluster of bioluminescent pods produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodFormation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(1.3, 1.6, 1.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+	  <drawSize>(2, 2)</drawSize>
+      <damageData>
+        <rect>(1.2,1.2,1.6,1.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.40</fillPercent>
+	<size>(2, 2)</size>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>12</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>15.9</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>60</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_GlowPodSpire</defName>
+    <label>glow pod spire</label>
+    <description>An incredibly tall spire of bioluminescent pods produced by giant insects. Lights an area brightly enough to grow crops and does not perish with time. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodSpire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(2.3, 2.6, 2.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+	  <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <rect>(2.2,2.2,2.6,2.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.60</fillPercent>
+	<size>(3, 3)</size>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>50</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>4500</WorkToBuild>
+    </statBases>
+	<specialDisplayRadius>15.7</specialDisplayRadius>
+    <comps>
+      <li Class="CompProperties_Glower">
+	    <overlightRadius>16.9</overlightRadius>
+        <glowRadius>22.9</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_StaticPod</defName>
+    <label>staticpod</label>
+    <description>A medium-sized hive structure capable of generating small amounts of electricity, produced by giant insects. Needs to be constructed on the creep and connected via conduits to batteries.</description>
+    <graphicData>
+      <texPath>Structures/GlowPodLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>50</MarketValue>
+	  <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2.9</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-50</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>40</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_FoamPod</defName>
+    <label>foampod</label>
+    <description>An organic, firefoam pod produced by giant insects. When it senses fire, the pod pops and sprays a fire-retardant foam in a circular field around itself. Can also be triggered manually. After some time has passed, it dies.</description>
+    <graphicData>
+      <texPath>Structures/FoamPod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>50</MarketValue>
+	  <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3.48</glowRadius>
+        <glowColor>(113,141,117,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>Extinguish</explosiveDamageType>
+        <startWickHitPointsPercent>-1</startWickHitPointsPercent>
+        <startWickOnDamageTaken>
+          <li>Flame</li>
+        </startWickOnDamageTaken>
+        <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+        <explosionSound>Explosion_FirefoamPopper</explosionSound>
+      </li>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>1200000</lifespanTicks>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>25</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_TendrilFarm</defName>
+    <label>tendril farm</label>
+    <description>A pillar that slowly grows clusters of insectoid tendrilmoss. Needs to be constructed on the creep. While tendrilmoss generally acts as good and strong cover, it can be harvested and eaten.</description>
+    <graphicData>
+      <texPath>Structures/TendrilFarm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.30</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>80</MarketValue>
+	  <WorkToBuild>2000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>60</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_Creeper</defName>
+    <label>creeper</label>
+    <description>A hive-like structure created by giant insects. It continuously extracts minerals and nutrition from the ground around it, feeding the hive and creating creep in surrounding area that greatly hinders the movement of anything that’s not an insectoid. If all area around a creeper is turned into creep, it will begin expunging insect jelly in regular intervals.</description>
+    <graphicData>
+      <texPath>Structures/TendrilFarm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>20</InsectJelly>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <fillPercent>0.50</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>2000</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>100</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_JellyFarm</defName>
+    <label>jelly farm</label>
+    <description>A deep organic bioreactor constantly generating insect jelly from nearby minerals and nutrition, produced by giant insects. Needs to be constructed on the creep.</description>
+    <graphicData>
+      <texPath>Structures/JellyFarm</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shadowData>
+        <volume>(1.3, 1.6, 1.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+	  <drawSize>(2, 2)</drawSize>
+      <damageData>
+        <rect>(1.2,1.2,1.6,1.6)</rect>
+      </damageData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>true</selectable>
+    <fillPercent>0.30</fillPercent>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+	<size>(2, 2)</size>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>100</MarketValue>
+	  <WorkToBuild>2200</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>13000~21000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>80</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipChunk</defName>
+    <label>infested ship chunk</label>
+    <description>A chunk of a spacecraft covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. Can be deconstructed to yield useful steel and components. If left alone, it is impossible to tell when the insects will emerge from within.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/InfestedShipChunk</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.1,0.1,1.8,1.8)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.39,0.5,1.25)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-20</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>10</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ComponentIndustrial>11</ComponentIndustrial>
+      <Steel>40</Steel>
+    </costList>
+    <building>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>true</alwaysDeconstructible>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipPart</defName>
+    <label>infested ship part</label>
+    <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one seems to be covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.\n\nA mysterious crashed piece of a spaceship. It may contain exotic materials, computers, even AI personas. This kind of technology can be dangerous.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/CrashedInfestedShipPart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,3)</drawSize>
+      <damageData>
+        <rect>(5.8,5.8,2.1,2.1)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(5.25,0.65,2.39)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <size>(6,3)</size>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-200</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+	  <Steel>60</Steel>
+	  <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ChunkSlagSteel>4</ChunkSlagSteel>
+	  <Steel>60</Steel>
+	  <Plasteel>10</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+	  <InsectJelly>40</InsectJelly>
+    </costList>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI2_InfestedShipModule</defName>
+    <label>infested ship module</label>
+    <description>A mysterious segment of a long destroyed spaceship. It may contain exotic materials, computers, even AI personas. It seems to be completely covered in biomass and lumps of insectoid jelly. It is fairly certain that this old wreckage may contain great dangers. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.</description>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Structures/CrashedInfestedShipPart_Large</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,6)</drawSize>
+      <damageData>
+        <rect>(4.8,4.8,3.1,3.1)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(4.25,0.65,3.39)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <fillPercent>0.50</fillPercent>
+	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <size>(5,4)</size>
+    <statBases>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-200</Beauty>
+      <WorkToBuild>12000</WorkToBuild>
+    </statBases>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <killedLeavings>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+	  <Steel>80</Steel>
+	  <Plasteel>20</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+	  <InsectJelly>80</InsectJelly>
+    </killedLeavings>
+    <costList>
+      <ChunkSlagSteel>6</ChunkSlagSteel>
+	  <Steel>80</Steel>
+	  <Plasteel>20</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+	  <InsectJelly>80</InsectJelly>
+    </costList>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+      <displayAttackToDestroyOnInspectPane>true</displayAttackToDestroyOnInspectPane>
+    </building>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>MapMeshOnly</drawerType>
+    <repairEffect>ConstructMetal</repairEffect>
   </ThingDef>
 
 </Defs>
