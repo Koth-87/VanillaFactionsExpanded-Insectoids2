@@ -1090,5 +1090,56 @@
       </li>
     </comps>
   </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_InsectoidCocoon</defName>
+    <label>insectoid cocoon</label>
+    <description>These jelly cocoons keep swarmlings safe from fire, extreme temperatures, and other threats while they undergo a metamorphosis process. After some time has passed, the cocoon will burst, releasing a fully grown insectoid.</description>
+    <graphicData>
+      <texPath>Structures/InsectoidCocoons</texPath>
+	  <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <thingClass>ThingWithComps</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <receivesSignals>true</receivesSignals>
+    <building>
+	  <combatPower>150</combatPower>
+      <deconstructible>false</deconstructible>
+    </building>
+    <comps>
+      <li Class="CompProperties_CanBeDormant"> <!-- placeholder values -->
+        <startsDormant>true</startsDormant>
+        <wakeUpDelayRange>162</wakeUpDelayRange>
+        <maxDistAwakenByOther>3</maxDistAwakenByOther>
+        <wakeUpRepeatSignalDelayRange>30~60</wakeUpRepeatSignalDelayRange>
+        <delayedWakeUpDoesZs>false</delayedWakeUpDoesZs>
+        <showSleepingZs>false</showSleepingZs>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>1</spawnRadius>
+      </li>
+      <!-- <li Class="CompProperties_SpawnEffecterOnDestroy">
+        <effect>CocoonDestroyed</effect>
+      </li> -->
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_CocoonTriggerRadius</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
 
 </Defs>
