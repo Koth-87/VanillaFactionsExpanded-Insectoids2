@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase" Name="VFEI2_ThumperBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.29,1,1.69)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+	  <MarketValue>250</MarketValue>
+      <Flammability>0.5</Flammability>
+	  <Mass>25</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(2,2)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <killedLeavings>
+      <ChunkSlagSteel>3</ChunkSlagSteel>
+    </killedLeavings>
+  </ThingDef>
+
+  <ThingDef ParentName="VFEI2_ThumperBase">
+    <defName>VFEI2_Thumper_Empress</defName>
+    <label>empress thumper</label>
+    <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid empress to attack with its escorts. If you can defeat her, you can collect a special pherocore from her corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Structures/Thumpers/EmpressThumper_Base</texPath>
+    </graphicData>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_ThumperBase">
+    <defName>VFEI2_Thumper_Titantick</defName>
+    <label>titantick thumper</label>
+    <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid titantick to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Structures/Thumpers/TitantickThumper_Base</texPath>
+    </graphicData>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_ThumperBase">
+    <defName>VFEI2_Thumper_Teramantis</defName>
+    <label>teramantis thumper</label>
+    <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid titantick to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Structures/Thumpers/TeramantisThumper_Base</texPath>
+    </graphicData>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_ThumperBase">
+    <defName>VFEI2_Thumper_Gigamite</defName>
+    <label>gigamite thumper</label>
+    <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid gigamite to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Structures/Thumpers/GigamiteThumper_Base</texPath>
+    </graphicData>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+  </ThingDef>
+	
+  <ThingDef ParentName="VFEI2_ThumperBase">
+    <defName>VFEI2_Thumper_Silverfish</defName>
+    <label>silverfish thumper</label>
+    <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid silverfish to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
+    <graphicData>
+      <texPath>Structures/Thumpers/SilverfishThumper_Base</texPath>
+    </graphicData>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>
