@@ -138,7 +138,7 @@
 		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
 			<filthSpawnAmount>2~3</filthSpawnAmount>
 			<radius>1.5</radius>
-			<filth>Filth_BloodInsect</filth>
+			<filth>VFEI2_Filth_InsectJelly</filth>
 			<chaining>true</chaining>
 		</li>
 	</comps>
@@ -177,7 +177,7 @@
 		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
 			<filthSpawnAmount>2~3</filthSpawnAmount>
 			<radius>1.5</radius>
-			<filth>Filth_BloodInsect</filth>
+			<filth>VFEI2_Filth_RoyalJelly</filth>
 			<chaining>false</chaining>
 		</li>
 	</comps>
