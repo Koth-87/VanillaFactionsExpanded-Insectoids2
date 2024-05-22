@@ -45,6 +45,7 @@
     <graphicData>
       <texPath>Structures/Thumpers/EmpressThumper_Base</texPath>
     </graphicData>
+	<uiIconPath>Structures/Thumpers/EmpressThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -61,6 +62,7 @@
     <graphicData>
       <texPath>Structures/Thumpers/TitantickThumper_Base</texPath>
     </graphicData>
+	<uiIconPath>Structures/Thumpers/TitantickThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -77,6 +79,7 @@
     <graphicData>
       <texPath>Structures/Thumpers/TeramantisThumper_Base</texPath>
     </graphicData>
+	<uiIconPath>Structures/Thumpers/TeramantisThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -93,6 +96,7 @@
     <graphicData>
       <texPath>Structures/Thumpers/GigamiteThumper_Base</texPath>
     </graphicData>
+	<uiIconPath>Structures/Thumpers/GigamiteThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -109,6 +113,7 @@
     <graphicData>
       <texPath>Structures/Thumpers/SilverfishThumper_Base</texPath>
     </graphicData>
+	<uiIconPath>Structures/Thumpers/SilverfishThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
