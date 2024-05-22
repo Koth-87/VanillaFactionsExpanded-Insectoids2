@@ -62,11 +62,14 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompOnDestroyWall.cs" />
     <Compile Include="GameComponent_Insectoids.cs" />
     <Compile Include="InsectTerritory.cs" />
     <Compile Include="Page_CreateWorldParams_DoWindowContents_Patch.cs" />
+    <Compile Include="SettlementProximityGoodwillUtility_GetConfirmationDescriptions_Patch.cs" />
     <Compile Include="VFEInsectoidsMod.cs" />
     <Compile Include="VFEI_DefOf.cs" />
+    <Compile Include="WITab_Terrain_FillTab_Patch.cs" />
     <Compile Include="WorldLayer_Insects.cs" />
     <Compile Include="WorldObjectsHolder_Add_Patch.cs" />
     <Compile Include="WorldObjectsHolder_Remove_Patch.cs" />

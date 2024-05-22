@@ -62,10 +62,23 @@ namespace VFEInsectoids
             tmpTiles.Clear();
         }
 
+        public float InfestationMtbDays(int tile)
+        {
+            foreach (var insectData in insectTiles)
+            {
+                if (insectData.Value.tiles.Contains(tile))
+                {
+                    var dist = Find.WorldGrid.ApproxDistanceInTiles(tile, insectData.Key.Tile);
+                    return dist * 5f;
+                }
+            }
+            return -1f;
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look(ref insectTiles, "insectTiles", LookMode.Reference, LookMode.Deep, ref settlementsTmp, ref insectTerritoriesTmp); ;
+            Scribe_Collections.Look(ref insectTiles, "insectTiles", LookMode.Reference, LookMode.Deep, ref settlementsTmp, ref insectTerritoriesTmp);
             Scribe_Values.Look(ref insectTerritoryScale, "insectTerritoryScale", 1f);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
