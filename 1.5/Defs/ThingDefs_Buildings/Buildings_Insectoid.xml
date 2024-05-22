@@ -57,6 +57,9 @@
           <li>Minimal</li>
         </focusTypes>
       </li>
+		<li Class="CompProperties_SpawnEffecterOnDestroy">
+			<effect>CocoonDestroyed</effect>
+		</li>
     </comps>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <damageMultipliers>
@@ -93,6 +96,14 @@
         <li>VFEI2_BasicHivetech</li>
     </researchPrerequisites>
     <uiOrder>2000</uiOrder>
+	<comps>
+		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
+			<filthSpawnAmount>2~3</filthSpawnAmount>
+			<radius>1.5</radius>
+			<filth>Filth_BloodInsect</filth>
+			<chaining>true</chaining>
+		</li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_InsectoidWallBase">
@@ -123,6 +134,14 @@
       <InsectJelly>2</InsectJelly>
     </killedLeavings>
     <uiOrder>2001</uiOrder>
+	<comps>
+		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
+			<filthSpawnAmount>2~3</filthSpawnAmount>
+			<radius>1.5</radius>
+			<filth>Filth_BloodInsect</filth>
+			<chaining>true</chaining>
+		</li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_InsectoidWallBase">
@@ -154,6 +173,14 @@
       <InsectJelly>2</InsectJelly>
     </killedLeavings>
     <uiOrder>2002</uiOrder>
+	<comps>
+		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
+			<filthSpawnAmount>2~3</filthSpawnAmount>
+			<radius>1.5</radius>
+			<filth>Filth_BloodInsect</filth>
+			<chaining>false</chaining>
+		</li>
+	</comps>
   </ThingDef>
   
   <!-- ========================================================= -->

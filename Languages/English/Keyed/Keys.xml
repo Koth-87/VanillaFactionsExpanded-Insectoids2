@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<VFEI_InsectTerritoryScale>Infested area</VFEI_InsectTerritoryScale>
+	<VFEI_Infestation>Infestation</VFEI_Infestation>
+	<VFEI_InfestationTooltip>Whether this tile is under the effects of an insectoid infestation.
+
+Areas around insectoid hives are often teeming with insects, with various insect-built structures affecting the environment. Infestations are much more likely to occur, and travelling parties may find roaming insectoids.</VFEI_InfestationTooltip>
+	<VFEI_Present>Present</VFEI_Present>
+	<VFEI_SettleWarning>This tile is near an insectoid hive, so there will be an ever-present insectoid influence on it. Infestations will happen every {0} days. Large infestations are much more likely to happen, and may occur anywhere, not just in dark areas. Megaspiders, spelopedes and megascarabs are roaming free, and travelling caravans may have to fend off insectoid swarms.</VFEI_SettleWarning>
+</LanguageData>
