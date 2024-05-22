@@ -18,6 +18,7 @@
     <canUseAvoidGrid>false</canUseAvoidGrid>
     <techLevel>Animal</techLevel>
     <canSiege>false</canSiege>
+	<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
     <canStageAttacks>true</canStageAttacks>
     <raidCommonalityFromPointsCurve>
       <points>
