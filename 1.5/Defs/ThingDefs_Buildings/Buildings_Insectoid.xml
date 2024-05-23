@@ -79,9 +79,9 @@
     <label>hive wall</label>
     <description>An impassable wall made from insectoid goop. Capable of holding up a roof.</description>
     <graphicData>
-      <texPath>Structures/Linked/WallHive_Atlas</texPath>
+      <texPath>Things/Building/Linked/WallHive_Atlas</texPath>
     </graphicData>
-    <uiIconPath>Structures/Linked/WallHive_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/WallHive_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>60</MaxHitPoints>
       <WorkToBuild>2000</WorkToBuild>
@@ -89,7 +89,7 @@
     </statBases>
     <building>
       <blueprintGraphicData>
-        <texPath>Structures/Linked/WallHive_Blueprint_Atlas</texPath>
+        <texPath>Things/Building/Linked/WallHive_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
     <researchPrerequisites>
@@ -111,9 +111,9 @@
     <label>insect jelly wall</label>
     <description>An impassable wall made from insect jelly, constructed by the worker caste of an insectoid geneline. Capable of holding up a roof.</description>
     <graphicData>
-      <texPath>Structures/Linked/WallInsectJelly_Atlas</texPath>
+      <texPath>Things/Building/Linked/WallInsectJelly_Atlas</texPath>
     </graphicData>
-    <uiIconPath>Structures/Linked/WallInsectJelly_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/WallInsectJelly_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>40</MaxHitPoints>
       <WorkToBuild>2000</WorkToBuild>
@@ -121,7 +121,7 @@
     </statBases>
     <building>
       <blueprintGraphicData>
-        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+        <texPath>Things/Building/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
     <researchPrerequisites>
@@ -149,9 +149,9 @@
     <label>royal jelly wall</label>
     <description>An impassable, hard wall made from royal jelly, constructed by the worker caste of an insectoid geneline. Capable of holding up a roof.</description>
     <graphicData>
-      <texPath>Structures/Linked/WallRoyalJelly_Atlas</texPath>
+      <texPath>Things/Building/Linked/WallRoyalJelly_Atlas</texPath>
     </graphicData>
-    <uiIconPath>Structures/Linked/WallRoyalJelly_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/WallRoyalJelly_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>140</MaxHitPoints>
       <WorkToBuild>2000</WorkToBuild>
@@ -160,7 +160,7 @@
     </statBases>
     <building>
       <blueprintGraphicData>
-        <texPath>Structures/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
+        <texPath>Things/Building/Linked/WallInsectJelly_Blueprint_Atlas</texPath>
       </blueprintGraphicData>
     </building>
     <researchPrerequisites>
@@ -202,7 +202,7 @@
     <label>large glow pod</label>
     <description>A large bioluminescent pod produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
     <graphicData>
-      <texPath>Structures/GlowPodLarge</texPath>
+      <texPath>Things/Building/GlowPodLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -255,7 +255,7 @@
     <label>glow pod formation</label>
     <description>A large cluster of bioluminescent pods produced by giant insects. Glows under its own light and does not perish with time. Needs to be constructed on the creep.</description>
     <graphicData>
-      <texPath>Structures/GlowPodFormation</texPath>
+      <texPath>Things/Building/GlowPodFormation</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(1.3, 1.6, 1.3)</volume>
@@ -307,7 +307,7 @@
     <label>glow pod spire</label>
     <description>An incredibly tall spire of bioluminescent pods produced by giant insects. Lights an area brightly enough to grow crops and does not perish with time. Needs to be constructed on the creep.</description>
     <graphicData>
-      <texPath>Structures/GlowPodSpire</texPath>
+      <texPath>Things/Building/GlowPodSpire</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(2.3, 2.6, 2.3)</volume>
@@ -361,7 +361,7 @@
     <label>staticpod</label>
     <description>A medium-sized hive structure capable of generating small amounts of electricity, produced by giant insects. Needs to be constructed on the creep and connected via conduits to batteries.</description>
     <graphicData>
-      <texPath>Structures/GlowPodLarge</texPath>
+      <texPath>Things/Building/GlowPodLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -419,7 +419,7 @@
     <label>foampod</label>
     <description>An organic, firefoam pod produced by giant insects. When it senses fire, the pod pops and sprays a fire-retardant foam in a circular field around itself. Can also be triggered manually. After some time has passed, it dies.</description>
     <graphicData>
-      <texPath>Structures/FoamPod</texPath>
+      <texPath>Things/Building/FoamPod</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -486,7 +486,7 @@
     <label>tendril farm</label>
     <description>A pillar that slowly grows clusters of insectoid tendrilmoss. Needs to be constructed on the creep. While tendrilmoss generally acts as good and strong cover, it can be harvested and eaten.</description>
     <graphicData>
-      <texPath>Structures/TendrilFarm</texPath>
+      <texPath>Things/Building/TendrilFarm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -532,7 +532,7 @@
     <label>creeper</label>
     <description>A hive-like structure created by giant insects. It continuously extracts minerals and nutrition from the ground around it, feeding the hive and creating creep in surrounding area that greatly hinders the movement of anything that’s not an insectoid. If all area around a creeper is turned into creep, it will begin expunging insect jelly in regular intervals.</description>
     <graphicData>
-      <texPath>Structures/TendrilFarm</texPath>
+      <texPath>Things/Building/TendrilFarm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -580,7 +580,7 @@
     <label>jelly farm</label>
     <description>A deep organic bioreactor constantly generating insect jelly from nearby minerals and nutrition, produced by giant insects. Needs to be constructed on the creep.</description>
     <graphicData>
-      <texPath>Structures/JellyFarm</texPath>
+      <texPath>Things/Building/JellyFarm</texPath>
       <graphicClass>Graphic_Random</graphicClass>
       <shadowData>
         <volume>(1.3, 1.6, 1.3)</volume>
@@ -637,7 +637,7 @@
     <description>A chunk of a spacecraft covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. Can be deconstructed to yield useful steel and components. If left alone, it is impossible to tell when the insects will emerge from within.</description>
     <category>Building</category>
     <graphicData>
-      <texPath>Structures/InfestedShipChunk</texPath>
+      <texPath>Things/Building/InfestedShipChunk</texPath>
       <graphicClass>Graphic_Random</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -685,7 +685,7 @@
     <description>An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old.\n\nThis one seems to be covered in biomass and insect jelly. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.\n\nA mysterious crashed piece of a spaceship. It may contain exotic materials, computers, even AI personas. This kind of technology can be dangerous.</description>
     <category>Building</category>
     <graphicData>
-      <texPath>Structures/CrashedInfestedShipPart</texPath>
+      <texPath>Things/Building/CrashedInfestedShipPart</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(6,3)</drawSize>
       <damageData>
@@ -740,7 +740,7 @@
     <description>A mysterious segment of a long destroyed spaceship. It may contain exotic materials, computers, even AI personas. It seems to be completely covered in biomass and lumps of insectoid jelly. It is fairly certain that this old wreckage may contain great dangers. Bizarre insect chittering can be heard within the hull. If left alone, it is impossible to tell when the insects will emerge from within.</description>
     <category>Building</category>
     <graphicData>
-      <texPath>Structures/CrashedInfestedShipPart_Large</texPath>
+      <texPath>Things/Building/CrashedInfestedShipPart_Large</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(8,6)</drawSize>
       <damageData>
@@ -794,7 +794,7 @@
     <description>A hive of giant insects of the Kemian geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
-      <texPath>Structures/KemianHive</texPath>
+      <texPath>Things/Building/KemianHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>
@@ -875,7 +875,7 @@
     <description>A hive of giant insects of the Chelis geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
-      <texPath>Structures/ChelisHive</texPath>
+      <texPath>Things/Building/ChelisHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>
@@ -956,7 +956,7 @@
     <description>A hive of giant insects of the Xanides geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
-      <texPath>Structures/XanidesHive</texPath>
+      <texPath>Things/Building/XanidesHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>
@@ -1037,7 +1037,7 @@
     <description>A hive of giant insects of the Nachudus geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly. May explode if damaged.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
-      <texPath>Structures/NachudusHive</texPath>
+      <texPath>Things/Building/NachudusHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>
@@ -1123,7 +1123,7 @@
     <label>insectoid cocoon</label>
     <description>These jelly cocoons keep swarmlings safe from fire, extreme temperatures, and other threats while they undergo a metamorphosis process. After some time has passed, the cocoon will burst, releasing a fully grown insectoid.</description>
     <graphicData>
-      <texPath>Structures/InsectoidCocoons</texPath>
+      <texPath>Things/Building/InsectoidCocoons</texPath>
 	  <graphicClass>Graphic_Random</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>

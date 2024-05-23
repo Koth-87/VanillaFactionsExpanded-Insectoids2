@@ -5,7 +5,7 @@
     <defName>VFEI2_Creep</defName>
     <label>creep</label>
     <description>A unique form of cracked soil, devoid of any minerals and nutrition, created around the insectoid infested areas. Supports insectoid structures and significantly hinders non-insectoid movement.</description>
-    <texturePath>Terrain/Creep</texturePath>
+    <texturePath>Terrain/Surfaces/Creep</texturePath>
     <edgeType>FadeRough</edgeType>
     <renderPrecedence>70</renderPrecedence>
     <isPaintable>false</isPaintable>

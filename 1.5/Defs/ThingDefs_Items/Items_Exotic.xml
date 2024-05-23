@@ -31,7 +31,7 @@
     <label>sorne pherocore</label>
     <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the oldest geneline from the planet Sorne, which is known for their great numbers and versatility.</description>
     <graphicData>
-      <texPath>Items/Pherocores/Pherocore_Sorne</texPath>
+      <texPath>Things/Item/Pherocores/Pherocore_Sorne</texPath>
     </graphicData>
     <statBases>
       <MarketValue>500</MarketValue>
@@ -43,7 +43,7 @@
     <label>nachudus pherocore</label>
     <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the hyper-aggressive geneline from the volcanic planet Nachudus.</description>
     <graphicData>
-      <texPath>Items/Pherocores/Pherocore_Nachudus</texPath>
+      <texPath>Things/Item/Pherocores/Pherocore_Nachudus</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -55,7 +55,7 @@
     <label>chelis pherocore</label>
     <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the great geneline from the planet Chelis, known for their locust-like appearance and ability to fly for thousands of miles.</description>
     <graphicData>
-      <texPath>Items/Pherocores/Pherocore_Chelis</texPath>
+      <texPath>Things/Item/Pherocores/Pherocore_Chelis</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -67,7 +67,7 @@
     <label>kemian pherocore</label>
     <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the mutated geneline from the toxic world of Kemia, known for their ability to use toxins to dispose of their enemies.</description>
     <graphicData>
-      <texPath>Items/Pherocores/Pherocore_Kemian</texPath>
+      <texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1000</MarketValue>
@@ -79,7 +79,7 @@
     <label>xanides pherocore</label>
     <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the Xanides geneline, which has evolved in a mineral-rich planet and create nearly impenetrable armor around themselves.</description>
     <graphicData>
-      <texPath>Items/Pherocores/Pherocore_Kemian</texPath>
+      <texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1000</MarketValue>

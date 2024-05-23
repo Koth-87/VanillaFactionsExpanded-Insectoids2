@@ -43,9 +43,9 @@
     <label>empress thumper</label>
     <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid empress to attack with its escorts. If you can defeat her, you can collect a special pherocore from her corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
     <graphicData>
-      <texPath>Structures/Thumpers/EmpressThumper_Base</texPath>
+      <texPath>Things/Building/Thumpers/EmpressThumper_Base</texPath>
     </graphicData>
-	<uiIconPath>Structures/Thumpers/EmpressThumper_MenuIcon</uiIconPath>
+	<uiIconPath>Things/Building/Thumpers/EmpressThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>50</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -60,9 +60,9 @@
     <label>titantick thumper</label>
     <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid titantick to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
     <graphicData>
-      <texPath>Structures/Thumpers/TitantickThumper_Base</texPath>
+      <texPath>Things/Building/Thumpers/TitantickThumper_Base</texPath>
     </graphicData>
-	<uiIconPath>Structures/Thumpers/TitantickThumper_MenuIcon</uiIconPath>
+	<uiIconPath>Things/Building/Thumpers/TitantickThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -77,9 +77,9 @@
     <label>teramantis thumper</label>
     <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid titantick to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
     <graphicData>
-      <texPath>Structures/Thumpers/TeramantisThumper_Base</texPath>
+      <texPath>Things/Building/Thumpers/TeramantisThumper_Base</texPath>
     </graphicData>
-	<uiIconPath>Structures/Thumpers/TeramantisThumper_MenuIcon</uiIconPath>
+	<uiIconPath>Things/Building/Thumpers/TeramantisThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -94,9 +94,9 @@
     <label>gigamite thumper</label>
     <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid gigamite to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
     <graphicData>
-      <texPath>Structures/Thumpers/GigamiteThumper_Base</texPath>
+      <texPath>Things/Building/Thumpers/GigamiteThumper_Base</texPath>
     </graphicData>
-	<uiIconPath>Structures/Thumpers/GigamiteThumper_MenuIcon</uiIconPath>
+	<uiIconPath>Things/Building/Thumpers/GigamiteThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
@@ -111,9 +111,9 @@
     <label>silverfish thumper</label>
     <description>A vibration-producing thumper device. When activated, it starts emitting powerful thump pulses, which will attract an insectoid silverfish to attack with its escorts. If you can defeat it, you can collect a special pherocore from its corpse. The thumps destabilise the thumper, so this building can only be used once.</description>
     <graphicData>
-      <texPath>Structures/Thumpers/SilverfishThumper_Base</texPath>
+      <texPath>Things/Building/Thumpers/SilverfishThumper_Base</texPath>
     </graphicData>
-	<uiIconPath>Structures/Thumpers/SilverfishThumper_MenuIcon</uiIconPath>
+	<uiIconPath>Things/Building/Thumpers/SilverfishThumper_MenuIcon</uiIconPath>
     <costList>
       <Steel>70</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
