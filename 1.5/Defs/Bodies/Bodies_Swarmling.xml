@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<BodyDef>
-		<defName>VFEI_Swarmling</defName>
+		<defName>VFEI2_Swarmling</defName>
 		<label>swarmling</label>
 		<corePart>
 			<def>Shell</def>
@@ -9,7 +9,7 @@
 			<depth>Outside</depth>
 			<parts>
 				<li>
-					<def>VFEI_Swarmling</def>
+					<def>VFEI2_Swarmling</def>
 					<coverage>0.2</coverage>
 					<customLabel>swarmling</customLabel>
 					<parts>
@@ -23,7 +23,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>VFEI_Swarmling</def>
+					<def>VFEI2_Swarmling</def>
 					<coverage>0.2</coverage>
 					<customLabel>swarmling</customLabel>
 					<parts>
@@ -37,7 +37,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>VFEI_Swarmling</def>
+					<def>VFEI2_Swarmling</def>
 					<coverage>0.2</coverage>
 					<customLabel>swarmling</customLabel>
 					<parts>
@@ -51,7 +51,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>VFEI_Swarmling</def>
+					<def>VFEI2_Swarmling</def>
 					<coverage>0.2</coverage>
 					<customLabel>swarmling</customLabel>
 					<parts>
@@ -65,7 +65,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>VFEI_Swarmling</def>
+					<def>VFEI2_Swarmling</def>
 					<coverage>0.2</coverage>
 					<customLabel>swarmling</customLabel>
 					<parts>

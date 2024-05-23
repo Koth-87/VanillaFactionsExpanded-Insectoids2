@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="PlantFoodRawBase">
-		<defName>VFEI_Tendrilmoss</defName>
+		<defName>VFEI2_Tendrilmoss</defName>
 		<label>tendrilmoss</label>
 		<description>Raw tendrilmoss obtained by harvesting tendrilmoss vines growing around insectoid tendril farms. It cannot be farmed.</description>
 		<graphicData>

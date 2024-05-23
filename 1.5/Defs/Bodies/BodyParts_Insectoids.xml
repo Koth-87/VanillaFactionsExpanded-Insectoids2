@@ -6,7 +6,7 @@
 
   
   	<BodyPartDef>
-		<defName>VFEI_Swarmling</defName>
+		<defName>VFEI2_Swarmling</defName>
 		<label>swarmling</label>
 		<hitPoints>10</hitPoints>
 		<frostbiteVulnerability>1</frostbiteVulnerability>

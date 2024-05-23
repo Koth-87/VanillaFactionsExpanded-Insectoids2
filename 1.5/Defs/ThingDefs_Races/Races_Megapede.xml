@@ -2,7 +2,7 @@
 <Defs>
 	<!--  Megapede -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI_Megapede</defName>
+		<defName>VFEI2_Megapede</defName>
 		<label>megapede</label>
 		<description>A giant, heavy insectoid that glides on dozens of tiny legs. Its thick chitin armor and sharp mandibles the size of an elephant’s tusk make it an excellent siege machine. Due to being extremely slow, they are somewhat vulnerable to hit-and-run tactics.</description>
 		<statBases>
@@ -72,7 +72,7 @@
 			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<trainability>Advanced</trainability>
-			<leatherDef>VFEI_Chitin</leatherDef>
+			<leatherDef>VFEI2_Chitin</leatherDef>
 			<lifeStageAges>
 				<li>
 					<def>EusocialInsectLarva</def>
@@ -97,9 +97,9 @@
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI_Megapede</defName>
+		<defName>VFEI2_Megapede</defName>
 		<label>megapede</label>
-		<race>VFEI_Megapede</race>
+		<race>VFEI2_Megapede</race>
 		<canBeSapper>true</canBeSapper>
 		<combatPower>300</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>

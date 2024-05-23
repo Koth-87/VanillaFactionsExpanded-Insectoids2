@@ -2,7 +2,7 @@
 <Defs>
 	<!-- Chitin -->
 	<ThingDef ParentName="LeatherBase">
-		<defName>VFEI_Chitin</defName>
+		<defName>VFEI2_Chitin</defName>
 		<label>chitin</label>
 		<description>An extremely thick composition of rare minerals and biomass, commonly found in a form of insect exoskeletons.</description>
 		<graphicData>

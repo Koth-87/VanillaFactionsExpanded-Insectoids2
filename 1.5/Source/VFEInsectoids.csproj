@@ -62,6 +62,7 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Comps\CompOnDestroyWall.cs" />
     <Compile Include="Comps\CompSpawnSwarmlings.cs" />
     <Compile Include="Comps\CompSwarmlingToCocoon.cs" />

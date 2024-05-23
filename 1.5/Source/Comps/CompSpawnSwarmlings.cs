@@ -51,7 +51,7 @@ namespace VFEInsectoids
                     {
                         IntVec3 vec3 = this.parent.Position.RandomAdjacentCell8Way();
                         if (!vec3.InBounds(this.parent.Map) || !vec3.Walkable(this.parent.Map)) break;
-                        Pawn p = PawnGenerator.GeneratePawn(VFEI_DefOf.VFEI_Swarmling, this.parent.Faction);
+                        Pawn p = PawnGenerator.GeneratePawn(VFEI_DefOf.VFEI2_Swarmling, this.parent.Faction);
                         GenSpawn.Spawn(p, vec3, this.parent.Map);
                         if (pa.mindState.spawnedByInfestationThingComp == true)
                         {

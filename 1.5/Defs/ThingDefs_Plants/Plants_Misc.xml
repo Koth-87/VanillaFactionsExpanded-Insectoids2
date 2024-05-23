@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="PlantBase">
-		<defName>VFEI_TendrilmossVines</defName>
+		<defName>VFEI2_TendrilmossVines</defName>
 		<label>tendrilmoss vines</label>
 		<description>Twisted, nutrient-rich moss that grows cultivated by insectoids in clumps in hive areas. Moss takes a long time to grow, but is very frost-resistant. Significantly slows down movement speed, but acts as cover.</description>
 		<statBases>
@@ -21,7 +21,7 @@
 			<fertilitySensitivity>0</fertilitySensitivity>
 			<dieIfLeafless>true</dieIfLeafless>
 			<harvestTag>Standard</harvestTag>
-			<harvestedThingDef>VFEI_Tendrilmoss</harvestedThingDef>	
+			<harvestedThingDef>VFEI2_Tendrilmoss</harvestedThingDef>	
 			<sowMinSkill>7</sowMinSkill>
 			<harvestWork>300</harvestWork>
 			<topWindExposure>0.2</topWindExposure>

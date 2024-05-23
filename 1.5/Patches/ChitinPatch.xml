@@ -4,20 +4,20 @@
    <Operation Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Megascarab"]/race</xpath>
       <value>
-          <leatherDef>VFEI_Chitin</leatherDef>
+          <leatherDef>VFEI2_Chitin</leatherDef>
       </value>
    </Operation>
    
     <Operation Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Spelopede"]/race</xpath>
       <value>
-          <leatherDef>VFEI_Chitin</leatherDef>
+          <leatherDef>VFEI2_Chitin</leatherDef>
       </value>
    </Operation>
     <Operation Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Megaspider"]/race</xpath>
       <value>
-          <leatherDef>VFEI_Chitin</leatherDef>
+          <leatherDef>VFEI2_Chitin</leatherDef>
       </value>
    </Operation>
    
