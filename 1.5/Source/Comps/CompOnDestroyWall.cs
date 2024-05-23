@@ -4,22 +4,12 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    public class CompProperties_OnDestroyWall : CompProperties
-    {
-        public IntRange filthSpawnAmount;
-        public float radius;
-        public ThingDef filth;
-        public bool chaining;
-        public CompProperties_OnDestroyWall()
-        {
-            this.compClass = typeof(CompOnDestroyWall);
-        }
-    }
+  
 
     public class CompOnDestroyWall : ThingComp
     {
         public static bool DoNotChain;
-        public CompProperties_OnDestroyWall Props => base.props as CompProperties_OnDestroyWall;
+        public CompProperties_OnDestroyWall Props => props as CompProperties_OnDestroyWall;
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);

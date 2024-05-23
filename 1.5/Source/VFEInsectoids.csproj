@@ -63,6 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comps\CompOnDestroyWall.cs" />
+    <Compile Include="Comps\CompSpawnSwarmlings.cs" />
+    <Compile Include="Comps\CompSwarmlingToCocoon.cs" />
+    <Compile Include="Comps\Properties\CompProperties_OnDestroyWall.cs" />
+    <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
+    <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />
     <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="InsectTerritory.cs" />
