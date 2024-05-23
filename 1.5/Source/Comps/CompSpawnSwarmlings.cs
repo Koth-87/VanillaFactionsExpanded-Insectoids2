@@ -28,6 +28,11 @@ namespace VFEInsectoids
 
         public override string CompInspectStringExtra()
         {
+            if(parent?.Faction == Faction.OfPlayerSilentFail)
+            {
+                return null;
+            }
+
             if (tickToSpawn > 0 && this.parent.Map.mapPawns.AllPawnsSpawnedCount < 100)
             {
                 return "VFEI_LarvaeTimeSpawn".Translate(tickToSpawn.ToStringTicksToPeriod());

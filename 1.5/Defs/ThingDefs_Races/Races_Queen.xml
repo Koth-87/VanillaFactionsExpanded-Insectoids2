@@ -44,6 +44,14 @@
 			<li Class="AnimalBehaviours.CompProperties_FixedGender">
 				<gender>Female</gender>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+				<resourceDef>VFEI_RoyalInsectJelly</resourceDef>
+				<gatheringIntervalDays>5</gatheringIntervalDays>
+				<resourceAmount>5</resourceAmount>
+				<customResourceString>VFEI_RoyalInsectJelly</customResourceString>
+				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
+
+			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
