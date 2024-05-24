@@ -1127,7 +1127,7 @@
 	  <graphicClass>Graphic_Random</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
-    <thingClass>ThingWithComps</thingClass>
+    <thingClass>VFEInsectoids.Cocoon</thingClass>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
     <fillPercent>0.5</fillPercent>
@@ -1144,29 +1144,8 @@
 	  <combatPower>150</combatPower>
       <deconstructible>false</deconstructible>
     </building>
-    <comps>
-      <li Class="CompProperties_CanBeDormant"> <!-- placeholder values -->
-        <startsDormant>true</startsDormant>
-        <wakeUpDelayRange>162</wakeUpDelayRange>
-        <maxDistAwakenByOther>3</maxDistAwakenByOther>
-        <wakeUpRepeatSignalDelayRange>30~60</wakeUpRepeatSignalDelayRange>
-        <delayedWakeUpDoesZs>false</delayedWakeUpDoesZs>
-        <showSleepingZs>false</showSleepingZs>
-      </li>
-      <li Class="CompProperties_SpawnerFilth">
-        <filthDef>Filth_Slime</filthDef>
-        <spawnCountOnSpawn>10</spawnCountOnSpawn>
-        <spawnMtbHours>4</spawnMtbHours>
-        <spawnRadius>1</spawnRadius>
-      </li>
-      <!-- <li Class="CompProperties_SpawnEffecterOnDestroy">
-        <effect>CocoonDestroyed</effect>
-      </li> -->
-    </comps>
-    <placeWorkers>
-      <li>PlaceWorker_CocoonTriggerRadius</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+   
+    
   </ThingDef>
 
 </Defs>

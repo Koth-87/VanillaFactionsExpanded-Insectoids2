@@ -6,13 +6,14 @@ using Verse.Sound;
 
 namespace VFEInsectoids
 {
-   /* public class Cocoon : ThingWithComps
+    public class Cocoon : ThingWithComps
     {
         private bool once = true;
         private int timeBeforeInsect;
         private int timeBeforeInsectString;
+        public WeightedInsectoids[] array = new WeightedInsectoids[5];
 
-        private struct WeightedInsectoids
+        public struct WeightedInsectoids
         {
 
             public PawnKindDef pawn;
@@ -20,15 +21,39 @@ namespace VFEInsectoids
            
         }
 
-        Cocoon()
+        public Cocoon()
         {
-            WeightedInsectoids[] array = new WeightedInsectoids[5];
+            
             WeightedInsectoids insectoid = new WeightedInsectoids
             {
                 pawn = VFEI_DefOf.Megascarab,
                 weight = 0.5f
             };
             array[0] = insectoid;
+            insectoid = new WeightedInsectoids
+            {
+                pawn = VFEI_DefOf.Spelopede,
+                weight = 0.25f
+            };
+            array[1] = insectoid;
+            insectoid = new WeightedInsectoids
+            {
+                pawn = VFEI_DefOf.Megaspider,
+                weight = 0.15f
+            };
+            array[2] = insectoid;
+            insectoid = new WeightedInsectoids
+            {
+                pawn = VFEI_DefOf.VFEI2_Megapede,
+                weight = 0.05f
+            };
+            array[3] = insectoid;
+            insectoid = new WeightedInsectoids
+            {
+                pawn = VFEI_DefOf.VFEI2_Queen,
+                weight = 0.03f
+            };
+            array[4] = insectoid;
 
         }
 
@@ -42,32 +67,28 @@ namespace VFEInsectoids
 
         public override string GetInspectString()
         {
-            return "CocoonInsectSpawnIn".Translate(timeBeforeInsectString.ToStringTicksToPeriod());
+            return "VFEI_CocoonInsectSpawnIn".Translate(timeBeforeInsectString.ToStringTicksToPeriod());
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (once) { this.timeBeforeInsect = Find.TickManager.TicksGame + 15000; timeBeforeInsectString = 15000; once = false; }
+            if (once) {
+                int timeToGo = new IntRange(10000, 30000).RandomInRange;  
+                this.timeBeforeInsect = Find.TickManager.TicksGame + timeToGo; 
+                timeBeforeInsectString = timeToGo; 
+                once = false;           
+            }
             if (Find.TickManager.TicksGame == this.timeBeforeInsect)
             {
                 CellFinder.TryFindRandomReachableCellNearPosition(this.Position,this.Position, this.Map, 4, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out IntVec3 c);
                 FilthMaker.TryMakeFilth(c, this.Map, ThingDefOf.Filth_Slime);
                 VFEI_DefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map));
 
-                List<PawnKindDef> pawnKindDefs = new List<PawnKindDef>
-                {
-                    PawnKindDefOf.Megascarab,
-                    PawnKindDefOf.Spelopede,
-                    PawnKindDefOf.Megaspider,
-                    VFEIDefOf.VFEI_Insectoid_Megapede,
-                    VFEIDefOf.VFEI_Insectoid_Gigalocust,
-                    VFEIDefOf.VFEI_Insectoid_RoyalMegaspider
-                };
+               
 
-                if (pawnKindDefs.Count > 0)
-                {
-                    Pawn p = PawnGenerator.GeneratePawn(pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue), this.Faction);
+                
+                    Pawn p = PawnGenerator.GeneratePawn(array.RandomElementByWeight(x => x.weight).pawn, this.Faction);
                     p.ageTracker.AgeBiologicalTicks = 30000;
                     GenSpawn.Spawn(p, this.Position, this.Map);
                     List<Pawn> pawns = new List<Pawn> { p };
@@ -86,10 +107,10 @@ namespace VFEInsectoids
                         };
                         LordMaker.MakeNewLord(this.Faction, new LordJob_DefendAndExpandHive(spp), this.Map, pawns);
                     }
-                }
+                
                 this.Destroy();
             }
             timeBeforeInsectString--;
         }
-    }*/
+    }
 }

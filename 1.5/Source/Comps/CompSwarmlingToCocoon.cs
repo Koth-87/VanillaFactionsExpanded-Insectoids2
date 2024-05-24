@@ -17,16 +17,22 @@ namespace VFEInsectoids
             }
         }
 
+        public override string CompInspectStringExtra()
+        {
+                  
+            return "VFEI_CreatingCocoon".Translate(timeBeforeTransform.ToStringTicksToPeriod());
+        }
+
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
-            this.timeBeforeTransform = Find.TickManager.TicksGame + Props.ticksBeforeBecomingCocoon;
+            this.timeBeforeTransform = Props.ticksBeforeBecomingCocoon;
         }
 
         public override void CompTick()
         {
             base.CompTick();
-            if (Find.TickManager.TicksGame == this.timeBeforeTransform && this.parent.Map != null)
+            if (this.timeBeforeTransform <0 && this.parent.Map != null)
             {
                 IntVec3 pos = this.parent.Position;
                 Map map = this.parent.Map;
@@ -43,6 +49,7 @@ namespace VFEInsectoids
                 VFEI_DefOf.Hive_Spawn.PlayOneShot(new TargetInfo(pos, map));
                 this.parent.Destroy();
             }
+            timeBeforeTransform--;
         }
 
         public override void PostExposeData()
