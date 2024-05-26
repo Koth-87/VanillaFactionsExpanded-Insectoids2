@@ -66,6 +66,7 @@
     <Compile Include="Comps\CompOnDestroyWall.cs" />
     <Compile Include="Comps\CompSpawnSwarmlings.cs" />
     <Compile Include="Comps\CompSwarmlingToCocoon.cs" />
+    <Compile Include="Comps\CompPlantFarm.cs" />
     <Compile Include="Comps\Properties\CompProperties_OnDestroyWall.cs" />
     <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
     <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />

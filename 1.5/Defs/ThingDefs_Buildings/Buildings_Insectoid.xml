@@ -470,6 +470,10 @@
       <li Class="CompProperties_Lifespan">
         <lifespanTicks>1200000</lifespanTicks>
       </li>
+      <li Class="CompProperties_ProximityFuse">
+        <target>Fire</target>
+        <radius>3</radius>
+      </li>
     </comps>
     <costList>
         <InsectJelly>25</InsectJelly>
@@ -504,7 +508,7 @@
     <fillPercent>0.30</fillPercent>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <rotatable>false</rotatable>
-    <tickerType>Rare</tickerType>
+    <tickerType>Normal</tickerType>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Mass>4</Mass>
@@ -516,6 +520,12 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
+	  <li Class="VFEInsectoids.CompProperties_PlantFarm">
+		<radius>5.9</radius>
+		<plant>VFEI2_TendrilmossVines</plant>
+		<requiredTerrain>VFEI2_Creep</requiredTerrain>
+		<spawnTickRate>15000~25000</spawnTickRate>
+	  </li>
     </comps>
     <costList>
         <InsectJelly>60</InsectJelly>
