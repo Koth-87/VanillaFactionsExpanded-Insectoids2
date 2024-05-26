@@ -4,8 +4,6 @@ using Verse;
 
 namespace VFEInsectoids
 {
-  
-
     public class CompOnDestroyWall : ThingComp
     {
         public static bool DoNotChain;

@@ -70,6 +70,7 @@
     <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
     <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />
     <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
+    <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="InsectTerritory.cs" />
     <Compile Include="Harmony\Page_CreateWorldParams_DoWindowContents_Patch.cs" />

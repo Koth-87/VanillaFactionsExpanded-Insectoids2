@@ -58,7 +58,7 @@
         </focusTypes>
       </li>
 		<li Class="CompProperties_SpawnEffecterOnDestroy">
-			<effect>CocoonDestroyed</effect>
+			<effect>VFEI_CocoonDestroyed</effect>
 		</li>
     </comps>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
