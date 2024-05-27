@@ -59,4 +59,64 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	<AbilityDef Name="VFEI2_InsectGlide_Base" Abstract="true">
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<hostile>false</hostile>
+		<aiCanUse>true</aiCanUse>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+			<violent>false</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<requireLineOfSight>false</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+	<AbilityDef ParentName="VFEI2_InsectGlide_Base">
+		<defName>VFEI2_InsectGlide_Short</defName>
+		<label>insect shortglide</label>
+		<description>Insectoid does a wing-assisted jump to a close location using strong hind legs.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<verbProperties>
+			<label>insect shortglide</label>
+			<warmupTime>0.5</warmupTime>
+			<range>7.9</range>
+			<minRange>3.9</minRange>
+		</verbProperties>
+	</AbilityDef>
+	<AbilityDef ParentName="VFEI2_InsectGlide_Base">
+		<defName>VFEI2_InsectGlide_Medium</defName>
+		<label>insect glide</label>
+		<description>Insectoid does a wing-assisted jump to a location using strong hind legs.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>2200</cooldownTicksRange>
+		<verbProperties>
+			<label>insect glide</label>
+			<warmupTime>0.5</warmupTime>
+			<range>10.9</range>
+			<minRange>4.9</minRange>
+		</verbProperties>
+	</AbilityDef>
+	<AbilityDef ParentName="VFEI2_InsectGlide_Base">
+		<defName>VFEI2_InsectGlide_Far</defName>
+		<label>insect farglide</label>
+		<description>Insectoid does a wing-assisted jump to a very distant location using strong hind legs.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>600</cooldownTicksRange>
+		<verbProperties>
+			<label>insect farglide</label>
+			<warmupTime>0.5</warmupTime>
+			<range>18.9</range>
+			<minRange>5.9</minRange>
+		</verbProperties>
+	</AbilityDef>
 </Defs>
