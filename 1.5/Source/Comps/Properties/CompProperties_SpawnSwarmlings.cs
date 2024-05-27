@@ -2,7 +2,7 @@
 
 namespace VFEInsectoids
 {
-    internal class CompProperties_SpawnSwarmlings : CompProperties
+    public class CompProperties_SpawnSwarmlings : CompProperties
     {
 
         public int ticksBetweenSpawn;

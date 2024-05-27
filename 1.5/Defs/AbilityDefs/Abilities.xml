@@ -24,9 +24,59 @@
 			<li Class="CompProperties_AbilityFireSpew">
 				<range>9.9</range>
 				<lineWidthEnd>3</lineWidthEnd>
-				<filthDef>Filth_FlammableBile</filthDef>
+				<filthDef>VFEI2_Filth_FlammableBile</filthDef>
 				<effecterDef>Fire_Spew</effecterDef>
 				<canHitFilledCells>true</canHitFilledCells>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>VFEI2_InsectAcidSpit</defName>
+		<label>insect acid spit</label>
+		<description>Insectoid sprays a sticky acid substance from glands in the neck up all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>600</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>11.9</range>
+			<warmupTime>1</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilitySprayLiquid">
+				<projectileDef>VFEI2_Proj_Acid</projectileDef>
+				<numCellsToHit>1</numCellsToHit>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>VFEI2_InsectAcidSpew</defName>
+		<label>insect acid spew</label>
+		<description>Insectoid sprays a sticky acid substance from glands in the neck up all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>1200</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>15.9</range>
+			<warmupTime>1.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilitySprayLiquid">
+				<projectileDef>VFEI2_Proj_Acid</projectileDef>
+				<numCellsToHit>9</numCellsToHit>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
 			</li>
 		</comps>
 	</AbilityDef>
@@ -54,7 +104,7 @@
 				<range>12.9</range>
 				<lineWidthEnd>3</lineWidthEnd>
 				<damAmount>1</damAmount>
-				<filthDef>Filth_FlammableBile</filthDef>
+				<filthDef>VFEI2_Filth_FlammableBile</filthDef>
 				<canHitFilledCells>true</canHitFilledCells>
 			</li>
 		</comps>

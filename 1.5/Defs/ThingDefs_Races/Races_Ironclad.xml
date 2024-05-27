@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!--  Megawasp -->
+	<!--  Ironclad -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Megawasp</defName>
-		<label>megawasp</label>
-		<description>Not actually a wasp, the megawasp is a genetically-engineered giant flying insectoid the size of a cow. Designed as the hunter and the hive defender, megawasp soars through the air to engage enemies in close quarters, where it uses long and sharp ripper-blades and mandibles to cut anyone they face into pieces. The sharpness of the claws means that they are capable of eliminating even the most heavily armored enemies. It is, however, quite slow in open terrain.</description>
+		<defName>VFEI2_Ironclad</defName>
+		<label>ironclad</label>
+		<description>A giant, genetically-engineered insectoid responsible for the hive defense. The incredible claws the size of a failed vidtuber’s ego can break and crush anything trying to harm the new spawn. Its extremely thick rock carapace makes it very slow but also very durable, but excessive damage will chip away the armor exposing the weak spots.</description>
 		<statBases>
-			<MoveSpeed>3.2</MoveSpeed>
+			<MoveSpeed>1.9</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>60</ComfyTemperatureMax>
-			<MarketValue>500</MarketValue>
-			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.24</ArmorRating_Sharp>
-		
+			<MarketValue>1500</MarketValue>
+			<ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.6</ArmorRating_Sharp>
+			<ArmorRating_Heat>1</ArmorRating_Heat>
 			<LeatherAmount>30</LeatherAmount>
+			<MiningSpeed>4</MiningSpeed>
 		</statBases>
 		<tools>
 			<li>
@@ -22,16 +23,25 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>14</power>
-				<cooldownTime>2.2</cooldownTime>
+				<power>18</power>
+				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
 			</li>
+			
 			<li>
 				<label>head</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>7</power>
+				<power>14</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -39,18 +49,22 @@
 			</li>
 		</tools>
 		<comps>
-			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
-				<initialAbility>VFEI2_InsectGlide_Medium</initialAbility>
+			<li Class="AnimalBehaviours.CompProperties_HediffAfterHealthLoss">
+				<healthPercent>80</healthPercent>
+				<tickInterval>60</tickInterval>
+				<hediff>VFEI2_ArmorDegradation</hediff>
+				<severity>0.9</severity>
 			</li>
 		</comps>
 		<race>
+			<renderTree>VFEI2_Unarmored</renderTree>
 			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.56</baseHungerRate>
-			<baseBodySize>1.35</baseBodySize>
-			<baseHealthScale>2.4</baseHealthScale>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>3</baseBodySize>
+			<baseHealthScale>6</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<wildness>0.4</wildness>
+			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<trainability>Advanced</trainability>
 			<leatherDef>VFEI2_Chitin</leatherDef>
@@ -78,11 +92,10 @@
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-			<defName>VFEI2_Megawasp</defName>
-		<label>megawasp</label>
-		<race>VFEI2_Megawasp</race>
-
-		<combatPower>150</combatPower>
+		<defName>VFEI2_Ironclad</defName>
+		<label>ironclad</label>
+		<race>VFEI2_Ironclad</race>
+		<combatPower>450</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<defaultFactionType>VFEI2_Hive</defaultFactionType>
@@ -91,42 +104,39 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<color>(147, 111, 93)</color>
-					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<texPath>Things/Pawn/Animal/Ironclad/Ironclad</texPath>
+					<color>(137, 143, 147)</color>
+					<drawSize>1.75</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>1.5</drawSize>
+					<texPath>Things/Pawn/Animal/Ironclad/Dessicated_Ironclad</texPath>
+					<drawSize>1.75</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<drawSize>2</drawSize>
-					<color>(147, 111, 93)</color>
-					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Pawn/Animal/Ironclad/Ironclad</texPath>
+					<drawSize>2.5</drawSize>
+					<color>(137, 143, 147)</color>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>2</drawSize>
+					<texPath>Things/Pawn/Animal/Ironclad/Dessicated_Ironclad</texPath>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<drawSize>2.2</drawSize>
-					<color>(147, 111, 93)</color>
-					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Pawn/Animal/Ironclad/Ironclad</texPath>
+					<drawSize>3</drawSize>
+					<color>(137, 143, 147)</color>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
 						<offset>(0,0,-0.1)</offset>
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>2.2</drawSize>
+					<texPath>Things/Pawn/Animal/Ironclad/Dessicated_Ironclad</texPath>
+					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

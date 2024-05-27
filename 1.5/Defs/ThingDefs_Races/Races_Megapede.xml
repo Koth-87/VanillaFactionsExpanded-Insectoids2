@@ -100,7 +100,7 @@
 		<defName>VFEI2_Megapede</defName>
 		<label>megapede</label>
 		<race>VFEI2_Megapede</race>
-		<canBeSapper>true</canBeSapper>
+
 		<combatPower>300</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>

@@ -2,7 +2,7 @@
 
 namespace VFEInsectoids
 {
-    internal class CompProperties_SwarmlingToCocoon : CompProperties
+    public class CompProperties_SwarmlingToCocoon : CompProperties
     {
 
         public int ticksBeforeBecomingCocoon;

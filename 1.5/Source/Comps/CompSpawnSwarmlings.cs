@@ -6,7 +6,7 @@ using VFEInsectoids;
 
 namespace VFEInsectoids
 {
-    internal class CompSpawnSwarmlings : ThingComp
+    public class CompSpawnSwarmlings : ThingComp
     {
         private int nextSpawn;
         private int tickToSpawn;

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!--  Megawasp -->
+	<!--  Venomite -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Megawasp</defName>
-		<label>megawasp</label>
-		<description>Not actually a wasp, the megawasp is a genetically-engineered giant flying insectoid the size of a cow. Designed as the hunter and the hive defender, megawasp soars through the air to engage enemies in close quarters, where it uses long and sharp ripper-blades and mandibles to cut anyone they face into pieces. The sharpness of the claws means that they are capable of eliminating even the most heavily armored enemies. It is, however, quite slow in open terrain.</description>
+		<defName>VFEI2_Venomite</defName>
+		<label>venomite</label>
+		<description>Not actually a mite, the venomite is a genetically-engineered giant insectoid the size of a lion. Designed to inflict maximum damage to organic enemies, venomite is capable of spitting globs of highly corrosive acid over long distances. Upon impact, it will cause severe burns, but won’t result in permanent damage. Relatively easy to defeat in close quarters due to shorter ripper blades than the Sorne variety. It is quite slow in open terrain.</description>
 		<statBases>
-			<MoveSpeed>3.2</MoveSpeed>
+			<MoveSpeed>3.75</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>60</ComfyTemperatureMax>
 			<MarketValue>500</MarketValue>
-			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.24</ArmorRating_Sharp>
 		
-			<LeatherAmount>30</LeatherAmount>
+			<LeatherAmount>29</LeatherAmount>
 		</statBases>
 		<tools>
 			<li>
@@ -22,8 +22,8 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>14</power>
-				<cooldownTime>2.2</cooldownTime>
+				<power>8</power>
+				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
 			</li>
 			<li>
@@ -31,7 +31,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>7</power>
+				<power>6</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -40,14 +40,14 @@
 		</tools>
 		<comps>
 			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
-				<initialAbility>VFEI2_InsectGlide_Medium</initialAbility>
+				<initialAbility>VFEI2_InsectAcidSpit</initialAbility>
 			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.56</baseHungerRate>
-			<baseBodySize>1.35</baseBodySize>
-			<baseHealthScale>2.4</baseHealthScale>
+			<baseBodySize>1.2</baseBodySize>
+			<baseHealthScale>2.5</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<wildness>0.4</wildness>
@@ -78,11 +78,10 @@
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-			<defName>VFEI2_Megawasp</defName>
-		<label>megawasp</label>
-		<race>VFEI2_Megawasp</race>
-
-		<combatPower>150</combatPower>
+		<defName>VFEI2_Venomite</defName>
+		<label>venomite</label>
+		<race>VFEI2_Venomite</race>
+		<combatPower>200</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<defaultFactionType>VFEI2_Hive</defaultFactionType>
@@ -91,33 +90,33 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<color>(147, 111, 93)</color>
+					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
+					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
+					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
 					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
+					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
 					<drawSize>2</drawSize>
-					<color>(147, 111, 93)</color>
+					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
+					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
 					<drawSize>2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
+					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
 					<drawSize>2.2</drawSize>
-					<color>(147, 111, 93)</color>
+					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
@@ -125,7 +124,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
+					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
 					<drawSize>2.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>

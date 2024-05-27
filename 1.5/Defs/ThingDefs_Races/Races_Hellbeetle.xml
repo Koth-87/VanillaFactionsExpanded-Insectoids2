@@ -81,7 +81,7 @@
 		<defName>VFEI2_Hellbeetle</defName>
 		<label>hellbeetle</label>
 		<race>VFEI2_Hellbeetle</race>
-		<canBeSapper>true</canBeSapper>
+
 		<combatPower>150</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>

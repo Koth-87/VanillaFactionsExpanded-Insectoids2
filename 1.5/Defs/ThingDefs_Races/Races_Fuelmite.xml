@@ -81,7 +81,7 @@
 		<defName>VFEI2_Fuelmite</defName>
 		<label>fuelmite</label>
 		<race>VFEI2_Fuelmite</race>
-		<canBeSapper>true</canBeSapper>
+
 		<combatPower>200</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>

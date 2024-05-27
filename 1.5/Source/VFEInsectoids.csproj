@@ -72,8 +72,10 @@
     <Compile Include="Comps\Properties\CompProperties_OnDestroyWall.cs" />
     <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
     <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />
+    <Compile Include="DamageWorkers\DamageWorker_AcidBite.cs" />
     <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
     <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />
+    <Compile Include="Harmony\Pawn_HealthTracker_DropBloodFilth.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="InsectTerritory.cs" />
     <Compile Include="Harmony\Page_CreateWorldParams_DoWindowContents_Patch.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Mod\VFEInsectoidsMod.cs" />
     <Compile Include="DefOfs\VFEI_DefOf.cs" />
     <Compile Include="Harmony\WITab_Terrain_FillTab_Patch.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_Unarmored.cs" />
     <Compile Include="WorldLayers\WorldLayer_Insects.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Add_Patch.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Remove_Patch.cs" />
