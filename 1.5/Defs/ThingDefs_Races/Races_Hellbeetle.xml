@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!--  Megapede -->
+	<!--  Hellbeetle -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Megapede</defName>
-		<label>megapede</label>
-		<description>A giant, heavy insectoid that glides on dozens of tiny legs. Its thick chitin armor and sharp mandibles the size of an elephant’s tusk make it an excellent siege machine. Due to being extremely slow, they are somewhat vulnerable to hit-and-run tactics.</description>
+		<defName>VFEI2_Hellbeetle</defName>
+		<label>hellbeetle</label>
+		<description>Not actually a beetle, the hellbeetle is a genetically-engineered giant insectoid the size of a bear. Designed for the forges of the planet Nachudus, hellbeetles have brittle armor, but are capable of spitting liquid fire from their giant jaws. In close quarters, the sharp horns and ripper-blades will dispose of flesh and metal alike. It is, however, quite slow in open terrain.</description>
 		<statBases>
-			<MoveSpeed>2.1</MoveSpeed>
-			<Flammability>0.7</Flammability>
-			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-			<MarketValue>750</MarketValue>
-			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
-			<MiningSpeed>4</MiningSpeed>
-			<LeatherAmount>30</LeatherAmount>
+			<MoveSpeed>3.2</MoveSpeed>
+			<Flammability>0.1</Flammability>
+			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+			<ComfyTemperatureMax>160</ComfyTemperatureMax>
+			<MarketValue>500</MarketValue>
+			<ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+			<ArmorRating_Heat>2</ArmorRating_Heat>
+			<LeatherAmount>29</LeatherAmount>
 		</statBases>
 		<tools>
 			<li>
@@ -21,55 +22,35 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>17</power>
-				<cooldownTime>2.6</cooldownTime>
+				<power>14</power>
+				<cooldownTime>2.8</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
-			</li>
-			<li>
-				<label>mandibles</label>
-				<capacities>
-					<li>ToxicBite</li>
-				</capacities>
-				<power>15</power>
-				<cooldownTime>2.6</cooldownTime>
-				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
 			</li>
 			<li>
 				<label>head</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>9</power>
+				<power>7</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<comps>
+			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
+				<initialAbility>VFEI2_FlameSpew</initialAbility>
+			</li>
+		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.35</baseHungerRate>
-			<baseBodySize>1.8</baseBodySize>
-			<baseHealthScale>4.32</baseHealthScale>
+			<baseHungerRate>0.42</baseHungerRate>
+			<baseBodySize>1.2</baseBodySize>
+			<baseHealthScale>2.5</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<wildness>0.95</wildness>
+			<wildness>0.4</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<trainability>Advanced</trainability>
 			<leatherDef>VFEI2_Chitin</leatherDef>
@@ -97,11 +78,11 @@
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI2_Megapede</defName>
-		<label>megapede</label>
-		<race>VFEI2_Megapede</race>
+		<defName>VFEI2_Hellbeetle</defName>
+		<label>hellbeetle</label>
+		<race>VFEI2_Hellbeetle</race>
 		<canBeSapper>true</canBeSapper>
-		<combatPower>300</combatPower>
+		<combatPower>150</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<defaultFactionType>VFEI2_Hive</defaultFactionType>
@@ -110,38 +91,41 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
-					<color>(139,140,127)</color>
-					<drawSize>1.2</drawSize>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
+					<color>(128,107,104)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
-					<drawSize>1.2</drawSize>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
+					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
-					<drawSize>2.0</drawSize>
-					<color>(139,140,127)</color>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
+					<drawSize>2</drawSize>
+					<color>(128,107,104)</color>
+					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
-					<drawSize>2.0</drawSize>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
+					<drawSize>2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
 					<drawSize>3</drawSize>
-					<color>(139,140,127)</color>
+					<color>(128,107,104)</color>
+					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
 						<offset>(0,0,-0.1)</offset>
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
+					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>

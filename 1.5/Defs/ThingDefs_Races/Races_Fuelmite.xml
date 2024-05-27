@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!--  Megapede -->
+	<!--  Fuelmite -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Megapede</defName>
-		<label>megapede</label>
-		<description>A giant, heavy insectoid that glides on dozens of tiny legs. Its thick chitin armor and sharp mandibles the size of an elephant’s tusk make it an excellent siege machine. Due to being extremely slow, they are somewhat vulnerable to hit-and-run tactics.</description>
+		<defName>VFEI2_Fuelmite</defName>
+		<label>fuelmite</label>
+		<description>A large, genetically-engineered mite native to the planet Nachundus, where it fuels gigantic megaforges of the corporations. Fuelmites are capable of synthesising volatile chemfuel in their fuel sacks, and can eject it from their fuelglands over huge distances. While fuel itself is not dangerous, a single spark is enough to set the area on fire. It is, however, quite slow in open terrain.</description>
 		<statBases>
-			<MoveSpeed>2.1</MoveSpeed>
+			<MoveSpeed>3.75</MoveSpeed>
 			<Flammability>0.7</Flammability>
-			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-			<MarketValue>750</MarketValue>
-			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
-			<MiningSpeed>4</MiningSpeed>
+			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+			<ComfyTemperatureMax>160</ComfyTemperatureMax>
+			<MarketValue>650</MarketValue>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+			<ArmorRating_Heat>2</ArmorRating_Heat>
 			<LeatherAmount>30</LeatherAmount>
 		</statBases>
 		<tools>
@@ -21,56 +22,36 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>17</power>
-				<cooldownTime>2.6</cooldownTime>
+				<power>12</power>
+				<cooldownTime>2.8</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
-			</li>
-			<li>
-				<label>mandibles</label>
-				<capacities>
-					<li>ToxicBite</li>
-				</capacities>
-				<power>15</power>
-				<cooldownTime>2.6</cooldownTime>
-				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
 			</li>
 			<li>
 				<label>head</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>9</power>
+				<power>7</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<comps>
+			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
+				<initialAbility>VFEI2_ChemfuelSpew</initialAbility>
+			</li>
+		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.35</baseHungerRate>
-			<baseBodySize>1.8</baseBodySize>
-			<baseHealthScale>4.32</baseHealthScale>
+			<baseHungerRate>0.62</baseHungerRate>
+			<baseBodySize>1.35</baseBodySize>
+			<baseHealthScale>2.85</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<wildness>0.95</wildness>
-			<lifeExpectancy>6</lifeExpectancy>
+			<lifeExpectancy>5</lifeExpectancy>
 			<trainability>Advanced</trainability>
 			<leatherDef>VFEI2_Chitin</leatherDef>
 			<lifeStageAges>
@@ -97,11 +78,11 @@
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI2_Megapede</defName>
-		<label>megapede</label>
-		<race>VFEI2_Megapede</race>
+		<defName>VFEI2_Fuelmite</defName>
+		<label>fuelmite</label>
+		<race>VFEI2_Fuelmite</race>
 		<canBeSapper>true</canBeSapper>
-		<combatPower>300</combatPower>
+		<combatPower>200</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<defaultFactionType>VFEI2_Hive</defaultFactionType>
@@ -110,38 +91,41 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
-					<color>(139,140,127)</color>
-					<drawSize>1.2</drawSize>
+					<texPath>Things/Pawn/Animal/Fuelmite/Fuelmite</texPath>
+					<color>(128,117,104)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
-					<drawSize>1.2</drawSize>
+					<texPath>Things/Pawn/Animal/Fuelmite/Dessicated_Fuelmite</texPath>
+					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
-					<drawSize>2.0</drawSize>
-					<color>(139,140,127)</color>
+					<texPath>Things/Pawn/Animal/Fuelmite/Fuelmite</texPath>
+					<drawSize>2</drawSize>
+					<shaderType>CutoutComplex</shaderType>
+					<color>(128,117,104)</color>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
-					<drawSize>2.0</drawSize>
+					<texPath>Things/Pawn/Animal/Fuelmite/Dessicated_Fuelmite</texPath>
+					<drawSize>2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Megapede</texPath>
+					<texPath>Things/Pawn/Animal/Fuelmite/Fuelmite</texPath>
 					<drawSize>3</drawSize>
-					<color>(139,140,127)</color>
+					<shaderType>CutoutComplex</shaderType>
+					<color>(128,117,104)</color>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
 						<offset>(0,0,-0.1)</offset>
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Megapede/Dessicated_Megapede</texPath>
+					<texPath>Things/Pawn/Animal/Fuelmite/Dessicated_Fuelmite</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
