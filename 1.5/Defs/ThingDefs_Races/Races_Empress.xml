@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- Insectoid Queen -->
+	<!-- Empress -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Queen</defName>
-		<label>insectoid queen</label>
-		<description>A giant, genetically-engineered insectoid responsible for creating new spawn. A mother to the insects in her hive, a queen doesn’t do heavy work, and tries to avoid combat if possible. As massive as an adult thrumbo, the queen instills fear in most opponents. Her thick chitinous armor makes her hard to kill, whilst long, deadly blades can tear through plasteel shielding in seconds. Despite being quite slow in open terrain, an insectoid queen is capable of creating new swarmlings at a rapid pace, and should never be allowed to settle down.</description>
+		<defName>VFEI2_Empress</defName>
+		<label>empress</label>
+		<description>An incredibly rare and monstrously large insectoid of the Sorne geneline, the empress insectoid is incredibly effective at birthing offspring. Her specialized larval chambers allow her to spawn large swarms of swarmlings quickly. While she's not as dangerous in close quarters, the vast numbers of her offspring can easily swarm and overwhelm enemies. While all insectoids are almost equally terrifying, many who have seen the empress find the sight of her even more disturbing, as she embodies all that is wrong with genetic engineering. Upon death, it’s possible to extract a Sorne pherocore from her body.</description>
 		<statBases>
-			<MoveSpeed>2.0</MoveSpeed>
+			<MoveSpeed>1.6</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-			<MarketValue>1500</MarketValue>
-			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+			<MarketValue>1800</MarketValue>
+			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
 			<LeatherAmount>30</LeatherAmount>
 		</statBases>
 		<tools>
@@ -20,7 +20,16 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>28</power>
+				<power>6</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>front claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>12</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
 			</li>
@@ -29,7 +38,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>20</power>
+				<power>4</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -38,15 +47,18 @@
 		</tools>
 		<comps>
 			<li Class="VFEInsectoids.CompProperties_SpawnSwarmlings">
-				<ticksBetweenSpawn>6000</ticksBetweenSpawn>
+				<ticksBetweenSpawn>2000</ticksBetweenSpawn>
 				<numberToSpawn>1</numberToSpawn>
 			</li>
 			<li Class="AnimalBehaviours.CompProperties_FixedGender">
 				<gender>Female</gender>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
 			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
 				<resourceDef>VFEI2_RoyalInsectJelly</resourceDef>
-				<gatheringIntervalDays>5</gatheringIntervalDays>
+				<gatheringIntervalDays>2</gatheringIntervalDays>
 				<resourceAmount>5</resourceAmount>
 				<customResourceString>VFEI2_RoyalInsectJelly</customResourceString>
 				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
@@ -55,13 +67,15 @@
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.70</baseHungerRate>
+			<baseHungerRate>0.12</baseHungerRate>
 			<baseBodySize>4</baseBodySize>
-			<baseHealthScale>8</baseHealthScale>
+			<baseHealthScale>5.2</baseHealthScale>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<wildness>0.95</wildness>
+			<wildness>0.8</wildness>
+			<manhunterOnDamageChance>1</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>1</manhunterOnTameFailChance>
 			<trainability>Advanced</trainability>
-			<lifeExpectancy>6</lifeExpectancy>
+			<lifeExpectancy>14</lifeExpectancy>
 			<leatherDef>VFEI2_Chitin</leatherDef>
 			<lifeStageAges>
 				<li>
@@ -70,11 +84,11 @@
 				</li>
 				<li>
 					<def>EusocialInsectJuvenile</def>
-					<minAge>0.03</minAge>
+					<minAge>0.05</minAge>
 				</li>
 				<li>
 					<def>EusocialInsectAdult</def>
-					<minAge>0.2</minAge>
+					<minAge>1</minAge>
 					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
 					<soundDeath>Pawn_BigInsect_Death</soundDeath>
 					<soundCall>Pawn_BigInsect_Call</soundCall>
@@ -85,12 +99,16 @@
 			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
+		<killedLeavings>
+      <VFEI2_PherocoreSorne>1</VFEI2_PherocoreSorne>
+      
+    </killedLeavings>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI2_Queen</defName>
-		<label>insectoid queen</label>
-		<race>VFEI2_Queen</race>
-		<combatPower>450</combatPower>
+		<defName>VFEI2_Empress</defName>
+		<label>empress</label>
+		<race>VFEI2_Empress</race>
+		<combatPower>800</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<defaultFactionType>VFEI2_Hive</defaultFactionType>
@@ -99,31 +117,31 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Empress</texPath>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<drawSize>3.6</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Dessicated_Empress</texPath>
 					<drawSize>3.6</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Empress</texPath>
 					<drawSize>4.0</drawSize>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Dessicated_Empress</texPath>
 					<drawSize>4.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Empress</texPath>
 					<drawSize>4.8</drawSize>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
@@ -133,7 +151,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
+					<texPath>Things/Pawn/Animal/Empress/Dessicated_Empress</texPath>
 					<drawSize>4.8</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>

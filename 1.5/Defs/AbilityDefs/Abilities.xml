@@ -109,6 +109,33 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	<AbilityDef>
+		<defName>VFEI2_ChemfuelSpit</defName>
+		<label>chemfuel spit</label>
+		<description>Titantick vomits a giant blob of burning chemfuel over a large distance.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>6000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>500</range>
+			<warmupTime>1.8</warmupTime>
+			<soundCast>FireSpew_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+			</targetParams>
+			<requireLineOfSight>false</requireLineOfSight>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>VFEI2_ChemfuelSpit</projectileDef>
+			</li>
+		</comps>
+	</AbilityDef>
 	<AbilityDef Name="VFEI2_InsectGlide_Base" Abstract="true">
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
@@ -116,7 +143,7 @@
 		<aiCanUse>true</aiCanUse>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
-			<verbClass>Verb_CastAbilityJump</verbClass>
+			<verbClass>VFEInsectoids.Verb_CastAbilityJumpUnrestricted</verbClass>
 			<violent>false</violent>
 			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 			<requireLineOfSight>false</requireLineOfSight>
@@ -163,6 +190,7 @@
 		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<verbProperties>
+			<requireLineOfSight>false</requireLineOfSight>
 			<label>insect farglide</label>
 			<warmupTime>0.5</warmupTime>
 			<range>18.9</range>

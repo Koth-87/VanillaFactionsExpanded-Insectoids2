@@ -13,6 +13,7 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_NoMoreSpawningAllowed>Queen is resting.</VFEI_NoMoreSpawningAllowed>
 	
 	<VFEI_RoyalInsectJelly>Royal insect jelly fullness:</VFEI_RoyalInsectJelly>
+	<VFEI2_Chemfuel>Chemfuel fullness:</VFEI2_Chemfuel>
 	<VFEI_CocoonInsectSpawnIn>{0} before insect spawn.</VFEI_CocoonInsectSpawnIn>
 	<VFEI_CreatingCocoon>{0} to create cocoon</VFEI_CreatingCocoon>
 	
