@@ -20,6 +20,7 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
+				<armorPenetration>0.06</armorPenetration>
 				<power>6</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
@@ -29,6 +30,7 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
+				<armorPenetration>0.18</armorPenetration>
 				<power>12</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
@@ -39,6 +41,7 @@
 					<li>Blunt</li>
 				</capacities>
 				<power>4</power>
+				<armorPenetration>0.02</armorPenetration>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>

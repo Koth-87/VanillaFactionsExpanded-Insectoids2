@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- Titantick -->
+	<!-- Silverfish -->
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI2_Titantick</defName>
-		<label>titantick</label>
-		<description>An incredibly rare and monstrously large insectoid of the Nachudus geneline, the titantick is a formidable engineered tick, designed to serve as a mobile fuel depot on the harsh magma planet of Nachudus. This creature features an enormous chemfuel sack attached to its lower abdomen, which is prone to leaking vast quantities of fuel when damaged. In addition to its capacity to store fuel, the titantick can also project streams of burning chemfuel over long distances, making it a dangerous adversary in combat. The volatile nature of its fuel sack means that upon death, the titantick will explode spectacularly, but it’s still possible to extract a Nachudus pherocore from his body.</description>
+		<defName>VFEI2_Silverfish</defName>
+		<label>silverfish</label>
+		<description>An incredibly rare and monstrously large insectoid of the Xanides geneline, the silverfish, a colossal bug from the mineral-rich planet of Xanides, is encased in a nearly impenetrable exoskeleton composed of rocky formations. Despite its slow movement, this giant insectoid is highly effective at tunneling through the planet's dense terrain, using its massive pincer claws to dig wide tunnels and dismantle defensive structures with ease. Although its rocky armor shields it from most attacks, strategically targeted shots can expose vulnerable spots beneath its hardened exterior. Upon death, it’s possible to extract a Xanides pherocore from its body.</description>
 		<statBases>
-			<MoveSpeed>1.96</MoveSpeed>
+			<MoveSpeed>1.6</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<MarketValue>1800</MarketValue>
-			<ArmorRating_Blunt>0.24</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.8</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.2</ArmorRating_Heat>
 			<LeatherAmount>30</LeatherAmount>
 		</statBases>
 		<tools>
 			<li>
-				<label>head horn</label>
+				<label>right claw</label>
 				<capacities>
-					<li>Cut</li>
+					<li>VFEI2_TeramantisStun</li>
 				</capacities>
-				<power>18</power>
-				<armorPenetration>0.32</armorPenetration>
-				<cooldownTime>3.2</cooldownTime>
-				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+				<power>20</power>
+				<armorPenetration>0.25</armorPenetration>
+				<cooldownTime>2.8</cooldownTime>
+				<linkedBodyPartsGroup>VFEI2_ClawAttackTool</linkedBodyPartsGroup>
 			</li>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>VFEI2_TeramantisStun</li>
+				</capacities>
+				<armorPenetration>0.25</armorPenetration>
+				<power>20</power>
+				<cooldownTime>2.8</cooldownTime>
+				<linkedBodyPartsGroup>VFEI2_ClawAttackTool</linkedBodyPartsGroup>
+			</li>
+			
 			<li>
 				<label>head</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>8</power>
-				<armorPenetration>0.02</armorPenetration>
+				<armorPenetration>0.08</armorPenetration>
+				<power>16</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -43,37 +55,38 @@
 			<li Class="AnimalBehaviours.CompProperties_Draftable">
 				<makeNonFleeingToo>true</makeNonFleeingToo>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_HediffAfterHealthLoss">
+				<healthPercent>80</healthPercent>
+				<tickInterval>60</tickInterval>
+				<hediff>VFEI2_ArmorDegradation</hediff>
+				<severity>1</severity>
+			</li>
 			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
-				<resourceDef>Chemfuel</resourceDef>
-				<gatheringIntervalDays>3</gatheringIntervalDays>
-				<resourceAmount>15</resourceAmount>
-				<customResourceString>VFEI2_Chemfuel</customResourceString>
+				<resourceDef>VFEI2_Chitin</resourceDef>
+				<gatheringIntervalDays>20</gatheringIntervalDays>
+				<resourceAmount>5</resourceAmount>
+				<customResourceString>VFEI2_Chitin</customResourceString>
 				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
+
 			</li>
-			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
-				<initialAbility>VFEI2_ChemfuelSpit</initialAbility>
-			</li>
+			
+		
 		</comps>
+		
 		<race>
-			<deathAction Class="AnimalBehaviours.DeathActionProperties_ConfigurableExplosion">
-				<workerClass>AnimalBehaviours.DeathActionWorker_ConfigurableExplosion</workerClass>
-				<babyExplosionRadius>4.9</babyExplosionRadius>
-				<juvenileExplosionRadius>6.9</juvenileExplosionRadius>
-				<adultExplosionRadius>9.9</adultExplosionRadius>
-				<damageDef>Flame</damageDef>
-			</deathAction>
-			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.1</baseHungerRate>
-			<baseBodySize>4</baseBodySize>
-			<baseHealthScale>9</baseHealthScale>
+			<renderTree>VFEI2_Unarmored</renderTree>
+			<body>VFEI2_ClawedInsectoid</body>
+			<baseHungerRate>0.06</baseHungerRate>
+			<baseBodySize>5</baseBodySize>
+			<baseHealthScale>10</baseHealthScale>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<wildness>0.8</wildness>
 			<manhunterOnDamageChance>1</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>1</manhunterOnTameFailChance>
 			<trainability>Advanced</trainability>
-			<lifeExpectancy>18</lifeExpectancy>
+			<lifeExpectancy>12</lifeExpectancy>
 			<leatherDef>VFEI2_Chitin</leatherDef>
-			<bloodDef>Filth_Fuel</bloodDef>
+
 			<lifeStageAges>
 				<li>
 					<def>EusocialInsectLarva</def>
@@ -97,13 +110,13 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<killedLeavings>
-			<VFEI2_PherocoreNachudus>1</VFEI2_PherocoreNachudus>
+			<VFEI2_PherocoreXanides>1</VFEI2_PherocoreXanides>
 		</killedLeavings>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI2_Titantick</defName>
-		<label>titantick</label>
-		<race>VFEI2_Titantick</race>
+	<defName>VFEI2_Silverfish</defName>
+		<label>silverfish</label>
+		<race>VFEI2_Silverfish</race>
 		<combatPower>800</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
@@ -113,41 +126,41 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Titantick</texPath>
-					<color>(132, 115, 105)</color>
-					<shaderType>CutoutComplex</shaderType>
+					<texPath>Things/Pawn/Animal/Silverfish/Silverfish</texPath>
+					<color>(129, 129, 130)</color>
+				
 					<drawSize>3.6</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Dessicated_Titantick</texPath>
+					<texPath>Things/Pawn/Animal/Silverfish/Dessicated_Silverfish</texPath>
 					<drawSize>3.6</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Titantick</texPath>
+					<texPath>Things/Pawn/Animal/Silverfish/Silverfish</texPath>
 					<drawSize>4.0</drawSize>
-					<color>(132, 115, 105)</color>
-					<shaderType>CutoutComplex</shaderType>
+					<color>(129, 129, 130)</color>
+					
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Dessicated_Titantick</texPath>
+					<texPath>Things/Pawn/Animal/Silverfish/Dessicated_Silverfish</texPath>
 					<drawSize>4.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Titantick</texPath>
+					<texPath>Things/Pawn/Animal/Silverfish/Silverfish</texPath>
 					<drawSize>4.8</drawSize>
-					<color>(132, 115, 105)</color>
-					<shaderType>CutoutComplex</shaderType>
+					<color>(129, 129, 130)</color>
+				
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
 						<offset>(0,0,-0.1)</offset>
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Titantick/Dessicated_Titantick</texPath>
+					<texPath>Things/Pawn/Animal/Silverfish/Dessicated_Silverfish</texPath>
 					<drawSize>4.8</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>

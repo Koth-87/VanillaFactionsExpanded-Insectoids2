@@ -25,7 +25,7 @@
 				<range>9.9</range>
 				<lineWidthEnd>3</lineWidthEnd>
 				<filthDef>VFEI2_Filth_FlammableBile</filthDef>
-				<effecterDef>Fire_Spew</effecterDef>
+				<effecterDef>VFEI2_Fire_Spew</effecterDef>
 				<canHitFilledCells>true</canHitFilledCells>
 			</li>
 		</comps>
@@ -77,6 +77,37 @@
 				<projectileDef>VFEI2_Proj_Acid</projectileDef>
 				<numCellsToHit>9</numCellsToHit>
 				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>VFEI2_LargeAcidSpew</defName>
+		<label>large acid spew</label>
+		<description>Insectoid sprays a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid deals damage over time.</description>
+		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<cooldownTicksRange>600</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>16.9</range>
+			<minRange>3.9</minRange>
+			<warmupTime>1</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>true</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_AbilityAcidSpew">
+				<range>16.9</range>
+				<lineWidthEnd>3</lineWidthEnd>
+				<filthDef>Filth_SpentAcid</filthDef>
+				<effecterDef>VFEI2_LargeAcidSpew</effecterDef>
+				<canHitFilledCells>true</canHitFilledCells>
+				<damAmount>10</damAmount>
 			</li>
 		</comps>
 	</AbilityDef>

@@ -22,6 +22,7 @@
 					<li>Cut</li>
 				</capacities>
 				<power>17</power>
+				<armorPenetration>0.18</armorPenetration>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
 				<surpriseAttack>
@@ -39,6 +40,7 @@
 					<li>ToxicBite</li>
 				</capacities>
 				<power>15</power>
+				<armorPenetration>0.1</armorPenetration>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
 				<surpriseAttack>
@@ -55,6 +57,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
+				<armorPenetration>0.1</armorPenetration>
 				<power>9</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>

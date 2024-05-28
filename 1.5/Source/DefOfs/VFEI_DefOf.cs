@@ -27,7 +27,10 @@ namespace VFEInsectoids
         public static ThingDef Filth_RubbleRock;
 
         public static HediffDef VFEI2_ArmorDegradation;
+        public static HediffDef VFEI2_TeramantisStun;
 
         public static PawnRenderTreeDef VFEI2_Unarmored;
+
+        public static DamageDef VFEI2_AcidSpit;
     }
 }

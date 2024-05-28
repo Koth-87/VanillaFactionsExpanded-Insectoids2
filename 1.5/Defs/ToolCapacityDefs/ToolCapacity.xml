@@ -10,4 +10,11 @@
 		<defName>VFEI2_AcidBite</defName>
 		<label>acidic bite</label>
 	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>VFEI2_TeramantisStun</defName>
+		<label>teramantis claws</label>
+	</ToolCapacityDef>
+	
+	
 </Defs>

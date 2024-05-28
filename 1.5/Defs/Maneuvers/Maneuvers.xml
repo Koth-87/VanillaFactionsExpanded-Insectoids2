@@ -26,4 +26,17 @@
 		<combatLogRulesMiss>Maneuver_Bite_MeleeMiss</combatLogRulesMiss>
 		<combatLogRulesDodge>Maneuver_Bite_MeleeDodge</combatLogRulesDodge>
 	</ManeuverDef>
+	<ManeuverDef>
+		<defName>VFEI2_TeramantisStun</defName>
+		<requiredCapacity>VFEI2_TeramantisStun</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>VFEI2_TeramantisStun</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
 </Defs>

@@ -25,6 +25,7 @@
 				</capacities>
 				<power>18</power>
 				<cooldownTime>2.6</cooldownTime>
+				<armorPenetration>0.18</armorPenetration>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
@@ -41,6 +42,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
+				<armorPenetration>0.1</armorPenetration>
 				<power>14</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>

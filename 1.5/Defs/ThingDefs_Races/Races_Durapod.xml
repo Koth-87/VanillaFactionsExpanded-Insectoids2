@@ -18,20 +18,22 @@
 		</statBases>
 		<tools>
 			<li>
-        <label>head claw</label>
-        <capacities>
-          <li>Cut</li>
-        </capacities>
-        <power>6</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
-      </li>
+				<label>head claw</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>6</power>
+				<armorPenetration>0.1</armorPenetration>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+			</li>
 			<li>
 				<label>head</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
 				<power>6</power>
+				<armorPenetration>0.09</armorPenetration>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -85,7 +87,6 @@
 		<defName>VFEI2_Durapod</defName>
 		<label>durapod</label>
 		<race>VFEI2_Durapod</race>
-
 		<combatPower>75</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
@@ -97,7 +98,6 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Durapod/Durapod</texPath>
 					<color>(137, 139, 163)</color>
-				
 					<drawSize>1</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
@@ -109,7 +109,6 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Durapod/Durapod</texPath>
 					<drawSize>1.25</drawSize>
-			
 					<color>(137, 139, 163)</color>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
@@ -121,7 +120,6 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Durapod/Durapod</texPath>
 					<drawSize>1.65</drawSize>
-					
 					<color>(137, 139, 163)</color>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
