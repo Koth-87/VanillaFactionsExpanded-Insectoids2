@@ -41,7 +41,7 @@
 				</li>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
 					<hediffDef>VFEI2_RoyalJellyTolerance</hediffDef>
-					<severity>0.032</severity>
+					<severity>0</severity>
 					<divideByBodySize>true</divideByBodySize>
 					<multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
 				</li>
@@ -58,7 +58,7 @@
 			<li Class="CompProperties_Drug">
 				<chemical>VFEI2_RoyalJellyChemical</chemical>
 				<addictiveness>0.05</addictiveness>
-				<minToleranceToAddict>0.15</minToleranceToAddict>
+				<minToleranceToAddict>0</minToleranceToAddict>
 				<existingAddictionSeverityOffset>0.2</existingAddictionSeverityOffset>
 				<needLevelOffset>0.9</needLevelOffset>
 				<listOrder>100</listOrder>
@@ -100,13 +100,13 @@
 		<label>royal jelly</label>
 		<addictionHediff>VFEI2_RoyalJellyAddiction</addictionHediff>
 		<toleranceHediff>VFEI2_RoyalJellyTolerance</toleranceHediff>
-		<onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
 	</ChemicalDef>
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>VFEI2_Chemical_RoyalJelly</defName>
 		<needClass>Need_Chemical</needClass>
 		<label>royal jelly</label>
-		<description>A chemical addiction to royal jelly. Regular consumption of royal jelly has caused immunological adaptations at the genetic level, so the immune system can no longer function properly without the drug. Whenever an infection happen, the addicted person will not be able to overcome it without royal jelly. However, extended abstinence will force the immune system to adapt back to its normal state, resolving the addiction.</description>
+		<description>Because of a royal jelly addiction, this person needs to regularly consume the jelly to avoid withdrawal symptoms, which include complete halt of the immune system.</description>
 		<listPriority>50</listPriority>
 	</NeedDef>
 	<HediffDef ParentName="DrugToleranceBase">
@@ -115,7 +115,7 @@
 		<description>Royal jelly tolerance</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.020</severityPerDay>
+				<severityPerDay>-10000</severityPerDay>
 			</li>
 			<li Class="HediffCompProperties_DrugEffectFactor">
 				<chemical>VFEI2_RoyalJellyChemical</chemical>
@@ -130,36 +130,53 @@
 		<causesNeed>VFEI2_Chemical_RoyalJelly</causesNeed>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.08</severityPerDay>
+				<severityPerDay>-0.0125</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
-			
 		</comps>
 		<stages>
-			<li/>
+			<li>
+				<label>addicted</label>
+				<statFactors>
+					<ImmunityGainSpeedFactor>0.2</ImmunityGainSpeedFactor>
+				</statFactors>
+			</li>
 			<li>
 				<label>withdrawal</label>
-				<lifeThreatening>true</lifeThreatening>
-				<capMods>
-					<li>
-						<capacity>Consciousness</capacity>
-						<offset>-0.50</offset>
-					</li>
-				</capMods>
+				<socialFightChanceFactor>1.2</socialFightChanceFactor>
+				<statFactors>
+					<ImmunityGainSpeedFactor>0</ImmunityGainSpeedFactor>
+				</statFactors>
 			</li>
 		</stages>
 	</HediffDef>
-	
-	  <ThoughtDef>
-    <defName>VFEI2_AteRoyalJelly</defName>
-    <durationDays>1</durationDays>
-	<stackLimit>10</stackLimit>
-    <stages>
-      <li>
-        <label>consumed royal jelly</label>
-        <description>What is the charge? Eating a meal? A succulent jelly meal?</description>
-        <baseMoodEffect>1</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEI2_AteRoyalJelly</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>10</stackLimit>
+		<stages>
+			<li>
+				<label>consumed royal jelly</label>
+				<description>What is the charge? Eating a meal? A succulent jelly meal?</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>VFEI2_RoyalJelly_Withdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VFEI2_RoyalJellyAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>royal jelly withdrawal</label>
+				<description>Man, I wish I had some royal jelly.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>
