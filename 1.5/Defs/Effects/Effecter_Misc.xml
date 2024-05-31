@@ -140,7 +140,7 @@
         <positionRadius>0.15</positionRadius>
         <fleckDef>VFEI2_AcidSpew_A</fleckDef>
         <chancePerTick>0.9</chancePerTick>
-        <speed>9.5</speed>
+        <speed>18</speed>
         <scale>0.8~1.2</scale>
         <angle>-15~15</angle>
         <positionLerpFactor>0.85</positionLerpFactor>
@@ -264,7 +264,7 @@
         <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
         <positionRadius>0.2</positionRadius>
         <fleckDef>VFEI2_ChemfuelSpew_Glow</fleckDef>
-        <chancePerTick>0.16</chancePerTick>
+        <chancePerTick>0.06</chancePerTick>
         <positionLerpFactor>0.65</positionLerpFactor>
       </li>
     </children>
