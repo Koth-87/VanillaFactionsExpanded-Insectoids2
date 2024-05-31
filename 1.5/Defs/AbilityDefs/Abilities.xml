@@ -132,8 +132,8 @@
 		</verbProperties>
 		<comps>
 			<li Class="VFEInsectoids.CompProperties_AbilityFuelSpew">
-				<range>12.9</range>
-				<lineWidthEnd>3</lineWidthEnd>
+				<range>10.9</range>
+				<lineWidthEnd>6</lineWidthEnd>
 				<damAmount>1</damAmount>
 				<effecterDef>VFEI2_ChemfuelSpew</effecterDef>
 				<filthDef>VFEI2_Filth_FlammableBile</filthDef>

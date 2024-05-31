@@ -16,7 +16,7 @@ namespace VFEInsectoids
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            GenExplosion.DoExplosion(target.Cell, parent.pawn.MapHeld, 0f, DamageDefOf.Blunt, Pawn, postExplosionSpawnThingDef: Props.filthDef, damAmount: Props.damAmount, armorPenetration: -1f, explosionSound: null, weapon: null, projectile: null, intendedTarget: null, postExplosionSpawnChance: 1f, postExplosionSpawnThingCount: 1, postExplosionGasType: null, applyDamageToExplosionCellsNeighbors: false, preExplosionSpawnThingDef: null, preExplosionSpawnChance: 0f, preExplosionSpawnThingCount: 1,  damageFalloff: false, direction: null, ignoredThings: null, affectedAngle: null, doVisualEffects: false, propagationSpeed: 0.6f, excludeRadius: 0f, doSoundEffects: false, postExplosionSpawnThingDefWater: null, screenShakeFactor: 1f,  overrideCells: AffectedCells(target));
+            GenExplosion.DoExplosion(target.Cell, parent.pawn.MapHeld, 0f, DamageDefOf.Blunt, Pawn, postExplosionSpawnThingDef: Props.filthDef, damAmount: Props.damAmount, armorPenetration: -1f, explosionSound: null, weapon: null, projectile: null, intendedTarget: null, postExplosionSpawnChance: 0.75f, postExplosionSpawnThingCount: 1, postExplosionGasType: null, applyDamageToExplosionCellsNeighbors: false, preExplosionSpawnThingDef: null, preExplosionSpawnChance: 0f, preExplosionSpawnThingCount: 1,  damageFalloff: false, direction: null, ignoredThings: null, affectedAngle: null, doVisualEffects: false, propagationSpeed: 0.6f, excludeRadius: 0f, doSoundEffects: false, postExplosionSpawnThingDefWater: null, screenShakeFactor: 1f,  overrideCells: AffectedCells(target));
             base.Apply(target, dest);
         }
 
