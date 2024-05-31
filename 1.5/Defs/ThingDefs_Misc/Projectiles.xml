@@ -31,8 +31,8 @@
 		<defName>VFEI2_ChemfuelSpit</defName>
 		<label>chemfuel spit</label>
 		<graphicData>
-			<texPath>UI/Abilities/VFEI2_FlameSpew</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Projectile/InsectBurningFuelSpit</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
 		<thingClass>Projectile_Explosive</thingClass>

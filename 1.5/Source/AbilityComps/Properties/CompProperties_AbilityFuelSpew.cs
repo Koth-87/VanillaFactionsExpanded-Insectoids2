@@ -13,7 +13,7 @@ namespace VFEInsectoids
 
         public int damAmount = -1;
 
- 
+        public EffecterDef effecterDef;
 
         public bool canHitFilledCells;
 

@@ -20,7 +20,20 @@ namespace VFEInsectoids
             base.Apply(target, dest);
         }
 
-       
+        public override IEnumerable<PreCastAction> GetPreCastActions()
+        {
+            if (Props.effecterDef != null)
+            {
+                yield return new PreCastAction
+                {
+                    action = delegate (LocalTargetInfo a, LocalTargetInfo b)
+                    {
+                        parent.AddEffecterToMaintain(Props.effecterDef.Spawn(parent.pawn.Position, a.Cell, parent.pawn.Map), Pawn.Position, a.Cell, 17, Pawn.MapHeld);
+                    },
+                    ticksAwayFromCast = 17
+                };
+            }
+        }
 
         public override void DrawEffectPreview(LocalTargetInfo target)
         {

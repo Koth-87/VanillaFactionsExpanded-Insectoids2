@@ -4,7 +4,7 @@
 		<defName>VFEI2_FlameSpew</defName>
 		<label>flame spew</label>
 		<description>Eject a flow of adhesive, combustible fluid from the oral cavity. This fluid, upon contact, can set ablaze any target or create burning patches upon surfaces. It is produced and held within a gland located in the throat, accompanied by a distinct sac filled with a spontaneously igniting chemical, ensuring immediate combustion upon expulsion.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectFireSpew</iconPath>
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsIncendiary>true</ai_IsIncendiary>
@@ -34,7 +34,7 @@
 		<defName>VFEI2_InsectAcidSpit</defName>
 		<label>insect acid spit</label>
 		<description>Insectoid sprays a sticky acid substance from glands in the neck up all over the target area. The acid will stick to targets and burn them.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectAcidSpit</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
@@ -59,7 +59,7 @@
 		<defName>VFEI2_InsectAcidSpew</defName>
 		<label>insect acid spew</label>
 		<description>Insectoid sprays a sticky acid substance from glands in the neck up all over the target area. The acid will stick to targets and burn them.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectAcidSpew</iconPath>
 		<cooldownTicksRange>1200</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
@@ -84,7 +84,7 @@
 		<defName>VFEI2_LargeAcidSpew</defName>
 		<label>large acid spew</label>
 		<description>Insectoid sprays a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid deals damage over time.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectLargeAcidSpew</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
@@ -115,7 +115,7 @@
 		<defName>VFEI2_ChemfuelSpew</defName>
 		<label>fuel spew</label>
 		<description>Discharge a stream of liquid chemfuel from the mouth. This liquid, when released, can coat any object or individual it contacts, without igniting or causing immediate combustion. The chemfuel is synthesized and stored within a specialized organ in the neck area.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectFuelSpew</iconPath>
 		<cooldownTicksRange>6000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -135,6 +135,7 @@
 				<range>12.9</range>
 				<lineWidthEnd>3</lineWidthEnd>
 				<damAmount>1</damAmount>
+				<effecterDef>VFEI2_ChemfuelSpew</effecterDef>
 				<filthDef>VFEI2_Filth_FlammableBile</filthDef>
 				<canHitFilledCells>true</canHitFilledCells>
 			</li>
@@ -144,7 +145,7 @@
 		<defName>VFEI2_ChemfuelSpit</defName>
 		<label>chemfuel spit</label>
 		<description>Titantick vomits a giant blob of burning chemfuel over a large distance.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectBurningFuelSpit</iconPath>
 		<cooldownTicksRange>6000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -192,7 +193,7 @@
 		<defName>VFEI2_InsectGlide_Short</defName>
 		<label>insect shortglide</label>
 		<description>Insectoid does a wing-assisted jump to a close location using strong hind legs.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectFlyShort</iconPath>
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<verbProperties>
 			<label>insect shortglide</label>
@@ -205,7 +206,7 @@
 		<defName>VFEI2_InsectGlide_Medium</defName>
 		<label>insect glide</label>
 		<description>Insectoid does a wing-assisted jump to a location using strong hind legs.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectFlyMedium</iconPath>
 		<cooldownTicksRange>2200</cooldownTicksRange>
 		<verbProperties>
 			<label>insect glide</label>
@@ -218,7 +219,7 @@
 		<defName>VFEI2_InsectGlide_Far</defName>
 		<label>insect farglide</label>
 		<description>Insectoid does a wing-assisted jump to a very distant location using strong hind legs.</description>
-		<iconPath>UI/Abilities/VFEI2_FlameSpew</iconPath>
+		<iconPath>UI/Abilities/VFE_InsectFlyLong</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<verbProperties>
 			<requireLineOfSight>false</requireLineOfSight>
