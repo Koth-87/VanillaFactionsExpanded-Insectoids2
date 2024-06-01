@@ -67,10 +67,14 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityAcidSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
+    <Compile Include="Comps\CompAOE.cs" />
+    <Compile Include="Comps\CompInsectJellySpawner.cs" />
+    <Compile Include="Comps\CompTerraform.cs" />
     <Compile Include="Comps\CompOnDestroyWall.cs" />
     <Compile Include="Comps\CompSpawnSwarmlings.cs" />
     <Compile Include="Comps\CompSwarmlingToCocoon.cs" />
     <Compile Include="Comps\CompPlantFarm.cs" />
+    <Compile Include="Comps\PlaceWorker_NeverCloseToOtherCreepers.cs" />
     <Compile Include="Comps\Properties\CompProperties_OnDestroyWall.cs" />
     <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
     <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />

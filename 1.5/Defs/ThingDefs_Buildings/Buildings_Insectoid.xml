@@ -562,7 +562,7 @@
     <selectable>true</selectable>
     <fillPercent>0.50</fillPercent>
     <rotatable>false</rotatable>
-    <tickerType>Rare</tickerType>
+    <tickerType>Normal</tickerType>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Mass>4</Mass>
@@ -570,9 +570,25 @@
       <MarketValue>100</MarketValue>
 	  <WorkToBuild>2000</WorkToBuild>
     </statBases>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherCreepers</li>
+	</placeWorkers>
     <comps>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+	  <li Class="VFEInsectoids.CompProperties_Terraform">
+		<radius>6.9</radius>
+		<terrainToSet>VFEI2_Creep</terrainToSet>
+		<spawnTickRate>120000</spawnTickRate>
+	  </li>
+      <li Class="CompProperties_Spawner">
+		<compClass>VFEInsectoids.CompInsectJellySpawner</compClass>
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>10</spawnCount>
+        <spawnIntervalRange>150000</spawnIntervalRange>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
       </li>
     </comps>
     <costList>
@@ -582,7 +598,6 @@
     <researchPrerequisites>
         <li>VFEI2_BasicHivetech</li>
     </researchPrerequisites>
-	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
