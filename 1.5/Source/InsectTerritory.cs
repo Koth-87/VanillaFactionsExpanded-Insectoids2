@@ -3,6 +3,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
+
     public class InsectTerritory : IExposable
     {
         public HashSet<int> tiles = new HashSet<int>();

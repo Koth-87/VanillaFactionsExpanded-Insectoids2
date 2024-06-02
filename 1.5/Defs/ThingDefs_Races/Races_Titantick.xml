@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI2_Titantick</defName>
 		<label>titantick</label>
-		<description>An incredibly rare and monstrously large insectoid of the Nachudus geneline, the titantick is a formidable engineered tick, designed to serve as a mobile fuel depot on the harsh magma planet of Nachudus. This creature features an enormous chemfuel sack attached to its lower abdomen, which is prone to leaking vast quantities of fuel when damaged. In addition to its capacity to store fuel, the titantick can also project streams of burning chemfuel over long distances, making it a dangerous adversary in combat. The volatile nature of its fuel sack means that upon death, the titantick will explode spectacularly, but it’s still possible to extract a Nachudus pherocore from his body.</description>
+		<description>An incredibly rare and monstrously large insectoid of the Nuchadus geneline, the titantick is a formidable engineered tick, designed to serve as a mobile fuel depot on the harsh magma planet of Nuchadus. This creature features an enormous chemfuel sack attached to its lower abdomen, which is prone to leaking vast quantities of fuel when damaged. In addition to its capacity to store fuel, the titantick can also project streams of burning chemfuel over long distances, making it a dangerous adversary in combat. The volatile nature of its fuel sack means that upon death, the titantick will explode spectacularly, but it’s still possible to extract a Nuchadus pherocore from his body.</description>
 		<statBases>
 			<MoveSpeed>1.96</MoveSpeed>
 			<Flammability>0.7</Flammability>
@@ -97,7 +97,7 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<killedLeavings>
-			<VFEI2_PherocoreNachudus>1</VFEI2_PherocoreNachudus>
+			<VFEI2_PherocoreNuchadus>1</VFEI2_PherocoreNuchadus>
 		</killedLeavings>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">

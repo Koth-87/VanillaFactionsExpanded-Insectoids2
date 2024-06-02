@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <ThingDef ParentName="BuildingBase" Name="VFEI2_InsectoidWallBase" Abstract="true">
@@ -1057,12 +1057,12 @@
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
-    <defName>VFEI2_NachudusHive</defName>
-    <label>nachudus hive</label>
-    <description>A hive of giant insects of the Nachudus geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly. May explode if damaged.</description>
+    <defName>VFEI2_NuchadusHive</defName>
+    <label>nuchadus hive</label>
+    <description>A hive of giant insects of the Nuchadus geneline. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly. May explode if damaged.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
-      <texPath>Things/Building/NachudusHive</texPath>
+      <texPath>Things/Building/NuchadusHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>

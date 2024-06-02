@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<VFEInsectoids.InsectGenelineDef>
+		<defName>VFEI_Sorne</defName>
+		<insects>
+			<li>Megascarab</li>
+			<li>Spelopede</li>
+			<li>Megaspider</li>
+			<li>VFEI2_Megapede</li>
+			<li>VFEI2_Queen</li>
+			<li>VFEI2_Swarmling</li>
+		</insects>
+	</VFEInsectoids.InsectGenelineDef>
+	
+</Defs>

@@ -1,4 +1,5 @@
-﻿using RimWorld.Planet;
+﻿using RimWorld;
+using RimWorld.Planet;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -13,6 +14,8 @@ namespace VFEInsectoids
         public float insectTerritoryScale = 1f;
 
         public static GameComponent_Insectoids Instance;
+
+        public static Faction HiveFaction => Find.FactionManager.FirstFactionOfDef(VFEI_DefOf.VFEI2_Hive);
 
         public GameComponent_Insectoids()
         {

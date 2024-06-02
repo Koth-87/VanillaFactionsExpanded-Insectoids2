@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>VFEI_InfestedChunkCrash</defName>
+    <label>infested chunk crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>VFEInsectoids.IncidentWorker_InfestedChunkCrash</workerClass>
+    <letterLabel>Infested chunk crash</letterLabel>
+    <letterText>A number of small chunks of an ancient ship has crashed nearby. \n\nThey seem to be infested with an organic mass. Bizarre insect chittering can be heard within the hull. \n\nDestroy them as soon as possible.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>1.6</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>800</minThreatPoints>
+    <earliestDay>20</earliestDay>
+	<mechClusterBuilding>VFEI2_InfestedShipChunk</mechClusterBuilding>
+  </IncidentDef>
+
+</Defs>
