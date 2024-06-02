@@ -702,6 +702,16 @@
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>MapMeshOnly</drawerType>
     <repairEffect>ConstructMetal</repairEffect>
+	<comps>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Sorne</geneline>
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <maxSpawnedPawnsPoints>250</maxSpawnedPawnsPoints>
+		<pawnSpawnIntervalDays>1~15</pawnSpawnIntervalDays>
+      </li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="BuildingBase">
@@ -757,6 +767,16 @@
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>MapMeshOnly</drawerType>
     <repairEffect>ConstructMetal</repairEffect>
+	<comps>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Sorne</geneline>
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <maxSpawnedPawnsPoints>800</maxSpawnedPawnsPoints>
+		<pawnSpawnIntervalDays>1~15</pawnSpawnIntervalDays>
+      </li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="BuildingBase">
@@ -811,6 +831,16 @@
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>MapMeshOnly</drawerType>
     <repairEffect>ConstructMetal</repairEffect>
+	<comps>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Sorne</geneline>
+        <lordJob>LordJob_AssaultColony</lordJob>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <maxSpawnedPawnsPoints>1600</maxSpawnedPawnsPoints>
+		<pawnSpawnIntervalDays>1~15</pawnSpawnIntervalDays>
+      </li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
