@@ -32,5 +32,7 @@ namespace VFEInsectoids
         public static PawnRenderTreeDef VFEI2_Unarmored;
 
         public static DamageDef VFEI2_AcidSpit;
+
+        public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule;
     }
 }

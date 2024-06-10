@@ -81,6 +81,9 @@
     <Compile Include="DamageWorkers\DamageWorker_AcidBite.cs" />
     <Compile Include="DamageWorkers\DamageWorker_TeramantisStun.cs" />
     <Compile Include="Comps\CompInsectSpawner.cs" />
+    <Compile Include="Events\IncidentWorker_InfestedCrashBase.cs" />
+    <Compile Include="Events\IncidentWorker_InfestedModuleCrash.cs" />
+    <Compile Include="Events\IncidentWorker_InfestedPartCrash.cs" />
     <Compile Include="Events\InsectGenelineDef.cs" />
     <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
     <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />

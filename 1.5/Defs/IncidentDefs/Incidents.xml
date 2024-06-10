@@ -17,7 +17,42 @@
     <pointsScaleable>true</pointsScaleable>
     <minThreatPoints>800</minThreatPoints>
     <earliestDay>20</earliestDay>
-	<mechClusterBuilding>VFEI2_InfestedShipChunk</mechClusterBuilding>
   </IncidentDef>
 
+  <IncidentDef>
+    <defName>VFEI_InfestedPartCrash</defName>
+    <label>infested part crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>VFEInsectoids.IncidentWorker_InfestedPartCrash</workerClass>
+    <letterLabel>Infested part crash</letterLabel>
+    <letterText>A large piece of an ancient ship has crashed nearby.\n\nIt seems to be infested with an organic mass. Bizarre insect chittering can be heard within the hull.\n\nDestroy it as soon as possible.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>1.2</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>1000</minThreatPoints>
+    <earliestDay>30</earliestDay>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VFEI_InfestedModuleCrash</defName>
+    <label>infested module crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>VFEInsectoids.IncidentWorker_InfestedModuleCrash</workerClass>
+    <letterLabel>Infested module crash</letterLabel>
+    <letterText>A mysterious segment of a long destroyed spaceship has crashed nearby.\n\nIt seems to be completely covered in biomass and lumps of insectoid jelly. It is fairly certain that this old wreckage may contain ancient dangers.\n\nDestroy it as soon as possible.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.8</baseChance>
+    <minRefireDays>60</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>1600</minThreatPoints>
+    <earliestDay>30</earliestDay>
+  </IncidentDef>
+  
 </Defs>

@@ -775,6 +775,7 @@
         <spawnSound>Hive_Spawn</spawnSound>
         <maxSpawnedPawnsPoints>800</maxSpawnedPawnsPoints>
 		<pawnSpawnIntervalDays>1~15</pawnSpawnIntervalDays>
+		<pawnSpawnRadius>3</pawnSpawnRadius>
       </li>
 	</comps>
   </ThingDef>
@@ -797,7 +798,8 @@
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <blockWind>true</blockWind>
-    <passability>Impassable</passability>
+    <pathCost>42</pathCost>
+    <passability>PassThroughOnly</passability>
     <fillPercent>0.50</fillPercent>
 	<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <size>(5,4)</size>
@@ -839,6 +841,7 @@
         <spawnSound>Hive_Spawn</spawnSound>
         <maxSpawnedPawnsPoints>1600</maxSpawnedPawnsPoints>
 		<pawnSpawnIntervalDays>1~15</pawnSpawnIntervalDays>
+		<pawnSpawnRadius>5</pawnSpawnRadius>
       </li>
 	</comps>
   </ThingDef>
