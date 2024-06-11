@@ -33,6 +33,7 @@ namespace VFEInsectoids
 
         public static DamageDef VFEI2_AcidSpit;
 
-        public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule;
+        public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, VFEI_InfestedMeteorIncoming;
+        public static InsectGenelineDef VFEI_Sorne;
     }
 }

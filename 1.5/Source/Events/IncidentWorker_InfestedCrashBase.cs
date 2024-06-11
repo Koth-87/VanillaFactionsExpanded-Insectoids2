@@ -18,7 +18,7 @@ namespace VFEInsectoids
             List<TargetInfo> list = new List<TargetInfo>();
             var chunkDef = MainPartDef;
             var takenCells = new HashSet<IntVec3>();
-            IntVec3 intVec = FindDropPodLocation(map, (IntVec3 spot) => CanPlaceAt(spot));
+            IntVec3 intVec = FindDropPodLocation(map, CanPlaceAt);
             if (intVec == IntVec3.Invalid)
             {
                 return false;
@@ -42,29 +42,7 @@ namespace VFEInsectoids
             return true;
             bool CanPlaceAt(IntVec3 loc)
             {
-                CellRect cellRect = GenAdj.OccupiedRect(loc, chunkDef.defaultPlacingRot, chunkDef.Size);
-                if (loc.Fogged(map) || !cellRect.InBounds(map))
-                {
-                    return false;
-                }
-                if (!DropCellFinder.SkyfallerCanLandAt(loc, map, chunkDef.Size))
-                {
-                    return false;
-                }
-                foreach (IntVec3 item2 in cellRect)
-                {
-                    RoofDef roof = item2.GetRoof(map);
-                    if (roof != null && roof.isNatural)
-                    {
-                        return false;
-                    }
-                }
-
-                if (cellRect.Any(x => takenCells.Contains(x)))
-                {
-                    return false;
-                }
-                return GenConstruct.CanBuildOnTerrain(chunkDef, loc, map, Rot4.North);
+                return IncidentWorker_InfestedCrashBase.CanPlaceAt(loc, map, chunkDef, takenCells);
             }
             bool SpawnCrashPart(Map map, List<TargetInfo> list, HashSet<IntVec3> takenCells, 
                 ref IntVec3 intVec, IntVec3 center, int count)
@@ -82,18 +60,46 @@ namespace VFEInsectoids
                 }
                 return true;
             }
-            IntVec3 FindDropPodLocation(Map map, Predicate<IntVec3> validator)
+        }
+
+        public static bool CanPlaceAt(IntVec3 loc, Map map, ThingDef chunkDef, HashSet<IntVec3> takenCells)
+        {
+            CellRect cellRect = GenAdj.OccupiedRect(loc, chunkDef.defaultPlacingRot, chunkDef.Size);
+            if (loc.Fogged(map) || !cellRect.InBounds(map))
             {
-                for (int i = 0; i < 200; i++)
-                {
-                    IntVec3 intVec = RCellFinder.FindSiegePositionFrom(DropCellFinder.FindRaidDropCenterDistant(map, allowRoofed: true), map, allowRoofed: true);
-                    if (validator(intVec))
-                    {
-                        return intVec;
-                    }
-                }
-                return IntVec3.Invalid;
+                return false;
             }
+            if (!DropCellFinder.SkyfallerCanLandAt(loc, map, chunkDef.Size))
+            {
+                return false;
+            }
+            foreach (IntVec3 item2 in cellRect)
+            {
+                RoofDef roof = item2.GetRoof(map);
+                if (roof != null && roof.isNatural)
+                {
+                    return false;
+                }
+            }
+
+            if (cellRect.Any(x => takenCells.Contains(x)))
+            {
+                return false;
+            }
+            return GenConstruct.CanBuildOnTerrain(chunkDef, loc, map, Rot4.North);
+        }
+
+        public static IntVec3 FindDropPodLocation(Map map, Predicate<IntVec3> validator)
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                IntVec3 intVec = RCellFinder.FindSiegePositionFrom(DropCellFinder.FindRaidDropCenterDistant(map, allowRoofed: true), map, allowRoofed: true);
+                if (validator(intVec))
+                {
+                    return intVec;
+                }
+            }
+            return IntVec3.Invalid;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using Verse;
 
@@ -90,7 +91,7 @@ namespace VFEInsectoids
             {
                 if (compSpawnerPawn is CompInsectSpawner insectSpawner)
                 {
-                    return insectSpawner.Props.geneline.insects;
+                    return insectSpawner.Props.geneline.insects.Select(x => x.kind).ToList();
                 }
                 return list;
             }

@@ -845,6 +845,26 @@
       </li>
 	</comps>
   </ThingDef>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VFEI_InfestedMeteorIncoming</defName>
+    <label>infested meteor (incoming)</label>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Things/Skyfallers/HiveMeteorite</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(3, 3)</shadowSize>
+      <explosionRadius>4</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>1.2</speed>
+	  <damageSpawnedThings>false</damageSpawnedThings>
+    </skyfaller>
+  </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_KemianHive</defName>
