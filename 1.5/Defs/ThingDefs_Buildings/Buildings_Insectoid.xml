@@ -542,7 +542,7 @@
     <label>creeper</label>
     <description>A hive-like structure created by giant insects. It continuously extracts minerals and nutrition from the ground around it, feeding the hive and creating creep in surrounding area that greatly hinders the movement of anything that’s not an insectoid. If all area around a creeper is turned into creep, it will begin expunging insect jelly in regular intervals.</description>
     <graphicData>
-      <texPath>Things/Building/TendrilFarm</texPath>
+      <texPath>Things/Building/Creeper</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -874,7 +874,7 @@
     <graphicData>
       <texPath>Things/Building/KemianHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.6</drawSize>
+      <drawSize>2.6</drawSize>
     </graphicData>
     <uiIconScale>0.65</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
@@ -955,7 +955,7 @@
     <graphicData>
       <texPath>Things/Building/ChelisHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.6</drawSize>
+      <drawSize>2.6</drawSize>
     </graphicData>
     <uiIconScale>0.65</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
@@ -1036,7 +1036,7 @@
     <graphicData>
       <texPath>Things/Building/XanidesHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.6</drawSize>
+      <drawSize>2.6</drawSize>
     </graphicData>
     <uiIconScale>0.65</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
@@ -1117,7 +1117,7 @@
     <graphicData>
       <texPath>Things/Building/NuchadusHive</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.6</drawSize>
+      <drawSize>2.6</drawSize>
     </graphicData>
     <uiIconScale>0.65</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
@@ -1222,8 +1222,559 @@
 	  <combatPower>150</combatPower>
       <deconstructible>false</deconstructible>
     </building>
-   
-    
+  </ThingDef>
+  
+  <!-- Artificial hives -->
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialBasicHive</defName>
+    <label>artificial basic hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning the most basic insectoids over time, as well as small amounts of valuable insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/BasicHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>150</MarketValue>
+	  <WorkToBuild>1500</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>10</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>120</InsectJelly>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialSorneHive</defName>
+    <label>artificial sorne hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SorneHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>250</MarketValue>
+	  <WorkToBuild>2500</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+		<VFEI2_PherocoreSorne>1</VFEI2_PherocoreSorne>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialNuchadusHive</defName>
+    <label>artificial nuchadus hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Nuchadus geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/NuchadusHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>500</MarketValue>
+	  <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>360</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.15</startWickHitPointsPercent>
+        <drawWick>false</drawWick>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>12</heatPerSecond>
+        <heatPushMaxTemperature>72</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+		<VFEI2_RoyalInsectJelly>50</VFEI2_RoyalInsectJelly>
+		<VFEI2_PherocoreNuchadus>1</VFEI2_PherocoreNuchadus>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialChelisHive</defName>
+    <label>artificial chelis hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Chelis geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/ChelisHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>500</MarketValue>
+	  <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>36</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+		<VFEI2_RoyalInsectJelly>50</VFEI2_RoyalInsectJelly>
+		<VFEI2_PherocoreChelis>1</VFEI2_PherocoreChelis>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialKemianHive</defName>
+    <label>artificial kemian hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Kemian geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/KemianHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>500</MarketValue>
+	  <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>36</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+		<VFEI2_RoyalInsectJelly>50</VFEI2_RoyalInsectJelly>
+		<VFEI2_PherocoreKemian>1</VFEI2_PherocoreKemian>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_ArtificialXanidesHive</defName>
+    <label>artificial xanides hive</label>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Xanides geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/XanidesHive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+	  <MarketValue>500</MarketValue>
+	  <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <pathCost>42</pathCost>
+    <receivesSignals>true</receivesSignals>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>40</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>36</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>150</InsectJelly>
+		<VFEI2_RoyalInsectJelly>50</VFEI2_RoyalInsectJelly>
+		<VFEI2_PherocoreXanides>1</VFEI2_PherocoreXanides>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
 
 </Defs>
