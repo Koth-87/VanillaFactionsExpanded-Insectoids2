@@ -36,7 +36,8 @@ namespace VFEInsectoids
             tmpTiles.Clear();
             var radius = 30 * insectTerritoryScale;
             var tilesCountMax = 50 * insectTerritoryScale;
-            Find.WorldFloodFiller.FloodFill(hiveTile, (int curTile) => Find.WorldGrid.ApproxDistanceInTiles(hiveTile, curTile) 
+            Find.WorldFloodFiller.FloodFill(hiveTile, (int curTile) => 
+            Find.WorldGrid.ApproxDistanceInTiles(hiveTile, curTile) 
             <= radius && !Find.World.Impassable(curTile), delegate (int curTile, int dist)
             {
                 if (dist <= 1)
@@ -76,6 +77,18 @@ namespace VFEInsectoids
                 }
             }
             return -1f;
+        }
+
+        public bool IsInfested(int tile)
+        {
+            foreach (var insectData in insectTiles)
+            {
+                if (insectData.Value.tiles.Contains(tile))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override void ExposeData()

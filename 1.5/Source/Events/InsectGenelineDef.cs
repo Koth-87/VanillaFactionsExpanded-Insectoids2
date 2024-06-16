@@ -7,5 +7,7 @@ namespace VFEInsectoids
     public class InsectGenelineDef : Def
     {
         public List<PawnGenOption> insects;
+        public ThingDef hive;
+        public float spawnWeight;
     }
 }

@@ -900,12 +900,8 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megascarab</li>
-          <li>Spelopede</li>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Kemia</geneline>
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>
@@ -981,12 +977,8 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megascarab</li>
-          <li>Spelopede</li>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Chelis</geneline>
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>
@@ -1062,12 +1054,8 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megascarab</li>
-          <li>Spelopede</li>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Xanides</geneline>
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>
@@ -1143,12 +1131,8 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megascarab</li>
-          <li>Spelopede</li>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
+      <li Class="VFEInsectoids.CompProperties_InsectSpawner">
+		<geneline>VFEI_Nuchadus</geneline>
         <lordJob>LordJob_DefendAndExpandHive</lordJob>
         <spawnSound>Hive_Spawn</spawnSound>
         <initialPawnsPoints>200</initialPawnsPoints>

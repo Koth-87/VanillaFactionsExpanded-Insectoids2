@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using Verse;
 
 namespace VFEInsectoids
@@ -72,28 +70,29 @@ namespace VFEInsectoids
         [HarmonyPatch(typeof(CompSpawnerPawn), "RandomPawnKindDef")]
         public static class CompSpawnerPawn_RandomPawnKindDef_Patch
         {
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
+            public static bool Prefix(ref PawnKindDef __result, CompSpawnerPawn __instance)
             {
-                var field = AccessTools.Field(typeof(CompProperties_SpawnerPawn), "spawnablePawnKinds");
-                foreach (var instruction in codeInstructions)
+                if (__instance is CompInsectSpawner insectSpawner)
                 {
-                    yield return instruction;
-                    if (instruction.LoadsField(field))
-                    {
-                        yield return new CodeInstruction(OpCodes.Ldarg_0);
-                        yield return new CodeInstruction(OpCodes.Call,
-                            AccessTools.Method(typeof(CompSpawnerPawn_RandomPawnKindDef_Patch), "GetFilteredList"));
-                    }
+                    __result = RandomPawnKindDef(insectSpawner);
+                    return false;
                 }
+                return true;
             }
 
-            public static List<PawnKindDef> GetFilteredList(List<PawnKindDef> list, CompSpawnerPawn compSpawnerPawn)
+            private static PawnKindDef RandomPawnKindDef(CompInsectSpawner insectSpawner)
             {
-                if (compSpawnerPawn is CompInsectSpawner insectSpawner)
+                float curPoints = insectSpawner.SpawnedPawnsPoints;
+                var source = insectSpawner.Props.geneline.insects;
+                if (insectSpawner.Props.maxSpawnedPawnsPoints > -1f)
                 {
-                    return insectSpawner.Props.geneline.insects.Select(x => x.kind).ToList();
+                    source = source.Where(x => curPoints + x.kind.combatPower <= insectSpawner.Props.maxSpawnedPawnsPoints).ToList();
                 }
-                return list;
+                if (source.TryRandomElementByWeight(x => x.selectionWeight, out var result))
+                {
+                    return result.kind;
+                }
+                return null;
             }
         }
     }

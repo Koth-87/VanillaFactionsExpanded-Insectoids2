@@ -85,6 +85,8 @@
     <Compile Include="Events\IncidentWorker_InfestedModuleCrash.cs" />
     <Compile Include="Events\IncidentWorker_InfestedPartCrash.cs" />
     <Compile Include="Events\InsectGenelineDef.cs" />
+    <Compile Include="Events\InsectMapGenDef.cs" />
+    <Compile Include="Harmony\MapComponentUtility_GenerateMap_Patch.cs" />
     <Compile Include="Harmony\PawnGroupKindWorker_GeneratePawns_Patch.cs" />
     <Compile Include="Harmony\PawnsArrivalModeWorker_CanUseWith_Patch.cs" />
     <Compile Include="Events\PawnsArrivalModeWorker_InfestedMeteorRaid.cs" />
