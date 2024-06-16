@@ -1,89 +1,146 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <ThingDef ParentName="ResourceBase" Name="VFEI2_PherocoreBase" Abstract="True">
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Metal_Drop</soundInteract>
-    <soundDrop>Metal_Drop</soundDrop>
-    <stackLimit>10</stackLimit>
-    <useHitPoints>true</useHitPoints>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>1</Mass>
-      <Flammability>0</Flammability>
-	  <Beauty>0.25</Beauty>
-	  <DeteriorationRate>2</DeteriorationRate>
-    </statBases>
-    <thingCategories>
-      <li>ItemsMisc</li>
-    </thingCategories>
-    <tradeability>All</tradeability>
-    <techLevel>Industrial</techLevel>
-    <tradeTags>
-      <li>VFEI2_Pherocore</li>
-    </tradeTags>
-  </ThingDef>
-
-  <ThingDef ParentName="VFEI2_PherocoreBase">
-    <defName>VFEI2_PherocoreSorne</defName>
-    <label>sorne pherocore</label>
-    <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the oldest geneline from the planet Sorne, which is known for their great numbers and versatility.</description>
-    <graphicData>
-      <texPath>Things/Item/Pherocores/Pherocore_Sorne</texPath>
-    </graphicData>
-    <statBases>
-      <MarketValue>500</MarketValue>
-    </statBases>
-  </ThingDef>
-  
-  <ThingDef ParentName="VFEI2_PherocoreBase">
-    <defName>VFEI2_PherocoreNuchadus</defName>
-    <label>nuchadus pherocore</label>
-    <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the hyper-aggressive geneline from the volcanic planet Nuchadus.</description>
-    <graphicData>
-      <texPath>Things/Item/Pherocores/Pherocore_Nuchadus</texPath>
-    </graphicData>
-    <statBases>
-      <MarketValue>1000</MarketValue>
-    </statBases>
-  </ThingDef>
-  
-  <ThingDef ParentName="VFEI2_PherocoreBase">
-    <defName>VFEI2_PherocoreChelis</defName>
-    <label>chelis pherocore</label>
-    <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the great geneline from the planet Chelis, known for their locust-like appearance and ability to fly for thousands of miles.</description>
-    <graphicData>
-      <texPath>Things/Item/Pherocores/Pherocore_Chelis</texPath>
-    </graphicData>
-    <statBases>
-      <MarketValue>1000</MarketValue>
-    </statBases>
-  </ThingDef>
-  
-  <ThingDef ParentName="VFEI2_PherocoreBase">
-    <defName>VFEI2_PherocoreKemian</defName>
-    <label>kemian pherocore</label>
-    <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the mutated geneline from the toxic world of Kemia, known for their ability to use toxins to dispose of their enemies.</description>
-    <graphicData>
-      <texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
-    </graphicData>
-    <statBases>
-      <MarketValue>1000</MarketValue>
-    </statBases>
-  </ThingDef>
-  
-  <ThingDef ParentName="VFEI2_PherocoreBase">
-    <defName>VFEI2_PherocoreXanides</defName>
-    <label>xanides pherocore</label>
-    <description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the Xanides geneline, which has evolved in a mineral-rich planet and create nearly impenetrable armor around themselves.</description>
-    <graphicData>
-      <texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
-    </graphicData>
-    <statBases>
-      <MarketValue>1000</MarketValue>
-    </statBases>
-  </ThingDef>
-
+	<ThingDef ParentName="ResourceBase" Name="VFEI2_PherocoreBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>10</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>1</Mass>
+			<Flammability>0</Flammability>
+			<Beauty>0.25</Beauty>
+			<DeteriorationRate>2</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<tradeability>All</tradeability>
+		<techLevel>Industrial</techLevel>
+		<tradeTags>
+			<li>VFEI2_Pherocore</li>
+		</tradeTags>
+		<ingestible>
+			<preferability>NeverForNutrition</preferability>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+			<drugCategory>Hard</drugCategory>
+			<foodType>Processed, Fluid</foodType>
+			<baseIngestTicks>80</baseIngestTicks>
+			<ingestSound>Ingest_Inject</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.18,0,0)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestCommandString>Inject {0}</ingestCommandString>
+			<ingestReportString>Injecting {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<chairSearchRadius>0</chairSearchRadius>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+				<overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_PherocoreBase">
+		<defName>VFEI2_PherocoreSorne</defName>
+		<label>sorne pherocore</label>
+		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the oldest geneline from the planet Sorne, which is known for their great numbers and versatility.</description>
+		<graphicData>
+			<texPath>Things/Item/Pherocores/Pherocore_Sorne</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>500</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VFEI2_EmpressSpawn</hediffDef>
+					<severity>0.01</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_PherocoreBase">
+		<defName>VFEI2_PherocoreNuchadus</defName>
+		<label>nuchadus pherocore</label>
+		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the hyper-aggressive geneline from the volcanic planet Nuchadus.</description>
+		<graphicData>
+			<texPath>Things/Item/Pherocores/Pherocore_Nuchadus</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VFEI2_TitantickSpawn</hediffDef>
+					<severity>0.01</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_PherocoreBase">
+		<defName>VFEI2_PherocoreChelis</defName>
+		<label>chelis pherocore</label>
+		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the great geneline from the planet Chelis, known for their locust-like appearance and ability to fly for thousands of miles.</description>
+		<graphicData>
+			<texPath>Things/Item/Pherocores/Pherocore_Chelis</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VFEI2_TeramantisSpawn</hediffDef>
+					<severity>0.01</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_PherocoreBase">
+		<defName>VFEI2_PherocoreKemian</defName>
+		<label>kemian pherocore</label>
+		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the mutated geneline from the toxic world of Kemia, known for their ability to use toxins to dispose of their enemies.</description>
+		<graphicData>
+			<texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VFEI2_GigamiteSpawn</hediffDef>
+					<severity>0.01</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_PherocoreBase">
+		<defName>VFEI2_PherocoreXanides</defName>
+		<label>xanides pherocore</label>
+		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the Xanides geneline, which has evolved in a mineral-rich planet and create nearly impenetrable armor around themselves.</description>
+		<graphicData>
+			<texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>VFEI2_SilverfishSpawn</hediffDef>
+					<severity>0.01</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
 </Defs>

@@ -48,6 +48,9 @@
 				<li Class="VFEInsectoids.IngestionOutcomeDoer_Immunity">
 					<percent>5</percent>
 				</li>
+				<li Class="VFEInsectoids.IngestionOutcomeDoer_IncreaseSpawnHediffs">
+					<increase>0.0334</increase>
+				</li>
 			</outcomeDoers>
 		</ingestible>
 		<comps>

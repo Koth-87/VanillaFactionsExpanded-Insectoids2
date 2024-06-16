@@ -28,6 +28,11 @@ namespace VFEInsectoids
 
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;
+        public static HediffDef VFEI2_EmpressSpawn;
+        public static HediffDef VFEI2_GigamiteSpawn;
+        public static HediffDef VFEI2_SilverfishSpawn;
+        public static HediffDef VFEI2_TitantickSpawn;
+        public static HediffDef VFEI2_TeramantisSpawn;
 
         public static PawnRenderTreeDef VFEI2_Unarmored;
 

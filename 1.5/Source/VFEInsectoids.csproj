@@ -91,6 +91,10 @@
     <Compile Include="Harmony\PawnsArrivalModeWorker_CanUseWith_Patch.cs" />
     <Compile Include="Events\PawnsArrivalModeWorker_InfestedMeteorRaid.cs" />
     <Compile Include="Events\RaidStrategyWorker_HiveRaid.cs" />
+    <Compile Include="HediffComps\HediffComp_Spawn.cs" />
+    <Compile Include="HediffComps\Properties\HediffCompProperties_Spawn.cs" />
+    <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediff.cs" />
+    <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_IncreaseSpawnHediffs.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
     <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />
