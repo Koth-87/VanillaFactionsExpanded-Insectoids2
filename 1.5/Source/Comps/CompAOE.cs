@@ -42,7 +42,8 @@ namespace VFEInsectoids
 
         protected virtual List<IntVec3> GetCells()
         {
-            return GenRadial.RadialCellsAround(parent.Position, Props.radius, true).Where(cell => CellValidator(cell)).ToList();
+            return GenRadial.RadialCellsAround(parent.Position, Props.radius, true)
+                .Where(cell => CellValidator(cell) && cell.InBounds(parent.Map)).ToList();
         }
 
         protected abstract void DoEffect(IntVec3 cell);

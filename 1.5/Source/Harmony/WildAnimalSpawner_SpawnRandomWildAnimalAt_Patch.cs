@@ -29,7 +29,7 @@ namespace VFEInsectoids
         {
             if (spawner.map.IsInfestedTile())
             {
-                return VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind);
+                return wildAnimals.Concat(VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind));
             }
             return wildAnimals;
         }
