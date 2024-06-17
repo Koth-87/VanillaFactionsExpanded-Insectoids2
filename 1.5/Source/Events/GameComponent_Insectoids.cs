@@ -7,19 +7,6 @@ using Verse.Noise;
 
 namespace VFEInsectoids
 {
-    public class MapComponent_InfestedMap : MapComponent
-    {
-        public MapComponent_InfestedMap(Map map) : base(map)
-        {
-        }
-
-        public override void MapComponentTick()
-        {
-            base.MapComponentTick();
-
-        }
-    }
-
     public class GameComponent_Insectoids : GameComponent
     {
         public Dictionary<Settlement, InsectTerritory> insectTiles = new();

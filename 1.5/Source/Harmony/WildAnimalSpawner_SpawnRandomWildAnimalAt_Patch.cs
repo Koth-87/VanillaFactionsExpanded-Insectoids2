@@ -27,7 +27,7 @@ namespace VFEInsectoids
 
         public static IEnumerable<PawnKindDef> TryOverrideWildAnimals(IEnumerable<PawnKindDef> wildAnimals, WildAnimalSpawner spawner)
         {
-            if (spawner.map.IsInfestedTile())
+            if (spawner.map.IsInfested())
             {
                 return wildAnimals.Concat(VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind));
             }
