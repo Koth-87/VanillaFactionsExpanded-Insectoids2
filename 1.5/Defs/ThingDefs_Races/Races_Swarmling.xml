@@ -84,19 +84,19 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Swarmling/Swarmling</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Swarmling/Swarmling</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Swarmling/Swarmling</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
