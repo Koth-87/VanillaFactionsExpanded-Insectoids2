@@ -14,13 +14,9 @@ namespace VFEInsectoids
             {
                 yield return item;
             }
-            foreach (var insectTerritory in GameComponent_Insectoids.Instance.insectTiles.Values)
+            if (tile.IsInfestedTile())
             {
-                if (insectTerritory.tiles.Contains(tile))
-                {
-                    yield return "VFEI_SettleWarning".Translate(GameComponent_Insectoids.Instance.InfestationMtbDays(tile));
-                    break;
-                }
+                yield return "VFEI_SettleWarning".Translate(GameComponent_Insectoids.Instance.InfestationMtbDays(tile));
             }
         }
     }

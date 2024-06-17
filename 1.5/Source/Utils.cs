@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Verse;
 
 namespace VFEInsectoids
 {
@@ -12,6 +13,24 @@ namespace VFEInsectoids
                 .GroupBy(x => x.Index / chunkSize)
                 .Select(x => x.Select(v => v.Value).ToList())
                 .ToList();
+        }
+
+        public static bool IsInfestedTile(this int tile)
+        {
+            if (tile <= 0) return false;
+            foreach (var insectData in GameComponent_Insectoids.Instance.insectTiles)
+            {
+                if (insectData.Value.tiles.Contains(tile))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool IsInfestedTile(this Map map)
+        {
+            return map.Tile.IsInfestedTile();
         }
     }
 }

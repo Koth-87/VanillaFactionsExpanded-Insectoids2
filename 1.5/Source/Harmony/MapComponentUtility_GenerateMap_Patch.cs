@@ -11,7 +11,7 @@ namespace VFEInsectoids
     {
         public static void Postfix(Map map)
         {
-            if (map != null && map.IsPocketMap is false && GameComponent_Insectoids.Instance.IsInfested(map.Tile))
+            if (map != null && map.IsPocketMap is false && map.Tile.IsInfestedTile())
             {
                 var mapGenDef = DefDatabase<InsectMapGenDef>.GetRandom();
                 mapGenDef.DoMapGen(map);

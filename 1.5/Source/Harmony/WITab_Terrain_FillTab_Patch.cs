@@ -26,13 +26,9 @@ namespace VFEInsectoids
 
         public static void AddInfestationLabel(int tileInt, Listing_Standard listing_Standard)
         {
-            foreach (var insectTerritory in GameComponent_Insectoids.Instance.insectTiles.Values)
+            if (tileInt.IsInfestedTile())
             {
-                if (insectTerritory.tiles.Contains(tileInt))
-                {
-                    listing_Standard.LabelDouble("VFEI_Infestation".Translate(), "VFEI_Present".Translate(), "VFEI_InfestationTooltip".Translate());
-                    break;
-                }
+                listing_Standard.LabelDouble("VFEI_Infestation".Translate(), "VFEI_Present".Translate(), "VFEI_InfestationTooltip".Translate());
             }
         }
     }

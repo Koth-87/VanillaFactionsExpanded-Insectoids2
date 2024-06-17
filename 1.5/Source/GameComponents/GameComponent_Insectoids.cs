@@ -79,18 +79,6 @@ namespace VFEInsectoids
             return -1f;
         }
 
-        public bool IsInfested(int tile)
-        {
-            foreach (var insectData in insectTiles)
-            {
-                if (insectData.Value.tiles.Contains(tile))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public override void ExposeData()
         {
             base.ExposeData();
