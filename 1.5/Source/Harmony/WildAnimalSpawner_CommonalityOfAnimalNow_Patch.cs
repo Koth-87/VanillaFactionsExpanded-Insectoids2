@@ -10,7 +10,7 @@ namespace VFEInsectoids
     { 
         public static void Postfix(ref float __result, PawnKindDef def, WildAnimalSpawner __instance)
         {
-            if (__instance.map.IsInfestedTile())
+            if (__instance.map.IsInfested())
             {
                 if (def.race.race.Insect)
                 {

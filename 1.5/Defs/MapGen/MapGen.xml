@@ -29,11 +29,11 @@
 				<chance>1</chance>
 			</li>
 			<li>
-				<insectSpawnThingsAmount>3~5</insectSpawnThingsAmount>
+				<insectSpawnThingsAmount>15~25</insectSpawnThingsAmount>
 				<thingCommonalities>
-					<VFEI_HiveWall>1</VFEI_HiveWall>
-					<VFEI2_InsectJellyWall>1</VFEI2_InsectJellyWall>
-					<VFEI2_RoyalJellyWall>1</VFEI2_RoyalJellyWall>
+					<VFEI_HiveWall>0.8</VFEI_HiveWall>
+					<VFEI2_InsectJellyWall>0.15</VFEI2_InsectJellyWall>
+					<VFEI2_RoyalJellyWall>0.05</VFEI2_RoyalJellyWall>
 				</thingCommonalities>
 				<spawnMethod>Clumped</spawnMethod>
 				<chance>0.7</chance>

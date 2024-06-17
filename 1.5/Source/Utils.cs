@@ -28,7 +28,7 @@ namespace VFEInsectoids
             return false;
         }
 
-        public static bool IsInfestedTile(this Map map)
+        public static bool IsInfested(this Map map)
         {
             return map.Tile.IsInfestedTile();
         }

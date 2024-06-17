@@ -63,11 +63,11 @@ namespace VFEInsectoids
                 }
             }
 
-            //var creepCount = map.AllCells.Count(x => x.GetTerrain(map) == VFEI_DefOf.VFEI2_Creep);
-            //var nonCreepCount = map.AllCells.Count(x => x.GetTerrain(map) != VFEI_DefOf.VFEI2_Creep);
-            //Log.Message("mapScale: " + mapScale + " - hivesToSpawn: " + hiveSpawnAmount + " - hives: " + hives.Count
-            //    + " - creep: " + creepCount + " - non creep: " + nonCreepCount
-            //    + " - rate: " + (creepCount / (float)nonCreepCount));
+            var creepCount = map.AllCells.Count(x => x.GetTerrain(map) == VFEI_DefOf.VFEI2_Creep);
+            var nonCreepCount = map.AllCells.Count(x => x.GetTerrain(map) != VFEI_DefOf.VFEI2_Creep);
+            Log.Message("mapScale: " + mapScale + " - hivesToSpawn: " + hiveSpawnAmount + " - hives: " + hives.Count
+                + " - creep: " + creepCount + " - non creep: " + nonCreepCount
+                + " - rate: " + (creepCount / (float)nonCreepCount));
             IntVec3 GetSpawnPosition(List<IntVec3> cells, Func<IntVec3, bool> validator = null)
             {
                 var cellCandidates = new HashSet<IntVec3>();
@@ -154,7 +154,7 @@ namespace VFEInsectoids
                     else if (Rand.Chance(hiveSurroundings.creepSpawnChancePerDistanceToHive / dist))
                     {
                         var neighbors = GenAdj.CellsAdjacent8Way(new TargetInfo(curCell, hive.Map));
-                        if (neighbors.Any(x => cells.Contains(x)))
+                        if (neighbors.Count(x => cells.Contains(x)) >= 2)
                         {
                             cells.Add(curCell);
                         }
