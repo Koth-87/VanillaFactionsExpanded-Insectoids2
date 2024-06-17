@@ -12,10 +12,17 @@ namespace VFEInsectoids
         {
             if (__instance.map.IsInfestedTile())
             {
-                var record = VFEI_DefOf.VFEI_Sorne.insects.FirstOrDefault(x => x.kind == def);
-                if (record != null)
+                if (def.race.race.Insect)
                 {
-                    __result = record.selectionWeight;
+                    var record = VFEI_DefOf.VFEI_Sorne.insects.FirstOrDefault(x => x.kind == def);
+                    if (record != null)
+                    {
+                        __result = record.selectionWeight;
+                    }
+                }
+                else
+                {
+                    __result *= 0.25f;
                 }
             }
         }

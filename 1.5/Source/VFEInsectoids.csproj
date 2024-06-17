@@ -98,7 +98,7 @@
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediff.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_IncreaseSpawnHediffs.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="GameComponents\GameComponent_Insectoids.cs" />
+    <Compile Include="Events\GameComponent_Insectoids.cs" />
     <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker_DropBloodFilth.cs" />
     <Compile Include="Events\IncidentWorker_InfestedChunkCrash.cs" />
