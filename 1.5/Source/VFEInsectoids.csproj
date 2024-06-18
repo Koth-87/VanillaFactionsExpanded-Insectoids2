@@ -92,6 +92,7 @@
     <Compile Include="Harmony\PawnsArrivalModeWorker_CanUseWith_Patch.cs" />
     <Compile Include="Events\PawnsArrivalModeWorker_InfestedMeteorRaid.cs" />
     <Compile Include="Events\RaidStrategyWorker_HiveRaid.cs" />
+    <Compile Include="Harmony\TunnelHiveSpawner_Spawn_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_CommonalityOfAnimalNow_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.cs" />
     <Compile Include="HediffComps\HediffComp_Spawn.cs" />
