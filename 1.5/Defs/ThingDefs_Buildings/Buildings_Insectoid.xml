@@ -957,8 +957,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>2.6</drawSize>
     </graphicData>
-    <uiIconScale>0.45</uiIconScale>
-	<uiIconOffset>(0, 0.05)</uiIconOffset>
+    <uiIconScale>0.5</uiIconScale>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
     <fillPercent>0.5</fillPercent>
@@ -1500,7 +1499,8 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>2.6</drawSize>
     </graphicData>
-    <uiIconScale>0.65</uiIconScale>
+    <uiIconScale>0.55</uiIconScale>
+	<uiIconOffset>(0, 0.05)</uiIconOffset>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
     <fillPercent>0.5</fillPercent>
