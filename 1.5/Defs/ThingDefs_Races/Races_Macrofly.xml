@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Macrofly -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Macrofly</defName>
 		<label>macrofly</label>
 		<description>A medium-sized bioengineered flying insectoid the size of a pig. The macrofly is the lowest caste of the Chelis hive, responsible for most of the resource gathering and work. It’s capable of lunging towards enemies at incredible speed, and it uses the digging claws to rip them in close quarters. It's dangerous in combat, but slow on open ground.</description>

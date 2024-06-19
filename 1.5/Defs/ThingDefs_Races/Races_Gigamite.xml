@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Gigamite -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Gigamite</defName>
 		<label>gigamite</label>
 		<description>An incredibly rare and monstrously large insectoid of the Kemia geneline, the gigamite is a towering insectoid native to the most toxic planet ever discovered, renowned for its unique adaptation to the hostile environment. This creature features a massive acid gland, prominently mounted on its back, which produces a potent corrosive acid. While the gigamite lacks prowess in close-quarters combat, it compensates with its ability to project a continuous, high-velocity stream of acid over considerable distances. This devastating attack not only burns through organic matter but also rapidly corrodes structures and vehicles. Upon death, it’s possible to extract a Kemia pherocore from its body.</description>

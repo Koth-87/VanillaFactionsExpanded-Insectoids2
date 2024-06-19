@@ -63,8 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityComps\CompAbilityAcidSpew.cs" />
+    <Compile Include="AbilityComps\CompAbilityFireSpew.cs" />
     <Compile Include="AbilityComps\CompAbilityFuelSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityAcidSpew.cs" />
+    <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Comps\CompAOE.cs" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Acidspitter -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Acidspitter</defName>
 		<label>acidspitter</label>
 		<description>A giant, heavy insectoid with a large acid sack on the lower abdomen, that glides on a few tiny legs. While its armor is not thick, or its mandibles sharp, it is capable of utilizing its acid glands to spew gallons of corrosive acid forward. Due to being extremely slow, they are somewhat vulnerable to hit-and-run tactics.</description>

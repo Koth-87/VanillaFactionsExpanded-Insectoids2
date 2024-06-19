@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Megawasp -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Megawasp</defName>
 		<label>megawasp</label>
 		<description>Not actually a wasp, the megawasp is a genetically-engineered giant flying insectoid the size of a cow. Designed as the hunter and the hive defender, megawasp soars through the air to engage enemies in close quarters, where it uses long and sharp ripper-blades and mandibles to cut anyone they face into pieces. The sharpness of the claws means that they are capable of eliminating even the most heavily armored enemies. It is, however, quite slow in open terrain.</description>

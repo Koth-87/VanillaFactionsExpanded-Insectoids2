@@ -21,8 +21,9 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="CompProperties_AbilityFireSpew">
+			<li Class="VFEInsectoids.CompProperties_AbilityFireSpew">
 				<range>9.9</range>
+				<filthChance>0.5</filthChance>
 				<lineWidthEnd>3</lineWidthEnd>
 				<filthDef>VFEI2_Filth_FlammableBile</filthDef>
 				<effecterDef>VFEI2_Fire_Spew</effecterDef>

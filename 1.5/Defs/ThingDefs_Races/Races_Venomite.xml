@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Venomite -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Venomite</defName>
 		<label>venomite</label>
 		<description>Not actually a mite, the venomite is a genetically-engineered giant insectoid the size of a lion. Designed to inflict maximum damage to organic enemies, venomite is capable of spitting globs of highly corrosive acid over long distances. Upon impact, it will cause severe burns, but won’t result in permanent damage. Relatively easy to defeat in close quarters due to shorter ripper blades than the Sorne variety. It is quite slow in open terrain.</description>

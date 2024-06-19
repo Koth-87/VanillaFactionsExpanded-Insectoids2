@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Gigalocust -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Gigalocust</defName>
 		<label>gigalocust</label>
 		<description>A genetically-engineered hunter drone the size of an elephant. It can fly over long distances, dropping down on unsuspecting targets, ripping them to shreds with its several sets of ripper-blades and sharp mandibles. It is, however, quite slow in open terrain.</description>

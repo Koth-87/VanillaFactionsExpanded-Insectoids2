@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Empress -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Empress</defName>
 		<label>empress</label>
 		<description>An incredibly rare and monstrously large insectoid of the Sorne geneline, the empress insectoid is incredibly effective at birthing offspring. Her specialized larval chambers allow her to spawn large swarms of swarmlings quickly. While she's not as dangerous in close quarters, the vast numbers of her offspring can easily swarm and overwhelm enemies. While all insectoids are almost equally terrifying, many who have seen the empress find the sight of her even more disturbing, as she embodies all that is wrong with genetic engineering. Upon death, it’s possible to extract a Sorne pherocore from her body.</description>

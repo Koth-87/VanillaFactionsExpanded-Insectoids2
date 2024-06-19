@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Durapod -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Durapod</defName>
 		<label>durapod</label>
 		<description>A medium-sized bioengineered insectoid the size of a goat. The durapod is the lowest caste of the Xanides geneline, taking care of most work tasks. Its extremely thick rock carapace makes it very slow but also very durable, but excessive damage will chip away the armor exposing the weak spots.</description>

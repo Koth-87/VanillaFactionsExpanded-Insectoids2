@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Hellbeetle -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Hellbeetle</defName>
 		<label>hellbeetle</label>
 		<description>Not actually a beetle, the hellbeetle is a genetically-engineered giant insectoid the size of a bear. Designed for the forges of the planet Nuchadus, hellbeetles have brittle armor, but are capable of spitting liquid fire from their giant jaws. In close quarters, the sharp horns and ripper-blades will dispose of flesh and metal alike. It is, however, quite slow in open terrain.</description>

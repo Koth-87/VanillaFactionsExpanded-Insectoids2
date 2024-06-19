@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Silverfish -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Silverfish</defName>
 		<label>silverfish</label>
 		<description>An incredibly rare and monstrously large insectoid of the Xanides geneline, the silverfish, a colossal bug from the mineral-rich planet of Xanides, is encased in a nearly impenetrable exoskeleton composed of rocky formations. Despite its slow movement, this giant insectoid is highly effective at tunneling through the planet's dense terrain, using its massive pincer claws to dig wide tunnels and dismantle defensive structures with ease. Although its rocky armor shields it from most attacks, strategically targeted shots can expose vulnerable spots beneath its hardened exterior. Upon death, it’s possible to extract a Xanides pherocore from its body.</description>

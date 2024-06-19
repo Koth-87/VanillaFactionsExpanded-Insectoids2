@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Swarmling -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Swarmling</defName>
 		<label>swarmlings</label>
 		<description>The juvenile form of insectoids, swarmlings are more or less harmless, slow and easy to kill. After some time has passed, they undergo a metamorphosis, forming a cocoon from which an adult insectoid will emerge. There is no way to tell what kind of insect will crawl out of its cocoon.</description>

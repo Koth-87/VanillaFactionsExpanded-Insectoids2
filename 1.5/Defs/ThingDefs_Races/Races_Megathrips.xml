@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Megathrips -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Megathrips</defName>
 		<label>megathrips</label>
 		<description>A large, genetically-engineered thrips. A worker caste of an artificial ecosystem of insectoids designed to fight against humans in large scale wars, it now often makes up for the majority of the kemian geneline hives. Megathrisp uses sharp mandibles to rip the armor into shreds, while overcharged acid glands coat the exposed flesh in corrosive substance, causing severe burns. A eusocial creature, it cannot reproduce individually.</description>

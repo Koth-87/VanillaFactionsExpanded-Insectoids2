@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--  Boomtick -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Boomtick</defName>
 		<label>boomtick</label>
 		<description>A large, genetically-engineered tick. Bred for the purpose of fuel refining on the molten planet of Nuchadus, boomtick is now often seen across many planets, where it is considered a dangerous, volatile pest. Its chemfuel sack explodes on death, setting everything nearby on fire. A eusocial creature, it cannot reproduce individually.</description>

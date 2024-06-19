@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!-- Teramantis -->
-	<ThingDef ParentName="BaseInsect">
+	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Teramantis</defName>
 		<label>teramantis</label>
 		<description>An incredibly rare and monstrously large insectoid of the Chelis geneline, the teramantis is the formidable leader of insectoid hives on the steppe planets of Chelis. Known as a prime male, this massive insectoid is equipped with lethal ripper claws sharp enough to cleave armored vehicles in two. Complementing its fearsome offensive capabilities, the teramantis boasts a large set of wings, granting it the ability to soar across the vast landscapes in pursuit of prey for hundreds of miles. Its aerial prowess and deadly strength make it a dreaded apex predator on Chelis, commanding respect and fear from all who dwell within its territory. Upon death, it’s possible to extract a Chelis pherocore from its body.</description>
