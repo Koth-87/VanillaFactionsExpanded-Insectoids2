@@ -50,7 +50,7 @@
 			<baseHungerRate>0.56</baseHungerRate>
 			<baseBodySize>1.35</baseBodySize>
 			<baseHealthScale>2.4</baseHealthScale>
-			<hasGenders>false</hasGenders>
+			
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<wildness>0.4</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
