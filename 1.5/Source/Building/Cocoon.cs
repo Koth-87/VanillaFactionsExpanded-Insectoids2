@@ -102,7 +102,7 @@ namespace VFEInsectoids
                         SpawnedPawnParams spp = new SpawnedPawnParams
                         {
                             aggressive = false,
-                            defSpot = base.Position,
+                            defSpot = Position,
                             defendRadius = 5
                         };
                         LordMaker.MakeNewLord(this.Faction, new LordJob_DefendAndExpandHive(spp), this.Map, pawns);
