@@ -145,7 +145,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Empress/Empress</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>5.2</drawSize>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -155,7 +155,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Empress/Dessicated_Empress</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>5.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

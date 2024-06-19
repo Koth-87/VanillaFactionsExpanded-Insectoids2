@@ -95,29 +95,29 @@
 					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
 					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Venomite/Venomite</texPath>
-					<drawSize>2.2</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(147, 139, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -127,7 +127,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Venomite/Dessicated_Venomite</texPath>
-					<drawSize>2.2</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

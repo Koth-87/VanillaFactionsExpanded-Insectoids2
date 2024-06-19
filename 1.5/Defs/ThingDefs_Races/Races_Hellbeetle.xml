@@ -96,29 +96,29 @@
 					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
 					<color>(128,107,104)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 					<color>(128,107,104)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Hellbeetle/Hellbeetle</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(128,107,104)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -128,7 +128,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Hellbeetle/Dessicated_Hellbeetle</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

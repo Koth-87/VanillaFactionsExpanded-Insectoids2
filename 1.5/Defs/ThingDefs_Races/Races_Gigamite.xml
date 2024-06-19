@@ -107,29 +107,29 @@
 					<texPath>Things/Pawn/Animal/Gigamite/Gigamite</texPath>
 					<color>(147, 134, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>3.6</drawSize>
+					<drawSize>2.0</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigamite/Dessicated_Gigamite</texPath>
-					<drawSize>3.6</drawSize>
+					<drawSize>2.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigamite/Gigamite</texPath>
-					<drawSize>4.0</drawSize>
+					<drawSize>3.5</drawSize>
 					<color>(147, 134, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigamite/Dessicated_Gigamite</texPath>
-					<drawSize>4.0</drawSize>
+					<drawSize>3.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigamite/Gigamite</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>4.4</drawSize>
 					<color>(147, 134, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -139,7 +139,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigamite/Dessicated_Gigamite</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>4.4</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

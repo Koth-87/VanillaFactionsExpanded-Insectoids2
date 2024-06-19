@@ -93,29 +93,29 @@
 					<texPath>Things/Pawn/Animal/Gigalocust/Gigalocust</texPath>
 					<color>(137, 130, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.0</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigalocust/Dessicated_Gigalocust</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigalocust/Gigalocust</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.5</drawSize>
 					<color>(137, 130, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigalocust/Dessicated_Gigalocust</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigalocust/Gigalocust</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(137, 130, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -125,7 +125,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Gigalocust/Dessicated_Gigalocust</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

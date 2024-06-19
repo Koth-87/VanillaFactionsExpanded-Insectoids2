@@ -96,29 +96,29 @@
 					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
 					<color>(147, 111, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 					<color>(147, 111, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.6</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Megawasp/Megawasp</texPath>
-					<drawSize>2.2</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(147, 111, 93)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -128,7 +128,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Megawasp/Dessicated_Megawasp</texPath>
-					<drawSize>2.2</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

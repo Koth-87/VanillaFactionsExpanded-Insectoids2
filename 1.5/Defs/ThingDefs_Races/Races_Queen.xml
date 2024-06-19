@@ -104,29 +104,29 @@
 					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>3.6</drawSize>
+					<drawSize>1.75</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
-					<drawSize>3.6</drawSize>
+					<drawSize>1.75</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
-					<drawSize>4.0</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
-					<drawSize>4.0</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/InsectoidQueen/InsectoidQueen</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>3.5</drawSize>
 					<color>(150, 124, 94)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -136,7 +136,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/InsectoidQueen/Dessicated_InsectoidQueen</texPath>
-					<drawSize>4.8</drawSize>
+					<drawSize>3.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

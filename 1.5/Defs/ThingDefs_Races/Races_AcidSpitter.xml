@@ -105,29 +105,29 @@
 					<texPath>Things/Pawn/Animal/Acidspitter/Acidspitter</texPath>
 					<color>(133, 137, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.0</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Acidspitter/Dessicated_Acidspitter</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>1.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Acidspitter/Acidspitter</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.5</drawSize>
 					<color>(133, 137, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Acidspitter/Dessicated_Acidspitter</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Acidspitter/Acidspitter</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 					<color>(133, 137, 125)</color>
 					<shaderType>CutoutComplex</shaderType>
 					<shadowData>
@@ -137,7 +137,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Acidspitter/Dessicated_Acidspitter</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>

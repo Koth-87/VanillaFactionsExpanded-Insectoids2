@@ -1191,7 +1191,7 @@
     <graphicData>
       <texPath>Things/Building/InsectoidCocoons</texPath>
 	  <graphicClass>Graphic_Random</graphicClass>
-      <drawSize>2</drawSize>
+      <drawSize>1</drawSize>
     </graphicData>
     <thingClass>VFEInsectoids.Cocoon</thingClass>
     <altitudeLayer>Building</altitudeLayer>
