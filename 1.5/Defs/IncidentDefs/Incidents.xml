@@ -107,7 +107,6 @@
     <letterText>{0} has been ambushed by insectoids from {2}!</letterText>
     <letterLabel>Roaming insectoids</letterLabel>
     <letterDef>ThreatBig</letterDef>
-    <baseChance>20</baseChance>
   </IncidentDef>
   
 </Defs>

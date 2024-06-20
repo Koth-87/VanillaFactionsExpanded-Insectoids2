@@ -1,11 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace VFEInsectoids
 {
+    [StaticConstructorOnStartup]
     public static class Utils
     {
+        static Utils()
+        {
+            VFEI_DefOf.VFEI_RoamingInsectoids.mtbDaysByBiome = new List<MTBByBiome>();
+            foreach (var def in DefDatabase<BiomeDef>.AllDefs)
+            {
+                VFEI_DefOf.VFEI_RoamingInsectoids.mtbDaysByBiome.Add(new MTBByBiome
+                {
+                    biome = def,
+                    mtbDays = 1f
+                });
+            }
+        }
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
         {
             return source

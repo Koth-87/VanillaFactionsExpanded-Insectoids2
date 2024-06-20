@@ -39,5 +39,6 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, VFEI_InfestedMeteorIncoming;
         public static InsectGenelineDef VFEI_Sorne;
         public static TerrainDef VFEI2_Creep;
+        public static IncidentDef VFEI_RoamingInsectoids;
     }
 }
