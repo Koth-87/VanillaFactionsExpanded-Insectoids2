@@ -87,6 +87,7 @@
     <Compile Include="Events\IncidentWorker_InfestedCrashBase.cs" />
     <Compile Include="Events\IncidentWorker_InfestedModuleCrash.cs" />
     <Compile Include="Events\IncidentWorker_InfestedPartCrash.cs" />
+    <Compile Include="Events\IncidentWorker_LargeInfestation.cs" />
     <Compile Include="Events\InsectGenelineDef.cs" />
     <Compile Include="Events\InsectMapGenDef.cs" />
     <Compile Include="Harmony\IncidentWorker_Infestation_CanFireNowSub_Patch.cs" />

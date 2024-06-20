@@ -13,23 +13,13 @@ namespace VFEInsectoids
         {
             if (parms.target.Tile.IsInfestedTile())
             {
-                Log.Message("CanFireNowSub: 1");
                 if (!base.CanFireNowSub(parms))
                 {
-                    Log.Message("CanFireNowSub: false");
                     return false;
                 }
-                Log.Message("CanFireNowSub: true");
                 return true;
             }
-            Log.Message("CanFireNowSub: false 2");
             return false;
-        }
-
-        public override bool TryExecuteWorker(IncidentParms parms)
-        {
-            Log.Message("TryExecuteWorker: 1");
-            return base.TryExecuteWorker(parms);
         }
 
         public override List<Pawn> GeneratePawns(IncidentParms parms)

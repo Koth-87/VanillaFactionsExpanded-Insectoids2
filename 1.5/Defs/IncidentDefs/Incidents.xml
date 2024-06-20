@@ -108,5 +108,23 @@
     <letterLabel>Roaming insectoids</letterLabel>
     <letterDef>ThreatBig</letterDef>
   </IncidentDef>
-  
+
+  <IncidentDef>
+    <defName>VFEI_LargeInfestation</defName>
+    <label>large infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>VFEInsectoids.IncidentWorker_LargeInfestation</workerClass>
+    <letterLabel>Large infestation</letterLabel>
+    <letterText>A large swarm of giant insects is tunneling towards you! They will break through in a few seconds and plant hives, as well as other insectoid-built formations.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>1</baseChance>
+    <minRefireDays>60</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>800</minThreatPoints>
+    <tale>Infestation</tale>
+  </IncidentDef>
+
 </Defs>
