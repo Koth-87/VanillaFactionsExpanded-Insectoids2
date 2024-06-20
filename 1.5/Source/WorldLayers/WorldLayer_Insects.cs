@@ -127,7 +127,7 @@ namespace VFEInsectoids
 
         private bool TryAddMeshForTile(int tileId)
         {
-            var hives = Find.WorldObjects.Settlements.Where(x => x.Faction.def == VFEI_DefOf.VFEI2_Hive);
+            var hives = Find.WorldObjects.Settlements.Where(x => x.Faction == Faction.OfInsects);
             foreach (var hive in hives)
             {
                 if (GameComponent_Insectoids.Instance.insectTiles.TryGetValue(hive, out var insectTerritory) && insectTerritory.tiles.Contains(tileId))

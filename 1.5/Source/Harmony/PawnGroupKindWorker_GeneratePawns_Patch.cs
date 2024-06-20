@@ -15,7 +15,7 @@ namespace VFEInsectoids
     {
         public static bool Prefix(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, ref List<Pawn> __result)
         {
-            if (parms.faction?.def == VFEI_DefOf.VFEI2_Hive)
+            if (parms.faction == Faction.OfInsects)
             {
                 var otherGeneline = DefDatabase<InsectGenelineDef>.AllDefsListForReading
                     .Where(x => x != VFEI_DefOf.VFEI_Sorne).RandomElement();

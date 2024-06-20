@@ -7,7 +7,7 @@ namespace VFEInsectoids
     internal class IngestionOutcomeDoer_IncreaseSpawnHediffs : IngestionOutcomeDoer
     {
 
-        List<HediffDef> hediffs = new List<HediffDef> { VFEI_DefOf.VFEI2_EmpressSpawn, VFEI_DefOf.VFEI2_GigamiteSpawn,
+        List<HediffDef> hediffs => new List<HediffDef> { VFEI_DefOf.VFEI2_EmpressSpawn, VFEI_DefOf.VFEI2_GigamiteSpawn,
         VFEI_DefOf.VFEI2_TitantickSpawn,VFEI_DefOf.VFEI2_TeramantisSpawn,VFEI_DefOf.VFEI2_SilverfishSpawn};
 
         public float increase;

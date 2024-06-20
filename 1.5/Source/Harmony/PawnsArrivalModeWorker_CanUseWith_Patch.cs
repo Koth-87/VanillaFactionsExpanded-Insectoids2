@@ -8,7 +8,7 @@ namespace VFEInsectoids
     {
         public static void Postfix(PawnsArrivalModeWorker __instance, ref bool __result, IncidentParms parms)
         {
-            if (parms.faction?.def == VFEI_DefOf.VFEI2_Hive &&
+            if (parms.faction == Faction.OfInsects &&
                 (__instance is PawnsArrivalModeWorker_EdgeDrop
                 || __instance is PawnsArrivalModeWorker_CenterDrop 
                 || __instance is PawnsArrivalModeWorker_EdgeDropGroups

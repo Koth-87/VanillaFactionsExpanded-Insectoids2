@@ -15,7 +15,7 @@ namespace VFEInsectoids
 
         public static GameComponent_Insectoids Instance;
 
-        public static Faction HiveFaction => Find.FactionManager.FirstFactionOfDef(VFEI_DefOf.VFEI2_Hive);
+        public static Faction HiveFaction => Faction.OfInsects;
 
         public GameComponent_Insectoids()
         {

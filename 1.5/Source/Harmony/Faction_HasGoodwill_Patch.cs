@@ -8,7 +8,7 @@ namespace VFEInsectoids
     {
         public static void Postfix(Faction __instance, ref bool __result)
         {
-            if (__result && __instance.def == VFEI_DefOf.VFEI2_Hive)
+            if (__result && __instance == Faction.OfInsects)
             {
                 __result = false;
             }

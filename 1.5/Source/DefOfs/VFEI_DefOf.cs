@@ -12,8 +12,6 @@ namespace VFEInsectoids
             DefOfHelper.EnsureInitializedInCtor(typeof(VFEI_DefOf));
         }
 
-        public static FactionDef VFEI2_Hive;
-
         public static PawnKindDef VFEI2_Swarmling;
         public static PawnKindDef Megascarab;
         public static PawnKindDef Spelopede;

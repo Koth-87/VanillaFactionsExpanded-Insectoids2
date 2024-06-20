@@ -6,7 +6,7 @@ namespace VFEInsectoids
     {
         public override bool CanUseWith(IncidentParms parms, PawnGroupKindDef groupKind)
         {
-            return parms?.faction?.def == VFEI_DefOf.VFEI2_Hive && base.CanUseWith(parms, groupKind);
+            return parms?.faction == Faction.OfInsects && base.CanUseWith(parms, groupKind);
         }
     }
 }

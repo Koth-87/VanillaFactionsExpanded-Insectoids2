@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
@@ -9,7 +10,7 @@ namespace VFEInsectoids
     {
         public static void Postfix(WorldObject o)
         {
-            if (o is Settlement settlement && settlement.Faction?.def == VFEI_DefOf.VFEI2_Hive)
+            if (o is Settlement settlement && settlement.Faction == Faction.OfInsects)
             {
                 Find.World.renderer.SetDirty<WorldLayer_Insects>();
             }
