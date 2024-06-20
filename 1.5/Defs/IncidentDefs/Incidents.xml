@@ -93,4 +93,21 @@
     <textEnemy>A shower of meteorites is striking the local area. It seems they are infested with hives belonging to {1}! They will attack immediately.</textEnemy>
   </PawnsArrivalModeDef>
 
+  <IncidentDef>
+    <defName>VFEI_RoamingInsectoids</defName>
+    <label>roaming insectoids</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Caravan</li>
+      <li>Map_TempIncident</li>
+    </targetTags>
+    <workerClass>VFEInsectoids.IncidentWorker_Ambush_RoamingInsectoids</workerClass>
+    <pointsScaleable>true</pointsScaleable>
+    <minRefireDays>0.3</minRefireDays>
+    <letterText>{0} has been ambushed by insectoids from {2}!</letterText>
+    <letterLabel>Roaming insectoids</letterLabel>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>20</baseChance>
+  </IncidentDef>
+  
 </Defs>

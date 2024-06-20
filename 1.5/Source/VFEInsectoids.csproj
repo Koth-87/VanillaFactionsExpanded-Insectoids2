@@ -83,11 +83,15 @@
     <Compile Include="DamageWorkers\DamageWorker_AcidBite.cs" />
     <Compile Include="DamageWorkers\DamageWorker_TeramantisStun.cs" />
     <Compile Include="Comps\CompInsectSpawner.cs" />
+    <Compile Include="Events\IncidentWorker_Ambush_RoamingInsectoids.cs" />
     <Compile Include="Events\IncidentWorker_InfestedCrashBase.cs" />
     <Compile Include="Events\IncidentWorker_InfestedModuleCrash.cs" />
     <Compile Include="Events\IncidentWorker_InfestedPartCrash.cs" />
     <Compile Include="Events\InsectGenelineDef.cs" />
     <Compile Include="Events\InsectMapGenDef.cs" />
+    <Compile Include="Harmony\IncidentWorker_Infestation_CanFireNowSub_Patch.cs" />
+    <Compile Include="Harmony\InfestationCellFinder_GetScoreAt_Patch.cs" />
+    <Compile Include="Harmony\InfestationUtility_FindRootTunnelLoc_Patch.cs" />
     <Compile Include="Harmony\MapComponentUtility_GenerateMap_Patch.cs" />
     <Compile Include="Harmony\Map_MapPostTick_Patch.cs" />
     <Compile Include="Harmony\PawnGroupKindWorker_GeneratePawns_Patch.cs" />

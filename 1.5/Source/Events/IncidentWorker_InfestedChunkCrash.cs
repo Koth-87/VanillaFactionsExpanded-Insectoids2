@@ -4,7 +4,6 @@ using Verse;
 
 namespace VFEInsectoids
 {
-
     public class IncidentWorker_InfestedChunkCrash : IncidentWorker_InfestedCrashBase
     {
         public override ThingDef MainPartDef => VFEI_DefOf.VFEI2_InfestedShipChunk;
