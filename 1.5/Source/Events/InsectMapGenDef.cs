@@ -195,20 +195,43 @@ namespace VFEInsectoids
                             var thingAmount = spawnSettings.insectSpawnThingsAmount.RandomInRange;
                             DeepProfiler.Start("GetSpawnPosition");
                             var center = GetSpawnPosition(creepCells.ToHashSet());
+                            var takenCells = new HashSet<IntVec3>();
                             DeepProfiler.End();
                             for (var j = 0; j <= thingAmount; j++)
                             {
                                 var thingToSpawn = spawnSettings.thingCommonalities.RandomElementByWeight(x => x.commonality).thing;
                                 var cell = GetCell();
-                                if (cell.InBounds(map))
+                                if (cell.IsValid)
                                 {
-                                    SpawnThing(map, thingToSpawn, cell, spawnSettings.spawnMethod == SpawnMethod.Clumped ? ThingPlaceMode.Near : ThingPlaceMode.Direct); ;
+                                    var thing = SpawnThing(map, thingToSpawn, cell, spawnSettings.spawnMethod == SpawnMethod.Clumped ? ThingPlaceMode.Near : ThingPlaceMode.Direct); ;
+                                    takenCells.AddRange(thing.OccupiedRect());
                                 }
                                 IntVec3 GetCell()
                                 {
                                     if (spawnSettings.spawnMethod == SpawnMethod.Clumped)
                                     {
-                                        return center;
+                                        if (takenCells.Count >= thingAmount / 2)
+                                        {
+                                            var cellCandidates = new HashSet<IntVec3>();
+                                            foreach (var cell in takenCells)
+                                            {
+                                                var adjCells = GenAdj.CellsAdjacentCardinal(cell, thingToSpawn.defaultPlacingRot, thingToSpawn.size)
+                                                    .Where(x => IsGoodCell(x) && takenCells.Contains(x) is false);
+                                                if (adjCells.Any())
+                                                {
+                                                    cellCandidates.AddRange(adjCells);
+                                                }
+                                            }
+                                            if (cellCandidates.TryRandomElement(out var result))
+                                            {
+                                                return result;
+                                            }
+                                            return IntVec3.Invalid;
+                                        }
+                                        else
+                                        {
+                                            return center;
+                                        }
                                     }
                                     else if (creepCells.Where(x => IsGoodCell(x, false) 
                                     && GenAdj.OccupiedRect(x, thingToSpawn.defaultPlacingRot, thingToSpawn.Size).InBounds(map))
