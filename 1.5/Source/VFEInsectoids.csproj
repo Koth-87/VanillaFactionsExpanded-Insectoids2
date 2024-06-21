@@ -96,11 +96,13 @@
     <Compile Include="Harmony\InfestationUtility_FindRootTunnelLoc_Patch.cs" />
     <Compile Include="Harmony\MapComponentUtility_GenerateMap_Patch.cs" />
     <Compile Include="Harmony\Map_MapPostTick_Patch.cs" />
+    <Compile Include="Harmony\PathFinder_FindPath_Patch.cs" />
     <Compile Include="Harmony\PawnGroupKindWorker_GeneratePawns_Patch.cs" />
     <Compile Include="Harmony\PawnGroupMakerUtility_GeneratePawns.cs" />
     <Compile Include="Harmony\PawnsArrivalModeWorker_CanUseWith_Patch.cs" />
     <Compile Include="Events\PawnsArrivalModeWorker_InfestedMeteorRaid.cs" />
     <Compile Include="Events\RaidStrategyWorker_HiveRaid.cs" />
+    <Compile Include="Harmony\Pawn_PathFollower_CostToMoveIntoCell_Patch.cs" />
     <Compile Include="Harmony\TunnelHiveSpawner_Spawn_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_CommonalityOfAnimalNow_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.cs" />
