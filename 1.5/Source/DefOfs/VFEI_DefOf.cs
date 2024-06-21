@@ -36,9 +36,12 @@ namespace VFEInsectoids
 
         public static DamageDef VFEI2_AcidSpit;
 
-        public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, VFEI_InfestedMeteorIncoming;
+        public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, 
+            VFEI_InfestedMeteorIncoming;
         public static InsectGenelineDef VFEI_Sorne;
         public static TerrainDef VFEI2_Creep;
         public static IncidentDef VFEI_RoamingInsectoids;
+        public static ThingDef VFEI2_LargeGlowPod, VFEI2_GlowPodFormation, VFEI2_FoamPod, VFEI2_TendrilFarm,
+            VFEI2_Creeper, VFEI2_JellyFarm, VFEI2_LargeTunnelHiveSpawner;
     }
 }

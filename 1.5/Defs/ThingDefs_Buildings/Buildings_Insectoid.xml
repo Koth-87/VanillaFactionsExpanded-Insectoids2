@@ -1761,4 +1761,17 @@
     </researchPrerequisites>
   </ThingDef>
 
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>VFEI2_LargeTunnelHiveSpawner</defName>
+    <label>tunnel</label>
+    <thingClass>VFEInsectoids.LargeTunnelHiveSpawner</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+    <building>
+      <groundSpawnerSustainedEffecter>EmergencePointSustained2X2</groundSpawnerSustainedEffecter>
+      <groundSpawnerCompleteEffecter>EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
+    </building>
+  </ThingDef>
+  
 </Defs>
