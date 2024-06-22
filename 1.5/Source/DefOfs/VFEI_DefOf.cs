@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace VFEInsectoids
 {
@@ -47,5 +48,6 @@ namespace VFEInsectoids
         public static ColorDef Structure_BrownSubtle;
         public static ThingDef VFEI2_InsectoidCocoonSpecific;
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
+        public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
     }
 }

@@ -12,7 +12,7 @@ namespace VFEInsectoids
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
-            var shouldSkip = AccessTools.Method(typeof(Utils), "IsColonyInsect");
+            var shouldSkip = AccessTools.Method(typeof(Utils), "IsColonyInsect", [typeof(Pawn)]);
             var pawnField = AccessTools.Field(typeof(Pawn_TrainingTracker), "pawn");
             var animalTypeField = AccessTools.Field(typeof(RaceProperties), "animalType");
 

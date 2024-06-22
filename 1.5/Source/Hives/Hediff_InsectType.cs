@@ -28,7 +28,13 @@ namespace VFEInsectoids
         public override void PostRemoved()
         {
             base.PostRemoved();
-            CompHive?.insects.Remove(pawn);
+            CompHive?.RemoveInsect(pawn);
+        }
+
+        public override void Notify_PawnKilled()
+        {
+            base.Notify_PawnKilled();
+            CompHive?.RemoveInsect(pawn);
         }
 
         public override void ExposeData()

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 using Verse.Sound;
 
 namespace VFEInsectoids
 {
+
     public enum InsectType { Worker, Defender, Hunter};
     public class PawnKindWithType
     {
@@ -31,6 +33,8 @@ namespace VFEInsectoids
         public CompProperties_Hive Props => base.props as CompProperties_Hive;
 
         public List<Pawn> insects = new List<Pawn>();
+
+        public Lord lord;
 
         public PawnKindDef currentPawnKindToSpawn;
 
@@ -112,6 +116,8 @@ namespace VFEInsectoids
             {
                 RemoveInsect(insect);
             }
+            lord?.RemoveAllBuildings();
+            lord?.RemoveAllPawns();
         }
 
         public override void CompTick()
@@ -136,6 +142,7 @@ namespace VFEInsectoids
             if (insects.Count >= InsectCapacity)
             {
                 nextRespawnTick = null;
+                Messages.Message("VFEI_SpawningStoppedMaxCapacity".Translate(), parent, MessageTypeDefOf.NeutralEvent);
             }
             else
             {
@@ -178,8 +185,7 @@ namespace VFEInsectoids
 
         public void AddInsect(Pawn insect)
         {
-            var hediff = insect.health.hediffSet.GetFirstHediff<Hediff_InsectType>();
-            if (hediff != null)
+            if (insect.IsColonyInsect(out var hediff))
             {
                 insect.health.RemoveHediff(hediff);
             }
@@ -187,16 +193,35 @@ namespace VFEInsectoids
             hediff = insect.health.AddHediff(hediffDef) as Hediff_InsectType;
             hediff.hive = this.parent;
             insects.Add(insect);
+            var otherLord = insect.GetLord();
+            if (otherLord != null)
+            {
+                otherLord.RemovePawn(insect);
+            }
+            if (lord is not null)
+            {
+                lord.AddPawn(insect);
+            }
+            else
+            {
+                lord = LordMaker.MakeNewLord(parent.Faction, new LordJob_PlayerHive(parent), parent.Map);
+                lord.AddBuilding(parent as Building);
+                lord.AddPawn(insect);
+            }
         }
 
         public void RemoveInsect(Pawn insect)
         {
-            var hediff = insect.health.hediffSet.GetFirstHediff<Hediff_InsectType>();
-            if (hediff != null)
+            if (insect.IsColonyInsect(out var hediff))
             {
                 insect.health.RemoveHediff(hediff);
             }
             insects.Remove(insect);
+            var lordJob = insect.GetLord()?.LordJob as LordJob_PlayerHive;
+            if (lordJob != null)
+            {
+                lordJob.lord.RemovePawn(insect);
+            }
         }
 
         public override string CompInspectStringExtra()
@@ -214,6 +239,7 @@ namespace VFEInsectoids
             Scribe_Collections.Look(ref insects, "insects", LookMode.Reference);
             Scribe_Values.Look(ref insectColor, "insectColor");
             Scribe_Values.Look(ref nextRespawnTick, "nextRespawnTick");
+            Scribe_References.Look(ref lord, "lord");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insects ??= new List<Pawn>();

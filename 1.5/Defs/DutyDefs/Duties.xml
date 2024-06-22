@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DutyDef>
+    <defName>VFEI_Defender</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+	  
+        <li Class="JobGiver_HiveDefense">
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+          <targetAcquireRadius>30</targetAcquireRadius>
+          <chaseTarget>false</chaseTarget>
+        </li>
+		
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>SatisfyBasicNeedsAndWork</treeDef>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>8</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Sprint</locomotionUrgencyOutsideRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>VFEI_Worker</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+	  
+        <li Class="ThinkNode_ChancePerHour_Constant">
+          <mtbHours>2.5</mtbHours>
+          <subNodes>
+            <li Class="JobGiver_MaintainHives" />
+          </subNodes>
+        </li>
+		
+		<li Class="VFEInsectoids.JobGiver_DoWork">
+			<workTypes>
+				<li>Construction</li>
+				<li>Hauling</li>
+				<li>Mining</li>
+			</workTypes>
+		</li>
+		
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>SatisfyBasicNeedsAndWork</treeDef>
+            </li>
+          </subNodes>
+        </li>
+		
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>8</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Sprint</locomotionUrgencyOutsideRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>VFEI_Hunter</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ChancePerHour_Constant">
+          <mtbHours>24</mtbHours>
+          <subNodes>
+            <li Class="VFEInsectoids.JobGiver_InsectHunt" />
+          </subNodes>
+        </li>
+		
+        <li Class="ThinkNode_ForbidOutsideFlagRadius">
+          <maxDistToSquadFlag>16</maxDistToSquadFlag>
+          <subNodes>
+            <li Class="ThinkNode_Subtree">
+              <treeDef>SatisfyBasicNeedsAndWork</treeDef>
+            </li>
+          </subNodes>
+        </li>
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>8</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Sprint</locomotionUrgencyOutsideRadius>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+</Defs>

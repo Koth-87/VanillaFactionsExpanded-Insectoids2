@@ -49,7 +49,18 @@ namespace VFEInsectoids
 
         public static bool IsColonyInsect(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediff<Hediff_InsectType>() != null;
+            return pawn.IsColonyInsect(out _);
+        }
+
+        public static bool IsColonyInsect(this Pawn pawn, out Hediff_InsectType hediff)
+        {
+            if (pawn.RaceProps.Insect)
+            {
+                hediff = pawn.health.hediffSet.GetFirstHediff<Hediff_InsectType>();
+                return hediff != null;
+            }
+            hediff = null;
+            return false;
         }
 
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)

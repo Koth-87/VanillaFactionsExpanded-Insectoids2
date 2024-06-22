@@ -72,6 +72,9 @@
         <multiplier>2</multiplier>
       </li>
     </damageMultipliers>
+	<modExtensions>
+		<li Class="VFEInsectoids.InsectBuilding"></li>
+	</modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="VFEI2_InsectoidWallBase">
@@ -184,8 +187,8 @@
   </ThingDef>
   
   <!-- ========================================================= -->
-  
-  <ThingDef Name="VFEI2_BuildingInsectoidBase" Abstract="True">
+
+  <ThingDef Name="VFEI2_BuildingBase" Abstract="True">
     <category>Building</category>
     <selectable>true</selectable>
     <drawerType>MapMeshOnly</drawerType>
@@ -195,6 +198,12 @@
       <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
     </building>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
+  </ThingDef>
+  
+  <ThingDef Name="VFEI2_BuildingInsectoidBase" ParentName="VFEI2_BuildingBase" Abstract="True">
+	<modExtensions>
+		<li Class="VFEInsectoids.InsectBuilding"></li>
+	</modExtensions>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
@@ -1220,7 +1229,7 @@
   
   <!-- Artificial hives -->
   
-  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+  <ThingDef ParentName="VFEI2_BuildingBase">
     <defName>VFEI2_ArtificialBasicHive</defName>
     <label>artificial basic hive</label>
     <description>An artificially constructed hive of giant insects. It is capable of spawning the most basic insectoids over time, as well as small amounts of valuable insect jelly.</description>
@@ -1306,9 +1315,14 @@
     <researchPrerequisites>
         <li>VFEI2_BasicHivetech</li>
     </researchPrerequisites>
+	<modExtensions>
+		<li Class="VFEInsectoids.InsectBuilding">
+			<nonInsectCanBuildIt>true</nonInsectCanBuildIt>
+		</li>
+	</modExtensions>
   </ThingDef>
   
-  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+  <ThingDef ParentName="VFEI2_BuildingBase">
     <defName>VFEI2_ArtificialSorneHive</defName>
     <label>artificial sorne hive</label>
     <description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly.</description>
