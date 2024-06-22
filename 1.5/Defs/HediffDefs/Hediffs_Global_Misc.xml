@@ -203,11 +203,21 @@
 		<defName>VFEI_HunterInsectType</defName>
 		<label>hunter type</label>
 		<hediffClass>VFEInsectoids.Hediff_InsectHunter</hediffClass>
+		<comps>
+			<li Class="AnimalBehaviours.HediffCompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
+		</comps>
 	</HediffDef>
 	
 	<HediffDef ParentName="VFEI_InsectTypeBase">
 		<defName>VFEI_DefenderInsectType</defName>
 		<label>defender type</label>
 		<hediffClass>VFEInsectoids.Hediff_InsectDefender</hediffClass>
+		<comps>
+			<li Class="AnimalBehaviours.HediffCompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>

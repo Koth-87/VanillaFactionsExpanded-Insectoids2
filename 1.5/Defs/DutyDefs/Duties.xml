@@ -36,7 +36,7 @@
         <li Class="ThinkNode_ChancePerHour_Constant">
           <mtbHours>2.5</mtbHours>
           <subNodes>
-            <li Class="JobGiver_MaintainHives" />
+            <li Class="VFEInsectoids.JobGiver_MaintainHives" />
           </subNodes>
         </li>
 		
@@ -65,6 +65,15 @@
     </thinkNode>
   </DutyDef>
 
+  <JobDef>
+    <defName>VFEI_InsectHunt</defName>
+    <driverClass>VFEInsectoids.JobDriver_InsectHunt</driverClass>
+    <reportString>hunting TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <checkOverrideOnDamage>OnlyIfInstigatorNotJobTarget</checkOverrideOnDamage>
+  </JobDef>
+  
   <DutyDef>
     <defName>VFEI_Hunter</defName>
     <thinkNode Class="ThinkNode_Priority">
@@ -75,7 +84,6 @@
             <li Class="VFEInsectoids.JobGiver_InsectHunt" />
           </subNodes>
         </li>
-		
         <li Class="ThinkNode_ForbidOutsideFlagRadius">
           <maxDistToSquadFlag>16</maxDistToSquadFlag>
           <subNodes>

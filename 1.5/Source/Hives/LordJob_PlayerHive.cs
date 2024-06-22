@@ -31,7 +31,7 @@ namespace VFEInsectoids
                     }
                     else if (hediff.InsectType == InsectType.Defender)
                     {
-                        pawn.mindState.duty = new PawnDuty(VFEI_DefOf.VFEI_Defender, hive);
+                        pawn.mindState.duty = new PawnDuty(VFEI_DefOf.VFEI_Defender, hive, 30);
                     }
                     else
                     {

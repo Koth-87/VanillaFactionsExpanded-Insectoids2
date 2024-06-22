@@ -1222,8 +1222,8 @@
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_InsectoidCocoon">
-    <defName>VFEI2_InsectoidCocoonSpecific</defName>
-    <thingClass>VFEInsectoids.CocoonSpecific</thingClass>
+    <defName>VFEI2_InsectoidCocoonHive</defName>
+    <thingClass>VFEInsectoids.CocoonHive</thingClass>
   </ThingDef>
 
   
@@ -1356,15 +1356,24 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>Spelopede</insect>
+				<insectType>Worker</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Megapede</insect>
+				<insectType>Defender</insectType>
+			</li>
+			<li>
+				<insect>Megaspider</insect>
+				<insectType>Hunter</insectType>
+			</li>
+		</insectTypes>
+		<insectoidRespawnTime>180000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
@@ -1444,15 +1453,25 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>VFEI2_Fuelmite</insect>
+				<insectType>Defender</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Boomtick</insect>
+				<insectType>Defender</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Hellbeetle</insect>
+				<insectType>Hunter</insectType>
+			</li>
+			
+		</insectTypes>
+		<insectoidRespawnTime>180000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_Explosive">
         <wickTicks>360</wickTicks>
         <explosiveRadius>3.9</explosiveRadius>
@@ -1542,15 +1561,24 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>VFEI2_Macrofly</insect>
+				<insectType>Hunter</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Megawasp</insect>
+				<insectType>Hunter</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Gigalocust</insect>
+				<insectType>Hunter</insectType>
+			</li>
+		</insectTypes>
+		<insectoidRespawnTime>180000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
@@ -1632,15 +1660,24 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>VFEI2_Megathrips</insect>
+				<insectType>Worker</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Acidspitter</insect>
+				<insectType>Defender</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Venomite</insect>
+				<insectType>Hunter</insectType>
+			</li>
+		</insectTypes>
+		<insectoidRespawnTime>180000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
@@ -1721,15 +1758,24 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>VFEI2_Durapod</insect>
+				<insectType>Worker</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Tankroach</insect>
+				<insectType>Defender</insectType>
+			</li>
+			<li>
+				<insect>VFEI2_Ironclad</insect>
+				<insectType>Defender</insectType>
+			</li>
+		</insectTypes>
+		<insectoidRespawnTime>180000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>

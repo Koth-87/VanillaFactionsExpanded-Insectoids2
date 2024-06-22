@@ -11,9 +11,10 @@ namespace VFEInsectoids
             var prey = FoodUtility.BestPawnToHuntForPredator(pawn, true);
             if (prey != null)
             {
-                return JobMaker.MakeJob(JobDefOf.Hunt, prey);
+                return JobMaker.MakeJob(VFEI_DefOf.VFEI_InsectHunt, prey);
             }
             return null;
         }
     }
+
 }

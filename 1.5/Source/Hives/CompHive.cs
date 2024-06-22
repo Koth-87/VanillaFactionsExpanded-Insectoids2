@@ -8,7 +8,6 @@ using Verse.Sound;
 
 namespace VFEInsectoids
 {
-
     public enum InsectType { Worker, Defender, Hunter};
     public class PawnKindWithType
     {
@@ -16,11 +15,10 @@ namespace VFEInsectoids
         public InsectType insectType;
     }
 
-    public class CompProperties_Hive : CompProperties
+    public class CompProperties_Hive : CompProperties_SpawnerPawn
     {
         public List<PawnKindWithType> insectTypes;
         public int insectoidRespawnTime;
-        public SoundDef spawnSound;
         public CompProperties_Hive()
         {
             this.compClass = typeof(CompHive);
@@ -28,19 +26,15 @@ namespace VFEInsectoids
     }
 
     [HotSwappable]
-    public class CompHive : ThingComp
+    public class CompHive : CompSpawnerPawn
     {
         public CompProperties_Hive Props => base.props as CompProperties_Hive;
 
-        public List<Pawn> insects = new List<Pawn>();
-
         public Lord lord;
-
-        public PawnKindDef currentPawnKindToSpawn;
 
         public Color insectColor;
 
-        private int? nextRespawnTick;
+        public List<Pawn> insects = new List<Pawn>();
 
         public int InsectCapacity
         {
@@ -59,21 +53,20 @@ namespace VFEInsectoids
             }
         }
 
-        public List<PawnKindDef> AllAvailableInsects
+        public List<PawnKindDef> AllAvailableInsects => Props.insectTypes.Select(x => x.insect).ToList();
+
+        public override void Initialize(CompProperties props)
         {
-            get
-            {
-                var list = new List<PawnKindDef>();
-                return Props.insectTypes.Select(x => x.insect).ToList();
-            }
+            this.props = props;
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (currentPawnKindToSpawn is null)
+            pawnsLeftToSpawn = 0;
+            if (chosenKind is null)
             {
-                currentPawnKindToSpawn = AllAvailableInsects.First();
+                chosenKind = AllAvailableInsects.First();
                 insectColor = VFEI_DefOf.Structure_BrownSubtle.color;
                 if (CanSpawn())
                 {
@@ -84,7 +77,7 @@ namespace VFEInsectoids
 
         private void SetNextRespawnTick()
         {
-            nextRespawnTick = Find.TickManager.TicksGame + Props.insectoidRespawnTime;
+            nextPawnSpawnTick = Find.TickManager.TicksGame + Props.insectoidRespawnTime;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -99,7 +92,7 @@ namespace VFEInsectoids
                 {
                     yield return new Command_Action
                     {
-                        defaultLabel = "DEV: Spawn " + currentPawnKindToSpawn.label,
+                        defaultLabel = "DEV: Spawn " + chosenKind.label,
                         action = delegate
                         {
                             DoSpawn();
@@ -112,36 +105,43 @@ namespace VFEInsectoids
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            foreach (var insect in insects)
+            foreach (var insect in insects.ToList())
             {
                 RemoveInsect(insect);
             }
-            lord?.RemoveAllBuildings();
-            lord?.RemoveAllPawns();
+            if (lord != null)
+            {
+                lord.RemoveAllBuildings();
+                lord.RemoveAllPawns();
+                previousMap.lordManager.RemoveLord(lord);
+            }
         }
 
         public override void CompTick()
         {
-            base.CompTick();
             if (CanSpawn())
             {
-                if (nextRespawnTick is null)
+                if (nextPawnSpawnTick == -1)
                 {
                     SetNextRespawnTick();
                 }
-                if (Find.TickManager.TicksGame >= nextRespawnTick)
+                if (Find.TickManager.TicksGame >= nextPawnSpawnTick)
                 {
                     DoSpawn();
                 }
+            }
+            else
+            {
+                nextPawnSpawnTick = -1;
             }
         }
 
         private void DoSpawn()
         {
-            TrySpawnPawn();
+            TrySpawnPawn(parent.Position);
             if (insects.Count >= InsectCapacity)
             {
-                nextRespawnTick = null;
+                nextPawnSpawnTick = -1;
                 Messages.Message("VFEI_SpawningStoppedMaxCapacity".Translate(), parent, MessageTypeDefOf.NeutralEvent);
             }
             else
@@ -155,24 +155,24 @@ namespace VFEInsectoids
             return insects.Count < InsectCapacity;
         }
 
-        private void TrySpawnPawn()
+        public void TrySpawnPawn(IntVec3 position)
         {
-            PawnGenerationRequest request = new PawnGenerationRequest(currentPawnKindToSpawn, parent.Faction);
-            int index = currentPawnKindToSpawn.lifeStages.Count - 1;
-            request.FixedBiologicalAge = currentPawnKindToSpawn.race.race.lifeStageAges[index].minAge;
+            PawnGenerationRequest request = new PawnGenerationRequest(chosenKind, parent.Faction);
+            int index = chosenKind.lifeStages.Count - 1;
+            request.FixedBiologicalAge = chosenKind.race.race.lifeStageAges[index].minAge;
             var pawn = PawnGenerator.GeneratePawn(request);
             AddInsect(pawn);
-            GenSpawn.Spawn(pawn, parent.Position, parent.Map);
+            GenSpawn.Spawn(pawn, position, parent.Map);
             if (Props.spawnSound != null)
             {
-                Props.spawnSound.PlayOneShot(parent);
+                Props.spawnSound.PlayOneShot(pawn);
             }
         }
 
         public void ChangePawnKind(PawnKindDef def)
         {
-            currentPawnKindToSpawn = def;
-            foreach (var insect in insects)
+            chosenKind = def;
+            foreach (var insect in insects.ToList())
             {
                 SpawnCocoon(insect);
             }
@@ -180,7 +180,13 @@ namespace VFEInsectoids
 
         public void SpawnCocoon(Pawn insect)
         {
-
+            var pos = insect.Position;
+            var cocoon = GenSpawn.Spawn(VFEI_DefOf.VFEI2_InsectoidCocoonHive, pos, parent.Map) 
+                as CocoonHive;
+            insect.DeSpawn();
+            cocoon.innerContainer.TryAdd(insect);
+            cocoon.hive = this.parent;
+            cocoon.spawnInTick = 6000;
         }
 
         public void AddInsect(Pawn insect)
@@ -189,7 +195,7 @@ namespace VFEInsectoids
             {
                 insect.health.RemoveHediff(hediff);
             }
-            var hediffDef = Props.insectTypes.First(x => x.insect == currentPawnKindToSpawn).insectType.GetInsectTypeHediff();
+            var hediffDef = Props.insectTypes.First(x => x.insect == chosenKind).insectType.GetInsectTypeHediff();
             hediff = insect.health.AddHediff(hediffDef) as Hediff_InsectType;
             hediff.hive = this.parent;
             insects.Add(insect);
@@ -226,19 +232,18 @@ namespace VFEInsectoids
 
         public override string CompInspectStringExtra()
         {
-            if (CanSpawn() && nextRespawnTick is not null)
+            if (CanSpawn() && nextPawnSpawnTick != -1)
             {
-                var period = nextRespawnTick.Value - Find.TickManager.TicksGame;
-                return "VFEI_InsectoidWillBeSpawnedIn".Translate(currentPawnKindToSpawn.LabelCap, period.ToStringTicksToPeriod());
+                var period = nextPawnSpawnTick - Find.TickManager.TicksGame;
+                return "VFEI_InsectoidWillBeSpawnedIn".Translate(chosenKind.LabelCap, period.ToStringTicksToPeriod());
             }
-            return base.CompInspectStringExtra();
+            return null;
         }
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Collections.Look(ref insects, "insects", LookMode.Reference);
             Scribe_Values.Look(ref insectColor, "insectColor");
-            Scribe_Values.Look(ref nextRespawnTick, "nextRespawnTick");
+            Scribe_Collections.Look(ref insects, "insects", LookMode.Reference);
             Scribe_References.Look(ref lord, "lord");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

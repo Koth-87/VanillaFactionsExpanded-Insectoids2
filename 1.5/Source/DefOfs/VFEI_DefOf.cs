@@ -46,8 +46,9 @@ namespace VFEInsectoids
             VFEI2_Creeper, VFEI2_JellyFarm, VFEI2_LargeTunnelHiveSpawner;
         public static ResearchProjectDef VFEI2_StandardHivetech, VFEI2_ExoticHivetech;
         public static ColorDef Structure_BrownSubtle;
-        public static ThingDef VFEI2_InsectoidCocoonSpecific;
+        public static ThingDef VFEI2_InsectoidCocoonHive;
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
         public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
+        public static JobDef VFEI_InsectHunt;
     }
 }

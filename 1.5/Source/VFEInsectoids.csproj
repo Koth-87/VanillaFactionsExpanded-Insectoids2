@@ -69,6 +69,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
+    <Compile Include="Hives\CocoonHive.cs" />
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompInsectJellySpawner.cs" />
     <Compile Include="Comps\CompTerraform.cs" />
@@ -116,8 +117,10 @@
     <Compile Include="HediffComps\Properties\HediffCompProperties_Spawn.cs" />
     <Compile Include="Hives\Gizmo_Hive.cs" />
     <Compile Include="Hives\Hediff_InsectType.cs" />
+    <Compile Include="Hives\JobDriver_InsectHunt.cs" />
     <Compile Include="Hives\JobGiver_DoWork.cs" />
     <Compile Include="Hives\JobGiver_InsectHunt.cs" />
+    <Compile Include="Hives\JobGiver_MaintainHives.cs" />
     <Compile Include="Hives\LordJob_PlayerHive.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediff.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_IncreaseSpawnHediffs.cs" />

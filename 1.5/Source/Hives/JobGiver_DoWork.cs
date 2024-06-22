@@ -66,21 +66,17 @@ namespace VFEInsectoids
             for (int j = 0; j < list.Count; j++)
             {
                 WorkGiver workGiver = list[j];
-                Log.Message("workGiver: " + workGiver.def);
                 if (workGiver.def.priorityInType != num && bestTargetOfLastPriority.IsValid)
                 {
-                    Log.Message("False 1: " + workGiver.def);
                     break;
                 }
                 if (!PawnCanUseWorkGiverOverride(pawn, workGiver))
                 {
-                    Log.Message("False 2: " + workGiver.def);
                     continue;
                 }
                 try
                 {
                     Job job2 = workGiver.NonScanJob(pawn);
-                    Log.Message("job2: " + job2 + " - " + workGiver.def);
                     if (job2 != null)
                     {
                         if (pawn.jobs.debugLog)
@@ -224,7 +220,6 @@ namespace VFEInsectoids
                 if (bestTargetOfLastPriority.IsValid)
                 {
                     Job job3 = ((!bestTargetOfLastPriority.HasThing) ? scannerWhoProvidedTarget.JobOnCell(pawn, bestTargetOfLastPriority.Cell) : scannerWhoProvidedTarget.JobOnThing(pawn, bestTargetOfLastPriority.Thing));
-                    Log.Message("job3: " + job3 + " - " + workGiver.def);
                     if (job3 != null)
                     {
                         job3.workGiverDef = scannerWhoProvidedTarget.def;

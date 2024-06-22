@@ -70,7 +70,7 @@ namespace VFEInsectoids
             Text.Anchor = TextAnchor.MiddleLeft;
             Widgets.Label(labelRect, "VFEI_Insectoids".Translate());
             var curPawnKindIconRect = new Rect(labelRect.xMax + 5, labelRect.y, 32, 32);
-            Widgets.DefIcon(curPawnKindIconRect, compHive.currentPawnKindToSpawn);
+            Widgets.DefIcon(curPawnKindIconRect, compHive.chosenKind);
             if (Widgets.ButtonInvisible(curPawnKindIconRect))
             {
                 var floatList = new List<FloatMenuOption>();
@@ -79,7 +79,7 @@ namespace VFEInsectoids
             }
 
             curPawnKindIconRect = new Rect(curPawnKindIconRect.xMax + 5, labelRect.y, 32, 32).ContractedBy(3);
-            var record = compHive.Props.insectTypes.FirstOrDefault(x => x.insect == compHive.currentPawnKindToSpawn);
+            var record = compHive.Props.insectTypes.FirstOrDefault(x => x.insect == compHive.chosenKind);
             GUI.DrawTexture(curPawnKindIconRect, record.insectType.GetInsectTypeTexture());
             TooltipHandler.TipRegion(curPawnKindIconRect, ("VFEI_" + record.insectType.ToString() + "Desc").Translate());
             curPawnKindIconRect = new Rect(curPawnKindIconRect.xMax + 5, labelRect.y, 32, 32).ContractedBy(3);
@@ -90,7 +90,7 @@ namespace VFEInsectoids
             if (Widgets.ButtonInvisible(curPawnKindIconRect))
             {
                 var dialog = new Dialog_ChooseColor("VFEI_ChooseInsectoidColor".Translate
-                    (compHive.currentPawnKindToSpawn.label), compHive.insectColor, AllColors, delegate (Color x)
+                    (compHive.chosenKind.label), compHive.insectColor, AllColors, delegate (Color x)
                     {
                         compHive.insectColor = x;
                     });
@@ -116,7 +116,7 @@ namespace VFEInsectoids
         {
             floatList.Add(new FloatMenuOption(pawnkind.LabelCap, delegate
             {
-                if (compHive.currentPawnKindToSpawn != pawnkind)
+                if (compHive.chosenKind != pawnkind)
                 {
                     compHive.ChangePawnKind(pawnkind);
                 }
