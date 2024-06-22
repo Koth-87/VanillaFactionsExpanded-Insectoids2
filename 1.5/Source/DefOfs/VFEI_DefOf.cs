@@ -43,5 +43,9 @@ namespace VFEInsectoids
         public static IncidentDef VFEI_RoamingInsectoids;
         public static ThingDef VFEI2_LargeGlowPod, VFEI2_GlowPodFormation, VFEI2_FoamPod, VFEI2_TendrilFarm,
             VFEI2_Creeper, VFEI2_JellyFarm, VFEI2_LargeTunnelHiveSpawner;
+        public static ResearchProjectDef VFEI2_StandardHivetech, VFEI2_ExoticHivetech;
+        public static ColorDef Structure_BrownSubtle;
+        public static ThingDef VFEI2_InsectoidCocoonSpecific;
+        public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
     }
 }

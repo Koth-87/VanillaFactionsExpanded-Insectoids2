@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 
 namespace VFEInsectoids
@@ -8,6 +9,10 @@ namespace VFEInsectoids
     [StaticConstructorOnStartup]
     public static class Utils
     {
+        private static readonly Texture2D DefenderIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Defender");
+        private static readonly Texture2D HunterIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Hunter");
+        private static readonly Texture2D WorkerIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Worker");
+
         static Utils()
         {
             VFEI_DefOf.VFEI_RoamingInsectoids.mtbDaysByBiome = new List<MTBByBiome>();
@@ -20,6 +25,33 @@ namespace VFEInsectoids
                 });
             }
         }
+
+        public static Texture2D GetInsectTypeTexture(this InsectType insectType)
+        {
+            switch (insectType)
+            {
+                case InsectType.Hunter: return HunterIcon;
+                case InsectType.Defender: return DefenderIcon;
+                case InsectType.Worker: return WorkerIcon;
+                default: return null;
+            }
+        }
+        public static HediffDef GetInsectTypeHediff(this InsectType insectType)
+        {
+            switch (insectType)
+            {
+                case InsectType.Hunter: return VFEI_DefOf.VFEI_HunterInsectType;
+                case InsectType.Defender: return VFEI_DefOf.VFEI_DefenderInsectType;
+                case InsectType.Worker: return VFEI_DefOf.VFEI_WorkerInsectType;
+                default: return null;
+            }
+        }
+
+        public static bool IsColonyInsect(this Pawn pawn)
+        {
+            return pawn.health.hediffSet.GetFirstHediff<Hediff_InsectType>() != null;
+        }
+
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
         {
             return source

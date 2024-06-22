@@ -6,6 +6,11 @@ using Verse.Sound;
 
 namespace VFEInsectoids
 {
+    public class CocoonSpecific : ThingWithComps
+    {
+
+    }
+
     public class Cocoon : ThingWithComps
     {
         private bool once = true;

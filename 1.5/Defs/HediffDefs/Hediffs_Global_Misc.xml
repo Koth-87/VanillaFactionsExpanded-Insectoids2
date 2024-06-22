@@ -181,4 +181,33 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef Name="VFEI_InsectTypeBase" Abstract="True">
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<description>An insectoid type.</description>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="VFEI_InsectTypeBase">
+		<defName>VFEI_WorkerInsectType</defName>
+		<label>worker type</label>
+		<hediffClass>VFEInsectoids.Hediff_InsectWorker</hediffClass>
+	</HediffDef>
+	
+	<HediffDef ParentName="VFEI_InsectTypeBase">
+		<defName>VFEI_HunterInsectType</defName>
+		<label>hunter type</label>
+		<hediffClass>VFEInsectoids.Hediff_InsectHunter</hediffClass>
+	</HediffDef>
+	
+	<HediffDef ParentName="VFEI_InsectTypeBase">
+		<defName>VFEI_DefenderInsectType</defName>
+		<label>defender type</label>
+		<hediffClass>VFEInsectoids.Hediff_InsectDefender</hediffClass>
+	</HediffDef>
 </Defs>

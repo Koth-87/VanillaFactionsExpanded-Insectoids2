@@ -1184,7 +1184,7 @@
     </comps>
   </ThingDef>
   
-  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase" Name="VFEI2_InsectoidCocoon">
     <defName>VFEI2_InsectoidCocoon</defName>
     <label>insectoid cocoon</label>
     <description>These jelly cocoons keep swarmlings safe from fire, extreme temperatures, and other threats while they undergo a metamorphosis process. After some time has passed, the cocoon will burst, releasing a fully grown insectoid.</description>
@@ -1211,6 +1211,12 @@
       <deconstructible>false</deconstructible>
     </building>
   </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_InsectoidCocoon">
+    <defName>VFEI2_InsectoidCocoonSpecific</defName>
+    <thingClass>VFEInsectoids.CocoonSpecific</thingClass>
+  </ThingDef>
+
   
   <!-- Artificial hives -->
   
@@ -1248,19 +1254,19 @@
         <canWakeUpFogged>false</canWakeUpFogged>
       </li>
       <li Class="CompProperties_WakeUpDormant" />
-      <li Class="CompProperties_SpawnerPawn">
-        <spawnablePawnKinds>
-          <li>Megaspider</li>
-        </spawnablePawnKinds>
-        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+	  <li Class="VFEInsectoids.CompProperties_Hive">
+		<insectTypes>
+			<li>
+				<insect>Megascarab</insect>
+				<insectType>Worker</insectType>
+			</li>
+		</insectTypes>
+		<insectoidRespawnTime>120000</insectoidRespawnTime>
         <spawnSound>Hive_Spawn</spawnSound>
-        <initialPawnsPoints>200</initialPawnsPoints>
-        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
-      </li>
+	  </li>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>10</spawnCount>
@@ -1348,7 +1354,6 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
@@ -1445,7 +1450,6 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
@@ -1536,7 +1540,6 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
@@ -1627,7 +1630,6 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
@@ -1717,7 +1719,6 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> <!-- 60k ticks = 1 day, 10 hp per day -->
       </li>
-      <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>20</spawnCount>
