@@ -93,6 +93,10 @@ namespace VFEInsectoids
                     (compHive.chosenKind.label), compHive.insectColor, AllColors, delegate (Color x)
                     {
                         compHive.insectColor = x;
+                        foreach (var insect in compHive.insects)
+                        {
+                            insect.Drawer.renderer.SetAllGraphicsDirty();
+                        }
                     });
                 dialog.forcePause = true;
                 Find.WindowStack.Add(dialog);

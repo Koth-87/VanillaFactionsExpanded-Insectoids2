@@ -69,6 +69,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
+    <Compile Include="Harmony\ITab_Pawn_Training_IsVisible_Patch.cs" />
     <Compile Include="Hives\CocoonHive.cs" />
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompInsectJellySpawner.cs" />
@@ -86,7 +87,7 @@
     <Compile Include="Comps\CompInsectSpawner.cs" />
     <Compile Include="Harmony\GenConstruct_CanConstruct_Patch.cs" />
     <Compile Include="Harmony\MainTabWindow_Animals_Pawns_Patch.cs" />
-    <Compile Include="Harmony\PawnRenderNodeWorker_GetMaterialPropertyBlock_Patch.cs" />
+    <Compile Include="Harmony\PawnRenderNode_AnimalPart_GraphicFor_Patch.cs" />
     <Compile Include="Harmony\Pawn_Destroy_Patch.cs" />
     <Compile Include="Harmony\Pawn_TrainingTracker_TrainingTrackerTickRare_Patch.cs" />
     <Compile Include="Hives\CompHive.cs" />
