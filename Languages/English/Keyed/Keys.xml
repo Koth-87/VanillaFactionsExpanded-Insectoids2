@@ -25,4 +25,7 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_WorkerDesc>Worker insectoids are tasked with constructing and maintaining insectoid-specific structures, as well as performing essential hauling and mining duties.</VFEI_WorkerDesc>
 	<VFEI_InsectoidWillBeSpawnedIn>{0} will be spawned in: {1}</VFEI_InsectoidWillBeSpawnedIn>
 	<VFEI_SpawningStoppedMaxCapacity>Spawning stopped: maximum amount reached.</VFEI_SpawningStoppedMaxCapacity>
+	<VFEI_AlreadyActivated>already activated</VFEI_AlreadyActivated>
+	<VFEI_OnCooldown>will be available in {0}</VFEI_OnCooldown>
+	<VFEI_OtherThumperIsActive>other thumper is active</VFEI_OtherThumperIsActive>
 </LanguageData>

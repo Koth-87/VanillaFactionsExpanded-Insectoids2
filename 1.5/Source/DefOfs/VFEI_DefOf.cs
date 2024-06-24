@@ -50,5 +50,6 @@ namespace VFEInsectoids
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
         public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
         public static JobDef VFEI_InsectHunt;
+        public static SoundDef ThumpCannon_Fire;
     }
 }

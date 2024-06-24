@@ -72,6 +72,15 @@ namespace VFEInsectoids
                 .ToList();
         }
 
+        public static List<List<T>> Split<T>(this List<T> list, int parts)
+        {
+            int i = 0;
+            var splits = from item in list
+                         group item by i++ % parts into part
+                         select part.ToList();
+            return splits.ToList();
+        }
+
         public static bool IsInfestedTile(this int tile)
         {
             if (tile <= 0) return false;

@@ -15,7 +15,9 @@ namespace VFEInsectoids
 
         public static GameComponent_Insectoids Instance;
 
-        public static Faction HiveFaction => Faction.OfInsects;
+        public int lastInsectoidBossArrival;
+        public Thing thumperActivated;
+        public Dictionary<InsectWaveDef, int> lastWavesIndices = new Dictionary<InsectWaveDef, int>();
 
         public GameComponent_Insectoids()
         {
@@ -25,6 +27,30 @@ namespace VFEInsectoids
         public GameComponent_Insectoids(Game game)
         {
             Instance = this;
+        }
+
+        public InsectWave GetInsectWave(InsectWaveDef def)
+        {
+            if (!lastWavesIndices.TryGetValue(def, out int waveIndex))
+            {
+                lastWavesIndices[def] = waveIndex = 0;
+            }
+            else
+            {
+                waveIndex = lastWavesIndices[def] += 1;
+            }
+            if (waveIndex > def.waves.Count - 1)
+            {
+                if (waveIndex >= def.minWaveRepeatIndex)
+                {
+                    lastWavesIndices[def] = waveIndex = def.minWaveRepeatIndex;
+                }
+                else
+                {
+                    lastWavesIndices[def] = waveIndex = 0;
+                }
+            }
+            return def.waves[waveIndex];
         }
 
         private List<int> tmpTiles = new List<int>();
@@ -84,9 +110,13 @@ namespace VFEInsectoids
             base.ExposeData();
             Scribe_Collections.Look(ref insectTiles, "insectTiles", LookMode.Reference, LookMode.Deep, ref settlementsTmp, ref insectTerritoriesTmp);
             Scribe_Values.Look(ref insectTerritoryScale, "insectTerritoryScale", 1f);
+            Scribe_Values.Look(ref lastInsectoidBossArrival, "lastInsectoidBossArrival");
+            Scribe_Collections.Look(ref lastWavesIndices, "lastWavesIndices", LookMode.Def, LookMode.Value);
+            Scribe_Values.Look(ref thumperActivated, "thumperActivated");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insectTiles ??= new Dictionary<Settlement, InsectTerritory>();
+                lastWavesIndices ??= new Dictionary<InsectWaveDef, int>();
             }
         }
 

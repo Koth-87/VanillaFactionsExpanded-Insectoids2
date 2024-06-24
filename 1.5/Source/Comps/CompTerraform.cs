@@ -3,6 +3,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
+
     public class CompProperties_Terraform : CompProperties_AOE
     {
         public TerrainDef terrainToSet;

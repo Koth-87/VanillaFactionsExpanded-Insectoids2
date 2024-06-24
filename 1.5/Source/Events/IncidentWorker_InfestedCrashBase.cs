@@ -48,7 +48,7 @@ namespace VFEInsectoids
                 ref IntVec3 intVec, IntVec3 center, int count)
             {
                 Thing thing = ThingMaker.MakeThing(chunkDef);
-                var faction = GameComponent_Insectoids.HiveFaction;
+                var faction = Faction.OfInsects;
                 thing.SetFaction(faction);
                 GenSpawn.Spawn(SkyfallerMaker.MakeSkyfaller(ThingDefOf.ShipChunkIncoming, thing), intVec, map);
                 takenCells.AddRange(GenAdj.OccupiedRect(intVec, thing.def.defaultPlacingRot, thing.def.Size).ExpandedBy(3));

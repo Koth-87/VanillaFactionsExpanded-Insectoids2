@@ -43,51 +43,40 @@ namespace VFEInsectoids
                 new CurvePoint(10000f, 14)
             }.Evaluate(parms.points);
             parms.points *= PointsFactorCurve.Evaluate(parms.points);
-            Thing thing = SpawnTunnels(Mathf.Max(GenMath.RoundRandom(parms.points / 220f), 1), map, true,
-                additionalStructuresCount, null,  parms.infestationLocOverride);
+            Thing thing = SpawnTunnels(Mathf.Max(GenMath.RoundRandom(parms.points / 220f), 1), map, additionalStructuresCount);
             SendStandardLetter(parms, thing);
             Find.TickManager.slower.SignalForceNormalSpeedShort();
             return true;
         }
 
-        public static Thing SpawnTunnels(int hiveCount, Map map, bool ignoreRoofedRequirement,
-            int additionalStructuresCount, string questTag = null, IntVec3? overrideLoc = null, float? insectsPoints = null)
+        public static Thing SpawnTunnels(int hiveCount, Map map, int additionalStructuresCount)
         {
-            IntVec3 loc = (overrideLoc.HasValue ? overrideLoc.Value : default(IntVec3));
-            if (!overrideLoc.HasValue && RCellFinder.TryFindRandomPawnEntryCell(out loc, map, 0))
-            {
-            }
-            if (!loc.IsValid)
+            if (RCellFinder.TryFindRandomPawnEntryCell(out var loc, map, 0) && !loc.IsValid)
             {
                 return null;
             }
             var hives = new List<LargeTunnelHiveSpawner>();
+            Thing thing = SpawnTunnels(hiveCount, map, loc, hives);
+            SpawnHiveThings(additionalStructuresCount, hives);
+            return thing;
+        }
+
+        public static Thing SpawnTunnels(int hiveCount, Map map, IntVec3 loc, List<LargeTunnelHiveSpawner> hives)
+        {
             var tunnelHiveSpawner = (LargeTunnelHiveSpawner)ThingMaker.MakeThing(VFEI_DefOf.VFEI2_LargeTunnelHiveSpawner);
             hives.Add(tunnelHiveSpawner);
             Thing thing = GenSpawn.Spawn(tunnelHiveSpawner, loc, map, WipeMode.FullRefund);
-
-            if (insectsPoints.HasValue)
-            {
-                tunnelHiveSpawner.insectsPoints = insectsPoints.Value;
-            }
-            QuestUtility.AddQuestTag(thing, questTag);
             for (int i = 0; i < hiveCount - 1; i++)
             {
-                loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, ThingDefOf.Hive, 
-                    ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), ignoreRoofedRequirement, allowUnreachable: true);
+                loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, ThingDefOf.Hive,
+                    ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), true, allowUnreachable: true);
                 if (loc.IsValid)
                 {
                     tunnelHiveSpawner = (LargeTunnelHiveSpawner)ThingMaker.MakeThing(VFEI_DefOf.VFEI2_LargeTunnelHiveSpawner);
                     hives.Add(tunnelHiveSpawner);
                     thing = GenSpawn.Spawn(tunnelHiveSpawner, loc, map, WipeMode.FullRefund);
-                    if (insectsPoints.HasValue)
-                    {
-                        tunnelHiveSpawner.insectsPoints = insectsPoints.Value;
-                    }
-                    QuestUtility.AddQuestTag(thing, questTag);
                 }
             }
-            SpawnHiveThings(additionalStructuresCount, hives);
             return thing;
         }
 
