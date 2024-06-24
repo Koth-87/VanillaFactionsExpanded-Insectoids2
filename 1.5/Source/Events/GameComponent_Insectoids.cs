@@ -112,7 +112,7 @@ namespace VFEInsectoids
             Scribe_Values.Look(ref insectTerritoryScale, "insectTerritoryScale", 1f);
             Scribe_Values.Look(ref lastInsectoidBossArrival, "lastInsectoidBossArrival");
             Scribe_Collections.Look(ref lastWavesIndices, "lastWavesIndices", LookMode.Def, LookMode.Value);
-            Scribe_Values.Look(ref thumperActivated, "thumperActivated");
+            Scribe_References.Look(ref thumperActivated, "thumperActivated");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insectTiles ??= new Dictionary<Settlement, InsectTerritory>();
