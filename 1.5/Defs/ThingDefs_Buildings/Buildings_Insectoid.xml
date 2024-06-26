@@ -217,6 +217,7 @@
         <volume>(0.3, 0.6, 0.3)</volume>
         <offset>(0,0,-0.1)</offset>
       </shadowData>
+	  <drawSize>1.5</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
@@ -322,7 +323,7 @@
         <volume>(2.3, 2.6, 2.3)</volume>
         <offset>(0,0,-0.1)</offset>
       </shadowData>
-	  <drawSize>(3, 3)</drawSize>
+	  <drawSize>(4, 4)</drawSize>
       <damageData>
         <rect>(2.2,2.2,2.6,2.6)</rect>
       </damageData>
@@ -505,7 +506,7 @@
         <volume>(0.3, 0.6, 0.3)</volume>
         <offset>(0,0,-0.1)</offset>
       </shadowData>
-	  <drawSize>(2, 2)</drawSize>
+	  <drawSize>(1.5, 1.5)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
