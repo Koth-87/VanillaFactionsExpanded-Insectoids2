@@ -14,10 +14,6 @@ namespace VFEInsectoids
             {
                 __result = false;
             }
-            if (__result)
-            {
-                Log.Message(map + " is defeated");
-            }
         }
     }
 
