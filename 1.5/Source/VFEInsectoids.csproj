@@ -71,6 +71,8 @@
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Comps\CompThumper.cs" />
     <Compile Include="Harmony\ITab_Pawn_Training_IsVisible_Patch.cs" />
+    <Compile Include="Harmony\SettlementDefeatUtility_IsDefeated_Patch.cs" />
+    <Compile Include="Harmony\TileFinder_RandomSettlementTileFor_Patch.cs" />
     <Compile Include="Hives\CocoonHive.cs" />
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompInsectJellySpawner.cs" />
