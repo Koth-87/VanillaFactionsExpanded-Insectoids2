@@ -5,7 +5,7 @@
     <defName>VFEI2_InsectoidSettlement</defName>
     <settlementSize>220,220</settlementSize>
     <centerBuildings>
-      <centerSize>220,220</centerSize>
+      <centerSize>65,65</centerSize>
       <allowedStructures>
         <li>
           <count>10~20</count>
