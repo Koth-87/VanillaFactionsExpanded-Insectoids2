@@ -86,5 +86,16 @@
 		</value>
 	</Operation>
 
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/FactionDef[defName="Insect"]</xpath>
+    <value>
+      <li Class="KCSG.CustomGenOption">
+        <chooseFromSettlements>
+          <li>VFEI2_InsectoidSettlement</li>
+        </chooseFromSettlements>
+        <preventBridgeable>true</preventBridgeable>
+      </li>
+    </value>
+  </Operation>
 
 </Patch>
