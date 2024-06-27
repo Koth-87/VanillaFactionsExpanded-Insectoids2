@@ -10,12 +10,14 @@ namespace VFEInsectoids
     {
         public static void Postfix(WorldObject o)
         {
-            if (o is Settlement settlement && settlement.Faction == Faction.OfInsects)
+            if (o is Settlement settlement)
             {
-                GameComponent_Insectoids.Instance.AddInsectHive(settlement);
-                Find.World.renderer.SetDirty<WorldLayer_Insects>();
+                if (settlement.Faction?.def == FactionDefOf.Insect)
+                {
+                    GameComponent_Insectoids.Instance.AddInsectHive(settlement);
+                    Find.World.renderer.SetDirty<WorldLayer_Insects>();
+                }
             }
         }
     }
-
 }

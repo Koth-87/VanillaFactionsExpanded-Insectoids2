@@ -253,11 +253,11 @@ namespace VFEInsectoids
             var num = 0;
             foreach (var cell in cells)
             {
-                if (cell.DistanceTo(curCell) <= 3)
+                if (cell.DistanceTo(curCell) <= 2)
                 {
                     num++;
                 }
-                if (num >= 2)
+                if (num >= 3)
                 {
                     return true;
                 }
