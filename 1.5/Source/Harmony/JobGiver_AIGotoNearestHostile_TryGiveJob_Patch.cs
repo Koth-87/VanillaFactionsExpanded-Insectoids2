@@ -43,7 +43,7 @@ namespace VFEInsectoids
                                     {
                                         if (Verb_CastAbilityJumpUnrestricted.CheckCanHitTargetFrom(pawn, pawn.Position, target, verb.EffectiveRange) 
                                             && verb.OutOfRange(pawn.Position, target, CellRect.SingleCell(target)) is false
-                                            && target.WalkableBy(pawn.Map, pawn))
+                                            && target.WalkableBy(pawn.Map, pawn) && verb.ValidateTarget(target, false))
                                         {
                                             thingWithTarget = (thing2, target);
                                             break;

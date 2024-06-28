@@ -81,6 +81,10 @@ namespace VFEInsectoids
             {
                 return false;
             }
+            if (target.Cell.Roofed(caster.Map))
+            {
+                return false;
+            }
             if (!ReloadableUtility.CanUseConsideringQueuedJobs(CasterPawn, EquipmentSource))
             {
                 return false;
