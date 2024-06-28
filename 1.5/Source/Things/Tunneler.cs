@@ -17,13 +17,23 @@ namespace VFEInsectoids
         private int filthCounter = 0;
         private System.Random random = new System.Random();
         private static List<Thing> tmpThings = new List<Thing>();
+        private Sustainer sustainer;
 
         public override void Tick()
         {
             base.Tick();
             if (Spawned)
             {
-               
+                if (this.sustainer == null)
+                {
+
+                    this.CreateSustainer();
+                }
+                if (!this.sustainer.Ended)
+                {
+                    this.sustainer.Maintain();
+
+                }
 
                 tickCounter++;
                 if (tickCounter > 30)
@@ -46,6 +56,16 @@ namespace VFEInsectoids
                 }
             }
 
+        }
+
+        private void CreateSustainer()
+        {
+            LongEventHandler.ExecuteWhenFinished(delegate
+            {
+                SoundDef rumbling = VFEI_DefOf.VFEI2_Rumbling;
+                this.sustainer = rumbling.TrySpawnSustainer(SoundInfo.InMap(this, MaintenanceType.PerTick));
+
+            });
         }
 
         private void RandomFilthGenerator()

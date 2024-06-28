@@ -234,14 +234,14 @@
 
 	<AbilityDef>
 		<defName>VFEI2_WideTunnels</defName>
-		<label>wide tunnels</label>
+		<label>breacher charge</label>
 		<aiCanUse>false</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<hostile>true</hostile>
-		<description>Charges towards a target.</description>
-		<iconPath>UI/Abilities/VFE_InsectFlyLong</iconPath>
+		<description>Insectoid charges towards the target, dealing significant damage to anything on the path. Will destroy any sort of defenses with ease.</description>
+		<iconPath>UI/Abilities/VFE_BreacherCharge</iconPath>
 		<cooldownTicksRange>300</cooldownTicksRange>
 		<verbProperties>
 			<verbClass>VFEInsectoids.Verb_CastAbilityWideTunnels</verbClass>

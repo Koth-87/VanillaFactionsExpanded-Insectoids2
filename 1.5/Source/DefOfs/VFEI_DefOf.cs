@@ -21,6 +21,7 @@ namespace VFEInsectoids
         public static PawnKindDef VFEI2_Megapede;
 
         public static SoundDef Hive_Spawn;
+        public static SoundDef VFEI2_Rumbling;
 
         public static ThingDef VFEI2_InsectoidCocoon;
         public static ThingDef Filth_RubbleRock;
