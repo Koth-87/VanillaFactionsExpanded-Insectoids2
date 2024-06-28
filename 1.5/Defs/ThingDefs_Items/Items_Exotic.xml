@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<ThingDef ParentName="ResourceBase" Name="VFEI2_PherocoreBase" Abstract="True">
 		<graphicData>
@@ -46,8 +46,15 @@
 				<listOrder>1000</listOrder>
 				<overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
 			</li>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Use {0_label} to increase the size of the hive</useLabel>
+				<useDuration>0</useDuration>
+				<showUseGizmo>true</showUseGizmo>
+			</li>
 		</comps>
 	</ThingDef>
+	
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreSorne</defName>
 		<label>sorne pherocore</label>
@@ -66,7 +73,16 @@
 				</li>
 			</outcomeDoers>
 		</ingestible>
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_TargetableHive">
+				<hive>VFEI2_ArtificialSorneHive</hive>
+			</li>
+			<li>
+				<compClass>VFEInsectoids.CompTargetEffect_UpgradeHive</compClass>
+			</li>
+		</comps>
 	</ThingDef>
+
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreNuchadus</defName>
 		<label>nuchadus pherocore</label>

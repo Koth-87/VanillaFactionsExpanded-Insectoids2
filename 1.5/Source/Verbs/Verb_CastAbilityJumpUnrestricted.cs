@@ -3,6 +3,7 @@ using RimWorld;
 using RimWorld.Utility;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace VFEInsectoids
 {
@@ -56,7 +57,18 @@ namespace VFEInsectoids
 
         public override void OrderForceTarget(LocalTargetInfo target)
         {
-            JumpUtility.OrderJump(CasterPawn, target, this, EffectiveRange);
+            OrderJump(CasterPawn, target, this, EffectiveRange);
+        }
+
+        public static void OrderJump(Pawn pawn, LocalTargetInfo target, Verb verb, float range)
+        {
+            Map map = pawn.Map;
+            Job job = JobMaker.MakeJob(JobDefOf.CastJump, target.Cell);
+            job.verbToUse = verb;
+            if (pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc))
+            {
+                FleckMaker.Static(target.Cell, map, FleckDefOf.FeedbackGoto);
+            }
         }
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)

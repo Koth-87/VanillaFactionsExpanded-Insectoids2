@@ -64,15 +64,6 @@
       </subNodes>
     </thinkNode>
   </DutyDef>
-
-  <JobDef>
-    <defName>VFEI_InsectHunt</defName>
-    <driverClass>VFEInsectoids.JobDriver_InsectHunt</driverClass>
-    <reportString>hunting TargetA.</reportString>
-    <suspendable>false</suspendable>
-    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    <checkOverrideOnDamage>OnlyIfInstigatorNotJobTarget</checkOverrideOnDamage>
-  </JobDef>
   
   <DutyDef>
     <defName>VFEI_Hunter</defName>

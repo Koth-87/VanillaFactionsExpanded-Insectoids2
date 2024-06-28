@@ -102,9 +102,9 @@ namespace VFEInsectoids
                 Find.WindowStack.Add(dialog);
             }
 
-            Rect rect2 = new Rect(rect.x + 5, labelRect.yMax + 5, rect.width, rect.height - labelRect.height).ContractedBy(3f);
             Text.Anchor = TextAnchor.UpperLeft;
-            DrawInsectBlocks(rect2);
+            Rect rect2 = new Rect(rect.x + 7, labelRect.yMax - 5, rect.width - 14, rect.height - labelRect.height + 5);
+            DrawInsectBlocks(rect2.ContractedBy(3));
             return new GizmoResult(GizmoState.Clear);
         }
 
@@ -138,28 +138,41 @@ namespace VFEInsectoids
         {
             var totalBandwidth = compHive.InsectCapacity;
             var usedBandwidth = compHive.insects.Count;
-            var blocksUsed = Mathf.Max(usedBandwidth, totalBandwidth);
-            var blockWidth = 26;
-            var pos = new Vector2(rect.x, rect.y);
-            var curBlock = 0;
-            for (int i = 0; i < blocksUsed; i++)
+            int maxBlocks = Mathf.Max(usedBandwidth, totalBandwidth);
+            int row = 1;
+            float blockSize = rect.height;
+            int blocksPerWidth = (int)(rect.width / blockSize);
+            while (row * blocksPerWidth < maxBlocks)
             {
-                curBlock++;
-                Rect rect5 = new Rect(pos.x, pos.y, blockWidth, blockWidth).ContractedBy(2f);
-                pos.x += blockWidth + 5;
-                if (curBlock <= blocksUsed)
+                if (blockSize > 26)
                 {
-                    if (curBlock <= usedBandwidth)
+                    blockSize *= 0.99f;
+                }
+                else
+                {
+                    row++;
+                    blockSize = (int)(rect.height / (float)row);
+                }
+                blocksPerWidth = (int)(rect.width / blockSize);
+            }
+            int column = (int)(rect.width / blockSize);
+            int curBlock = 0;
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    curBlock++;
+                    Rect rect5 = new Rect(rect.x + (float)(j * blockSize), (rect.y + (float)(i * blockSize)), blockSize, blockSize).ContractedBy(2f);
+                    if (curBlock <= maxBlocks)
                     {
-                        Widgets.DrawRectFast(rect5, (curBlock <= totalBandwidth) ? FilledBlockColor : ExcessBlockColor);
-                        if (Widgets.ButtonInvisible(rect5))
+                        if (curBlock <= usedBandwidth)
                         {
-                            CameraJumper.TryJumpAndSelect(compHive.insects[i]);
+                            Widgets.DrawRectFast(rect5, (curBlock <= totalBandwidth) ? FilledBlockColor : ExcessBlockColor);
                         }
-                    }
-                    else
-                    {
-                        Widgets.DrawRectFast(rect5, EmptyBlockColor);
+                        else
+                        {
+                            Widgets.DrawRectFast(rect5, EmptyBlockColor);
+                        }
                     }
                 }
             }

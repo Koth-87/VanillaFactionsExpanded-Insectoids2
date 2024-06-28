@@ -49,7 +49,8 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_InsectoidCocoonHive;
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
         public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
-        public static JobDef VFEI_InsectHunt;
+        public static JobDef VFEI_InsectHunt, VFEI_UpgradeHive;
         public static SoundDef ThumpCannon_Fire;
+
     }
 }

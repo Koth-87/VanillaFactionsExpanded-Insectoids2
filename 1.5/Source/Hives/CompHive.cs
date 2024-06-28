@@ -30,12 +30,14 @@ namespace VFEInsectoids
     {
         public CompProperties_Hive Props => base.props as CompProperties_Hive;
 
+        public const int MaxInsectCapacity = 24;
         public Lord lord;
 
         public Color insectColor;
 
         public List<Pawn> insects = new List<Pawn>();
 
+        public int additionalCapacity;
         public int InsectCapacity
         {
             get
@@ -49,7 +51,7 @@ namespace VFEInsectoids
                 {
                     baseValue += 2;
                 }
-                return baseValue;
+                return Mathf.Min(baseValue + additionalCapacity, MaxInsectCapacity);
             }
         }
 
@@ -245,6 +247,8 @@ namespace VFEInsectoids
             Scribe_Values.Look(ref insectColor, "insectColor");
             Scribe_Collections.Look(ref insects, "insects", LookMode.Reference);
             Scribe_References.Look(ref lord, "lord");
+            Scribe_Values.Look(ref additionalCapacity, "additionalCapacity");
+
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insects ??= new List<Pawn>();
