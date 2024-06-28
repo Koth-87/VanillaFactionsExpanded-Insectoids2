@@ -4,7 +4,7 @@
   <PawnKindDef ParentName="BasePlayerPawnKind">
     <defName>VFE_Mercenary</defName>
     <label>mercenary</label>
-    <defaultFactionType>VFE_PlayerOutpost</defaultFactionType>
+    <defaultFactionType>VFEI2_PlayerOutpost</defaultFactionType>
     <chemicalAddictionChance>0.08</chemicalAddictionChance>
     <gearHealthRange>1~1</gearHealthRange>
     <apparelTags>
