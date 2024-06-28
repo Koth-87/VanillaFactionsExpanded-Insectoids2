@@ -53,7 +53,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4104">
     </PackageReference>
     <PackageReference Include="Lib.Harmony" Version="2.3.*">
       <ExcludeAssets>runtime</ExcludeAssets>
@@ -131,6 +131,7 @@
     <Compile Include="Hives\LordJob_PlayerHive.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediff.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_IncreaseSpawnHediffs.cs" />
+    <Compile Include="Things\Tunneler.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Events\GameComponent_Insectoids.cs" />
     <Compile Include="Harmony\Faction_HasGoodwill_Patch.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Harmony\WITab_Terrain_FillTab_Patch.cs" />
     <Compile Include="PawnRenderNodes\PawnRenderNode_Unarmored.cs" />
     <Compile Include="Verbs\Verb_CastAbilityJumpUnrestricted.cs" />
+    <Compile Include="Verbs\Verb_CastAbilityWideTunnels.cs" />
     <Compile Include="WorldLayers\WorldLayer_Insects.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Add_Patch.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Remove_Patch.cs" />

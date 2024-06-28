@@ -230,4 +230,41 @@
 			<minRange>5.9</minRange>
 		</verbProperties>
 	</AbilityDef>
+	
+	
+
+	<AbilityDef>
+		<defName>VFEI2_WideTunnels</defName>
+		<label>wide tunnels</label>
+		<aiCanUse>false</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<hostile>true</hostile>
+		<description>Charges towards a target.</description>
+		<iconPath>UI/Abilities/VFE_InsectFlyLong</iconPath>
+		<cooldownTicksRange>300</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>VFEInsectoids.Verb_CastAbilityWideTunnels</verbClass>
+			<violent>true</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<requireLineOfSight>false</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+			<label>wide tunnels</label>
+			<warmupTime>0.1</warmupTime>
+			<range>18.9</range>
+			<minRange>0.9</minRange>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+	</AbilityDef>
+	
+	
+	
+	
 </Defs>

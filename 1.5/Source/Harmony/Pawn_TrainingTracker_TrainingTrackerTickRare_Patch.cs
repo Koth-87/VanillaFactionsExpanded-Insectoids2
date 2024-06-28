@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using Verse;
+using System;
 
 namespace VFEInsectoids
 {
@@ -12,7 +13,7 @@ namespace VFEInsectoids
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
-            var shouldSkip = AccessTools.Method(typeof(Utils), "IsColonyInsect", [typeof(Pawn)]);
+            var shouldSkip = AccessTools.Method(typeof(Utils), "IsColonyInsect", new Type[] { typeof(Pawn) });
             var pawnField = AccessTools.Field(typeof(Pawn_TrainingTracker), "pawn");
             var animalTypeField = AccessTools.Field(typeof(RaceProperties), "animalType");
 
