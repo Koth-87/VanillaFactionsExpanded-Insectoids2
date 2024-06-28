@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>VFE_Mercenary</defName>
+    <label>mercenary</label>
+    <defaultFactionType>VFE_PlayerOutpost</defaultFactionType>
+    <chemicalAddictionChance>0.08</chemicalAddictionChance>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+    </apparelTags>
+    <weaponTags>
+      <li>GunHeavy</li>
+      <li>Flamethrower</li>
+	  <li>SpacerGun</li>
+    </weaponTags>
+    <apparelMoney>2500~3500</apparelMoney>
+    <weaponMoney>750~2600</weaponMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <backstoryCryptosleepCommonality>0.4</backstoryCryptosleepCommonality>
+    <techHediffsMoney>1000~1200</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <inventoryOptions>
+      <skipChance>0.25</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>4</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>6~12</range>
+      </li>
+    </skills>
+    <techHediffsChance>0.15</techHediffsChance>
+    <initialResistanceRange>13~21</initialResistanceRange>
+  </PawnKindDef>
+
+</Defs>
