@@ -38,7 +38,6 @@ namespace VFEInsectoids
             if (list.Any())
             {
                 LordMaker.MakeNewLord(Faction.OfInsects, new LordJob_AssaultColony(Faction.OfInsects, canKidnap: true, canTimeoutOrFlee: false), map, list);
-                Log.Message("Spawned: " + list.Select(x => x.def.label).ToStringSafeEnumerable());
             }
             var thumpers = loc.GetThingList(map).Where(x => x.TryGetComp<CompThumper>() != null).ToList();
             thumpers.ForEach(x => x.Destroy(DestroyMode.KillFinalizeLeavingsOnly));

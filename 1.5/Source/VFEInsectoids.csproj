@@ -145,6 +145,7 @@
     <Compile Include="DefOfs\VFEI_DefOf.cs" />
     <Compile Include="Harmony\WITab_Terrain_FillTab_Patch.cs" />
     <Compile Include="PawnRenderNodes\PawnRenderNode_Unarmored.cs" />
+    <Compile Include="Harmony\JobGiver_AIGotoNearestHostile_TryGiveJob_Patch.cs" />
     <Compile Include="Verbs\Verb_CastAbilityJumpUnrestricted.cs" />
     <Compile Include="Verbs\Verb_CastAbilityWideTunnels.cs" />
     <Compile Include="WorldLayers\WorldLayer_Insects.cs" />

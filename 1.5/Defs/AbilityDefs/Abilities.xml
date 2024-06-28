@@ -173,7 +173,6 @@
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<hostile>false</hostile>
-		<aiCanUse>true</aiCanUse>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>VFEInsectoids.Verb_CastAbilityJumpUnrestricted</verbClass>
