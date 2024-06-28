@@ -24,6 +24,7 @@ namespace VFEInsectoids
 
         public static ThingDef VFEI2_InsectoidCocoon;
         public static ThingDef Filth_RubbleRock;
+        public static ThingDef VFEI2_Tunneler;
 
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;
@@ -36,6 +37,8 @@ namespace VFEInsectoids
         public static PawnRenderTreeDef VFEI2_Unarmored;
 
         public static DamageDef VFEI2_AcidSpit;
+
+        public static RulePackDef VFEI2_DamageEvent_Crushing;
 
         public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, 
             VFEI_InfestedMeteorIncoming;
