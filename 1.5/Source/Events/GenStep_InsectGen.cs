@@ -1,5 +1,6 @@
 ﻿using KCSG;
 using RimWorld.BaseGen;
+using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System.Collections.Generic;
 using Verse;
@@ -15,10 +16,12 @@ namespace VFEInsectoids
         {
             BaseGen.globalSettings.map = map;
             var rect = CellRect.WholeMap(map);
+            var site = map.Parent as Site;
             var rp = new ResolveParams
             {
                 faction = map.ParentFaction,
-                rect = rect
+                rect = rect,
+                settlementPawnGroupPoints = site.ActualThreatPoints,
             };
             GenOption.settlementLayout = layoutDef;
             GenOption.GetAllMineableIn(rect, map);

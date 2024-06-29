@@ -76,10 +76,13 @@
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />
     <Compile Include="Comps\CompThumper.cs" />
+    <Compile Include="Events\QuestNode_CreateInsectSettlement.cs" />
+    <Compile Include="Events\QuestPart_CreateInsectSettlement.cs" />
     <Compile Include="Events\GenStep_InsectGen.cs" />
     <Compile Include="Events\QuestNode_GetSitePart.cs" />
     <Compile Include="Events\SitePartWorker_InsectHive.cs" />
     <Compile Include="Harmony\Site_ShouldRemoveMapNow_Patch.cs" />
+    <Compile Include="Harmony\TimedDetectionRaids_StartDetectionCountdown_Patch.cs" />
     <Compile Include="Hives\JobDriver_UpgradeHive.cs" />
     <Compile Include="Harmony\ITab_Pawn_Training_IsVisible_Patch.cs" />
     <Compile Include="Harmony\SettlementDefeatUtility_IsDefeated_Patch.cs" />

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using System.Linq;
 using Verse;
 
@@ -49,6 +50,19 @@ namespace VFEInsectoids
         {
             nextPawnSpawnTick = -1;
             SpawnPawnsUntilPoints(Props.maxSpawnedPawnsPoints);
+        }
+
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            if (previousMap.Parent is Site)
+            {
+                if (previousMap.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial).Any(x => x.HasComp<CompInsectSpawner>()) is false)
+                {
+                    QuestUtility.SendQuestTargetSignals(previousMap.Parent.questTags, "AllHivesAreDestroyed", parent.Named("SUBJECT"));
+                }
+            }
         }
 
         [HarmonyPatch(typeof(Thing), "Destroy")]

@@ -1,41 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <KCSG.SettlementLayoutDef Name="VFEI_LayoutInsectoidHiveBase">
-    <defName>VFEI2_InsectoidSettlementRatingOne</defName>
-    <settlementSize>220,220</settlementSize>
-    <centerBuildings>
-      <centerSize>65,65</centerSize>
-      <allowedStructures>
-        <li>
-          <count>8</count>
-          <tag>VFEI2_InsectoidFormation</tag>
-        </li>
-      </allowedStructures>
-    </centerBuildings>
-    <roadOptions>
-      <addLinkRoad>false</addLinkRoad>
-    </roadOptions>
-    <defenseOptions>
-      <addEdgeDefense>false</addEdgeDefense>
-      <addSandbags>false</addSandbags>
-      <addTurrets>false</addTurrets>
-      <addMortars>false</addMortars>
-      <pawnGroupMultiplier>1.0</pawnGroupMultiplier>
-    </defenseOptions>
-  </KCSG.SettlementLayoutDef>
-  
+	<KCSG.SettlementLayoutDef Name="VFEI_LayoutInsectoidHiveBase">
+		<defName>VFEI2_InsectoidSettlementRatingOne</defName>
+		<settlementSize>220,220</settlementSize>
+		<centerBuildings>
+			<centerSize>65,65</centerSize>
+			<allowedStructures>
+				<li>
+					<count>8</count>
+					<tag>VFEI2_InsectoidFormation</tag>
+				</li>
+			</allowedStructures>
+		</centerBuildings>
+		<roadOptions>
+			<addLinkRoad>false</addLinkRoad>
+		</roadOptions>
+		<defenseOptions>
+			<addEdgeDefense>false</addEdgeDefense>
+			<addSandbags>false</addSandbags>
+			<addTurrets>false</addTurrets>
+			<addMortars>false</addMortars>
+			<pawnGroupMultiplier>1.0</pawnGroupMultiplier>
+		</defenseOptions>
+	</KCSG.SettlementLayoutDef>
+
 	<SitePartDef Name="VFEI_InsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingOne</defName>
 		<label>insectoid hive</label>
 		<description>An insectoid hive.</description>
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
 		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
 		<tags>
 			<li>VFEI_InsectoidHive</li>
 		</tags>
 	</SitePartDef>
-	
+
 	<GenStepDef Name="VFEI_GenInsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingOne</defName>
 		<linkWithSite>VFEI_InsectoidHiveRatingOne</linkWithSite>
@@ -45,22 +46,22 @@
 		</genStep>
 	</GenStepDef>
 
-  <KCSG.SettlementLayoutDef ParentName="VFEI_LayoutInsectoidHiveBase">
-    <defName>VFEI2_InsectoidSettlementRatingTwo</defName>
-    <centerBuildings>
-      <allowedStructures Inherit="False">
-        <li>
-          <count>12</count>
-          <tag>VFEI2_InsectoidFormation</tag>
-        </li>
-      </allowedStructures>
-    </centerBuildings>
-  </KCSG.SettlementLayoutDef>
-  
+	<KCSG.SettlementLayoutDef ParentName="VFEI_LayoutInsectoidHiveBase">
+		<defName>VFEI2_InsectoidSettlementRatingTwo</defName>
+		<centerBuildings>
+			<allowedStructures Inherit="False">
+				<li>
+					<count>12</count>
+					<tag>VFEI2_InsectoidFormation</tag>
+				</li>
+			</allowedStructures>
+		</centerBuildings>
+	</KCSG.SettlementLayoutDef>
+
 	<SitePartDef ParenName="VFEI_InsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingTwo</defName>
 	</SitePartDef>
-	
+
 	<GenStepDef ParentName="VFEI_GenInsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingTwo</defName>
 		<linkWithSite>VFEI_InsectoidHiveRatingTwo</linkWithSite>
@@ -69,22 +70,22 @@
 		</genStep>
 	</GenStepDef>
 
-  <KCSG.SettlementLayoutDef ParentName="VFEI_LayoutInsectoidHiveBase">
-    <defName>VFEI2_InsectoidSettlementRatingThree</defName>
-    <centerBuildings>
-      <allowedStructures Inherit="False">
-        <li>
-          <count>16</count>
-          <tag>VFEI2_InsectoidFormation</tag>
-        </li>
-      </allowedStructures>
-    </centerBuildings>
-  </KCSG.SettlementLayoutDef>
-  
+	<KCSG.SettlementLayoutDef ParentName="VFEI_LayoutInsectoidHiveBase">
+		<defName>VFEI2_InsectoidSettlementRatingThree</defName>
+		<centerBuildings>
+			<allowedStructures Inherit="False">
+				<li>
+					<count>16</count>
+					<tag>VFEI2_InsectoidFormation</tag>
+				</li>
+			</allowedStructures>
+		</centerBuildings>
+	</KCSG.SettlementLayoutDef>
+
 	<SitePartDef ParenName="VFEI_InsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingThree</defName>
 	</SitePartDef>
-	
+
 	<GenStepDef ParentName="VFEI_GenInsectoidHiveBase">
 		<defName>VFEI_InsectoidHiveRatingThree</defName>
 		<linkWithSite>VFEI_InsectoidHiveRatingThree</linkWithSite>
@@ -92,13 +93,29 @@
 			<layoutDef>VFEI2_InsectoidSettlementRatingThree</layoutDef>
 		</genStep>
 	</GenStepDef>
-	
+
+	<QuestScriptDef>
+		<defName>VFEI2_Util_GenerateSite</defName>
+		<root Class="QuestNode_GenerateSite">
+			<sitePartsParams>$sitePartsParams</sitePartsParams>
+			<hiddenSitePartsPossible>$hiddenSitePartsPossible</hiddenSitePartsPossible>
+			<storeAs>site</storeAs>
+			<faction>$siteFaction</faction>
+			<tile>$siteTile</tile>
+			<singleSitePartRules>
+				<rulesStrings>
+					<li>root->there are (*Threat)[count] insectoid hives(/Threat)</li>
+				</rulesStrings>
+			</singleSitePartRules>
+		</root>
+	</QuestScriptDef>
+
 	<QuestScriptDef>
 		<defName>VFEI2_OpportunitySite_InsectoidHive</defName>
 		<rootSelectionWeight>1.0</rootSelectionWeight>
 		<rootMinPoints>350</rootMinPoints>
 		<canGiveRoyalFavor>true</canGiveRoyalFavor>
-		<expireDaysRange>6~12</expireDaysRange>
+		<expireDaysRange>0.0012</expireDaysRange>
 		<questNameRules>
 			<rulesStrings>
 				<li>questName->The [insectoid] [hive]</li>
@@ -183,7 +200,7 @@
 				</li>
 
 				<li Class="QuestNode_SubScript">
-					<def>Util_GenerateSite</def>
+					<def>VFEI2_Util_GenerateSite</def>
 				</li>
 
 				<li Class="QuestNode_SpawnWorldObjects">
@@ -198,6 +215,7 @@
 					<destroyOnCleanup>true</destroyOnCleanup>
 					<node Class="QuestNode_Sequence">
 						<nodes>
+							<li Class="VFEInsectoids.QuestNode_CreateInsectSettlement"/>
 							<li Class="QuestNode_Letter">
 								<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
 								<text TKey="LetterTextQuestExpired">The insectoid hive has established a new colony. The quest [resolvedQuestName] has expired.</text>
@@ -210,7 +228,25 @@
 				</li>
 
 				<li Class="QuestNode_Signal">
-					<inSignal>site.AllEnemiesDefeated</inSignal>
+					<inSignal>site.InfestationHasSpread</inSignal>
+					<signalListenMode>Always</signalListenMode>
+					<node Class="QuestNode_Sequence">
+						<nodes>
+							<li Class="QuestNode_Letter">
+								<label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
+								<text TKey="LetterTextQuestFailed">The insectoid hive has spread. The quest [resolvedQuestName] has ended.</text>
+							</li>
+							<li Class="VFEInsectoids.QuestNode_CreateInsectSettlement"/>
+
+							<li Class="QuestNode_End">
+								<outcome>Fail</outcome>
+							</li>
+						</nodes>
+					</node>
+				</li>
+				
+				<li Class="QuestNode_Signal">
+					<inSignal>site.AllHivesAreDestroyed</inSignal>
 					<node Class="QuestNode_Sequence">
 						<nodes>
 							<li Class="QuestNode_Notify_PlayerRaidedSomeone">
@@ -233,12 +269,11 @@
 									<chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
 								</nodeIfChosenPawnSignalUsed>
 							</li>
+							<li Class="QuestNode_End">
+								<outcome>Success</outcome>
+							</li>
 						</nodes>
 					</node>
-				</li>
-				<li Class="QuestNode_End">
-					<inSignal>site.AllEnemiesDefeated</inSignal>
-					<outcome>Success</outcome>
 				</li>
 			</nodes>
 		</root>

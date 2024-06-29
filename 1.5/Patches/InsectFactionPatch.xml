@@ -35,8 +35,8 @@
       </value>
    </Operation>
    
-   <Operation Class="PatchOperationReplace">
-      <xpath>Defs/FactionDef[defName="Insect"]/raidCommonalityFromPointsCurve</xpath>
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/FactionDef[defName="Insect"]</xpath>
       <value>
          <pawnGroupMakers>
             <li>
