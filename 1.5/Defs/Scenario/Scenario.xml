@@ -9,7 +9,7 @@
 			<!--<spaceAround>10</spaceAround>-->
 			<allowedStructures>
 				<li>
-					<count>10</count>
+					<count>6</count>
 					<tag>VFEI2_InsectoidFormation</tag>
 				</li>
 			</allowedStructures>
