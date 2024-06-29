@@ -25,7 +25,7 @@
 		</defenseOptions>
 	</KCSG.SettlementLayoutDef>
 
-	<SitePartDef Name="VFEI_InsectoidHiveBase">
+	<SitePartDef>
 		<defName>VFEI_InsectoidHiveRatingOne</defName>
 		<label>insectoid hive</label>
 		<description>An insectoid hive.</description>
@@ -58,8 +58,16 @@
 		</centerBuildings>
 	</KCSG.SettlementLayoutDef>
 
-	<SitePartDef ParenName="VFEI_InsectoidHiveBase">
+	<SitePartDef>
 		<defName>VFEI_InsectoidHiveRatingTwo</defName>
+		<label>insectoid hive</label>
+		<description>An insectoid hive.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
+		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
+		<tags>
+			<li>VFEI_InsectoidHive</li>
+		</tags>
 	</SitePartDef>
 
 	<GenStepDef ParentName="VFEI_GenInsectoidHiveBase">
@@ -82,8 +90,16 @@
 		</centerBuildings>
 	</KCSG.SettlementLayoutDef>
 
-	<SitePartDef ParenName="VFEI_InsectoidHiveBase">
+	<SitePartDef>
 		<defName>VFEI_InsectoidHiveRatingThree</defName>
+		<label>insectoid hive</label>
+		<description>An insectoid hive.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
+		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
+		<tags>
+			<li>VFEI_InsectoidHive</li>
+		</tags>
 	</SitePartDef>
 
 	<GenStepDef ParentName="VFEI_GenInsectoidHiveBase">
@@ -115,7 +131,7 @@
 		<rootSelectionWeight>1.0</rootSelectionWeight>
 		<rootMinPoints>350</rootMinPoints>
 		<canGiveRoyalFavor>true</canGiveRoyalFavor>
-		<expireDaysRange>0.0012</expireDaysRange>
+		<expireDaysRange>12</expireDaysRange>
 		<questNameRules>
 			<rulesStrings>
 				<li>questName->The [insectoid] [hive]</li>
@@ -220,24 +236,6 @@
 								<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
 								<text TKey="LetterTextQuestExpired">The insectoid hive has established a new colony. The quest [resolvedQuestName] has expired.</text>
 							</li>
-							<li Class="QuestNode_End">
-								<outcome>Fail</outcome>
-							</li>
-						</nodes>
-					</node>
-				</li>
-
-				<li Class="QuestNode_Signal">
-					<inSignal>site.InfestationHasSpread</inSignal>
-					<signalListenMode>Always</signalListenMode>
-					<node Class="QuestNode_Sequence">
-						<nodes>
-							<li Class="QuestNode_Letter">
-								<label TKey="LetterLabelQuestFailed">Quest failed: [resolvedQuestName]</label>
-								<text TKey="LetterTextQuestFailed">The insectoid hive has spread. The quest [resolvedQuestName] has ended.</text>
-							</li>
-							<li Class="VFEInsectoids.QuestNode_CreateInsectSettlement"/>
-
 							<li Class="QuestNode_End">
 								<outcome>Fail</outcome>
 							</li>

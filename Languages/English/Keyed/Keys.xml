@@ -30,4 +30,6 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_OtherThumperIsActive>other thumper is active</VFEI_OtherThumperIsActive>
 	<VFEI_PherocoreCanBeUsedOnHive>{0} can only be used on an {1}.</VFEI_PherocoreCanBeUsedOnHive>
 	<VFEI_HiveCannotBeUpgradedMore>Cannot upgrade: reached maximum size of the {0}.</VFEI_HiveCannotBeUpgradedMore>
+	<VFEI_InfestationHasSpread>Quest failed: {0}</VFEI_InfestationHasSpread>
+	<VFEI_InfestationHasSpreadDesc>The insectoid hive has spread. The quest {0} has ended.</VFEI_InfestationHasSpreadDesc>
 </LanguageData>

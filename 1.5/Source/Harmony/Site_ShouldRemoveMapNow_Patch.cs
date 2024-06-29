@@ -20,9 +20,7 @@ namespace VFEInsectoids
                 {
                     if (part.def.Worker is SitePartWorker_InsectHive)
                     {
-                        if (__instance.Map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect 
-                            && x.HostileTo(Faction.OfPlayer) && !x.Dead && !x.Destroyed).Any()
-                            || __instance.Map.listerThings.AllThings.Any(x => x is Hive))
+                        if (__instance.Map.listerThings.AllThings.Any(x => x is Hive))
                         {
                             List<Quest> quests = Find.QuestManager.QuestsListForReading;
                             for (var j = 0; j < quests.Count; j++)
@@ -34,14 +32,12 @@ namespace VFEInsectoids
                                     {
                                         if (worldTimeout.State == QuestPartState.Disabled)
                                         {
-                                            Log.Message("TEst 2");
-                                            worldTimeout.Enable(new SignalArgs("TEST"));
+                                            worldTimeout.Enable(new SignalArgs("wtfIshouldSentIt"));
                                         }
                                     }
                                 }
                             }
                             __result = alsoRemoveWorldObject = false;
-                            Log.Message("TEst");
                             return;
                         }
                     }
