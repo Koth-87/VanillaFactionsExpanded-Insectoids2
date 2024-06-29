@@ -138,5 +138,13 @@
          </li>
       </value>
    </Operation>
+   
+   <Operation Class="PatchOperationAdd">
+      <xpath>Defs/FactionDef[defName="Insect"]</xpath>
+      <value>
+        <settlementNameMaker>VFE_NamerFactionInsectoidHives</settlementNameMaker>
+      </value>
+   </Operation>
+   
 </Patch>
 
