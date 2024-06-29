@@ -7,6 +7,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using static HarmonyLib.Code;
 
 
 namespace VFEInsectoids
@@ -18,12 +19,19 @@ namespace VFEInsectoids
         private System.Random random = new System.Random();
         private static List<Thing> tmpThings = new List<Thing>();
         private Sustainer sustainer;
+        private Effecter effecter;
 
         public override void Tick()
         {
             base.Tick();
             if (Spawned)
             {
+                if (effecter == null)
+                {
+                    effecter = VFEI_DefOf.Berserk.SpawnAttached(this,Map);
+                }
+                effecter?.EffectTick(this, this);
+
                 if (this.sustainer == null)
                 {
 
@@ -56,6 +64,18 @@ namespace VFEInsectoids
                 }
             }
 
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.Destroy(mode);
+            sustainer.End();
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            base.DeSpawn(mode);
+            sustainer.End();
         }
 
         private void CreateSustainer()

@@ -10,12 +10,12 @@
 		<ai_IsIncendiary>true</ai_IsIncendiary>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_FireSpew_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>9.9</range>
 			<warmupTime>1.6</warmupTime>
-			<soundCast>FireSpew_Resolve</soundCast>
+			<soundCast>VFEI2_FireSpew_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
@@ -38,12 +38,12 @@
 		<iconPath>UI/Abilities/VFE_InsectAcidSpit</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
-		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_AcidSpray_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>11.9</range>
 			<warmupTime>1</warmupTime>
-			<soundCast>AcidSpray_Resolve</soundCast>
+			<soundCast>VFEI2_AcidSpray_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
@@ -63,12 +63,12 @@
 		<iconPath>UI/Abilities/VFE_InsectAcidSpew</iconPath>
 		<cooldownTicksRange>1200</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
-		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_AcidSpray_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>15.9</range>
 			<warmupTime>1.5</warmupTime>
-			<soundCast>AcidSpray_Resolve</soundCast>
+			<soundCast>VFEI2_AcidSpray_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
@@ -88,13 +88,13 @@
 		<iconPath>UI/Abilities/VFE_InsectLargeAcidSpew</iconPath>
 		<cooldownTicksRange>600</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
-		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_AcidSpray_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>16.9</range>
 			<minRange>3.9</minRange>
 			<warmupTime>1</warmupTime>
-			<soundCast>AcidSpray_Resolve</soundCast>
+			<soundCast>VFEI2_AcidSpray_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 				<canTargetPawns>true</canTargetPawns>
@@ -121,12 +121,12 @@
 		<aiCanUse>true</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_FireSpew_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>12.9</range>
 			<warmupTime>2</warmupTime>
-			<soundCast>FireSpew_Resolve</soundCast>
+			<soundCast>VFEI2_FireSpew_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
@@ -151,12 +151,12 @@
 		<aiCanUse>true</aiCanUse>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<warmupStartSound>VFEI2_FireSpew_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>500</range>
 			<warmupTime>1.8</warmupTime>
-			<soundCast>FireSpew_Resolve</soundCast>
+			<soundCast>VFEI2_FireSpew_Resolve</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 				<canTargetPawns>true</canTargetPawns>
@@ -179,7 +179,7 @@
 			<violent>false</violent>
 			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 			<requireLineOfSight>false</requireLineOfSight>
-			<soundCast>Longjump_Jump</soundCast>
+			<soundCast>VFEI2_Insect_Jump</soundCast>
 			<soundLanding>Longjump_Land</soundLanding>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
@@ -248,7 +248,7 @@
 			<violent>true</violent>
 			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 			<requireLineOfSight>false</requireLineOfSight>
-			<soundCast>Longjump_Jump</soundCast>
+			<soundCast>VFEI2_Insect_Jump</soundCast>
 			<soundLanding>Longjump_Land</soundLanding>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
