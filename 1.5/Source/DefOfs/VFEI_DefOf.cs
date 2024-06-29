@@ -57,5 +57,6 @@ namespace VFEInsectoids
         public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
         public static JobDef VFEI_InsectHunt, VFEI_UpgradeHive;
         public static SoundDef ThumpCannon_Fire;
+        public static ThingDef VFEI_HellpodActiveDropPod, VFEI_HellpodIncoming;
     }
 }

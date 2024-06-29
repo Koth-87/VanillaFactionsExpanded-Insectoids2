@@ -23,9 +23,10 @@ namespace VFEInsectoids
             return true;
         }
 
+        public static InsectGenelineDef forcedSecondGeneline;
         public static List<Pawn> GenerateInsectPawns(PawnGroupMakerParms parms)
         {
-            var otherGeneline = DefDatabase<InsectGenelineDef>.AllDefsListForReading
+            var otherGeneline = forcedSecondGeneline ?? DefDatabase<InsectGenelineDef>.AllDefsListForReading
                 .Where(x => x != VFEI_DefOf.VFEI_Sorne).RandomElement();
             var points = parms.points;
             var sornePoints = parms.points * 0.7f;

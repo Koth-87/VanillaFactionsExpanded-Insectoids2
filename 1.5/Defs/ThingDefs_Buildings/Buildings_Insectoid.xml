@@ -1835,5 +1835,60 @@
       <groundSpawnerCompleteEffecter>EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
     </building>
   </ThingDef>
+
+  <ThingDef>
+    <defName>VFEI_HellpodActiveDropPod</defName>
+    <label>hellpod</label>
+    <category>Item</category>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <thingClass>ActiveDropPod</thingClass>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Skyfallers/Skyfaller_Hellpod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.9</drawSize>
+      <shadowData>
+        <volume>(0.8, 0.6, 0.8)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <selectable>true</selectable>
+    <drawOffscreen>true</drawOffscreen>
+  </ThingDef>
   
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VFEI_HellpodIncoming</defName>
+    <label>hellpod (incoming)</label>
+    <thingClass>VFEInsectoids.HellpodIncoming</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Skyfallers/Skyfaller_Hellpod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>ConstantSpeed</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>100</anticipationSoundTicks>
+      <explosionRadius>4.9</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+      <motesPerCell>1</motesPerCell>
+      <angleCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.98, 0)</li>
+        </points>
+      </angleCurve>
+    </skyfaller>
+  </ThingDef>
 </Defs>

@@ -2,9 +2,6 @@
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.Planet;
-using RimWorld.QuestGen;
-using System.Collections.Generic;
-using System.Linq;
 using Verse;
 using Verse.AI.Group;
 
@@ -17,9 +14,19 @@ namespace VFEInsectoids
 
         public override void Generate(Map map, GenStepParams parms)
         {
+            var site = map.Parent as Site;
+            Generate(map, layoutDef, site.ActualThreatPoints);
+        }
+
+        public static void Generate(Map map, SettlementLayoutDef layoutDef, float enemyPoints)
+        {
+            var oldFaction = map.Parent.Faction;
+            if (oldFaction != Faction.OfInsects)
+            {
+                map.Parent.SetFaction(Faction.OfInsects);
+            }
             BaseGen.globalSettings.map = map;
             var rect = CellRect.WholeMap(map);
-            var site = map.Parent as Site;
             var rp = new ResolveParams
             {
                 faction = map.ParentFaction,
@@ -28,14 +35,19 @@ namespace VFEInsectoids
             GenOption.settlementLayout = layoutDef;
             GenOption.GetAllMineableIn(rect, map);
             SettlementGenUtils.Generate(rp, map, layoutDef);
-            AddHostilePawnGroup(Faction.OfInsects, map, rp, PawnGroupKindDefOf.Combat, site.ActualThreatPoints);
+            AddHostilePawnGroup(Faction.OfInsects, map, rp, PawnGroupKindDefOf.Combat, enemyPoints, layoutDef);
             if (map.mapPawns.FreeColonistsSpawned.Count > 0)
             {
                 FloodFillerFog.DebugRefogMap(map);
             }
+            if (oldFaction != Faction.OfInsects)
+            {
+                map.Parent.SetFaction(oldFaction);
+            }
         }
 
-        private void AddHostilePawnGroup(Faction faction, Map map, ResolveParams parms, PawnGroupKindDef pawnGroup, float points)
+        public static void AddHostilePawnGroup(Faction faction, Map map, ResolveParams parms, 
+            PawnGroupKindDef pawnGroup, float points, SettlementLayoutDef layoutDef)
         {
             Lord singlePawnLord = LordMaker.MakeNewLord(faction, new LordJob_DefendAndExpandHive
             {
@@ -57,6 +69,7 @@ namespace VFEInsectoids
                 seed = parms.settlementPawnGroupSeed
             };
             BaseGen.symbolStack.Push("pawnGroup", rp, null);
+
         }
     }
 }
