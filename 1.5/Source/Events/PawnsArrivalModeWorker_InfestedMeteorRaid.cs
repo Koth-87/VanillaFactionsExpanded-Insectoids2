@@ -15,7 +15,6 @@ namespace VFEInsectoids
             int numberOfMeteor = (int)(Mathf.Max(1, parms.points / 1000f));
             var takenCells = new HashSet<IntVec3>();
             var chunkDef = VFEI_DefOf.VFEI_InfestedMeteorIncoming;
-            var insectsTotal = new List<Pawn>();
             Lord lord = LordMaker.MakeNewLord(parms.faction, new LordJob_AssaultColony(parms.faction, false, false, false, false, false), map);
             var groups = pawns.ChunkBy(numberOfMeteor);
             var intVec = IncidentWorker_InfestedCrashBase.FindDropPodLocation(map, CanPlaceAt);

@@ -31,6 +31,7 @@
 		<description>An insectoid hive.</description>
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
 		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
+		<wantsThreatPoints>true</wantsThreatPoints>
 		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
 		<tags>
 			<li>VFEI_InsectoidHive</li>
@@ -65,6 +66,7 @@
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
 		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
 		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
+		<wantsThreatPoints>true</wantsThreatPoints>
 		<tags>
 			<li>VFEI_InsectoidHive</li>
 		</tags>
@@ -97,6 +99,7 @@
 		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
 		<workerClass>VFEInsectoids.SitePartWorker_InsectHive</workerClass>
 		<expandingIconTexture>UI/EmergingHive</expandingIconTexture>
+		<wantsThreatPoints>true</wantsThreatPoints>
 		<tags>
 			<li>VFEI_InsectoidHive</li>
 		</tags>

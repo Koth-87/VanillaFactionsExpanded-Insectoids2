@@ -2,6 +2,7 @@
 using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.Grammar;
 
@@ -19,7 +20,13 @@ namespace VFEInsectoids
             base.Notify_GeneratedByQuestGen(part, slate, outExtraDescriptionRules, outExtraDescriptionConstants);
             string count = GetInsectoidCount(slate.Get<int>("challengeRating")).ToString();
             outExtraDescriptionRules.Add(new Rule_String("count", count));
-            Log.Message("count: " + count);
+        }
+
+        public override SitePartParams GenerateDefaultParams(float myThreatPoints, int tile, Faction faction)
+        {
+            SitePartParams sitePartParams = base.GenerateDefaultParams(myThreatPoints, tile, faction);
+            sitePartParams.threatPoints = Mathf.Max(sitePartParams.threatPoints, faction.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Settlement));
+            return sitePartParams;
         }
 
         public int GetInsectoidCount(int rating)
