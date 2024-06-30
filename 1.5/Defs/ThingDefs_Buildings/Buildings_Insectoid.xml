@@ -371,12 +371,13 @@
     <label>staticpod</label>
     <description>A medium-sized hive structure capable of generating small amounts of electricity, produced by giant insects. Needs to be constructed on the creep and connected via conduits to batteries.</description>
     <graphicData>
-      <texPath>Things/Building/GlowPodLarge</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Staticpod/Staticpod</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
         <offset>(0,0,-0.1)</offset>
       </shadowData>
+	  <drawSize>(2, 2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
