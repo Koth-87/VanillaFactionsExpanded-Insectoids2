@@ -21,7 +21,7 @@ namespace VFEInsectoids
             }
 
             PawnGroupKindWorker_GeneratePawns_Patch.forcedSecondGeneline = VFEI_DefOf.VFEI_Sorne;
-            GenStep_InsectGen.Generate(map, layoutDef, 800);
+            GenStep_InsectGen.Generate(map, layoutDef, 250);
             RimWorld.BaseGen.BaseGen.Generate();
             PawnGroupKindWorker_GeneratePawns_Patch.forcedSecondGeneline = null;
 
