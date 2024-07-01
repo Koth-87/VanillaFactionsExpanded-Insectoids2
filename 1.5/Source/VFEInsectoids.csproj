@@ -73,6 +73,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
+    <Compile Include="Building\StaticPod.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />
     <Compile Include="Comps\CompThumper.cs" />

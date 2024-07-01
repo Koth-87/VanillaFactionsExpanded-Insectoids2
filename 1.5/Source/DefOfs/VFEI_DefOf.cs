@@ -41,6 +41,8 @@ namespace VFEInsectoids
 
         public static RulePackDef VFEI2_DamageEvent_Crushing;
 
+        public static FleckDef BlastEMP;
+
         public static EffecterDef Berserk;
 
         public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, 
