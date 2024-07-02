@@ -26,6 +26,11 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_InsectoidCocoon;
         public static ThingDef Filth_RubbleRock;
         public static ThingDef VFEI2_Tunneler;
+        public static ThingDef VFEI2_PherocoreSorne;
+        public static ThingDef VFEI2_PherocoreKemian;
+        public static ThingDef VFEI2_PherocoreNuchadus;
+        public static ThingDef VFEI2_PherocoreChelis;
+        public static ThingDef VFEI2_PherocoreXanides;
 
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;
