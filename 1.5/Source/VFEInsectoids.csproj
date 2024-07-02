@@ -73,6 +73,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
+    <Compile Include="Building\StaticPod.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />
     <Compile Include="Comps\CompThumper.cs" />
@@ -144,6 +145,11 @@
     <Compile Include="Hives\LordJob_PlayerHive.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediff.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_IncreaseSpawnHediffs.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerChelisPherocore.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerKemianPherocore.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerNuchadusPherocore.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerSornePherocore.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerXanidesPherocore.cs" />
     <Compile Include="Things\Tunneler.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Events\GameComponent_Insectoids.cs" />

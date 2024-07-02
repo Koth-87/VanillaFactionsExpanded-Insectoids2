@@ -23,29 +23,9 @@
 		<tradeTags>
 			<li>VFEI2_Pherocore</li>
 		</tradeTags>
-		<ingestible>
-			<preferability>NeverForNutrition</preferability>
-			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-			<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
-			<drugCategory>Hard</drugCategory>
-			<foodType>Processed, Fluid</foodType>
-			<baseIngestTicks>80</baseIngestTicks>
-			<ingestSound>Ingest_Inject</ingestSound>
-			<ingestHoldOffsetStanding>
-				<northDefault>
-					<offset>(0.18,0,0)</offset>
-				</northDefault>
-			</ingestHoldOffsetStanding>
-			<ingestCommandString>Inject {0}</ingestCommandString>
-			<ingestReportString>Injecting {0}.</ingestReportString>
-			<useEatingSpeedStat>false</useEatingSpeedStat>
-			<chairSearchRadius>0</chairSearchRadius>
-		</ingestible>
+		
 		<comps>
-			<li Class="CompProperties_Drug">
-				<listOrder>1000</listOrder>
-				<overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
-			</li>
+			
 			<li Class="CompProperties_Usable">
 				<useJob>UseItem</useJob>
 				<useLabel>Use {0_label} to increase the size of the hive</useLabel>
@@ -65,14 +45,7 @@
 		<statBases>
 			<MarketValue>500</MarketValue>
 		</statBases>
-		<ingestible>
-			<outcomeDoers>
-				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>VFEI2_EmpressSpawn</hediffDef>
-					<severity>0.01</severity>
-				</li>
-			</outcomeDoers>
-		</ingestible>
+		
 		<comps>
 			<li Class="VFEInsectoids.CompProperties_TargetableHive">
 				<hive>VFEI2_ArtificialSorneHive</hive>
@@ -93,14 +66,7 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		<ingestible>
-			<outcomeDoers>
-				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>VFEI2_TitantickSpawn</hediffDef>
-					<severity>0.01</severity>
-				</li>
-			</outcomeDoers>
-		</ingestible>
+		
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreChelis</defName>
@@ -112,14 +78,7 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		<ingestible>
-			<outcomeDoers>
-				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>VFEI2_TeramantisSpawn</hediffDef>
-					<severity>0.01</severity>
-				</li>
-			</outcomeDoers>
-		</ingestible>
+		
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreKemian</defName>
@@ -131,14 +90,7 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		<ingestible>
-			<outcomeDoers>
-				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>VFEI2_GigamiteSpawn</hediffDef>
-					<severity>0.01</severity>
-				</li>
-			</outcomeDoers>
-		</ingestible>
+		
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreXanides</defName>
@@ -150,13 +102,6 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		<ingestible>
-			<outcomeDoers>
-				<li Class="VFEInsectoids.IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>VFEI2_SilverfishSpawn</hediffDef>
-					<severity>0.01</severity>
-				</li>
-			</outcomeDoers>
-		</ingestible>
+		
 	</ThingDef>
 </Defs>

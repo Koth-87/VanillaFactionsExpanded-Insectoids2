@@ -382,7 +382,7 @@
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
     </graphicData>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEInsectoids.StaticPod</thingClass>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
