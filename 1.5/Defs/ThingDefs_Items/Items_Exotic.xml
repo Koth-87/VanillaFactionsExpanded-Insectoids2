@@ -45,7 +45,6 @@
 		<statBases>
 			<MarketValue>500</MarketValue>
 		</statBases>
-		
 		<comps>
 			<li Class="VFEInsectoids.CompProperties_TargetableHive">
 				<hive>VFEI2_ArtificialSorneHive</hive>
@@ -66,8 +65,16 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_TargetableHive">
+				<hive>VFEI2_ArtificialNuchadusHive</hive>
+			</li>
+			<li>
+				<compClass>VFEInsectoids.CompTargetEffect_UpgradeHive</compClass>
+			</li>
+		</comps>
 	</ThingDef>
+	
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreChelis</defName>
 		<label>Chelis pherocore</label>
@@ -78,7 +85,14 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_TargetableHive">
+				<hive>VFEI2_ArtificialChelisHive</hive>
+			</li>
+			<li>
+				<compClass>VFEInsectoids.CompTargetEffect_UpgradeHive</compClass>
+			</li>
+		</comps>
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreKemian</defName>
@@ -90,7 +104,14 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_TargetableHive">
+				<hive>VFEI2_ArtificialKemianHive</hive>
+			</li>
+			<li>
+				<compClass>VFEInsectoids.CompTargetEffect_UpgradeHive</compClass>
+			</li>
+		</comps>
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_PherocoreBase">
 		<defName>VFEI2_PherocoreXanides</defName>
@@ -102,6 +123,13 @@
 		<statBases>
 			<MarketValue>1000</MarketValue>
 		</statBases>
-		
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_TargetableHive">
+				<hive>VFEI2_ArtificialXanidesHive</hive>
+			</li>
+			<li>
+				<compClass>VFEInsectoids.CompTargetEffect_UpgradeHive</compClass>
+			</li>
+		</comps>
 	</ThingDef>
 </Defs>

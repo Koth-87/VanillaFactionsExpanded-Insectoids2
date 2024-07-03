@@ -140,7 +140,7 @@ namespace VFEInsectoids
             var usedBandwidth = compHive.insects.Count;
             int maxBlocks = Mathf.Max(usedBandwidth, totalBandwidth);
             int row = 1;
-            float blockSize = rect.height;
+            float blockSize = 35;
             int blocksPerWidth = (int)(rect.width / blockSize);
             while (row * blocksPerWidth < maxBlocks)
             {
