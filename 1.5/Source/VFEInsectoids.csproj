@@ -74,9 +74,11 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\CompFueledSpawner.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />
     <Compile Include="Comps\CompThumper.cs" />
+    <Compile Include="Comps\Properties\CompProperties_FueledSpawner.cs" />
     <Compile Include="Events\HellpodIncoming.cs" />
     <Compile Include="Events\QuestNode_CreateInsectSettlement.cs" />
     <Compile Include="Events\QuestPart_CreateInsectSettlement.cs" />
