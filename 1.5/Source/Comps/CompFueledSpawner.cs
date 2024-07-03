@@ -13,7 +13,15 @@ namespace VFEInsectoids
 
         private bool Fueled => parent.GetComp<CompRefuelable>()?.HasFuel ?? false;
 
-       
+        public override void CompTick()
+        {
+            TickInterval(1);
+        }
+
+        public override void CompTickRare()
+        {
+            TickInterval(250);
+        }
 
         private new void TickInterval(int interval)
         {
