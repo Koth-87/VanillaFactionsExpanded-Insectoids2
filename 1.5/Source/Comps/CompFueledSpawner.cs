@@ -41,7 +41,7 @@ namespace VFEInsectoids
             {
                 return;
             }
-            if (!PropsSpawner.requiresFuel || Fueled)
+            if ((!PropsSpawner.requiresFuel || Fueled)&& (!PropsSpawner.requiresPower || PowerOn))
             {
                 ticksUntilSpawn -= interval;
                 CheckShouldSpawn();
