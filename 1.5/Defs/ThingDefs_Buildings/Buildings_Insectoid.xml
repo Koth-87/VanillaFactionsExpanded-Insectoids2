@@ -1329,7 +1329,7 @@
 	</modExtensions>
   </ThingDef>
   
-  <ThingDef ParentName="VFEI2_BuildingBase">
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialSorneHive</defName>
     <label>artificial sorne hive</label>
     <description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly.</description>
