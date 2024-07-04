@@ -6,7 +6,19 @@
 		<li>1.5</li>
 	</supportedVersions>
 	<packageId>OskarPotocki.VFE.Insectoid2</packageId>
-	<description>Todo</description>
+	<description>Dive into the "Vanilla Factions Expanded - Insectoids 2" mod and experience a thrilling expansion of the insectoid universe in the game. Here’s what you can look forward to:
+
+Summon and Battle New Bosses: Get ready to face off against new and formidable insectoid bosses. Research and build thumpers to summon these bosses and test your combat skills!
+
+Build and Manage Your Hive: Ever wanted to run your own insectoid hive? Now you can! Harvest resources, breed new types of insectoids, and create a bustling hub of activity.
+
+New Structures and Defenses: From unique walls that only your insectoids can build to defensive structures that protect your colony, this mod introduces a variety of innovative constructions to enhance your gameplay.
+
+Dynamic Combat Challenges: Prepare for unexpected raids and battles. The mod changes how insectoid attacks unfold, making each encounter a unique challenge.
+
+Engaging Quests and World Events: Participate in new quests and world events that revolve around the insectoid infestation. Whether defending against a swarm or initiating one, there's never a dull moment.
+
+Research and Innovation: Unlock new technologies and discover the secrets of the insectoids through dedicated research projects, enhancing your gameplay and giving you the edge in survival.</description>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
 	<modDependencies>
 		<li>
