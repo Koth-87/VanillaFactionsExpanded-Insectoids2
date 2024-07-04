@@ -60,7 +60,7 @@
       <ComponentIndustrial>4</ComponentIndustrial>
     </costList>
     <researchPrerequisites>
-        <li>VFEI2_BasicHivetech</li>
+        <li>VFEI2_StandardHivetech</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">
