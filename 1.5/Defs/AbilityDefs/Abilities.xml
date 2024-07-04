@@ -242,7 +242,7 @@
 		<hostile>true</hostile>
 		<description>Insectoid charges towards the target, dealing significant damage to anything on the path. Will destroy any sort of defenses with ease.</description>
 		<iconPath>UI/Abilities/VFE_BreacherCharge</iconPath>
-		<cooldownTicksRange>300</cooldownTicksRange>
+		<cooldownTicksRange>14400</cooldownTicksRange>
 		<verbProperties>
 			<verbClass>VFEInsectoids.Verb_CastAbilityWideTunnels</verbClass>
 			<violent>true</violent>
