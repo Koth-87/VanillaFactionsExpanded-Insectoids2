@@ -21,6 +21,7 @@
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
 			<li>Electricity</li>
+			<li>VFEI2_BasicHivetech</li>
 		</prerequisites>
 		<researchViewX>8.00</researchViewX>
 		<researchViewY>5.65</researchViewY>
@@ -34,7 +35,7 @@
 		<baseCost>2000</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
-			<li>Electricity</li>
+			<li>VFEI2_StandardHivetech</li>
 		</prerequisites>
 		<researchViewX>8.00</researchViewX>
 		<researchViewY>6.20</researchViewY> 
