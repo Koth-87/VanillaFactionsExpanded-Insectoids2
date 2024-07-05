@@ -24,7 +24,6 @@
       <li>Heavy</li>
     </affordances>
 	<fertility>0.05</fertility>
-    <designationCategory>VFEI2_Insectoids</designationCategory>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <uiOrder>2020</uiOrder>
   </TerrainDef>

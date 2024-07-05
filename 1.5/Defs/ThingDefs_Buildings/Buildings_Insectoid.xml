@@ -170,7 +170,7 @@
         <li>VFEI2_ExoticHivetech</li>
     </researchPrerequisites>
 	<costList>
-	    <InsectJelly>4</InsectJelly>
+	    <VFEI2_RoyalInsectJelly>4</VFEI2_RoyalInsectJelly>
 	</costList>
     <killedLeavings>
       <InsectJelly>2</InsectJelly>
