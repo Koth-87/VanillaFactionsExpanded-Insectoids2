@@ -464,6 +464,7 @@
       <MarketValue>50</MarketValue>
 	  <WorkToBuild>1000</WorkToBuild>
     </statBases>
+	<specialDisplayRadius>9.9</specialDisplayRadius>
     <comps>
       <li Class="CompProperties_Glower">
         <glowRadius>3.48</glowRadius>
