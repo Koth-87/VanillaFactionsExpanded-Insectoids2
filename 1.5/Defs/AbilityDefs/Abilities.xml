@@ -263,7 +263,7 @@
 			<label>wide tunnels</label>
 			<warmupTime>0.1</warmupTime>
 			<range>18.9</range>
-			<minRange>0.9</minRange>
+			<minRange>1.9</minRange>
 		</verbProperties>
 		<jobDef>CastJump</jobDef>
 	</AbilityDef>
