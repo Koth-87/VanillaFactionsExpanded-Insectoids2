@@ -78,6 +78,20 @@ namespace VFEInsectoids
                 + " - creep: " + creepCount + " - non creep: " + nonCreepCount
                 + " - rate: " + (creepCount / (float)nonCreepCount));
             badCells.Clear();
+            Log.Message("Adding lords for insects");
+            foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null))
+            {
+                WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);
+            }
+
+            foreach (var lord in map.lordManager.lords.Where(x => x.LordJob is LordJob_DefendAndExpandHive))
+            {
+                var toils = lord.graph.lordToils.OfType<LordToil_DefendAndExpandHive>();
+                foreach (var toil in toils)
+                {
+                    toil.distToHiveToAttack = 30;
+                }
+            }
 
             IntVec3 GetSpawnPosition(HashSet<IntVec3> cells)
             {

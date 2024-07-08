@@ -33,7 +33,7 @@ namespace VFEInsectoids
                 }
                 DoNotChain = true;
                 var info = new TargetInfo(parent.Position, previousMap);
-                foreach (var thing in GenAdj.CellsAdjacent8Way(info).SelectMany(x => x.GetThingList(previousMap)
+                foreach (var thing in GenAdj.CellsAdjacent8Way(info).Where(x => x.InBounds(previousMap)).SelectMany(x => x.GetThingList(previousMap)
                     .Where(x => x != parent && x.def == parent.def)).ToList())
                 {
                     thing.Destroy(mode);

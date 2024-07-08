@@ -34,21 +34,9 @@ namespace VFEInsectoids
                             {
                                 Thing thing2 = (Thing)attackTarget;
                                 int num2 = thing2.Position.DistanceToSquared(pawn.Position);
-                                if ((float)num2 < num)
+                                if ((float)num2 < num && TryGetTargetCell(pawn, thing2, verb, out var result))
                                 {
-                                    var targets = GenSight.PointsOnLineOfSight(pawn.Position, thing2.Position)
-                                        .Where(x => x.GetRoom(pawn.Map) == thing2.GetRoom() 
-                                        && x.Roofed(pawn.Map) is false).Reverse().Skip(1);
-                                    foreach (var target in targets)
-                                    {
-                                        if (Verb_CastAbilityJumpUnrestricted.CheckCanHitTargetFrom(pawn, pawn.Position, target, verb.EffectiveRange) 
-                                            && verb.OutOfRange(pawn.Position, target, CellRect.SingleCell(target)) is false
-                                            && target.WalkableBy(pawn.Map, pawn) && verb.ValidateTarget(target, false))
-                                        {
-                                            thingWithTarget = (thing2, target);
-                                            break;
-                                        }
-                                    }
+                                    thingWithTarget = result;
                                     num = num2;
                                 }
                             }
@@ -62,6 +50,27 @@ namespace VFEInsectoids
                     }
                 }
             }
+        }
+
+        public static bool TryGetTargetCell(Pawn pawn, Thing thing2, Verb verb, out (Thing thing, IntVec3 cell) targetWithCell)
+        {
+            targetWithCell = default;
+            if (verb.OutOfRange(pawn.Position, thing2.Position, thing2.OccupiedRect()) is false)
+            {
+                var targets = GenAdj.CellsAdjacent8Way(thing2).Where(x => x != thing2.Position 
+                    && x.GetRoom(pawn.Map) == thing2.GetRoom()).Distinct().OrderBy(x => x.DistanceTo(pawn.Position));
+                foreach (var target in targets)
+                {
+                    if (Verb_CastAbilityJumpUnrestricted.CheckCanHitTargetFrom(pawn, pawn.Position, target, verb.EffectiveRange)
+                        && verb.OutOfRange(pawn.Position, target, CellRect.SingleCell(target)) is false
+                        && target.WalkableBy(pawn.Map, pawn) && verb.ValidateTarget(target, false))
+                    {
+                        targetWithCell = (thing2, target);
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

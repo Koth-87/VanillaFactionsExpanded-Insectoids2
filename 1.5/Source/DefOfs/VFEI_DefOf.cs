@@ -61,9 +61,10 @@ namespace VFEInsectoids
         public static ColorDef Structure_BrownSubtle;
         public static ThingDef VFEI2_InsectoidCocoonHive;
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
-        public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker;
+        public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker, VFEI_DefendAndExpandHive;
         public static JobDef VFEI_InsectHunt, VFEI_UpgradeHive;
         public static SoundDef ThumpCannon_Fire;
         public static ThingDef VFEI_HellpodActiveDropPod, VFEI_HellpodIncoming;
+
     }
 }

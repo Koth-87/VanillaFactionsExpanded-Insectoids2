@@ -188,6 +188,11 @@
 			</targetParams>
 		</verbProperties>
 		<jobDef>CastJump</jobDef>
+		<comps>
+			<li>
+				<compClass>VFEInsectoids.CompAbilityInsectGlide</compClass>
+			</li>
+		</comps>
 	</AbilityDef>
 	<AbilityDef ParentName="VFEI2_InsectGlide_Base">
 		<defName>VFEI2_InsectGlide_Short</defName>

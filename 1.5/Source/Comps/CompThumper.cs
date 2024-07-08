@@ -159,8 +159,9 @@ namespace VFEInsectoids
 
         private void MoveDown(float speed)
         {
+            var oldValue = topGraphicOffset;
             topGraphicOffset = Mathf.Max(topGraphicOffset - speed, 0);
-            if (topGraphicOffset <= 0)
+            if (topGraphicOffset <= 0 && oldValue > 0)
             {
                 isLowering = false;
                 FleckMaker.Static(parent.DrawPos, parent.Map, FleckDefOf.PsycastAreaEffect, 5f);

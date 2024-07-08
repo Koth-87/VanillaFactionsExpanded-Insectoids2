@@ -1,9 +1,11 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using Verse;
+using Verse.AI.Group;
 
 namespace VFEInsectoids
 {
@@ -13,6 +15,7 @@ namespace VFEInsectoids
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var allWildAnimals = AccessTools.PropertyGetter(typeof(BiomeDef), "AllWildAnimals");
+            var generatePawn = AccessTools.Method(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnKindDef), typeof(Faction) });
             foreach (var instruction in instructions)
             {
                 yield return instruction;
@@ -21,6 +24,12 @@ namespace VFEInsectoids
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Call,
                         AccessTools.Method(typeof(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch), "TryOverrideWildAnimals"));
+                }
+                else if (instruction.Calls(generatePawn))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    yield return new CodeInstruction(OpCodes.Call,
+                        AccessTools.Method(typeof(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch), "TryAddLordJob"));
                 }
             }
         }
@@ -32,6 +41,28 @@ namespace VFEInsectoids
                 return wildAnimals.Concat(VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind));
             }
             return wildAnimals;
+        }
+
+        public static Pawn TryAddLordJob(Pawn pawn, WildAnimalSpawner spawner)
+        {
+            var map = spawner?.map ?? pawn.Map;
+            if (map.IsInfested() && pawn.RaceProps.Insect)
+            {
+                var hive = map.listerThings.AllThings.OfType<Hive>().OrderBy(x => x.Position.DistanceTo(pawn.Position)).FirstOrDefault();
+                if (hive != null)
+                {
+                    pawn.SetFaction(hive.Faction);
+                    var comp = hive.GetComp<CompSpawnerPawn>();
+                    comp.spawnedPawns.Add(pawn);
+                    Lord lord = comp.Lord;
+                    if (lord == null)
+                    {
+                        lord = CompSpawnerPawn.CreateNewLord(comp.parent, true, 30, comp.Props.lordJob);
+                    }
+                    lord.AddPawn(pawn);
+                }
+            }
+            return pawn;
         }
     }
 }
