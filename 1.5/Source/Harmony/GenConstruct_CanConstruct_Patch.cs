@@ -24,9 +24,11 @@ namespace VFEInsectoids
                     {
                         return;
                     }
-                    else if (p.IsColonyInsect() is false && p.genes?.GenesListForReading.Any(x => x.def.defName == "VRE_Hiveglands") is false)
+                    else if (p.IsColonyInsect() is false
+                        && p.genes?.GenesListForReading.Any(x => x.def.defName == "VRE_Hiveglands") is false)
                     {
                         __result = false;
+
                     }
                 }
                 else if (p.IsColonyInsect())

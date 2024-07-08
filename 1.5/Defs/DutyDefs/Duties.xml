@@ -41,7 +41,7 @@
 		</li>
 			
         <li Class="ThinkNode_ChancePerHour_Constant">
-          <mtbHours>0.5</mtbHours>
+          <mtbHours>0.1</mtbHours>
           <subNodes>
             <li Class="VFEInsectoids.JobGiver_MaintainHives" />
           </subNodes>

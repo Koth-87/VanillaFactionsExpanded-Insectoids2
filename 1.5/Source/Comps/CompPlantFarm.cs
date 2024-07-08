@@ -20,7 +20,8 @@ namespace VFEInsectoids
         protected override bool CellValidator(IntVec3 cell)
         {
             return (Props.requiredTerrain is null || cell.GetTerrain(parent.Map) == Props.requiredTerrain)
-                                    && cell.GetThingList(parent.Map).OfType<Plant>().Any(thing => Props.plant == thing.def) is false;
+                && Props.plant.CanEverPlantAt(cell, parent.Map, true)
+                && cell.GetThingList(parent.Map).OfType<Plant>().Any(thing => Props.plant == thing.def) is false;
         }
 
         protected override void DoEffect(IntVec3 cell)

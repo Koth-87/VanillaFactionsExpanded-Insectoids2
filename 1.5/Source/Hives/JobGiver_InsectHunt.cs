@@ -9,7 +9,7 @@ namespace VFEInsectoids
         public override Job TryGiveJob(Pawn pawn)
         {
             var prey = FoodUtility.BestPawnToHuntForPredator(pawn, true);
-            if (prey != null)
+            if (prey != null && pawn.CanReserveAndReach(prey, PathEndMode.Touch, Danger.Deadly))
             {
                 return JobMaker.MakeJob(VFEI_DefOf.VFEI_InsectHunt, prey);
             }
