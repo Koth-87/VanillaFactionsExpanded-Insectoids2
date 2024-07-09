@@ -75,6 +75,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\Alert_InsectWaveIncoming.cs" />
     <Compile Include="Comps\CompFueledSpawner.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />

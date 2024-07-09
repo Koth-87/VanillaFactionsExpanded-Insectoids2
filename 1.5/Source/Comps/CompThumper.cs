@@ -48,6 +48,7 @@ namespace VFEInsectoids
         public float topGraphicOffset;
         public bool infestationSpawned;
         public bool isLowering;
+        public SoundDef soundThumping;
         public Graphic TopGraphic => _topGraphic ??= Props.topGraphic.Graphic;
 
         public CompProperties_Thumper Props => (CompProperties_Thumper)props;
@@ -156,7 +157,7 @@ namespace VFEInsectoids
 
             for (var i = 0; i < hives.Count; i++)
             {
-                var hive = hives[i]; 
+                var hive = hives[i];
                 hive.spawnHive = false;
                 hive.otherHives = hives.Where(x => x != hive).ToList();
                 hive.pawnsToSpawn = new List<PawnKindDef>();
@@ -169,12 +170,14 @@ namespace VFEInsectoids
                     }
                 }
             }
+
             var insectLeaderKind = wave.insects.First().kindDef;
             Find.LetterStack.ReceiveLetter("VFEI_LetterLabelInsectWaveArrived".Translate(
                 GenLabel.BestKindLabel(insectLeaderKind, Gender.None).CapitalizeFirst()),
                 "VFEI_LetterInsectWaveArrived".Translate(Faction.OfInsects.NameColored, wave.GetPawnList()),
-                LetterDefOf.ThreatBig, parent);
+                VFEI_DefOf.VFEI_InsectWaveArrived, parent);
         }
+
 
         private void MoveUp(float speed)
         {
@@ -193,7 +196,13 @@ namespace VFEInsectoids
             {
                 isLowering = false;
                 FleckMaker.Static(parent.DrawPos, parent.Map, FleckDefOf.PsycastAreaEffect, 5f);
-                VFEI_DefOf.ThumpCannon_Fire.PlayOneShot(parent);
+                if (soundThumping is null)
+                {
+                    soundThumping = new List<SoundDef> {VFEI_DefOf.VFEI2_InsectThumperOne,
+                        VFEI_DefOf.VFEI2_InsectThumperTwo, VFEI_DefOf.VFEI2_InsectThumperThree,
+                        VFEI_DefOf.VFEI2_InsectThumperFour}.RandomElement();
+                }
+                soundThumping.PlayOneShot(parent);
             }
         }
 
@@ -205,6 +214,7 @@ namespace VFEInsectoids
             Scribe_Values.Look(ref topGraphicOffset, "topGraphicOffset");
             Scribe_Values.Look(ref isLowering, "isLowering");
             Scribe_Values.Look(ref infestationSpawned, "infestationSpawned");
+            Scribe_Defs.Look(ref soundThumping, "soundThumping");
         }
     }
 }
