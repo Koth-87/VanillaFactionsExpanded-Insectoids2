@@ -64,11 +64,11 @@
 				</li>
 				<li>
 					<def>EusocialInsectJuvenile</def>
-					<minAge>0.03</minAge>
+					<minAge>0.015</minAge>
 				</li>
 				<li>
 					<def>EusocialInsectAdult</def>
-					<minAge>0.2</minAge>
+					<minAge>0.1</minAge>
 					<soundWounded>Pawn_Megascarab_Wounded</soundWounded>
 					<soundDeath>Pawn_Megascarab_Death</soundDeath>
 					<soundCall>Pawn_Megascarab_Call</soundCall>

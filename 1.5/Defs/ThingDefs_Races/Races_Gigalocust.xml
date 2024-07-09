@@ -60,11 +60,11 @@
 				</li>
 				<li>
 					<def>EusocialInsectJuvenile</def>
-					<minAge>0.03</minAge>
+					<minAge>0.015</minAge>
 				</li>
 				<li>
 					<def>EusocialInsectAdult</def>
-					<minAge>0.2</minAge>
+					<minAge>0.1</minAge>
 					<soundWounded>Pawn_BigInsect_Pain</soundWounded>
 					<soundDeath>Pawn_BigInsect_Death</soundDeath>
 					<soundCall>Pawn_BigInsect_Call</soundCall>

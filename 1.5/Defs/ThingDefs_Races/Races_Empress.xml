@@ -61,7 +61,7 @@
 			</li>
 			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
 				<resourceDef>VFEI2_RoyalInsectJelly</resourceDef>
-				<gatheringIntervalDays>2</gatheringIntervalDays>
+				<gatheringIntervalDays>1</gatheringIntervalDays>
 				<resourceAmount>5</resourceAmount>
 				<customResourceString>VFEI2_RoyalInsectJelly</customResourceString>
 				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
