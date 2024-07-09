@@ -29,28 +29,38 @@ namespace VFEInsectoids
             Instance = this;
         }
 
-        public InsectWave GetInsectWave(InsectWaveDef def)
+        public int GetNextWaveIndex(InsectWaveDef def)
         {
             if (!lastWavesIndices.TryGetValue(def, out int waveIndex))
             {
-                lastWavesIndices[def] = waveIndex = 0;
+                waveIndex = 0;
             }
             else
             {
-                waveIndex = lastWavesIndices[def] += 1;
+                waveIndex += 1;
             }
             if (waveIndex > def.waves.Count - 1)
             {
                 if (waveIndex >= def.minWaveRepeatIndex)
                 {
-                    lastWavesIndices[def] = waveIndex = def.minWaveRepeatIndex;
+                    waveIndex = def.minWaveRepeatIndex;
                 }
                 else
                 {
-                    lastWavesIndices[def] = waveIndex = 0;
+                    waveIndex = 0;
                 }
             }
+            return waveIndex;
+        }
+
+        public InsectWave GetInsectWave(InsectWaveDef def, int waveIndex)
+        {
             return def.waves[waveIndex];
+        }
+
+        public InsectWave GetNextInsectWave(InsectWaveDef def)
+        {
+            return def.waves[GetNextWaveIndex(def)];
         }
 
         private List<int> tmpTiles = new List<int>();

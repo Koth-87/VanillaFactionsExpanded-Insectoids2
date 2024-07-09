@@ -8,10 +8,10 @@
 Areas around insectoid hives are often teeming with insects, with various insect-built structures affecting the environment. Infestations are much more likely to occur, and travelling parties may find roaming insectoids.</VFEI_InfestationTooltip>
 	<VFEI_Present>Present</VFEI_Present>
 	<VFEI_SettleWarning>This tile is near an insectoid hive, so there will be an ever-present insectoid influence on it. Infestations will happen every {0} days. Large infestations are much more likely to happen, and may occur anywhere, not just in dark areas. Megaspiders, spelopedes and megascarabs are roaming free, and travelling caravans may have to fend off insectoid swarms.</VFEI_SettleWarning>
-	
+
 	<VFEI_LarvaeTimeSpawn>{0} before next swarmling spawn.</VFEI_LarvaeTimeSpawn>
 	<VFEI_NoMoreSpawningAllowed>Queen is resting.</VFEI_NoMoreSpawningAllowed>
-	
+
 	<VFEI2_RoyalInsectJelly>Royal insect jelly fullness:</VFEI2_RoyalInsectJelly>
 	<VFEI2_Chemfuel>Chemfuel fullness:</VFEI2_Chemfuel>
 	<VFEI2_Chitin>Shedding chitin in:</VFEI2_Chitin>
@@ -32,4 +32,10 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_HiveCannotBeUpgradedMore>Cannot upgrade: reached maximum size of the {0}.</VFEI_HiveCannotBeUpgradedMore>
 	<VFEI_InfestationHasSpread>Quest failed: {0}</VFEI_InfestationHasSpread>
 	<VFEI_InfestationHasSpreadDesc>The insectoid hive has spread. The quest {0} has ended.</VFEI_InfestationHasSpreadDesc>
+	<VFEI_InsectSummonWarning>Activating the {0} will summon the following hostile insects:\n\n{PAWNS}\n\nAre you ready to fight?</VFEI_InsectSummonWarning>
+	<VFEI_LetterLabelInsectWaveSummoned>{0} summoned</VFEI_LetterLabelInsectWaveSummoned>
+	<VFEI_LetterInsectWaveSummoned>Attracted by your thumper vibrations, an insectoid leader from {0} will emerge from the ground soon. Be prepared.</VFEI_LetterInsectWaveSummoned>
+	<VFEI_LetterLabelInsectWaveArrived>{0} arrived</VFEI_LetterLabelInsectWaveArrived>
+	<VFEI_LetterInsectWaveArrived>An insectoid leader from {0} has come to eradicate you, along with escorts.\n\nThe assault group is composed of the following insects:\n\n{1}</VFEI_LetterInsectWaveArrived>
+
 </LanguageData>

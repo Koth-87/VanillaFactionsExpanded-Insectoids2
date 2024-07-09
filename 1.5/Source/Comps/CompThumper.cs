@@ -10,6 +10,17 @@ namespace VFEInsectoids
     public class InsectWave
     {
         public List<PawnKindDefCount> insects;
+
+        public string GetPawnList()
+        {
+            var entries = new List<string>();
+            foreach (var entry in insects)
+            {
+                entries.Add(GenLabel.BestKindLabel(entry.kindDef, Gender.None).CapitalizeFirst()
+                    + " x" + entry.count);
+            }
+            return entries.ToLineList("  - ");
+        }
     }
 
     public class InsectWaveDef : Def
@@ -47,6 +58,17 @@ namespace VFEInsectoids
             activated = true;
             GameComponent_Insectoids.Instance.thumperActivated = parent;
             thumpDuration = (int)(new FloatRange(30f, 90f).RandomInRange * 60f);
+            var wave = GameComponent_Insectoids.Instance.GetNextInsectWave(Props.wave);
+            Find.LetterStack.ReceiveLetter("VFEI_LetterLabelInsectWaveSummoned".Translate(
+                GenLabel.BestKindLabel(wave.insects.First().kindDef, Gender.None).CapitalizeFirst()), 
+                "VFEI_LetterInsectWaveSummoned".Translate(Faction.OfInsects.NameColored), 
+                LetterDefOf.NeutralEvent, parent);
+        }
+
+        public override TaggedString ConfirmMessage(Pawn p)
+        {
+            var wave = GameComponent_Insectoids.Instance.GetNextInsectWave(Props.wave);
+            return "VFEI_InsectSummonWarning".Translate(parent.Label, wave.GetPawnList().Named("PAWNS"));
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -95,7 +117,7 @@ namespace VFEInsectoids
                     MoveDown(speed);
                     if (infestationSpawned is false)
                     {
-                        var wave = GameComponent_Insectoids.Instance.GetInsectWave(Props.wave);
+                        var wave = GameComponent_Insectoids.Instance.GetNextInsectWave(Props.wave);
                         SpawnInfestation(wave);
                         infestationSpawned = true;
                     }
@@ -117,6 +139,7 @@ namespace VFEInsectoids
         public void SpawnInfestation(InsectWave wave)
         {
             GameComponent_Insectoids.Instance.lastInsectoidBossArrival = Find.TickManager.TicksGame;
+            GameComponent_Insectoids.Instance.lastWavesIndices[Props.wave] = Props.wave.waves.IndexOf(wave);
             var hives = new List<LargeTunnelHiveSpawner>();
             var hiveCount = wave.insects.First().count;
             IncidentWorker_LargeInfestation.SpawnTunnels(hiveCount, parent.Map, parent.Position, hives);
@@ -146,6 +169,11 @@ namespace VFEInsectoids
                     }
                 }
             }
+            var insectLeaderKind = wave.insects.First().kindDef;
+            Find.LetterStack.ReceiveLetter("VFEI_LetterLabelInsectWaveArrived".Translate(
+                GenLabel.BestKindLabel(insectLeaderKind, Gender.None).CapitalizeFirst()),
+                "VFEI_LetterInsectWaveArrived".Translate(Faction.OfInsects.NameColored, wave.GetPawnList()),
+                LetterDefOf.ThreatBig, parent);
         }
 
         private void MoveUp(float speed)
