@@ -63,8 +63,8 @@ namespace VFEInsectoids
         public static HediffDef VFEI_WorkerInsectType, VFEI_HunterInsectType, VFEI_DefenderInsectType;
         public static DutyDef VFEI_Defender, VFEI_Hunter, VFEI_Worker, VFEI_DefendAndExpandHive;
         public static JobDef VFEI_InsectHunt, VFEI_UpgradeHive;
-        public static SoundDef ThumpCannon_Fire;
+        public static SoundDef VFEI2_InsectThumperOne, VFEI2_InsectThumperTwo, VFEI2_InsectThumperThree, VFEI2_InsectThumperFour;
         public static ThingDef VFEI_HellpodActiveDropPod, VFEI_HellpodIncoming;
-
+        public static LetterDef VFEI_InsectWaveArrived;
     }
 }

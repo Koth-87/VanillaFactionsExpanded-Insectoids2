@@ -95,6 +95,97 @@
     </subSounds>
   </SoundDef>
 
- 
+   <SoundDef>
+    <defName>VFEI2_InsectThumperOne</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Special/InsectThumper_Thump_01a_01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+   <SoundDef>
+    <defName>VFEI2_InsectThumperTwo</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Special/InsectThumper_Thump_01b_01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
   
+   <SoundDef>
+    <defName>VFEI2_InsectThumperThree</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Special/InsectThumper_Thump_01c_01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>VFEI2_InsectThumperFour</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Special/InsectThumper_Thump_01d_01</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>VFEI_InsectWaveArrived</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Special/LetterArriveInsectBossgroup</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25</volumeRange>
+        <muteWhenPaused>True</muteWhenPaused>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
