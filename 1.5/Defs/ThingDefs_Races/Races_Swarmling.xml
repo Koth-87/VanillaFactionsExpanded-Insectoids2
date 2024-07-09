@@ -4,6 +4,7 @@
 	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Swarmling</defName>
 		<label>swarmlings</label>
+	
 		<description>The juvenile form of insectoids, swarmlings are more or less harmless, slow and easy to kill. After some time has passed, they undergo a metamorphosis, forming a cocoon from which an adult insectoid will emerge. There is no way to tell what kind of insect will crawl out of its cocoon.</description>
 		<statBases>
 			<MoveSpeed>1.24</MoveSpeed>
@@ -67,6 +68,13 @@
 		<comps>
 			<li Class="VFEInsectoids.CompProperties_SwarmlingToCocoon">
 				<ticksBeforeBecomingCocoon>10000</ticksBeforeBecomingCocoon>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_MakeOtherPawnsFlee">
+				<pawnkinddefsToAffect>
+					<li>VFEI2_Swarmling</li>
+					
+				</pawnkinddefsToAffect>
+				<checkingInterval>2000</checkingInterval>
 			</li>
 		</comps>
 	</ThingDef>
