@@ -75,7 +75,10 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
-    <Compile Include="Comps\Alert_InsectWaveIncoming.cs" />
+    <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
+    <Compile Include="Harmony\Pawn_PlayerSettings_RespectsAllowedArea_Patch.cs" />
+    <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
+    <Compile Include="UI\Alert_InsectWaveIncoming.cs" />
     <Compile Include="Comps\CompFueledSpawner.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
     <Compile Include="Comps\CompTargetEffect_UpgradeHive.cs" />
@@ -88,6 +91,8 @@
     <Compile Include="Events\QuestNode_GetSitePart.cs" />
     <Compile Include="Events\ScenPart_SquadArriveMethod.cs" />
     <Compile Include="Events\SitePartWorker_InsectHive.cs" />
+    <Compile Include="Harmony\Designator_ReleaseAnimalToWild_CanDesignateThing_Patch.cs" />
+    <Compile Include="Harmony\Designator_Slaughter_CanDesignateThing_Patch.cs" />
     <Compile Include="Harmony\LordToil_DefendAndExpandHive_UpdateAllDuties_Patch.cs" />
     <Compile Include="Harmony\LordToil_HiveRelated_FindClosestHive_Patch.cs" />
     <Compile Include="Harmony\Site_ShouldRemoveMapNow_Patch.cs" />
@@ -142,7 +147,11 @@
     <Compile Include="Harmony\WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.cs" />
     <Compile Include="HediffComps\HediffComp_Spawn.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_Spawn.cs" />
-    <Compile Include="Hives\Gizmo_Hive.cs" />
+    <Compile Include="UI\Area_Hive.cs" />
+    <Compile Include="UI\Designator_AreaHive.cs" />
+    <Compile Include="UI\Designator_AreaHiveClear.cs" />
+    <Compile Include="UI\Designator_AreaHiveExpand.cs" />
+    <Compile Include="UI\Gizmo_Hive.cs" />
     <Compile Include="Hives\Hediff_InsectType.cs" />
     <Compile Include="Hives\JobDriver_InsectHunt.cs" />
     <Compile Include="Hives\JobGiver_DoWork.cs" />

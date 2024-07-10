@@ -37,6 +37,26 @@ namespace VFEInsectoids
             CompHive?.RemoveInsect(pawn);
         }
 
+        public override void Notify_Spawned()
+        {
+            base.Notify_Spawned();
+            UpdateArea();
+        }
+
+        public void UpdateArea()
+        {
+            var area = pawn.playerSettings.AreaRestrictionInPawnCurrentMap;
+            var hiveArea = pawn.Map.areaManager.Get<Area_Hive>();
+            if (area != null && hiveArea == area && hiveArea.TrueCount <= 0)
+            {
+                pawn.playerSettings.AreaRestrictionInPawnCurrentMap = null;
+            }
+            else if (hiveArea != null && hiveArea != area && hiveArea.TrueCount > 0)
+            {
+                pawn.playerSettings.AreaRestrictionInPawnCurrentMap = hiveArea;
+            }
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();

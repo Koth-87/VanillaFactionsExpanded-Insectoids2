@@ -10,9 +10,8 @@ namespace VFEInsectoids
     {
         public override Job TryGiveJob(Pawn pawn)
         {
-            foreach (var hive in pawn.Map.listerThings.AllThings.OfType<Hive>().Where(x =>
-            x.Faction == pawn.Faction && pawn.CanReserve(x) 
-                && pawn.CanReach(x, PathEndMode.Touch, Danger.Deadly))
+            foreach (var hive in pawn.Map.listerThings.AllThings.Where(x => (x is Hive || x.def == VFEI_DefOf.VFEI2_JellyFarm)
+                && x.Faction == pawn.Faction && pawn.CanReserve(x) && pawn.CanReach(x, PathEndMode.Touch, Danger.Deadly))
                 .OrderBy(x => x.Position.DistanceTo(pawn.Position)))
             {
                 CompMaintainable compMaintainable = hive.TryGetComp<CompMaintainable>();

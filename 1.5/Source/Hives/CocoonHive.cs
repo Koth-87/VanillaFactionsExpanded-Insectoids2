@@ -45,19 +45,21 @@ namespace VFEInsectoids
             if (this.spawnInTick <= 0)
             {
                 var comp = hive.TryGetComp<CompHive>();
-                TryRemoveInsect(comp);
-                comp.TrySpawnPawn(Position);
+                TryRemoveInsect(comp, out var insectAge);
+                comp.TrySpawnPawn(Position, insectAge);
                 FilthMaker.TryMakeFilth(Position, Map, ThingDefOf.Filth_Slime);
                 innerContainer.ClearAndDestroyContents();
                 this.Destroy();
             }
         }
 
-        private void TryRemoveInsect(CompHive comp)
+        private void TryRemoveInsect(CompHive comp, out float insectAge)
         {
+            insectAge = 0;
             var insect = innerContainer.InnerListForReading.FirstOrDefault() as Pawn;
             if (insect != null)
             {
+                insectAge = insect.ageTracker.AgeBiologicalYearsFloat;
                 comp.RemoveInsect(insect);
             }
         }
@@ -66,7 +68,7 @@ namespace VFEInsectoids
         {
             base.Destroy(mode);
             var comp = hive.TryGetComp<CompHive>();
-            TryRemoveInsect(comp);
+            TryRemoveInsect(comp, out _);
         }
     }
 }

@@ -20,8 +20,10 @@
 			<fertilityMin>0.05</fertilityMin>
 			<fertilitySensitivity>0</fertilitySensitivity>
 			<dieIfLeafless>true</dieIfLeafless>
+			<harvestMinGrowth>0.99</harvestMinGrowth>
 			<harvestTag>Standard</harvestTag>
-			<harvestedThingDef>VFEI2_Tendrilmoss</harvestedThingDef>	
+			<harvestedThingDef>VFEI2_Tendrilmoss</harvestedThingDef>
+			<harvestYield>1</harvestYield>
 			<sowMinSkill>7</sowMinSkill>
 			<harvestWork>300</harvestWork>
 			<topWindExposure>0.2</topWindExposure>

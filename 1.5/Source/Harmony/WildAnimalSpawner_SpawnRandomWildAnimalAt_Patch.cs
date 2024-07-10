@@ -15,7 +15,8 @@ namespace VFEInsectoids
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var allWildAnimals = AccessTools.PropertyGetter(typeof(BiomeDef), "AllWildAnimals");
-            var generatePawn = AccessTools.Method(typeof(PawnGenerator), "GeneratePawn", new Type[] { typeof(PawnKindDef), typeof(Faction) });
+            var spawnPawn = AccessTools.Method(typeof(GenSpawn), "Spawn", new Type[] { typeof(Thing),
+                typeof(IntVec3), typeof(Map), typeof(WipeMode)});
             foreach (var instruction in instructions)
             {
                 yield return instruction;
@@ -25,11 +26,12 @@ namespace VFEInsectoids
                     yield return new CodeInstruction(OpCodes.Call,
                         AccessTools.Method(typeof(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch), "TryOverrideWildAnimals"));
                 }
-                else if (instruction.Calls(generatePawn))
+                else if (instruction.Calls(spawnPawn))
                 {
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch), "TryAddLordJob"));
+                        AccessTools.Method(typeof(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch), 
+                        "TryAddLordJob"));
                 }
             }
         }
@@ -43,26 +45,29 @@ namespace VFEInsectoids
             return wildAnimals;
         }
 
-        public static Pawn TryAddLordJob(Pawn pawn, WildAnimalSpawner spawner)
+        public static Thing TryAddLordJob(Thing thing, WildAnimalSpawner spawner)
         {
-            var map = spawner?.map ?? pawn.Map;
-            if (map.IsInfested() && pawn.RaceProps.Insect)
+            if (thing is Pawn pawn)
             {
-                var hive = map.listerThings.AllThings.OfType<Hive>().OrderBy(x => x.Position.DistanceTo(pawn.Position)).FirstOrDefault();
-                if (hive != null)
+                var map = spawner?.map ?? pawn.Map;
+                if (map != null && pawn.Spawned && map.IsInfested() && pawn.RaceProps.Insect)
                 {
-                    pawn.SetFaction(hive.Faction);
-                    var comp = hive.GetComp<CompSpawnerPawn>();
-                    comp.spawnedPawns.Add(pawn);
-                    Lord lord = comp.Lord;
-                    if (lord == null)
+                    var hive = map.listerThings.AllThings.OfType<Hive>().OrderBy(x => x.Position.DistanceTo(pawn.Position)).FirstOrDefault();
+                    if (hive != null)
                     {
-                        lord = CompSpawnerPawn.CreateNewLord(comp.parent, true, 30, comp.Props.lordJob);
+                        pawn.SetFaction(hive.Faction);
+                        var comp = hive.GetComp<CompSpawnerPawn>();
+                        comp.spawnedPawns.Add(pawn);
+                        Lord lord = comp.Lord;
+                        if (lord == null)
+                        {
+                            lord = CompSpawnerPawn.CreateNewLord(comp.parent, true, 30, comp.Props.lordJob);
+                        }
+                        lord.AddPawn(pawn);
                     }
-                    lord.AddPawn(pawn);
                 }
             }
-            return pawn;
+            return thing;
         }
     }
 }

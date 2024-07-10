@@ -599,9 +599,9 @@
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
 	  <li Class="VFEInsectoids.CompProperties_Terraform">
-		<radius>6.9</radius>
+		<radius>12.9</radius>
 		<terrainToSet>VFEI2_Creep</terrainToSet>
-		<spawnTickRate>120000</spawnTickRate>
+		<spawnTickRate>45000</spawnTickRate>
 	  </li>
       <li Class="CompProperties_Spawner">
 		<compClass>VFEInsectoids.CompInsectJellySpawner</compClass>
@@ -660,11 +660,16 @@
       </li>
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>20</spawnCount>
-        <spawnIntervalRange>13000~21000</spawnIntervalRange>
+        <spawnCount>10</spawnCount>
+        <spawnIntervalRange>45000~65000</spawnIntervalRange>
         <spawnMaxAdjacent>40</spawnMaxAdjacent>
         <spawnForbidden>false</spawnForbidden>
         <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
       </li>
     </comps>
     <costList>

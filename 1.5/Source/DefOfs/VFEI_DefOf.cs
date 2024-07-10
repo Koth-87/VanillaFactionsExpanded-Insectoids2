@@ -66,5 +66,6 @@ namespace VFEInsectoids
         public static SoundDef VFEI2_InsectThumperOne, VFEI2_InsectThumperTwo, VFEI2_InsectThumperThree, VFEI2_InsectThumperFour;
         public static ThingDef VFEI_HellpodActiveDropPod, VFEI_HellpodIncoming;
         public static LetterDef VFEI_InsectWaveArrived;
+        public static ThingDef VFEI2_TendrilmossVines;
     }
 }

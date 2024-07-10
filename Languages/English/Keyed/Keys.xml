@@ -39,5 +39,9 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_LetterInsectWaveArrived>An insectoid leader from {0} has come to eradicate you, along with escorts.\n\nThe assault group is composed of the following insects:\n\n{1}</VFEI_LetterInsectWaveArrived>
 	<VFEI_AlertInsectWaveIncoming>{0} incoming</VFEI_AlertInsectWaveIncoming>
 	<VFEI_AlertInsectWaveIncomingDesc>Alerted by your thumper, a hostile {0} with an army of insectoids are digging their way towards the surface. They will arrive in a few hours.</VFEI_AlertInsectWaveIncomingDesc>
-
+	<VFEI_HiveArea>Hive area</VFEI_HiveArea>
+	<VFEI_HiveAreaClear>Clear hive area</VFEI_HiveAreaClear>
+	<VFEI_HiveAreaClearDesc>Removes a hive area. Your insectoids will no longer work, look for prey and attack hostile targets here.</VFEI_HiveAreaClearDesc>
+	<VFEI_HiveAreaExpand>Hive area</VFEI_HiveAreaExpand>
+	<VFEI_HiveAreaExpandDesc>Create a hive area where your insectoid hives will work, look for prey and attack hostile targets. Your insectoids will not leave the hive area.</VFEI_HiveAreaExpandDesc>
 </LanguageData>

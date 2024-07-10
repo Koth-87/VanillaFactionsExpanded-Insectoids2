@@ -8,6 +8,8 @@
     <specialDesignatorClasses>
       <li>Designator_Cancel</li>
       <li>Designator_Deconstruct</li>
+		<li>VFEInsectoids.Designator_AreaHiveExpand</li>
+		<li>VFEInsectoids.Designator_AreaHiveClear</li>
     </specialDesignatorClasses>
   </DesignationCategoryDef>
   

@@ -1,9 +1,11 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using Verse;
+using Verse.AI.Group;
 
 namespace VFEInsectoids
 {
@@ -79,6 +81,10 @@ namespace VFEInsectoids
                 + " - rate: " + (creepCount / (float)nonCreepCount));
             badCells.Clear();
             Log.Message("Adding lords for insects");
+            if (map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
+            {
+                Log.Message("Spawned insects: " + map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).Select(x => x.def.defName + " - " + x.GetLord()?.LordJob).ToStringSafeEnumerable());
+            }
             foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null))
             {
                 WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);

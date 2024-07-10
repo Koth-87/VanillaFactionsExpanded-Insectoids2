@@ -140,7 +140,7 @@ namespace VFEInsectoids
 
         private void DoSpawn()
         {
-            TrySpawnPawn(parent.Position);
+            TrySpawnPawn(parent.Position, chosenKind.race.race.lifeStageAges[0].minAge);
             if (insects.Count >= InsectCapacity)
             {
                 nextPawnSpawnTick = -1;
@@ -157,11 +157,10 @@ namespace VFEInsectoids
             return insects.Count < InsectCapacity;
         }
 
-        public void TrySpawnPawn(IntVec3 position)
+        public void TrySpawnPawn(IntVec3 position, float age)
         {
             PawnGenerationRequest request = new PawnGenerationRequest(chosenKind, parent.Faction);
-            int index = chosenKind.lifeStages.Count - 1;
-            request.FixedBiologicalAge = chosenKind.race.race.lifeStageAges[index].minAge;
+            request.FixedBiologicalAge = age;
             var pawn = PawnGenerator.GeneratePawn(request);
             AddInsect(pawn);
             GenSpawn.Spawn(pawn, position, parent.Map);

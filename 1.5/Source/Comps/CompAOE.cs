@@ -29,13 +29,18 @@ namespace VFEInsectoids
                 if (Find.TickManager.TicksGame >= nextTickEffect)
                 {
                     var cells = GetCells();
-                    if (cells.TryRandomElement(out var cell))
+                    if (TryGetCell(cells, out var cell))
                     {
                         DoEffect(cell);
                     }
                     nextTickEffect = NextTickEffect;
                 }
             }
+        }
+
+        protected virtual bool TryGetCell(List<IntVec3> cells, out IntVec3 cell)
+        {
+            return cells.TryRandomElement(out cell);
         }
 
         protected virtual bool Active => parent.Spawned;

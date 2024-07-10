@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace VFEInsectoids
 {
-
     public class CompProperties_Terraform : CompProperties_AOE
     {
         public TerrainDef terrainToSet;
@@ -37,6 +37,12 @@ namespace VFEInsectoids
             var cells = base.GetCells();
             insectSpawner.canSpawn = cells.Any() is false;
             return cells;
+        }
+
+        protected override bool TryGetCell(List<IntVec3> cells, out IntVec3 cell)
+        {
+            cell = cells.OrderBy(x => x.DistanceTo(parent.Position)).FirstOrDefault();
+            return cell != default;
         }
 
         protected override void DoEffect(IntVec3 cell)
