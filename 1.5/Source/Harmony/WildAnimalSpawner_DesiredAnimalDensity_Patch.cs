@@ -11,7 +11,7 @@ namespace VFEInsectoids
     {
         public static void Postfix(ref float __result, WildAnimalSpawner __instance)
         {
-            if (__instance.map.IsInfested())// && __instance.map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
+            if (__instance.map.IsInfested())
             {
                 __result /= 4f;
             }

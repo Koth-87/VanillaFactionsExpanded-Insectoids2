@@ -23,7 +23,7 @@ namespace VFEInsectoids
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
-            if (nextPawnSpawnTick != -1)
+            if (nextPawnSpawnTick != -1 && parent is not Hive)
             {
                 SpawnInsects();
             }
@@ -32,7 +32,7 @@ namespace VFEInsectoids
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
+            if (!respawningAfterLoad && parent is not Hive)
             {
                 CalculateNextPawnSpawnTick();
             }
@@ -40,23 +40,30 @@ namespace VFEInsectoids
 
         public override void CompTick()
         {
-            if (nextPawnSpawnTick != -1 && parent.Spawned && Find.TickManager.TicksGame >= nextPawnSpawnTick)
+            if (parent is not Hive)
             {
-                SpawnInsects();
+                if (nextPawnSpawnTick != -1 && parent.Spawned && Find.TickManager.TicksGame >= nextPawnSpawnTick)
+                {
+                    SpawnInsects();
+                }
+            }
+            else
+            {
+                base.CompTick();
             }
         }
 
         public void SpawnInsects()
         {
+            SpawnPawnsUntilPoints(Props.maxSpawnedPawnsPoints); 
             nextPawnSpawnTick = -1;
-            SpawnPawnsUntilPoints(Props.maxSpawnedPawnsPoints);
         }
 
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            if (previousMap.Parent is Site)
+            if (previousMap.Parent is Site && parent is Hive)
             {
                 if (previousMap.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial).Any(x => x.HasComp<CompInsectSpawner>()) is false)
                 {
@@ -70,7 +77,7 @@ namespace VFEInsectoids
         {
             public static void Prefix(Thing __instance, DestroyMode mode)
             {
-                if (mode == DestroyMode.Deconstruct)
+                if (mode == DestroyMode.Deconstruct && __instance is not Hive)
                 {
                     var comp = __instance.TryGetComp<CompInsectSpawner>();
                     if (comp != null && comp.nextPawnSpawnTick != -1)
