@@ -102,12 +102,12 @@ namespace VFEInsectoids
                 }
             }
 
-            foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null))
+            foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null).ToList())
             {
                 WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);
             }
 
-            foreach (var lord in map.lordManager.lords.Where(x => x.LordJob is LordJob_DefendAndExpandHive))
+            foreach (var lord in map.lordManager.lords.Where(x => x.LordJob is LordJob_DefendAndExpandHive).ToList())
             {
                 var toils = lord.graph.lordToils.OfType<LordToil_DefendAndExpandHive>();
                 foreach (var toil in toils)
