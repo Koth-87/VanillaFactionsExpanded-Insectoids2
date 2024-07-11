@@ -13,8 +13,17 @@ namespace VFEInsectoids
         private static readonly Texture2D HunterIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Hunter");
         private static readonly Texture2D WorkerIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Worker");
 
+        public static List<ThingDef> allHiveDefs = new List<ThingDef>();
         static Utils()
         {
+            foreach (var def in DefDatabase<ThingDef>.AllDefs)
+            {
+                allHiveDefs.Add(ThingDefOf.Hive);
+                allHiveDefs.Add(VFEI_DefOf.VFEI2_KemianHive);
+                allHiveDefs.Add(VFEI_DefOf.VFEI2_NuchadusHive);
+                allHiveDefs.Add(VFEI_DefOf.VFEI2_ChelisHive);
+                allHiveDefs.Add(VFEI_DefOf.VFEI2_XanidesHive);
+            }
             VFEI_DefOf.VFEI_RoamingInsectoids.mtbDaysByBiome = new List<MTBByBiome>();
             foreach (var def in DefDatabase<BiomeDef>.AllDefs)
             {

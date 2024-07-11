@@ -76,6 +76,7 @@
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
     <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
+    <Compile Include="Harmony\InspectPaneFiller_DrawAreaAllowed_Patch.cs" />
     <Compile Include="Harmony\Pawn_PlayerSettings_RespectsAllowedArea_Patch.cs" />
     <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
     <Compile Include="UI\Alert_InsectWaveIncoming.cs" />

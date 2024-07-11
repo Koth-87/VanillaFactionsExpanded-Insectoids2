@@ -41,6 +41,7 @@ namespace VFEInsectoids
         public List<SpawnSettings> spawnSettings;
     }
 
+    [HotSwappable]
     public class InsectMapGenDef : Def
     {
         public IntRange hivesToSpawn;
@@ -83,8 +84,24 @@ namespace VFEInsectoids
             Log.Message("Adding lords for insects");
             if (map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
             {
-                Log.Message("Spawned insects: " + map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).Select(x => x.def.defName + " - " + x.GetLord()?.LordJob).ToStringSafeEnumerable());
+                var kind = GetBossKind(map);
+                if (kind != null)
+                {
+                    var boss = PawnGenerator.GeneratePawn(kind, Faction.OfInsects);
+                    var defendBase = map.lordManager.lords.First(x => x.LordJob is LordJob_DefendBase);
+                    var baseCenter = ((LordJob_DefendBase)defendBase.LordJob).baseCenter;
+                    var position = GenRadial.RadialCellsAround(baseCenter, 30, true)
+                        .Where(x => x.InBounds(map) && x.WalkableBy(map, boss)).First();
+                    GenSpawn.Spawn(boss, position, map);
+                    defendBase.AddPawn(boss);
+                    Log.Message("Added boss: " + boss + " - center " + position + " - baseCenter: " + baseCenter);
+                }
+                else
+                {
+                    Log.Message("Found no boss kind");
+                }
             }
+
             foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null))
             {
                 WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);
@@ -266,6 +283,31 @@ namespace VFEInsectoids
                     }
                 }
             }
+        }
+
+        private static PawnKindDef GetBossKind(Map map)
+        {
+            if (Rand.Chance(0.5f))
+            {
+                return VFEI_DefOf.VFEI_Sorne.boss;
+            }
+            else
+            {
+                var nonSorneInsects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect
+                && VFEI_DefOf.VFEI_Sorne.insects.Any(o => o.kind == x.kindDef) is false).ToList();
+                Log.Message("Non sorne insects: " + nonSorneInsects.Select(x => x.kindDef).Distinct().ToStringSafeEnumerable());
+                foreach (var insect in nonSorneInsects)
+                {
+                    foreach (var geneline in DefDatabase<InsectGenelineDef>.AllDefs.Where(x => x != VFEI_DefOf.VFEI_Sorne))
+                    {
+                        if (geneline.insects.Any(o => o.kind == insect.kindDef))
+                        {
+                            return geneline.boss;
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         private static bool HasCloseCells(IntVec3 curCell, HashSet<IntVec3> cells)

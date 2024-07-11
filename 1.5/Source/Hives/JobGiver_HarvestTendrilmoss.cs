@@ -14,7 +14,7 @@ namespace VFEInsectoids
             foreach (var plant in pawn.Map.listerThings.ThingsOfDef(VFEI_DefOf.VFEI2_TendrilmossVines)
                 .OfType<Plant>().OrderBy(x => x.Position.DistanceTo(pawn.Position)))
             {
-                if (HasJobOnCell(pawn, plant))
+                if (HasJobOnPlant(pawn, plant))
                 {
                     num += plant.def.plant.harvestWork;
                     if (num > 2400f)
@@ -35,13 +35,17 @@ namespace VFEInsectoids
             return null;
         }
 
-        public bool HasJobOnCell(Pawn pawn, Plant plant)
+        public bool HasJobOnPlant(Pawn pawn, Plant plant)
         {
             if (plant.IsForbidden(pawn))
             {
                 return false;
             }
             if (!plant.HarvestableNow || plant.LifeStage != PlantLifeStage.Mature)
+            {
+                return false;
+            }
+            if (pawn.Map.designationManager.DesignationOn(plant, DesignationDefOf.HarvestPlant) is null)
             {
                 return false;
             }

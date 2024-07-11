@@ -67,5 +67,6 @@ namespace VFEInsectoids
         public static ThingDef VFEI_HellpodActiveDropPod, VFEI_HellpodIncoming;
         public static LetterDef VFEI_InsectWaveArrived;
         public static ThingDef VFEI2_TendrilmossVines;
+        public static ThingDef VFEI2_KemianHive, VFEI2_ChelisHive, VFEI2_XanidesHive, VFEI2_NuchadusHive;
     }
 }

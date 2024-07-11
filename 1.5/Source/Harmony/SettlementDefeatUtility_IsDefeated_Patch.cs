@@ -10,9 +10,15 @@ namespace VFEInsectoids
     {
         public static void Postfix(Map map, Faction faction, ref bool __result)
         {
-            if (__result && faction == Faction.OfInsects && map.listerThings.AllThings.Any(x => x is Hive))
+            if (__result && faction == Faction.OfInsects)
             {
-                __result = false;
+                foreach (var hiveDef in Utils.allHiveDefs)
+                {
+                    if (map.listerThings.ThingsOfDef(hiveDef).Any(x => x.Faction == faction))
+                    {
+                        __result = false;
+                    }
+                }
             }
         }
     }
