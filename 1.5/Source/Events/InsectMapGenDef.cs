@@ -101,10 +101,14 @@ namespace VFEInsectoids
                     Log.Message("Found no boss kind");
                 }
             }
-
-            foreach (var insect in map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect && x.Faction is null).ToList())
+            var insects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).ToList();
+            Log.Message("Insects spawned: " + insects.Count);
+            foreach (var insect in insects)
             {
-                WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);
+                if (insect.Faction is null)
+                {
+                    WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(insect, null);
+                }
             }
 
             foreach (var lord in map.lordManager.lords.Where(x => x.LordJob is LordJob_DefendAndExpandHive).ToList())
