@@ -44,4 +44,7 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_HiveAreaClearDesc>Removes a hive area. Your insectoids will no longer work, look for prey and attack hostile targets here.</VFEI_HiveAreaClearDesc>
 	<VFEI_HiveAreaExpand>Hive area</VFEI_HiveAreaExpand>
 	<VFEI_HiveAreaExpandDesc>Create a hive area where your insectoid hives will work, look for prey and attack hostile targets. Your insectoids will not leave the hive area.</VFEI_HiveAreaExpandDesc>
+	<VFEI_HiveCloseProximityWarning>Constructing artificial hives in close proximity to each other will increase their maintenance need.</VFEI_HiveCloseProximityWarning>
+	<VFEI_MaintenanceLossSpeed>Maintenance loss speed: {0}</VFEI_MaintenanceLossSpeed>
+	<VFEI_MinHiveStabilityDistance>Minimum artificial hive stability distance</VFEI_MinHiveStabilityDistance>
 </LanguageData>

@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
@@ -54,6 +55,41 @@ namespace VFEInsectoids
                 return Mathf.Min(baseValue + additionalCapacity, MaxInsectCapacity);
             }
         }
+
+        public override void PostDrawExtraSelectionOverlays()
+        {
+            base.PostDrawExtraSelectionOverlays();
+            DrawArtificialHiveOverlay(parent.Position, parent.def, parent.Map, VFEInsectoidsSettings.minHiveStabilityDistance);
+        }
+
+        public static readonly Color ArtificialHiveRingColor = new Color(0.8f, 0.49f, 0.43f);
+
+        public static void DrawArtificialHiveOverlay(IntVec3 pos, ThingDef def, Map map, float radius)
+        {
+            GenDraw.DrawRadiusRing(pos, radius, ArtificialHiveRingColor);
+            foreach (Thing item in GetAllNearbyArtificialHives(pos, map))
+            {
+                GenDraw.DrawLineBetween(GenThing.TrueCenter(pos, Rot4.North, def.size, def.Altitude), item.TrueCenter(), SimpleColor.Red);
+            }
+        }
+
+        public float MaintenanceDurationOverride(float duration) => duration / MaintenanceMultiplier();
+
+        public float MaintenanceMultiplier()
+        {
+            var mult = 1f;
+            foreach (var other in GetAllNearbyArtificialHives(parent.Position, parent.Map).Where(x => x != parent))
+            {
+                mult += 0.25f;
+            }
+            return mult;
+        }
+        public static IEnumerable<Thing> GetAllNearbyArtificialHives(IntVec3 pos, Map map)
+        {
+            return map.listerThings.AllThings.Where(x => (x.def.building?.buildingTags.Contains("VFEI_ArtificialHive") ?? false)
+                            && x.Position.DistanceTo(pos) < VFEInsectoidsSettings.minHiveStabilityDistance);
+        }
+
 
         public List<PawnKindDef> AllAvailableInsects => Props.insectTypes.Select(x => x.insect).ToList();
 
@@ -233,12 +269,15 @@ namespace VFEInsectoids
 
         public override string CompInspectStringExtra()
         {
+            var sb = new StringBuilder();
             if (CanSpawn() && nextPawnSpawnTick != -1)
             {
                 var period = nextPawnSpawnTick - Find.TickManager.TicksGame;
-                return "VFEI_InsectoidWillBeSpawnedIn".Translate(chosenKind.LabelCap, period.ToStringTicksToPeriod());
+                sb.AppendLine("VFEI_InsectoidWillBeSpawnedIn".Translate(chosenKind.LabelCap, 
+                    period.ToStringTicksToPeriod()));
             }
-            return null;
+            sb.AppendLine("VFEI_MaintenanceLossSpeed".Translate(MaintenanceMultiplier().ToStringPercent()));
+            return sb.ToString().TrimEndNewlines();
         }
         public override void PostExposeData()
         {

@@ -1270,6 +1270,14 @@
     <killedLeavings>
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
@@ -1363,6 +1371,14 @@
     <killedLeavings>
       <InsectJelly>30</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
@@ -1460,6 +1476,14 @@
     <killedLeavings>
       <InsectJelly>40</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
@@ -1568,6 +1592,14 @@
     <killedLeavings>
       <InsectJelly>40</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
@@ -1667,6 +1699,14 @@
     <killedLeavings>
       <InsectJelly>40</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
@@ -1765,6 +1805,14 @@
     <killedLeavings>
       <InsectJelly>40</InsectJelly>
     </killedLeavings>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+	</placeWorkers>
+	<building>
+		<buildingTags>
+			<li>VFEI_ArtificialHive</li>
+		</buildingTags>
+	</building>
     <comps>
       <li Class="CompProperties_CanBeDormant">
         <startsDormant>true</startsDormant>
