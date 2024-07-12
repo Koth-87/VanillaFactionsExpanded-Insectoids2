@@ -33,7 +33,7 @@ namespace VFEInsectoids
                 return null;
             }
 
-            if (tickToSpawn > 0 && this.parent.Map.mapPawns.AllPawnsSpawnedCount < 100)
+            if (tickToSpawn > 0 && this.parent.Map.mapPawns.AllPawnsSpawnedCount < 200)
             {
                 return "VFEI_LarvaeTimeSpawn".Translate(tickToSpawn.ToStringTicksToPeriod());
             }

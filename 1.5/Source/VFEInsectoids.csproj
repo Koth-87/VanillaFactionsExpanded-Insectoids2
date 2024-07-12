@@ -75,6 +75,8 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="DeathActionWorkers\DeathActionWorker_VanishInsect.cs" />
+    <Compile Include="DeathActionWorkers\Properties\DeathActionProperties_VanishInsect.cs" />
     <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
     <Compile Include="Harmony\CompMaintainable_CurStage_Patch.cs" />
     <Compile Include="Harmony\InspectPaneFiller_DrawAreaAllowed_Patch.cs" />

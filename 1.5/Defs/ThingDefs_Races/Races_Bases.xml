@@ -20,6 +20,6 @@
 				<li MayRequire="Ludeon.RimWorld.Ideology">InsectMeat</li>
 			</mergeCompatibilityTags>
 		</ingredient>
-		<receivesSignals>true</receivesSignals>
+		
 	</ThingDef>
 </Defs>
