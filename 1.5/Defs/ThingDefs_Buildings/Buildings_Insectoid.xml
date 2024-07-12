@@ -584,6 +584,7 @@
     <fillPercent>0.50</fillPercent>
     <rotatable>false</rotatable>
     <tickerType>Normal</tickerType>
+	<specialDisplayRadius>12.9</specialDisplayRadius>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Mass>4</Mass>
