@@ -16,7 +16,7 @@
 		
         <li Class="VFEInsectoids.JobGiver_HiveDefense">
           <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
-          <targetAcquireRadius>30</targetAcquireRadius>
+          <targetAcquireRadius>75</targetAcquireRadius>
           <chaseTarget>true</chaseTarget>
         </li>
 		

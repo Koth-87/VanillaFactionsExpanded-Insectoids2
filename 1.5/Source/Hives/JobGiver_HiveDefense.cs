@@ -17,6 +17,13 @@ namespace VFEInsectoids
 
         public override float GetFlagRadius(Pawn pawn)
         {
+            if (pawn.IsColonyInsect(out var hediff))
+            {
+                if (hediff.InsectType == InsectType.Defender)
+                {
+                    return 50;
+                }
+            }
             return 30;
         }
 
