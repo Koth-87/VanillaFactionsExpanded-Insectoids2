@@ -29,12 +29,14 @@ namespace VFEInsectoids
     public class VFEInsectoidsSettings : ModSettings
     {
         public static float minHiveStabilityDistance = 10.9f;
+        public static float stabilityHiveMaintenancePenalty = 0.25f;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
             var ls = new Listing_Standard();
             ls.Begin(inRect);
             minHiveStabilityDistance = ls.SliderLabeled("VFEI_MinHiveStabilityDistance".Translate() + ": " + Math.Round(minHiveStabilityDistance, 1).ToString("0.#"), minHiveStabilityDistance, 1, 50);
+            stabilityHiveMaintenancePenalty = ls.SliderLabeled("VFEI_StabilityHiveMaintenancePenalty".Translate() + ": " + stabilityHiveMaintenancePenalty.ToStringPercent(), stabilityHiveMaintenancePenalty, 0f, 1f);
             ls.End();
         }
 
@@ -42,6 +44,7 @@ namespace VFEInsectoids
         {
             base.ExposeData();
             Scribe_Values.Look(ref minHiveStabilityDistance, "minHiveStabilityDistance", 10.9f);
+            Scribe_Values.Look(ref stabilityHiveMaintenancePenalty, "stabilityHiveMaintenancePenalty", 0.25f);
         }
     }
 }

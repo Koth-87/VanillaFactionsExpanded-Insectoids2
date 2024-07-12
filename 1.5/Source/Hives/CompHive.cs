@@ -80,7 +80,7 @@ namespace VFEInsectoids
             var mult = 1f;
             foreach (var other in GetAllNearbyArtificialHives(parent.Position, parent.Map).Where(x => x != parent))
             {
-                mult += 0.25f;
+                mult += VFEInsectoidsSettings.stabilityHiveMaintenancePenalty;
             }
             return mult;
         }

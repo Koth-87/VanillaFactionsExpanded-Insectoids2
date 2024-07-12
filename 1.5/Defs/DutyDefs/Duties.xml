@@ -6,10 +6,18 @@
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
 	  
-        <li Class="JobGiver_HiveDefense">
+		<li Class="ThinkNode_Tagger">
+			<tagToGive>DraftedOrder</tagToGive>
+			<subNodes>
+				<li Class="JobGiver_MoveToStandable" />
+				<li Class="JobGiver_Orders" />
+			</subNodes>
+		</li>
+		
+        <li Class="VFEInsectoids.JobGiver_HiveDefense">
           <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
           <targetAcquireRadius>30</targetAcquireRadius>
-          <chaseTarget>false</chaseTarget>
+          <chaseTarget>true</chaseTarget>
         </li>
 		
         <li Class="ThinkNode_ForbidOutsideFlagRadius">
@@ -32,6 +40,7 @@
     <defName>VFEI_Worker</defName>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
+	  
 		<li Class="ThinkNode_Tagger">
 			<tagToGive>DraftedOrder</tagToGive>
 			<subNodes>
@@ -39,6 +48,13 @@
 				<li Class="JobGiver_Orders" />
 			</subNodes>
 		</li>
+		
+        <li Class="VFEInsectoids.JobGiver_HiveDefense">
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+          <targetAcquireRadius>15</targetAcquireRadius>
+          <targetKeepRadius>30</targetKeepRadius>
+          <chaseTarget>false</chaseTarget>
+        </li>
 			
         <li Class="ThinkNode_ChancePerHour_Constant">
           <mtbHours>0.1</mtbHours>
@@ -84,6 +100,14 @@
 				<li Class="JobGiver_Orders" />
 			</subNodes>
 		</li>
+		
+        <li Class="VFEInsectoids.JobGiver_HiveDefense">
+          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+          <targetAcquireRadius>15</targetAcquireRadius>
+          <targetKeepRadius>30</targetKeepRadius>
+          <chaseTarget>false</chaseTarget>
+        </li>
+		
         <li Class="ThinkNode_ChancePerHour_Constant">
           <mtbHours>24</mtbHours>
           <subNodes>

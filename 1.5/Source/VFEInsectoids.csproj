@@ -82,6 +82,7 @@
     <Compile Include="Harmony\Pawn_PlayerSettings_RespectsAllowedArea_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_DesiredAnimalDensity_Patch.cs" />
     <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
+    <Compile Include="Hives\JobGiver_HiveDefense.cs" />
     <Compile Include="Hives\PlaceWorker_ArtificialHivesNear.cs" />
     <Compile Include="UI\Alert_InsectWaveIncoming.cs" />
     <Compile Include="Comps\CompFueledSpawner.cs" />
