@@ -14,6 +14,7 @@
 			<ArmorRating_Blunt>0.14</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
 			<LeatherAmount>30</LeatherAmount>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 		</statBases>
 		<tools>
 			<li>
@@ -52,6 +53,11 @@
 		<comps>
 			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
 				<initialAbility>VFEI2_InsectAcidSpew</initialAbility>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_InitialHediff">
+				<hediffname>VFEI2_AcidImmunity</hediffname>
+				<hediffseverity>1</hediffseverity>
+
 			</li>
 		</comps>
 		<race>

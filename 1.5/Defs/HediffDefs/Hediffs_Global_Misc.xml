@@ -182,6 +182,26 @@
 		</stages>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>VFEI2_AcidImmunity</defName>
+		<description>Insectoids from the Kemia geneline are immune to acid.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>acid immunity</label>
+		<defaultLabelColor>(.8,0,0)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		
+		<stages>
+			<li>
+				<damageFactors>
+					<AcidBurn>0</AcidBurn>
+					<VEF_SecondaryAcidBurn>0</VEF_SecondaryAcidBurn>
+				
+				</damageFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
 	<HediffDef Name="VFEI_InsectTypeBase" Abstract="True">
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<isBad>false</isBad>

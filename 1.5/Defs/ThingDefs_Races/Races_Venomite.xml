@@ -13,7 +13,7 @@
 			<MarketValue>500</MarketValue>
 			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.24</ArmorRating_Sharp>
-		
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<LeatherAmount>29</LeatherAmount>
 		</statBases>
 		<tools>
@@ -44,6 +44,14 @@
 			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
 				<initialAbility>VFEI2_InsectAcidSpit</initialAbility>
 			</li>
+			
+			
+			<li Class="AnimalBehaviours.CompProperties_InitialHediff">
+				<hediffname>VFEI2_AcidImmunity</hediffname>
+				<hediffseverity>1</hediffseverity>
+
+			</li>
+	
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
