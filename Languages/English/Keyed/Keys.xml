@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
+	<VFEI_ModNameForSettings>VFE - Insectoids 2</VFEI_ModNameForSettings>
+
+
 	<VFEI_InsectTerritoryScale>Infested area</VFEI_InsectTerritoryScale>
 	<VFEI_Infestation>Infestation</VFEI_Infestation>
 	<VFEI_InfestationTooltip>Whether this tile is under the effects of an insectoid infestation.

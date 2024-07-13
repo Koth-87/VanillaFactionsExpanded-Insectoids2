@@ -20,10 +20,7 @@ namespace VFEInsectoids
             VFEInsectoidsSettings.DoSettingsWindowContents(inRect);
         }
 
-        public override string SettingsCategory()
-        {
-            return Content.Name;
-        }
+        public override string SettingsCategory() => "VFEI_ModNameForSettings".Translate();
     }
 
     public class VFEInsectoidsSettings : ModSettings
