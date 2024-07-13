@@ -10,18 +10,25 @@ namespace VFEInsectoids
         public override void CompTick()
         {
             base.CompTick();
-            if (parent.pawn.IsHashIntervalTick(60) && parent.pawn.CurJob is Job job 
-                && job.jobGiver is JobGiver_AIGotoNearestHostile && job.targetA.HasThing && parent.CanCast)
+            if (parent.pawn.Faction != Faction.OfPlayer && parent.pawn.IsHashIntervalTick(60) 
+                && parent.pawn.CurJob is Job job)
             {
-                if (JobGiver_AIGotoNearestHostile_TryGiveJob_Patch.TryGetTargetCell(parent.pawn, 
-                    job.targetA.Thing, this.parent.verb, out var result))
+                if ((job.jobGiver is JobGiver_AIGotoNearestHostile 
+                    || job.jobGiver is JobGiver_AITrashBuildingsDistant
+                    || job.jobGiver is JobGiver_AIFightEnemies)
+                    && job.targetA.HasThing && parent.CanCast)
                 {
-                    if (result != default)
+                    if (JobGiver_AIGotoNearestHostile_TryGiveJob_Patch.TryGetTargetCell(parent.pawn,
+                        job.targetA.Thing, this.parent.verb, out var result))
                     {
-                        Job jumpJob = parent.GetJob(result.cell, result.cell);
-                        parent.pawn.jobs.StartJob(jumpJob, JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+                        if (result != default)
+                        {
+                            Job jumpJob = parent.GetJob(result.cell, result.cell);
+                            parent.pawn.jobs.StartJob(jumpJob, JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+                        }
                     }
                 }
+
             }
         }
     }

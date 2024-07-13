@@ -27,10 +27,8 @@ namespace VFEInsectoids
                         {
                             IAttackTarget attackTarget = potentialTargetsFor[i];
                             if (!attackTarget.ThreatDisabled(pawn) &&
-                                AttackTargetFinder.IsAutoTargetable(attackTarget) &&
-                                (!__instance.humanlikesOnly || !(attackTarget is Pawn pawn2)
-                                || pawn2.RaceProps.Humanlike) && (!(attackTarget.Thing is Pawn pawn3)
-                                || pawn3.IsCombatant()))
+                                AttackTargetFinder.IsAutoTargetable(attackTarget) 
+                                && (!(attackTarget.Thing is Pawn pawn3) || pawn3.IsCombatant()))
                             {
                                 Thing thing2 = (Thing)attackTarget;
                                 int num2 = thing2.Position.DistanceToSquared(pawn.Position);
@@ -52,20 +50,23 @@ namespace VFEInsectoids
             }
         }
 
-        public static bool TryGetTargetCell(Pawn pawn, Thing thing2, Verb verb, out (Thing thing, IntVec3 cell) targetWithCell)
+        public static bool TryGetTargetCell(Pawn pawn, Thing thing, Verb verb, 
+            out (Thing thing, IntVec3 cell) targetWithCell)
         {
             targetWithCell = default;
-            if (verb.OutOfRange(pawn.Position, thing2.Position, thing2.OccupiedRect()) is false)
+            if (verb.OutOfRange(pawn.Position, thing.Position, thing.OccupiedRect()) is false 
+                && pawn.Position.DistanceTo(thing.Position) > 2)
             {
-                var targets = GenAdj.CellsAdjacent8Way(thing2).Where(x => x != thing2.Position 
-                    && x.GetRoom(pawn.Map) == thing2.GetRoom()).Distinct().OrderBy(x => x.DistanceTo(pawn.Position));
+                var targets = GenAdj.CellsAdjacent8Way(thing).Where(x => x != thing.Position 
+                    && x.GetRoom(pawn.Map) == thing.GetRoom()).Distinct().OrderBy(x => x.DistanceTo(pawn.Position));
                 foreach (var target in targets)
                 {
                     if (Verb_CastAbilityJumpUnrestricted.CheckCanHitTargetFrom(pawn, pawn.Position, target, verb.EffectiveRange)
                         && verb.OutOfRange(pawn.Position, target, CellRect.SingleCell(target)) is false
-                        && target.WalkableBy(pawn.Map, pawn) && verb.ValidateTarget(target, false))
+                        && target.WalkableBy(pawn.Map, pawn) && target.GetFirstPawn(pawn.Map) is null 
+                        && verb.ValidateTarget(target, false))
                     {
-                        targetWithCell = (thing2, target);
+                        targetWithCell = (thing, target);
                         return true;
                     }
                 }

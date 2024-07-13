@@ -21,7 +21,7 @@
       <addSandbags>false</addSandbags>
       <addTurrets>false</addTurrets>
       <addMortars>false</addMortars>
-      <pawnGroupMultiplier>0.25</pawnGroupMultiplier>
+      <pawnGroupMultiplier>1</pawnGroupMultiplier>
     </defenseOptions>
   </KCSG.SettlementLayoutDef>
 

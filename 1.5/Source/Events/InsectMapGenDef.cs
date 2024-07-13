@@ -81,7 +81,6 @@ namespace VFEInsectoids
                 + " - creep: " + creepCount + " - non creep: " + nonCreepCount
                 + " - rate: " + (creepCount / (float)nonCreepCount));
             badCells.Clear();
-            Log.Message("Adding lords for insects");
             if (map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
             {
                 var kind = GetBossKind(map);
@@ -94,11 +93,6 @@ namespace VFEInsectoids
                         .Where(x => x.InBounds(map) && x.WalkableBy(map, boss)).First();
                     GenSpawn.Spawn(boss, position, map);
                     defendBase.AddPawn(boss);
-                    Log.Message("Added boss: " + boss + " - center " + position + " - baseCenter: " + baseCenter);
-                }
-                else
-                {
-                    Log.Message("Found no boss kind");
                 }
             }
             var insects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).ToList();
@@ -299,7 +293,6 @@ namespace VFEInsectoids
             {
                 var nonSorneInsects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect
                 && VFEI_DefOf.VFEI_Sorne.insects.Any(o => o.kind == x.kindDef) is false).ToList();
-                Log.Message("Non sorne insects: " + nonSorneInsects.Select(x => x.kindDef).Distinct().ToStringSafeEnumerable());
                 foreach (var insect in nonSorneInsects)
                 {
                     foreach (var geneline in DefDatabase<InsectGenelineDef>.AllDefs.Where(x => x != VFEI_DefOf.VFEI_Sorne))
