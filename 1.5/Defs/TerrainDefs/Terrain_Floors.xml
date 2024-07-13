@@ -26,6 +26,7 @@
 	<fertility>0.05</fertility>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <uiOrder>2020</uiOrder>
+	<designationCategory inherit ="False"/>
   </TerrainDef>
 
 </Defs>
