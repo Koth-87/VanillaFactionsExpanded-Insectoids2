@@ -3,7 +3,7 @@
 
 	<KCSG.SettlementLayoutDef Name="VFEI_LayoutInsectoidHiveBase">
 		<defName>VFEI2_InsectoidSettlementRatingOne</defName>
-		<settlementSize>220,220</settlementSize>
+		<settlementSize>80,80</settlementSize>
 		<centerBuildings>
 			<centerSize>65,65</centerSize>
 			<allowedStructures>

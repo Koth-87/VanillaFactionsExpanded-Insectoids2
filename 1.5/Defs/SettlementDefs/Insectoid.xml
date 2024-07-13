@@ -3,7 +3,7 @@
 
   <KCSG.SettlementLayoutDef>
     <defName>VFEI2_InsectoidSettlement</defName>
-    <settlementSize>220,220</settlementSize>
+    <settlementSize>80,80</settlementSize>
     <centerBuildings>
       <centerSize>65,65</centerSize>
       <allowedStructures>
@@ -21,7 +21,7 @@
       <addSandbags>false</addSandbags>
       <addTurrets>false</addTurrets>
       <addMortars>false</addMortars>
-      <pawnGroupMultiplier>1.0</pawnGroupMultiplier>
+      <pawnGroupMultiplier>0.25</pawnGroupMultiplier>
     </defenseOptions>
   </KCSG.SettlementLayoutDef>
 

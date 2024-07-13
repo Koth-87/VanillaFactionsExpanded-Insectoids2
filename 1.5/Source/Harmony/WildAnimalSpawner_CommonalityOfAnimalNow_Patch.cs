@@ -5,6 +5,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
+    [HotSwappable]
     [HarmonyPatch(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow")]
     public static class WildAnimalSpawner_CommonalityOfAnimalNow_Patch
     { 
@@ -19,10 +20,6 @@ namespace VFEInsectoids
                     {
                         __result = record.selectionWeight;
                     }
-                }
-                else
-                {
-                    __result *= 0.25f;
                 }
             }
         }

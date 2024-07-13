@@ -36,11 +36,12 @@ namespace VFEInsectoids
             }
         }
 
-        public static IEnumerable<PawnKindDef> TryOverrideWildAnimals(IEnumerable<PawnKindDef> wildAnimals, WildAnimalSpawner spawner)
+        public static IEnumerable<PawnKindDef> TryOverrideWildAnimals(IEnumerable<PawnKindDef> wildAnimals, 
+            WildAnimalSpawner spawner)
         {
-            if (spawner.map.IsInfested())
+            if (spawner.map.IsInfested() && Rand.Chance(0.75f))
             {
-                return wildAnimals.Concat(VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind));
+                return VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind);
             }
             return wildAnimals;
         }

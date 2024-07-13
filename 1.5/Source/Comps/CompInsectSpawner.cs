@@ -32,9 +32,12 @@ namespace VFEInsectoids
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad && parent is not Hive)
+            if (!respawningAfterLoad)
             {
-                CalculateNextPawnSpawnTick();
+                if (parent is not Hive || parent.Tile.IsInfestedTile())
+                {
+                    CalculateNextPawnSpawnTick();
+                }
             }
         }
 

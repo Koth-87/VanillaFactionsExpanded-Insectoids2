@@ -13,7 +13,7 @@ namespace VFEInsectoids
         {
             if (__instance.map.IsInfested())
             {
-                __result /= 4f;
+                __result /= 8f;
             }
         }
     }
