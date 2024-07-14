@@ -609,7 +609,7 @@
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>10</spawnCount>
         <spawnIntervalRange>150000</spawnIntervalRange>
-        <spawnForbidden>true</spawnForbidden>
+        <spawnForbidden>false</spawnForbidden>
         <saveKeysPrefix>jelly</saveKeysPrefix>
       </li>
     </comps>
