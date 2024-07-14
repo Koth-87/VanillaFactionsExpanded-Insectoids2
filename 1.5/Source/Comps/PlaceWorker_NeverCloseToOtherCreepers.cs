@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using RimWorld;
+using Verse;
 
 namespace VFEInsectoids
 {
@@ -6,9 +7,9 @@ namespace VFEInsectoids
     {
         public override AcceptanceReport AllowsPlacing(BuildableDef def, IntVec3 center, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)
         {
-            foreach (var item in map.listerThings.ThingsOfDef(def as ThingDef))
+            foreach (var nearby in GenRadial.RadialDistinctThingsAround(center, map, 6.9f, true))
             {
-                if (item.Position.DistanceTo(center) <= 6.9f)
+                if (nearby.def == VFEI_DefOf.VFEI2_Creeper || nearby.def.entityDefToBuild == VFEI_DefOf.VFEI2_Creeper)
                 {
                     return "VFEI_CannotPlaceCloseToOtherCreeper".Translate();
                 }
