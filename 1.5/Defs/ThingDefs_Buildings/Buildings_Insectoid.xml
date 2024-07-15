@@ -1972,9 +1972,6 @@
         <heatPerSecond>3.5</heatPerSecond>
         <heatPushMaxTemperature>23</heatPushMaxTemperature>
       </li>
-      <li Class="CompProperties_Lifespan">
-        <lifespanTicks>1200000</lifespanTicks>
-      </li>
     </comps>
     <costList>
         <InsectJelly>30</InsectJelly>
