@@ -25,6 +25,10 @@ namespace VFEInsectoids
 
         private bool PawnCanUseWorkGiverOverride(Pawn pawn, WorkGiver giver)
         {
+            if (giver.def == VFEI_DefOf.Drill)
+            {
+                return false;
+            }
             if (pawn.WorkTagIsDisabled(giver.def.workTags))
             {
                 return false;

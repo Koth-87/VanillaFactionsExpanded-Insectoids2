@@ -11,7 +11,7 @@ namespace VFEInsectoids
         public static bool Prefix(Pawn_MindState __instance)
         {
             if (__instance.pawn.RaceProps.Insect && (__instance.pawn.Faction == Faction.OfInsects 
-                && __instance.pawn.GetLord()?.LordJob is LordJob_AssaultColony || __instance.pawn.IsColonyInsect()))
+                || __instance.pawn.IsColonyInsect()))
             {
                 return false;
             }

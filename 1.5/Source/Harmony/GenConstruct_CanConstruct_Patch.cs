@@ -17,23 +17,28 @@ namespace VFEInsectoids
         {
             if (__result)
             {
-                var extension = (t.def.entityDefToBuild ?? t.def).GetModExtension<InsectBuilding>();
-                if (extension != null)
+                p.CheckCanWorkOnIt(t, ref __result);
+            }
+        }
+
+        public static void CheckCanWorkOnIt(this Pawn p, Thing t, ref bool __result)
+        {
+            var extension = (t.def.entityDefToBuild ?? t.def).GetModExtension<InsectBuilding>();
+            if (extension != null)
+            {
+                if (extension.nonInsectCanBuildIt)
                 {
-                    if (extension.nonInsectCanBuildIt)
-                    {
-                        return;
-                    }
-                    else if (p.IsColonyInsect() is false
-                        && (p.genes is null || p.genes.GenesListForReading.Any(x => x.def.defName == "VRE_Hiveglands" && x.Active) is false))
-                    {
-                        __result = false;
-                    }
+                    return;
                 }
-                else if (p.IsColonyInsect())
+                else if (p.IsColonyInsect() is false
+                    && (p.genes is null || p.genes.GenesListForReading.Any(x => x.def.defName == "VRE_Hiveglands" && x.Active) is false))
                 {
                     __result = false;
                 }
+            }
+            else if (p.IsColonyInsect())
+            {
+                __result = false;
             }
         }
     }

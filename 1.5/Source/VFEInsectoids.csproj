@@ -83,6 +83,7 @@
     <Compile Include="Harmony\InspectPaneFiller_DrawAreaAllowed_Patch.cs" />
     <Compile Include="Harmony\Pawn_MindState_StartFleeingBecauseOfPawnAction_Patch.cs" />
     <Compile Include="Harmony\Pawn_PlayerSettings_RespectsAllowedArea_Patch.cs" />
+    <Compile Include="Harmony\RepairUtility_PawnCanRepairEver_Patch.cs" />
     <Compile Include="Harmony\SymbolResolver_Settlement_AddHostilePawnGroup_Patch.cs" />
     <Compile Include="Harmony\VFEM_AutoCrane_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_DesiredAnimalDensity_Patch.cs" />
