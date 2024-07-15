@@ -46,7 +46,7 @@ namespace VFEInsectoids
         public void Hatch(Map map, IntVec3 pos,Name name)
         {
       
-            PawnGenerationRequest request = new PawnGenerationRequest(Props.spawn, Faction.OfPlayerSilentFail);
+            PawnGenerationRequest request = new PawnGenerationRequest(Props.spawn, Faction.OfPlayerSilentFail, fixedBiologicalAge: 0);
             Pawn newinsectoid = PawnGenerator.GeneratePawn(request);
             GenSpawn.Spawn(newinsectoid, CellFinder.RandomClosewalkCellNear(pos, map, 3, null), map, WipeMode.Vanish);
             newinsectoid.Name = name;
