@@ -51,7 +51,7 @@ namespace VFEInsectoids
             if (terrain == VFEI_DefOf.VFEI2_Creep)
             {
                 if (pawn.RaceProps.Insect || 
-                    (pawn.genes?.GenesListForReading.Any(x => x.def.defName == "VRE_InsectFlesh" && x.Active) ?? false))
+                    (pawn.genes != null && pawn.genes.GenesListForReading.Any(x => x.def.defName == "VRE_InsectFlesh" && x.Active)))
                 {
                     cost /= 1.06f;
                 }

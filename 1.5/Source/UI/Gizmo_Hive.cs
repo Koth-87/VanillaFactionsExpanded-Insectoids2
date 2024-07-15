@@ -168,6 +168,10 @@ namespace VFEInsectoids
                         if (curBlock <= usedBandwidth)
                         {
                             Widgets.DrawRectFast(rect5, (curBlock <= totalBandwidth) ? FilledBlockColor : ExcessBlockColor);
+                            if (Widgets.ButtonInvisible(rect5))
+                            {
+                                CameraJumper.TryJumpAndSelect(compHive.insects[i]);
+                            }
                         }
                         else
                         {

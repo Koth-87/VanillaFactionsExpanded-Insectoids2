@@ -10,7 +10,6 @@ namespace VFEInsectoids
         public VFEInsectoidsSettings settings;
         public VFEInsectoidsMod(ModContentPack pack) : base(pack)
         {
-            new Harmony("VFEInsectoidsMod").PatchAll();
             settings = GetSettings<VFEInsectoidsSettings>();
         }
 
