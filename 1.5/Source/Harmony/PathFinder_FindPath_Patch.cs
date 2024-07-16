@@ -46,12 +46,19 @@ namespace VFEInsectoids
             return cost;
         }
 
+        public static HashSet<string> allowedGenes = new HashSet<string>
+        {
+            "VRE_InsectFlesh",
+            "VREH_Glidewings",
+            "VRE_MoveSpeed_ExtremelyQuick"
+        };
         public static float TryChangePathCost(this Pawn pawn, float cost, TerrainDef terrain)
         {
             if (terrain == VFEI_DefOf.VFEI2_Creep)
             {
                 if (pawn.RaceProps.Insect || 
-                    (pawn.genes != null && pawn.genes.GenesListForReading.Any(x => x.def.defName == "VRE_InsectFlesh" && x.Active)))
+                    (pawn.genes != null && pawn.genes.GenesListForReading
+                    .Any(x => allowedGenes.Contains(x.def.defName) && x.Active)))
                 {
                     cost /= 1.06f;
                 }

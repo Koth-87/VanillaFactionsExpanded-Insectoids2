@@ -38,7 +38,8 @@ namespace VFEInsectoids
         {
             if (base.TryCastShot())
             {
-                return JumpUtility.DoJump(CasterPawn, currentTarget, ReloadableCompSource, verbProps, ability, CurrentTarget, JumpFlyerDef);
+                return JumpUtility.DoJump(CasterPawn, currentTarget, ReloadableCompSource, verbProps, 
+                    ability, CurrentTarget, JumpFlyerDef);
             }
             return false;
         }
@@ -85,6 +86,10 @@ namespace VFEInsectoids
             {
                 return false;
             }
+            if (OutOfRange(caster.Position, target.Cell, CellRect.SingleCell(target.Cell)))
+            {
+                return false;
+            }
             if (!ReloadableUtility.CanUseConsideringQueuedJobs(CasterPawn, EquipmentSource))
             {
                 return false;
@@ -99,17 +104,21 @@ namespace VFEInsectoids
 
         public override void DrawHighlight(LocalTargetInfo target)
         {
-            if (target.IsValid && JumpUtility.ValidJumpTarget(caster.Map, target.Cell))
+            if (target.IsValid && ValidateTarget(target.Cell, false))
             {
                 GenDraw.DrawTargetHighlightWithLayer(target.CenterVector3, AltitudeLayer.MetaOverlays);
             }
-            //GenDraw.DrawRadiusRing(caster.Position, EffectiveRange, Color.white, (IntVec3 c) => GenSight.LineOfSight(caster.Position, c, caster.Map) && JumpUtility.ValidJumpTarget(caster.Map, c));
+            GenDraw.DrawRadiusRing(caster.Position, EffectiveRange, Color.white, (IntVec3 c) => ValidateTarget(c, false));
         }
 
         public static bool CheckCanHitTargetFrom(Pawn pawn, IntVec3 root, LocalTargetInfo targ, float range)
         {
             float num = range * range;
             IntVec3 cell = targ.Cell;
+            if (cell.WalkableBy(pawn.Map, pawn) is false)
+            {
+                return false;
+            }
             if ((float)pawn.Position.DistanceToSquared(cell) <= num)
             {
                 return true;

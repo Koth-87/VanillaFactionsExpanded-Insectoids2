@@ -54,7 +54,7 @@ namespace VFEInsectoids
             out (Thing thing, IntVec3 cell) targetWithCell)
         {
             targetWithCell = default;
-            if (verb.OutOfRange(pawn.Position, thing.Position, thing.OccupiedRect()) is false 
+            if (pawn.Position.Roofed(pawn.Map) is false && verb.OutOfRange(pawn.Position, thing.Position, thing.OccupiedRect()) is false 
                 && pawn.Position.DistanceTo(thing.Position) > 2)
             {
                 var targets = GenAdj.CellsAdjacent8Way(thing).Where(x => x != thing.Position 

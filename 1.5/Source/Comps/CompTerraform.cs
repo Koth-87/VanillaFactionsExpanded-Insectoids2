@@ -29,7 +29,7 @@ namespace VFEInsectoids
 
         protected override bool CellValidator(IntVec3 cell)
         {
-            return cell.GetTerrain(parent.Map) != Props.terrainToSet;
+            return cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet && terrain.IsWater is false;
         }
 
         protected override List<IntVec3> GetCells()

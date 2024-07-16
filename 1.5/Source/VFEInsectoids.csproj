@@ -87,6 +87,7 @@
     <Compile Include="Harmony\SymbolResolver_Settlement_AddHostilePawnGroup_Patch.cs" />
     <Compile Include="Harmony\VFEM_AutoCrane_Patch.cs" />
     <Compile Include="Harmony\WildAnimalSpawner_DesiredAnimalDensity_Patch.cs" />
+    <Compile Include="Hives\Hediff_ToBeCocooned.cs" />
     <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
     <Compile Include="Hives\JobGiver_HiveDefense.cs" />
     <Compile Include="Hives\PlaceWorker_ArtificialHivesNear.cs" />

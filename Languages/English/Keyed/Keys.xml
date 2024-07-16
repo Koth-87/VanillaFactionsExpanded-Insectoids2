@@ -51,4 +51,5 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_MaintenanceLossSpeed>Maintenance loss speed: {0}</VFEI_MaintenanceLossSpeed>
 	<VFEI_MinHiveStabilityDistance>Nearby artificial hive distance penalty</VFEI_MinHiveStabilityDistance>
 	<VFEI_StabilityHiveMaintenancePenalty>Stability Hive maintenance penalty</VFEI_StabilityHiveMaintenancePenalty>
+	<VFEI_CannotUseRoofed>Caster is in a roofed area.</VFEI_CannotUseRoofed>
 </LanguageData>

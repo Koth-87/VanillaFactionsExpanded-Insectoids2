@@ -12,6 +12,7 @@
             <li>VFEI2_BasicHivetech</li>
          </researchPrerequisites>
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
       </value>
    </Operation>
    

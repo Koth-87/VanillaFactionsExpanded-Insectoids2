@@ -240,4 +240,11 @@
 			</li>
 		</comps>
 	</HediffDef>
+	
+	<HediffDef>
+		<defName>VFEI_ToBeCocooned</defName>
+		<label>to be cocooned</label>
+		<description>To be cocooned.</description>
+		<hediffClass>VFEInsectoids.Hediff_ToBeCocooned</hediffClass>
+	</HediffDef>
 </Defs>

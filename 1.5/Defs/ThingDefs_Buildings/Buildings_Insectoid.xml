@@ -198,6 +198,7 @@
       <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
     </building>
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
   </ThingDef>
   
   <ThingDef Name="VFEI2_BuildingInsectoidBase" ParentName="VFEI2_BuildingBase" Abstract="True">
@@ -1232,6 +1233,7 @@
     <building>
 	  <combatPower>150</combatPower>
       <deconstructible>false</deconstructible>
+      <isEdifice>false</isEdifice>
     </building>
   </ThingDef>
   

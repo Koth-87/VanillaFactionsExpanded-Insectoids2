@@ -211,8 +211,21 @@ namespace VFEInsectoids
             chosenKind = def;
             foreach (var insect in insects.ToList())
             {
-                SpawnCocoon(insect);
+                if (insect.Spawned is false)
+                {
+                    SetToBeCocooned(insect);
+                }
+                else
+                {
+                    SpawnCocoon(insect);
+                }
             }
+        }
+
+        public void SetToBeCocooned(Pawn insect)
+        {
+            var hediff = insect.health.AddHediff(VFEI_DefOf.VFEI_ToBeCocooned) as Hediff_ToBeCocooned;
+            hediff.hive = this.parent;
         }
 
         public void SpawnCocoon(Pawn insect)
