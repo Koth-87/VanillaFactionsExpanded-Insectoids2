@@ -2059,6 +2059,7 @@
     <costList>
         <InsectJelly>60</InsectJelly>
 		<VFEI2_RoyalInsectJelly>20</VFEI2_RoyalInsectJelly>
+		<VFEI2_PherocoreSorne>1</VFEI2_PherocoreSorne>
     </costList>
     <designationCategory>VFEI2_Insectoids</designationCategory>
     <researchPrerequisites>
