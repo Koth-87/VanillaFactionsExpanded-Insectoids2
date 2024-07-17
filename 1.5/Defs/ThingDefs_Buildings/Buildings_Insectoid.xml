@@ -1248,7 +1248,7 @@
   <ThingDef ParentName="VFEI2_BuildingBase">
     <defName>VFEI2_ArtificialBasicHive</defName>
     <label>artificial basic hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning the most basic insectoids over time, as well as small amounts of valuable insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning the most basic insectoids over time, as well as small amounts of valuable insect jelly. It requires no maintenance, but will still affect the maintenance of nearby hives.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/BasicHive</texPath>
@@ -1349,7 +1349,7 @@
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialSorneHive</defName>
     <label>artificial sorne hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/SorneHive</texPath>
@@ -1454,7 +1454,7 @@
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialNuchadusHive</defName>
     <label>artificial nuchadus hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning various Nuchadus geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Nuchadus geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/NuchadusHive</texPath>
@@ -1569,7 +1569,7 @@
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialChelisHive</defName>
     <label>artificial chelis hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning various Chelis geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Chelis geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/ChelisHive</texPath>
@@ -1676,7 +1676,7 @@
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialKemianHive</defName>
     <label>artificial kemian hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning various Kemian geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Kemian geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/KemianHive</texPath>
@@ -1783,7 +1783,7 @@
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
     <defName>VFEI2_ArtificialXanidesHive</defName>
     <label>artificial xanides hive</label>
-    <description>An artificially constructed hive of giant insects. It is capable of spawning various Xanides geneline insectoids over time, as well as some amount of insect jelly.</description>
+    <description>An artificially constructed hive of giant insects. It is capable of spawning various Xanides geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
     <thingClass>Hive</thingClass>
     <graphicData>
       <texPath>Things/Building/XanidesHive</texPath>
