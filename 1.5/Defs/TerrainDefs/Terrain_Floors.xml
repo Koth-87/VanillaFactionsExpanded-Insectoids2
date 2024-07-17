@@ -15,7 +15,7 @@
 	  <FilthMultiplier>1.5</FilthMultiplier>
       <WorkToBuild>1000</WorkToBuild>
       <CleaningTimeFactor>0.5</CleaningTimeFactor>
-	  <Flammability>0</Flammability>
+	  <Flammability>0.75</Flammability>
     </statBases>
     <affordances>
       <li>Light</li>
@@ -27,6 +27,21 @@
 	<constructEffect>VFEI2_ConstructSlime</constructEffect>
     <uiOrder>2020</uiOrder>
 	<designationCategory inherit ="False"/>
+	<burnedDef>VFEI2_BurnedCreep</burnedDef>
+  </TerrainDef>
+  
+  <TerrainDef ParentName="BurnedFloorBase">
+    <defName>VFEI2_BurnedCreep</defName>
+    <label>burned creep</label>
+    <statBases>
+      <Cleanliness>-2</Cleanliness>
+	  <FilthMultiplier>1.5</FilthMultiplier>
+      <CleaningTimeFactor>0.5</CleaningTimeFactor>
+    </statBases>
+    <renderPrecedence>201</renderPrecedence>
+    <description>Burned-out creep.</description>
+    <texturePath>Terrain/Surfaces/BurnedCreep</texturePath>
+    <edgeType>FadeRough</edgeType>
   </TerrainDef>
 
 </Defs>
