@@ -107,7 +107,7 @@
             <clipPath>Special/InsectThumper_Thump_01a_01</clipPath>
           </li>
         </grains>
-        <volumeRange>25</volumeRange>
+        <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
       </li>
@@ -126,7 +126,7 @@
             <clipPath>Special/InsectThumper_Thump_01b_01</clipPath>
           </li>
         </grains>
-        <volumeRange>25</volumeRange>
+        <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
       </li>
@@ -145,7 +145,7 @@
             <clipPath>Special/InsectThumper_Thump_01c_01</clipPath>
           </li>
         </grains>
-        <volumeRange>25</volumeRange>
+        <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
       </li>
@@ -164,7 +164,7 @@
             <clipPath>Special/InsectThumper_Thump_01d_01</clipPath>
           </li>
         </grains>
-        <volumeRange>25</volumeRange>
+        <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
       </li>
@@ -182,7 +182,7 @@
             <clipPath>Special/LetterArriveInsectBossgroup</clipPath>
           </li>
         </grains>
-        <volumeRange>25</volumeRange>
+        <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
       </li>
