@@ -1,4 +1,6 @@
-﻿using Verse;
+﻿using RimWorld;
+using Verse;
+using Verse.AI.Group;
 
 namespace VFEInsectoids
 {
@@ -22,8 +24,9 @@ namespace VFEInsectoids
         private CompHive _compHive;
         public CompHive CompHive =>_compHive ??= hive?.TryGetComp<CompHive>();
         public abstract InsectType InsectType { get; }
-        public override bool ShouldRemove => pawn.MapHeld is null || CompHive is null || CompHive.parent.Destroyed 
-            || CompHive.parent.MapHeld != pawn.MapHeld;
+        public override bool ShouldRemove => CompHive is null || CompHive.parent.Destroyed 
+            || CompHive.parent.MapHeld != pawn.MapHeld && pawn.Spawned && 
+            pawn.GetLord().LordJob is not LordJob_FormAndSendCaravan;
 
         public override void PostRemoved()
         {
@@ -41,6 +44,25 @@ namespace VFEInsectoids
         {
             base.Notify_Spawned();
             UpdateArea();
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+            if (pawn.IsHashIntervalTick(60))
+            {
+                var lord = pawn.GetLord();
+                if (lord is null)
+                {
+                    CompHive.lord.AddPawn(pawn);
+                }
+                else if (hive is Pawn pawnHive && pawnHive.GetLord() is Lord lord2
+                    && lord2.LordJob is LordJob_FormAndSendCaravan lordCaravan)
+                {
+                    lord.RemovePawn(pawn);
+                    lord2.AddPawn(pawn);
+                }
+            }
         }
 
         public void UpdateArea()

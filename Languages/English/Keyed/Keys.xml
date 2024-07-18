@@ -21,6 +21,7 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_CocoonInsectSpawnIn>{0} before insect spawn.</VFEI_CocoonInsectSpawnIn>
 	<VFEI_CreatingCocoon>{0} to create cocoon</VFEI_CreatingCocoon>
 	<VFEI_CannotPlaceCloseToOtherCreeper>Cannot be placed close to other creeper.</VFEI_CannotPlaceCloseToOtherCreeper>
+	<VFEI_CannotPlaceCloseToOtherJellyFarm>Cannot be placed close to other jelly farm.</VFEI_CannotPlaceCloseToOtherJellyFarm>
 	<VFEI_Insectoids>Insectoids</VFEI_Insectoids>
 	<VFEI_ChooseInsectoidColor>Choose insectoid {0} color</VFEI_ChooseInsectoidColor>
 	<VFEI_DefenderDesc>Defender insectoids vigilantly protect their hive by attacking any hostile entities that come within a designated radius.</VFEI_DefenderDesc>

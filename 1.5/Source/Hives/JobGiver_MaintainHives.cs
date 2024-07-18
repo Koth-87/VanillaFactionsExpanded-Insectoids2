@@ -15,7 +15,7 @@ namespace VFEInsectoids
                 .OrderBy(x => x.Position.DistanceTo(pawn.Position)))
             {
                 CompMaintainable compMaintainable = hive.TryGetComp<CompMaintainable>();
-                if (compMaintainable.CurStage != MaintainableStage.Healthy)
+                if (compMaintainable != null && compMaintainable.CurStage != MaintainableStage.Healthy)
                 {
                     return JobMaker.MakeJob(JobDefOf.Maintain, hive);
                 }

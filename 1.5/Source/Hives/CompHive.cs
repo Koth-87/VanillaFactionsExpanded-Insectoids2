@@ -111,6 +111,24 @@ namespace VFEInsectoids
                     SetNextRespawnTick();
                 }
             }
+
+            if (lord != null && lord.Map != parent.Map)
+            {
+                RemoveLord();
+            }
+            if (insects.Count > 0 && lord is null)
+            {
+                if (parent is Pawn pawn && pawn.GetLord() is Lord lord && lord.LordJob is LordJob_FormAndSendCaravan)
+                {
+                    return;
+                }
+                lord = LordMaker.MakeNewLord(parent.Faction, new LordJob_PlayerHive(parent), parent.Map);
+                lord.AddBuilding(parent as Building);
+                foreach (var insect in insects)
+                {
+                    lord.AddPawn(insect);
+                }
+            }
         }
 
         private void SetNextRespawnTick()
@@ -149,10 +167,16 @@ namespace VFEInsectoids
             }
             if (lord != null)
             {
-                lord.RemoveAllBuildings();
-                lord.RemoveAllPawns();
-                previousMap.lordManager.RemoveLord(lord);
+                RemoveLord();
             }
+        }
+
+        private void RemoveLord()
+        {
+            lord.RemoveAllBuildings();
+            lord.RemoveAllPawns();
+            lord.Map?.lordManager.RemoveLord(lord);
+            lord = null;
         }
 
         public override void CompTick()
@@ -292,7 +316,10 @@ namespace VFEInsectoids
                 sb.AppendLine("VFEI_InsectoidWillBeSpawnedIn".Translate(chosenKind.LabelCap, 
                     period.ToStringTicksToPeriod()));
             }
-            sb.AppendLine("VFEI_MaintenanceLossSpeed".Translate(MaintenanceMultiplier().ToStringPercent()));
+            if (parent.GetComp<CompMaintainable>() != null)
+            {
+                sb.AppendLine("VFEI_MaintenanceLossSpeed".Translate(MaintenanceMultiplier().ToStringPercent()));
+            }
             return sb.ToString().TrimEndNewlines();
         }
         public override void PostExposeData()

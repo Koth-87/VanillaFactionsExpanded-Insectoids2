@@ -34,7 +34,11 @@ namespace VFEInsectoids
         {
             var pos = thing.Position;
             thing.DeSpawn();
-            GenSpawn.Spawn(Props.thingToSet, pos, parent.Map);
+            var rock = GenSpawn.Spawn(Props.thingToSet, pos, parent.Map);
+            if (parent.Faction != null && rock.def.CanHaveFaction)
+            {
+                rock.SetFaction(parent.Faction);
+            }
         }
 
         protected override bool ThingValidator(Thing thing)

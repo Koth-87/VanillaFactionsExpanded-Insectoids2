@@ -67,6 +67,24 @@
 				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
 
 			</li>
+			<li Class="VFEInsectoids.CompProperties_Hive">
+				<insectTypes>
+					<li>
+						<insect>Spelopede</insect>
+						<insectType>Worker</insectType>
+					</li>
+					<li>
+						<insect>VFEI2_Megapede</insect>
+						<insectType>Defender</insectType>
+					</li>
+					<li>
+						<insect>Megaspider</insect>
+						<insectType>Hunter</insectType>
+					</li>
+				</insectTypes>
+				<insectoidRespawnTime>180000</insectoidRespawnTime>
+				<spawnSound>Hive_Spawn</spawnSound>
+			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>

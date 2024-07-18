@@ -78,6 +78,9 @@
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompAOE_Thing.cs" />
     <Compile Include="Comps\CompTransformRocks.cs" />
+    <Compile Include="Hives\JobGiver_FollowCaravan.cs" />
+    <Compile Include="Hives\LordToil_PlayerHive.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherJellyFarms.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_VanishInsect.cs" />
     <Compile Include="DeathActionWorkers\Properties\DeathActionProperties_VanishInsect.cs" />
     <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
@@ -93,7 +96,7 @@
     <Compile Include="Hives\Hediff_ToBeCocooned.cs" />
     <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
     <Compile Include="Hives\JobGiver_HiveDefense.cs" />
-    <Compile Include="Hives\PlaceWorker_ArtificialHivesNear.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_ArtificialHivesNear.cs" />
     <Compile Include="UI\Alert_InsectWaveIncoming.cs" />
     <Compile Include="Comps\CompFueledSpawner.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />
@@ -125,7 +128,7 @@
     <Compile Include="Comps\CompSpawnSwarmlings.cs" />
     <Compile Include="Comps\CompSwarmlingToCocoon.cs" />
     <Compile Include="Comps\CompPlantFarm.cs" />
-    <Compile Include="Comps\PlaceWorker_NeverCloseToOtherCreepers.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherCreepers.cs" />
     <Compile Include="Comps\Properties\CompProperties_OnDestroyWall.cs" />
     <Compile Include="Comps\Properties\CompProperties_SpawnSwarmlings.cs" />
     <Compile Include="Comps\Properties\CompProperties_SwarmlingToCocoon.cs" />

@@ -699,21 +699,24 @@
       <MarketValue>100</MarketValue>
 	  <WorkToBuild>2200</WorkToBuild>
     </statBases>
+	<placeWorkers>
+		<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherJellyFarms</li>
+	</placeWorkers>
     <comps>
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
       <li Class="CompProperties_Spawner">
         <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>10</spawnCount>
+        <spawnCount>6</spawnCount>
         <spawnIntervalRange>45000~65000</spawnIntervalRange>
         <spawnMaxAdjacent>40</spawnMaxAdjacent>
         <spawnForbidden>false</spawnForbidden>
         <saveKeysPrefix>jelly</saveKeysPrefix>
       </li>
       <li Class="CompProperties_Maintainable">
-        <ticksHealthy>60000</ticksHealthy>
-        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <ticksHealthy>30000</ticksHealthy>
+        <ticksNeedsMaintenance>30000</ticksNeedsMaintenance>
         <damagePerTickRare>10</damagePerTickRare>
       </li>
     </comps>
@@ -1368,11 +1371,6 @@
         <spawnCountOnSpawn>10</spawnCountOnSpawn>
         <spawnMtbHours>4</spawnMtbHours>
         <spawnRadius>5</spawnRadius>
-      </li>
-      <li Class="CompProperties_Maintainable">
-        <ticksHealthy>60000</ticksHealthy>
-        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
-        <damagePerTickRare>10</damagePerTickRare>
       </li>
     </comps>
     <costList>
