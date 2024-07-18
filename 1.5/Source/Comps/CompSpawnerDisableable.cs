@@ -4,7 +4,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    public class CompInsectJellySpawner : CompSpawner
+    public class CompSpawnerDisableable : CompSpawner
     {
         public bool canSpawn;
 

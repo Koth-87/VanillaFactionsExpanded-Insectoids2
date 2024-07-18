@@ -13,7 +13,7 @@ namespace VFEInsectoids
             this.compClass = typeof(CompPlantFarm);
         }
     }
-    public class CompPlantFarm : CompAOE
+    public class CompPlantFarm : CompAOE_Cell
     {
         public CompProperties_PlantFarm Props => base.props as CompProperties_PlantFarm;
 

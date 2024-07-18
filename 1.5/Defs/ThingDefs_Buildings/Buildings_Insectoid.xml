@@ -644,7 +644,7 @@
 		<spawnTickRate>45000</spawnTickRate>
 	  </li>
       <li Class="CompProperties_Spawner">
-		<compClass>VFEInsectoids.CompInsectJellySpawner</compClass>
+		<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
         <thingToSpawn>InsectJelly</thingToSpawn>
         <spawnCount>10</spawnCount>
         <spawnIntervalRange>150000</spawnIntervalRange>
@@ -2215,13 +2215,13 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
-	  <li Class="VFEInsectoids.CompProperties_Terraform">
+	  <li Class="VFEInsectoids.CompProperties_TransformRocks">
 		<radius>24.9</radius>
-		<terrainToSet>VFEI2_Creep</terrainToSet>
-		<spawnTickRate>45000</spawnTickRate>
+		<spawnTickRate>14000~36000</spawnTickRate>
+		<thingToSet>VFEI_HivestoneWall</thingToSet>
 	  </li>
       <li Class="CompProperties_Spawner">
-		<compClass>VFEInsectoids.CompInsectJellySpawner</compClass>
+		<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
         <thingToSpawn>VFEI2_Chitin</thingToSpawn>
         <spawnCount>10</spawnCount>
         <spawnIntervalRange>150000</spawnIntervalRange>

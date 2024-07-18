@@ -25,7 +25,7 @@ namespace VFEInsectoids
                 }
             });
 
-            if (Props.chaining)
+            if (mode == DestroyMode.KillFinalize && Props.chaining)
             {
                 if (DoNotChain)
                 {

@@ -70,5 +70,6 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_KemianHive, VFEI2_ChelisHive, VFEI2_XanidesHive, VFEI2_NuchadusHive;
         public static WorkGiverDef Drill;
         public static HediffDef VFEI_ToBeCocooned;
+        public static ThingDef VFEI2_Hivenode;
     }
 }

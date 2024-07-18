@@ -1,59 +1,20 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Verse;
+﻿using Verse;
 
 namespace VFEInsectoids
 {
-    public class CompProperties_AOE : CompProperties
-    {
-        public float radius;
-        public IntRange spawnTickRate;
-    }
-
     public abstract class CompAOE : ThingComp
     {
         public CompProperties_AOE Props => base.props as CompProperties_AOE;
         public int nextTickEffect;
-
-        public int NextTickEffect => Find.TickManager.TicksGame + Props.spawnTickRate.RandomInRange;
-
-        public override void CompTick()
-        {
-            base.CompTick();
-            if (Active)
-            {
-                if (nextTickEffect == 0)
-                {
-                    nextTickEffect = NextTickEffect;
-                }
-                if (Find.TickManager.TicksGame >= nextTickEffect)
-                {
-                    var cells = GetCells();
-                    if (TryGetCell(cells, out var cell))
-                    {
-                        DoEffect(cell);
-                    }
-                    nextTickEffect = NextTickEffect;
-                }
-            }
-        }
-
-        protected virtual bool TryGetCell(List<IntVec3> cells, out IntVec3 cell)
-        {
-            return cells.TryRandomElement(out cell);
-        }
-
         protected virtual bool Active => parent.Spawned;
+        public int NextTickEffect => Find.TickManager.TicksGame + Props.spawnTickRate.RandomInRange;
+        public CompSpawnerDisableable compSpawner;
 
-        protected virtual List<IntVec3> GetCells()
+        public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            return GenRadial.RadialCellsAround(parent.Position, Props.radius, true)
-                .Where(cell => cell.InBounds(parent.Map) && CellValidator(cell)).ToList();
+            base.PostSpawnSetup(respawningAfterLoad);
+            compSpawner = parent.GetComp<CompSpawnerDisableable>();
         }
-
-        protected abstract void DoEffect(IntVec3 cell);
-
-        protected abstract bool CellValidator(IntVec3 cell);
 
         public override void PostExposeData()
         {

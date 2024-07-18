@@ -75,6 +75,9 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\CompAOE.cs" />
+    <Compile Include="Comps\CompAOE_Thing.cs" />
+    <Compile Include="Comps\CompTransformRocks.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_VanishInsect.cs" />
     <Compile Include="DeathActionWorkers\Properties\DeathActionProperties_VanishInsect.cs" />
     <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
@@ -115,8 +118,8 @@
     <Compile Include="Harmony\SettlementDefeatUtility_IsDefeated_Patch.cs" />
     <Compile Include="Harmony\TileFinder_RandomSettlementTileFor_Patch.cs" />
     <Compile Include="Hives\CocoonHive.cs" />
-    <Compile Include="Comps\CompAOE.cs" />
-    <Compile Include="Comps\CompInsectJellySpawner.cs" />
+    <Compile Include="Comps\CompAOE_Cell.cs" />
+    <Compile Include="Comps\CompSpawnerDisableable.cs" />
     <Compile Include="Comps\CompTerraform.cs" />
     <Compile Include="Comps\CompOnDestroyWall.cs" />
     <Compile Include="Comps\CompSpawnSwarmlings.cs" />

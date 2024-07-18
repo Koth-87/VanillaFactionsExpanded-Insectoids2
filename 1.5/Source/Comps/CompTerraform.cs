@@ -13,10 +13,9 @@ namespace VFEInsectoids
         }
     }
 
-    public class CompTerraform : CompAOE
+    public class CompTerraform : CompAOE_Cell
     {
         public CompProperties_Terraform Props => base.props as CompProperties_Terraform;
-        public CompInsectJellySpawner insectSpawner;
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -24,18 +23,18 @@ namespace VFEInsectoids
             {
                 parent.Map.terrainGrid.SetTerrain(parent.Position, Props.terrainToSet);
             }
-            insectSpawner = parent.GetComp<CompInsectJellySpawner>();
         }
 
         protected override bool CellValidator(IntVec3 cell)
         {
-            return cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet && terrain.IsWater is false;
+            return cell.GetTerrain(parent.Map) is TerrainDef terrain 
+                && terrain != Props.terrainToSet && terrain.IsWater is false && terrain.natural;
         }
 
         protected override List<IntVec3> GetCells()
         {
             var cells = base.GetCells();
-            insectSpawner.canSpawn = cells.Any() is false;
+            compSpawner.canSpawn = cells.Any() is false;
             return cells;
         }
 
