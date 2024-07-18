@@ -2291,9 +2291,9 @@
         <explosiveRadius>6.9</explosiveRadius>
         <explosiveDamageType>Flame</explosiveDamageType>
         <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
-        <preExplosionSpawnThingDef>Filth_BloodInsect</preExplosionSpawnThingDef>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
         <preExplosionSpawnChance>1</preExplosionSpawnChance>
-		<chanceNeverExplodeFromDamage>0.9</chanceNeverExplodeFromDamage>
+		<chanceNeverExplodeFromDamage>0.35</chanceNeverExplodeFromDamage>
         <wickTicks>1500~3600</wickTicks>
       </li>
     </comps>
