@@ -176,15 +176,15 @@
     <context>MapOnly</context>
     <subSounds>
       <li>
-        <onCamera>True</onCamera>
+        <onCamera>true</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
             <clipPath>Special/LetterArriveInsectBossgroup</clipPath>
           </li>
         </grains>
         <volumeRange>50</volumeRange>
-        <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <muteWhenPaused>False</muteWhenPaused>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
