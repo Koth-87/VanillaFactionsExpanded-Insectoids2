@@ -33,7 +33,7 @@
         </grains>
         <volumeRange>60</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -52,7 +52,7 @@
         </grains>
         <volumeRange>60</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -71,7 +71,7 @@
         </grains>
         <volumeRange>25</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -90,7 +90,7 @@
         </grains>
         <volumeRange>25</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -109,7 +109,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -128,7 +128,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -147,7 +147,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -166,7 +166,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
