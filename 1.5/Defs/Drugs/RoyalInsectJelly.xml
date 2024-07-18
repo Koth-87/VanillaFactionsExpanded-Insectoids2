@@ -3,7 +3,7 @@
 	<ThingDef ParentName="DrugBase">
 		<defName>VFEI2_RoyalInsectJelly</defName>
 		<label>royal insect jelly</label>
-		<description>A golden, shining jelly used by the insect queens to create new spawn. It is smooth, rich, and brings joy to those who consume it. Because of its unique biological composition, it boosts immunity and nourishes anyone who has a taste of it. Addiction to royal jelly can compromise the immunity system of the addict.</description>
+		<description>A golden, shining jelly used by the insect queens to create new spawn. It is smooth, rich, and brings joy to those who consume it. Because of its unique biological composition, it boosts immunity and nourishes anyone who has a taste of it. Addiction to royal jelly can compromise the immunity system of the addict. It is also known to increase the speed of gestating hive leaders in victims.</description>
 		<descriptionHyperlinks>
 			<HediffDef>VFEI2_RoyalJellyHigh</HediffDef>
 			<HediffDef>VFEI2_RoyalJellyTolerance</HediffDef>
