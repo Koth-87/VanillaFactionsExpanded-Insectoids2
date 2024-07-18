@@ -109,7 +109,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -128,7 +128,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -147,7 +147,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
@@ -166,7 +166,7 @@
         </grains>
         <volumeRange>50</volumeRange>
         <muteWhenPaused>True</muteWhenPaused>
-        <tempoAffectedByGameSpeed>False</tempoAffectedByGameSpeed>
+        <tempoAffectedByGameSpeed>True</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
   </SoundDef>
