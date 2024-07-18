@@ -186,6 +186,43 @@
 	</comps>
   </ThingDef>
   
+  <ThingDef ParentName="VFEI2_InsectoidWallBase">
+    <defName>VFEI_HivestoneWall</defName>
+    <label>hivestone wall</label>
+    <description>An impassable rock wall reinforced with thick and solidified insect goop. Much stronger than standard rock wall, but flammable. Capable of holding up a roof.</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/WallHive_Atlas</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/WallHive_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.75</Flammability>
+	  <Beauty>0</Beauty>
+    </statBases>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/WallHive_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <researchPrerequisites>
+        <li>VFEI2_BasicHivetech</li>
+    </researchPrerequisites>
+	<tickerType>Rare</tickerType>
+	<designationCategory inherit="False" />
+	<comps>
+		<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
+			<filthSpawnAmount>2~3</filthSpawnAmount>
+			<radius>1.5</radius>
+			<filth>Filth_BloodInsect</filth>
+			<chaining>false</chaining>
+		</li>
+        <li Class="CompProperties_SelfhealHitpoints">
+          <ticksPerHeal>3000</ticksPerHeal> 
+        </li>
+	</comps>
+	<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+  </ThingDef>
+  
   <!-- ========================================================= -->
 
   <ThingDef Name="VFEI2_BuildingBase" Abstract="True">
@@ -2139,4 +2176,136 @@
       </angleCurve>
     </skyfaller>
   </ThingDef>
+  
+<!-- New structures -->
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_Petroglypher</defName>
+    <label>petroglypher</label>
+    <description>A hive-like structure created by giant insects. It continuously reinforces nearby rock formations with thick, resin-like insect goop, creating hivestone walls in the process. It will only turn natural rock walls into hivestone and will have no effect on any other wall types. If all walls around a petroglypher are turned into hivestone, it will begin expunging  chitin in regular intervals.</description>
+    <graphicData>
+      <texPath>Things/Building/Petroglypher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(4, 4)</drawSize>
+      <shadowData>
+        <volume>(2.3, 2.6, 2.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>75</InsectJelly>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <fillPercent>0.50</fillPercent>
+    <rotatable>false</rotatable>
+	<size>(3, 3)</size>
+    <tickerType>Normal</tickerType>
+	<specialDisplayRadius>24.9</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>40</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>1000</MarketValue>
+	  <WorkToBuild>3500</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+	  <li Class="VFEInsectoids.CompProperties_Terraform">
+		<radius>24.9</radius>
+		<terrainToSet>VFEI2_Creep</terrainToSet>
+		<spawnTickRate>45000</spawnTickRate>
+	  </li>
+      <li Class="CompProperties_Spawner">
+		<compClass>VFEInsectoids.CompInsectJellySpawner</compClass>
+        <thingToSpawn>VFEI2_Chitin</thingToSpawn>
+        <spawnCount>10</spawnCount>
+        <spawnIntervalRange>150000</spawnIntervalRange>
+        <spawnForbidden>false</spawnForbidden>
+        <saveKeysPrefix>chitin</saveKeysPrefix>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>180</InsectJelly>
+		<VFEI2_PherocoreXanides>1</VFEI2_PherocoreXanides>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_Hivenode</defName>
+    <label>hivenode</label>
+    <description>A large, exotic goop spire created by giant insects. Hivenodes lie in the center of the hive, nourishing nearby insectoid structures with required sustenance and warmth, removing any maintenance need. When destroyed, it may explode in a large, fiery explosion.</description>
+    <graphicData>
+      <texPath>Things/Building/Hivenode</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>(4, 4)</drawSize>
+      <shadowData>
+        <volume>(2.3, 2.6, 2.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <thingClass>Building</thingClass>
+    <minifiedDef Inherit="False"/>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>75</InsectJelly>
+    </killedLeavings>
+    <selectable>true</selectable>
+    <fillPercent>0.3</fillPercent>
+    <rotatable>false</rotatable>
+	<size>(3, 3)</size>
+    <tickerType>Normal</tickerType>
+	<specialDisplayRadius>7.9</specialDisplayRadius>
+	<uiIconScale>0.9</uiIconScale>
+	<uiIconOffset>(0, -0.1)</uiIconOffset>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <Mass>40</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>1000</MarketValue>
+	  <WorkToBuild>3800</WorkToBuild>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal> 
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>12.9</glowRadius>
+        <glowColor>(184,136,83,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>4.5</heatPerSecond>
+        <heatPushMaxTemperature>36</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>6.9</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <preExplosionSpawnThingDef>Filth_BloodInsect</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>1</preExplosionSpawnChance>
+		<chanceNeverExplodeFromDamage>0.9</chanceNeverExplodeFromDamage>
+        <wickTicks>1500~3600</wickTicks>
+      </li>
+    </comps>
+    <costList>
+        <InsectJelly>145</InsectJelly>
+		<VFEI2_PherocoreNuchadus>1</VFEI2_PherocoreNuchadus>
+    </costList>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_ExoticHivetech</li>
+    </researchPrerequisites>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
 </Defs>
