@@ -39,8 +39,6 @@ namespace VFEInsectoids
             {
                 LordMaker.MakeNewLord(Faction.OfInsects, new LordJob_AssaultColony(Faction.OfInsects, canKidnap: true, canTimeoutOrFlee: false), map, list);
             }
-            var thumpers = loc.GetThingList(map).Where(x => x.TryGetComp<CompThumper>() != null).ToList();
-            thumpers.ForEach(x => x.Destroy(DestroyMode.KillFinalizeLeavingsOnly));
         }
 
         public override void ExposeData()

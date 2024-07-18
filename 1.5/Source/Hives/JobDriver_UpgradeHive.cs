@@ -36,7 +36,11 @@ namespace VFEInsectoids
         private void Upgrade()
         {
             var compHive = Hive.TryGetComp<CompHive>();
-            compHive.additionalCapacity++;
+            compHive.additionalCapacity += 2;
+            while (compHive.CanSpawn())
+            {
+                compHive.DoSpawn(sendMessage: false);
+            }
             Item.SplitOff(1).Destroy();
         }
     }

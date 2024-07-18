@@ -50,7 +50,7 @@ namespace VFEInsectoids
                 }
                 if (VFEI_DefOf.VFEI2_ExoticHivetech.IsFinished)
                 {
-                    baseValue += 2;
+                    baseValue += 1;
                 }
                 return Mathf.Min(baseValue + additionalCapacity, MaxInsectCapacity);
             }
@@ -174,13 +174,16 @@ namespace VFEInsectoids
             }
         }
 
-        private void DoSpawn()
+        public void DoSpawn(bool sendMessage = true)
         {
             TrySpawnPawn(parent.Position, chosenKind.race.race.lifeStageAges[0].minAge);
             if (insects.Count >= InsectCapacity)
             {
                 nextPawnSpawnTick = -1;
-                Messages.Message("VFEI_SpawningStoppedMaxCapacity".Translate(), parent, MessageTypeDefOf.NeutralEvent);
+                if (sendMessage)
+                {
+                    Messages.Message("VFEI_SpawningStoppedMaxCapacity".Translate(), parent, MessageTypeDefOf.NeutralEvent);
+                }
             }
             else
             {
@@ -188,7 +191,7 @@ namespace VFEInsectoids
             }
         }
 
-        private bool CanSpawn()
+        public bool CanSpawn()
         {
             return insects.Count < InsectCapacity;
         }

@@ -59,7 +59,7 @@ namespace VFEInsectoids
         public static int jellyFarmProductionAmount = 10;
         public static int creeperSpawnSpeed = 45000;
         public static IntRange tendrilmossSpawnSpeed = new IntRange(15000, 25000);
-        public static int baseArtificalInsectCount = 3;
+        public static int baseArtificalInsectCount = 2;
         public static void DoSettingsWindowContents(Rect inRect)
         {
             var ls = new Listing_Standard();
@@ -199,7 +199,7 @@ namespace VFEInsectoids
             Scribe_Values.Look(ref jellyFarmProductionAmount, "jellyFarmProductionAmount", 10);
             Scribe_Values.Look(ref creeperSpawnSpeed, "stabcreeperSpawnSpeedilityHiveMaintenancePenalty", 45000);
             Scribe_Values.Look(ref tendrilmossSpawnSpeed, "tendrilmossSpawnSpeed", new IntRange(15000, 25000));
-            Scribe_Values.Look(ref baseArtificalInsectCount, "baseArtificalInsectCount", 3);
+            Scribe_Values.Look(ref baseArtificalInsectCount, "baseArtificalInsectCount", 2);
         }
     }
 }

@@ -143,7 +143,9 @@ namespace VFEInsectoids
             GameComponent_Insectoids.Instance.lastWavesIndices[Props.wave] = Props.wave.waves.IndexOf(wave);
             var hives = new List<LargeTunnelHiveSpawner>();
             var hiveCount = wave.insects.First().count;
-            IncidentWorker_LargeInfestation.SpawnTunnels(hiveCount, parent.Map, parent.Position, hives);
+            IntVec3 intVec = parent.Map.AllCells.Where(x => x.Walkable(parent.Map) && x.Fogged(parent.Map) is false
+            && x.GetTerrain(parent.Map) is TerrainDef def && def.IsWater is false).RandomElement();
+            IncidentWorker_LargeInfestation.SpawnTunnels(hiveCount, parent.Map, intVec, hives);
             var dict = new Dictionary<PawnKindDef, List<List<PawnKindDef>>>();
             foreach (var pawnCount in wave.insects)
             {
@@ -175,9 +177,9 @@ namespace VFEInsectoids
             Find.LetterStack.ReceiveLetter("VFEI_LetterLabelInsectWaveArrived".Translate(
                 GenLabel.BestKindLabel(insectLeaderKind, Gender.None).CapitalizeFirst()),
                 "VFEI_LetterInsectWaveArrived".Translate(Faction.OfInsects.NameColored, wave.GetPawnList()),
-                VFEI_DefOf.VFEI_InsectWaveArrived, parent);
+                VFEI_DefOf.VFEI_InsectWaveArrived, new TargetInfo(intVec, parent.Map));
+            parent.GetComp<CompExplosive>().StartWick();
         }
-
 
         private void MoveUp(float speed)
         {

@@ -44,6 +44,11 @@
 			<useDuration>60</useDuration>
 			<floatMenuFactionIcon>Insect</floatMenuFactionIcon>
 		</li>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>160~600</wickTicks>
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
 	</comps>
   </ThingDef>
 
