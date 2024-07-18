@@ -42,7 +42,7 @@
 		</tools>
 		<comps>
 			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
-				<initialAbility>VFEI2_InsectGlide_Short</initialAbility>
+				<initialAbility>VFEI2_InsectGlide_Far</initialAbility>
 			</li>
 		</comps>
 		<race>

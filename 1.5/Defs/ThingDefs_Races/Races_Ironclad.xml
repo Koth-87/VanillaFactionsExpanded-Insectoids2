@@ -6,7 +6,7 @@
 		<label>ironclad</label>
 		<description>A giant, genetically-engineered insectoid responsible for the hive defense. The incredible claws the size of a failed vidtuber’s ego can break and crush anything trying to harm the new spawn. Its extremely thick rock carapace makes it very slow but also very durable, but excessive damage will chip away the armor exposing the weak spots.</description>
 		<statBases>
-			<MoveSpeed>1.9</MoveSpeed>
+			<MoveSpeed>1.45</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>60</ComfyTemperatureMax>

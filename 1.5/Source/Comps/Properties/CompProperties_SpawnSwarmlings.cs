@@ -7,7 +7,7 @@ namespace VFEInsectoids
 
         public int ticksBetweenSpawn;
 
-        public int numberToSpawn;
+        public IntRange numberToSpawn;
 
 
         public CompProperties_SpawnSwarmlings()

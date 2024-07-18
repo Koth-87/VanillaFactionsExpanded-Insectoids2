@@ -47,7 +47,7 @@ namespace VFEInsectoids
             {
                 if (Find.TickManager.TicksGame == this.nextSpawn)
                 {
-                    for (int i = 0; i < Props.numberToSpawn; i++)
+                    for (int i = 0; i < Props.numberToSpawn.RandomInRange; i++)
                     {
                         IntVec3 vec3 = this.parent.Position.RandomAdjacentCell8Way();
                         if (!vec3.InBounds(this.parent.Map) || !vec3.Walkable(this.parent.Map)) break;

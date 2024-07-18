@@ -6,7 +6,7 @@
 		<label>tankroach</label>
 		<description>A giant, heavy insectoid that glides on dozens of tiny legs. Its extremely thick rock carapace makes it very slow but also very durable, but excessive damage will chip away the armor exposing the weak spots.</description>
 		<statBases>
-			<MoveSpeed>2</MoveSpeed>
+			<MoveSpeed>2.65</MoveSpeed>
 			<Flammability>0.7</Flammability>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>60</ComfyTemperatureMax>
