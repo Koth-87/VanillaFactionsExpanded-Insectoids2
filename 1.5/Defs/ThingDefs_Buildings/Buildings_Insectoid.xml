@@ -2267,7 +2267,7 @@
     <tickerType>Normal</tickerType>
 	<specialDisplayRadius>7.9</specialDisplayRadius>
 	<uiIconScale>0.9</uiIconScale>
-	<uiIconOffset>(0, 0.1)</uiIconOffset>
+	<uiIconOffset>(0, 0.05)</uiIconOffset>
     <statBases>
       <MaxHitPoints>160</MaxHitPoints>
       <Mass>40</Mass>
