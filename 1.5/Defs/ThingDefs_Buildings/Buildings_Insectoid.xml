@@ -396,6 +396,11 @@
       <li Class="CompProperties_SelfhealHitpoints">
         <ticksPerHeal>6000</ticksPerHeal> 
       </li>
+	  <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+	  </li>
     </comps>
     <costList>
         <InsectJelly>150</InsectJelly>

@@ -43,7 +43,7 @@ namespace VFEInsectoids
         {
             get
             {
-                var baseValue = 3;
+                var baseValue = VFEInsectoidsSettings.baseArtificalInsectCount;
                 if (VFEI_DefOf.VFEI2_StandardHivetech.IsFinished)
                 {
                     baseValue += 1;

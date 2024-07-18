@@ -52,4 +52,8 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_MinHiveStabilityDistance>Nearby artificial hive distance penalty</VFEI_MinHiveStabilityDistance>
 	<VFEI_StabilityHiveMaintenancePenalty>Stability Hive maintenance penalty</VFEI_StabilityHiveMaintenancePenalty>
 	<VFEI_CannotUseRoofed>Caster is in a roofed area.</VFEI_CannotUseRoofed>
+	<VFEI_JellyFarmProductionAmount>Jelly farm production amount</VFEI_JellyFarmProductionAmount>
+	<VFEI_CreeperSpawnSpeed>Creeper spawn speed</VFEI_CreeperSpawnSpeed>
+	<VFEI_TendrilmossSpawnSpeed>Tendril farm spawn speed</VFEI_TendrilmossSpawnSpeed>
+	<VFEI_BaseArtificalInsectCount>Base artificial hive insect count</VFEI_BaseArtificalInsectCount>
 </LanguageData>
