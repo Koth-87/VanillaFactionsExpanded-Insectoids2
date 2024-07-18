@@ -118,7 +118,7 @@
 		<label>Xanides pherocore</label>
 		<description>A pheromone controlling micro-organ. It is necessary to construct certain types of insectoid hives. Pherocores have been embedded deep into the brains of geneline leaders which allowed ancient civilizations to control the hives.\n\nThis pherocore belongs to the Xanides geneline, which has evolved in a mineral-rich planet and create nearly impenetrable armor around themselves.</description>
 		<graphicData>
-			<texPath>Things/Item/Pherocores/Pherocore_Kemian</texPath>
+			<texPath>Things/Item/Pherocores/Pherocore_Xanides</texPath>
 		</graphicData>
 		<statBases>
 			<MarketValue>1000</MarketValue>
