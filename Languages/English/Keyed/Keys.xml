@@ -57,4 +57,5 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_CreeperSpawnSpeed>Creeper spawn speed</VFEI_CreeperSpawnSpeed>
 	<VFEI_TendrilmossSpawnSpeed>Tendril farm spawn speed</VFEI_TendrilmossSpawnSpeed>
 	<VFEI_BaseArtificalInsectCount>Base artificial hive insect count</VFEI_BaseArtificalInsectCount>
+	<VFEI_TimeUntilThornsRegrow>Time until thorns regrow: {0}</VFEI_TimeUntilThornsRegrow>
 </LanguageData>

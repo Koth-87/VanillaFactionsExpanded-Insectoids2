@@ -2325,7 +2325,8 @@
       </shadowData>
 	  <drawSize>1</drawSize>
     </graphicData>
-    <thingClass>Building_TrapExplosive</thingClass>
+    <thingClass>VFEInsectoids.ThornPod</thingClass>
+	<drawerType>RealtimeOnly</drawerType>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -2345,40 +2346,24 @@
     </statBases>
 	<specialDisplayRadius>4.9</specialDisplayRadius>
     <comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>4.9</explosiveRadius>
-        <explosiveDamageType>Stab</explosiveDamageType>
-        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
-        <wickTicks>15</wickTicks>
-        <startWickOnDamageTaken>
-          <li>Bullet</li>
-          <li>Arrow</li>
-          <li>ArrowHighVelocity</li>
-        </startWickOnDamageTaken>
-      </li>
-	  <!-- should be this:
-      <li Class="VFED.CompProperties_Explosive_Shells">
+      <li Class="VFECore.CompProperties_Explosive_Shells">
         <explosiveRadius>0.1</explosiveRadius>
-        <explosiveDamageType>Burn</explosiveDamageType>
-        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
-        <wickTicks>15</wickTicks>
-        <startWickOnDamageTaken>
-          <li>Bullet</li>
-          <li>Arrow</li>
-          <li>ArrowHighVelocity</li>
-        </startWickOnDamageTaken>
-        <shell>VFED_Bullet_Shrapnel</shell>
-        <shellCount>48</shellCount>
-        <shellDist>1~10</shellDist>
+        <explosiveDamageType>Stab</explosiveDamageType>
+		<damageAmountBase>8</damageAmountBase>
+        <startWickHitPointsPercent>0</startWickHitPointsPercent>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <wickTicks>0</wickTicks>
+        <shell>VFEI2_Bullet_Thorn</shell>
+        <shellCount>18</shellCount>
+        <shellDist>3~7</shellDist>
+        <destroyThingOnExplosionSize>9999</destroyThingOnExplosionSize><!--hack to not destroy on explosion-->
+		<doSoundEffects>false</doSoundEffects>
       </li>
-	  -->
     </comps>
     <costList>
         <InsectJelly>45</InsectJelly>
     </costList>
     <building>
-      <isTrap>true</isTrap>
-      <trapPeacefulWildAnimalsSpringChanceFactor>0.25</trapPeacefulWildAnimalsSpringChanceFactor>
       <expandHomeArea>false</expandHomeArea>
       <ai_chillDestination>false</ai_chillDestination>
     </building>
@@ -2395,36 +2380,10 @@
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
   
-  <!-- Thorns -->
-  <!-- commented out until the C# is done <ThingDef ParentName="BaseBullet">
-    <defName>VFED_Bullet_Thornworm_Spike</defName>
-    <label>thornworm spike</label>
-    <graphicData>
-      <texPath>Things/Projectile/Projectile_Thornworm_Spike</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-    </graphicData>
-    <thingClass>VFED.Projectile_Shrapnel</thingClass>
-    <projectile Class="VFED.ProjectileProperties_Shrapnel">
-      <damageDef>Bomb</damageDef>
-      <speed>41</speed>
-      <explosionRadius>2.9</explosionRadius>
-      <flyOverhead>true</flyOverhead>
-      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
-      <soundExplode>MortarBomb_Explode</soundExplode>
-      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
-      <soundAmbient>MortarRound_Ambient</soundAmbient>
-      <shrapnelProjectile>VFED_Bullet_Shrapnel</shrapnelProjectile>
-      <shrapnelCount>24</shrapnelCount>
-      <shrapnelRange>16.5</shrapnelRange>
-      <angleVariance>25</angleVariance>
-    </projectile>
-  </ThingDef> -->
-  
   <ThingDef ParentName="BaseBullet">
     <defName>VFEI2_Bullet_Thorn</defName>
     <label>thorn</label>
-    <!-- <thingClass>VFED.Projectile_ShrapnelPiece</thingClass> -->
+    <thingClass>VFECore.Projectile_ShrapnelPiece</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Projectile_Thorn</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -2434,7 +2393,5 @@
       <damageAmountBase>8</damageAmountBase>
       <speed>55</speed>
     </projectile>
-  </ThingDef>
-  <!-- ============= -->
-  
+  </ThingDef>  
 </Defs>

@@ -73,6 +73,7 @@
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityAcidSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFireSpew.cs" />
     <Compile Include="AbilityComps\Properties\CompProperties_AbilityFuelSpew.cs" />
+    <Compile Include="Building\ThornPod.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
     <Compile Include="Comps\CompAOE.cs" />
