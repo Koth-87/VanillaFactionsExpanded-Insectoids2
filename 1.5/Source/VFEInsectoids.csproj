@@ -79,6 +79,7 @@
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompAOE_Thing.cs" />
     <Compile Include="Comps\CompTransformRocks.cs" />
+    <Compile Include="Harmony\Building_TurretGun_TryStartShootSomething.cs" />
     <Compile Include="Hives\JobGiver_FollowCaravan.cs" />
     <Compile Include="Hives\LordToil_PlayerHive.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherJellyFarms.cs" />
