@@ -2357,7 +2357,7 @@
         <shellCount>18</shellCount>
         <shellDist>3~7</shellDist>
         <destroyThingOnExplosionSize>9999</destroyThingOnExplosionSize><!--hack to not destroy on explosion-->
-		<doSoundEffects>false</doSoundEffects>
+		<explosionSound>VFEI2_InsectThornpod_Release</explosionSound>
       </li>
     </comps>
     <costList>
