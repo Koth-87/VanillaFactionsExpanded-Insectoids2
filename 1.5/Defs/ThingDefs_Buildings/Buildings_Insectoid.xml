@@ -242,6 +242,7 @@
 	<modExtensions>
 		<li Class="VFEInsectoids.InsectBuilding"></li>
 	</modExtensions>
+	<stealable>false</stealable>
   </ThingDef>
   
   <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
@@ -2310,5 +2311,130 @@
     </researchPrerequisites>
 	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
   </ThingDef>
+  
+  <ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+    <defName>VFEI2_Thornpod</defName>
+    <label>thornpod</label>
+    <description>A volatile pod covered in sharp chitin thorns, produced by giant insects. If any target gets close to it, the pod expunges the thorns, after which it will take some time to grow them back.</description>
+    <graphicData>
+      <texPath>Things/Building/Thornpod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <thingClass>Building_TrapExplosive</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <fillPercent>0.20</fillPercent>
+	<uiIconScale>0.6</uiIconScale>
+	<uiIconOffset>(0, 0.1)</uiIconOffset>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>1.0</Flammability>
+      <MarketValue>85</MarketValue>
+	  <WorkToBuild>1000</WorkToBuild>
+    </statBases>
+	<specialDisplayRadius>4.9</specialDisplayRadius>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>4.9</explosiveRadius>
+        <explosiveDamageType>Stab</explosiveDamageType>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <wickTicks>15</wickTicks>
+        <startWickOnDamageTaken>
+          <li>Bullet</li>
+          <li>Arrow</li>
+          <li>ArrowHighVelocity</li>
+        </startWickOnDamageTaken>
+      </li>
+	  <!-- should be this:
+      <li Class="VFED.CompProperties_Explosive_Shells">
+        <explosiveRadius>0.1</explosiveRadius>
+        <explosiveDamageType>Burn</explosiveDamageType>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <wickTicks>15</wickTicks>
+        <startWickOnDamageTaken>
+          <li>Bullet</li>
+          <li>Arrow</li>
+          <li>ArrowHighVelocity</li>
+        </startWickOnDamageTaken>
+        <shell>VFED_Bullet_Shrapnel</shell>
+        <shellCount>48</shellCount>
+        <shellDist>1~10</shellDist>
+      </li>
+	  -->
+    </comps>
+    <costList>
+        <InsectJelly>45</InsectJelly>
+    </costList>
+    <building>
+      <isTrap>true</isTrap>
+      <trapPeacefulWildAnimalsSpringChanceFactor>0.25</trapPeacefulWildAnimalsSpringChanceFactor>
+      <expandHomeArea>false</expandHomeArea>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationCategory>VFEI2_Insectoids</designationCategory>
+    <researchPrerequisites>
+        <li>VFEI2_StandardHivetech</li>
+    </researchPrerequisites>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentTrap</li>
+    </placeWorkers>
+	<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+  </ThingDef>
+  
+  <!-- Thorns -->
+  <!-- commented out until the C# is done <ThingDef ParentName="BaseBullet">
+    <defName>VFED_Bullet_Thornworm_Spike</defName>
+    <label>thornworm spike</label>
+    <graphicData>
+      <texPath>Things/Projectile/Projectile_Thornworm_Spike</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>VFED.Projectile_Shrapnel</thingClass>
+    <projectile Class="VFED.ProjectileProperties_Shrapnel">
+      <damageDef>Bomb</damageDef>
+      <speed>41</speed>
+      <explosionRadius>2.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <shrapnelProjectile>VFED_Bullet_Shrapnel</shrapnelProjectile>
+      <shrapnelCount>24</shrapnelCount>
+      <shrapnelRange>16.5</shrapnelRange>
+      <angleVariance>25</angleVariance>
+    </projectile>
+  </ThingDef> -->
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFEI2_Bullet_Thorn</defName>
+    <label>thorn</label>
+    <!-- <thingClass>VFED.Projectile_ShrapnelPiece</thingClass> -->
+    <graphicData>
+      <texPath>Things/Projectile/Projectile_Thorn</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Stab</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+  <!-- ============= -->
   
 </Defs>
