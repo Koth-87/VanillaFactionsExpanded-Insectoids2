@@ -2430,6 +2430,10 @@
 				<interval>120</interval>
 				<damage>1</damage>
 			</li>
+			<li Class="VFEInsectoids.CompProperties_InsectCalls">
+				<soundDefs><li>Pawn_BigInsect_Call</li></soundDefs>
+				<interval>6~12</interval>
+			</li>
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="VFEI2_TurretBase">
