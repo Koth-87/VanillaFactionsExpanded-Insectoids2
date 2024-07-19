@@ -22,6 +22,7 @@ namespace VFEInsectoids
 
         public static SoundDef Hive_Spawn;
         public static SoundDef VFEI2_Rumbling;
+        public static SoundDef VFEI_InsectoidTurretTargetAcquired;
 
         public static ThingDef VFEI2_InsectoidCocoon;
         public static ThingDef Filth_RubbleRock;
@@ -31,6 +32,7 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_PherocoreNuchadus;
         public static ThingDef VFEI2_PherocoreChelis;
         public static ThingDef VFEI2_PherocoreXanides;
+        public static ThingDef VFEI2_Vilelobber;
 
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;

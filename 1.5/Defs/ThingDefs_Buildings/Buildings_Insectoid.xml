@@ -2394,4 +2394,149 @@
       <speed>55</speed>
     </projectile>
   </ThingDef>  
+  
+  <!-- Insectoid Turrets -->
+	<ThingDef ParentName="VFEI2_BuildingInsectoidBase" Name="VFEI2_TurretBase" Abstract="True">
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/InsectoidTurrets/InsectoidTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.5,0.35,1.4)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<size>(2,2)</size>
+		<statBases>
+			<MaxHitPoints>380</MaxHitPoints>
+			<Flammability>1</Flammability>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>100</Mass>
+			<Beauty>-20</Beauty>
+			<MarketValue>950</MarketValue>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.3</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<soundImpactDefault>Hive_Spawn</soundImpactDefault>
+		<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+		<designationCategory>VFEI2_Insectoids</designationCategory>
+		<building>
+			<turretBurstCooldownTime>25</turretBurstCooldownTime>
+			<turretTopDrawSize>2.7</turretTopDrawSize>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+		
+		</placeWorkers>
+		<designationHotKey>Misc3</designationHotKey>
+		<uiIconScale>0.95</uiIconScale>
+		<comps>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal>
+				<!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+		
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_TurretBase">
+		<defName>VFEI2_Vilelobber</defName>
+		<label>vilelobber</label>
+		<description>A small mound serving as the entrance to an expansive deephive cluster below ground, topped by the emergence of a vilelobber insectoid. This creature is adept at spitting large, corrosive acid blobs over considerable distances, provided it is regularly fed with insect jelly. If starved, the mound will gradually deteriorate. Once completely deteriorated, the vilelobber will retreat back into the deephive tunnels.</description>
+		<uiIconPath>Things/Building/InsectoidTurrets/InsectoidTurretKemia_MenuIcon</uiIconPath>
+		<statBases>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			<!-- like level 8 human shooter -->
+		</statBases>
+		<costList>
+			<InsectJelly>160</InsectJelly>
+			<VFEI2_PherocoreKemian>1</VFEI2_PherocoreKemian>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			
+		</comps>
+		<building>
+			<turretGunDef>VFEI2_Vilelobber_Gun</turretGunDef>
+			<destroySound>Hive_Spawn</destroySound>
+			<playTargetAcquiredSound>false</playTargetAcquiredSound>
+		</building>
+		<researchPrerequisites>
+			<li>VFEI2_ExoticHivetech</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>VFEI2_Vilelobber_Gun</defName>
+		<label>vilelobber</label>
+		<description>A small mound serving as the entrance to an expansive deephive cluster below ground, topped by the emergence of a vilelobber insectoid. This creature is adept at spitting large, corrosive acid blobs over considerable distances, provided it is regularly fed with insect jelly. If starved, the mound will gradually deteriorate. Once completely deteriorated, the vilelobber will retreat back into the deephive tunnels.</description>
+		<graphicData>
+			<texPath>Things/Building/InsectoidTurrets/TurretInsectoidKemia_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			
+			<RangedWeapon_Cooldown>25</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>40</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		
+		<verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>7</warmupTime>
+        <forcedMissRadius>5</forcedMissRadius>
+		<defaultCooldownTime>25</defaultCooldownTime>
+        <forcedMissRadiusClassicMortars>13</forcedMissRadiusClassicMortars>
+       <defaultProjectile>VFEI2_Vilelobber_Projectile</defaultProjectile>
+        <requireLineOfSight>false</requireLineOfSight>
+        <minRange>10.9</minRange>
+        <range>500</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>VFEI2_AcidSpray_Resolve</soundCast>
+        <muzzleFlashScale>16</muzzleFlashScale>
+        <consumeFuelPerShot>0</consumeFuelPerShot>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+		
+		
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFEI2_Vilelobber_Projectile</defName>
+		<label>vilelobber projectile</label>
+		<graphicData>
+			<texPath>Things/Projectile/Projectie_VilelobberSpit</texPath>
+			<graphicClass>Graphic_Flicker</graphicClass>
+		</graphicData>
+		 <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>33</speed>
+      <explosionRadius>3.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <damageDef>VFEI2_AcidSpit</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <preExplosionSpawnChance>0.4</preExplosionSpawnChance>
+      <preExplosionSpawnThingDef>Filth_SpentAcid</preExplosionSpawnThingDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>VFEI2_AcidSpray_Resolve</soundExplode>    
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>   
+    </projectile>
+	</ThingDef>
 </Defs>
