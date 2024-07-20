@@ -84,6 +84,7 @@
     <Compile Include="Comps\Properties\CompProperties_DamagedWhenUnfueled.cs" />
     <Compile Include="Comps\Properties\CompProperties_InsectCalls.cs" />
     <Compile Include="Harmony\Building_TurretGun_TryStartShootSomething.cs" />
+    <Compile Include="Harmony\WorldObject_ExpandingIconColor_Patch.cs" />
     <Compile Include="Hives\JobGiver_FollowCaravan.cs" />
     <Compile Include="Hives\LordToil_PlayerHive.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherJellyFarms.cs" />
