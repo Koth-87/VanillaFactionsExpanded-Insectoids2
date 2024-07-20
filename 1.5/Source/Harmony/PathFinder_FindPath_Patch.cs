@@ -18,7 +18,8 @@ namespace VFEInsectoids
             for (int i = 0; i < codes.Count; i++)
             {
                 yield return codes[i];
-                if (!found && codes[i].opcode == OpCodes.Stloc_S && codes[i].operand is LocalBuilder lb && lb.LocalIndex == 53)
+                if (!found && codes[i].opcode == OpCodes.Stloc_S && codes[i].operand is LocalBuilder lb 
+                    && lb.LocalIndex == 53)
                 {
                     found = true;
                     yield return new CodeInstruction(OpCodes.Ldloc_0);
@@ -52,13 +53,13 @@ namespace VFEInsectoids
             "VREH_Glidewings",
             "VRE_MoveSpeed_ExtremelyQuick"
         };
+
         public static float TryChangePathCost(this Pawn pawn, float cost, TerrainDef terrain)
         {
             if (terrain == VFEI_DefOf.VFEI2_Creep)
             {
-                if (pawn.RaceProps.Insect || 
-                    (pawn.genes != null && pawn.genes.GenesListForReading
-                    .Any(x => allowedGenes.Contains(x.def.defName) && x.Active)))
+                if (pawn.RaceProps.Insect || pawn.genes != null && pawn.genes.GenesListForReading
+                    .Any(x => allowedGenes.Contains(x.def.defName) && x.Active))
                 {
                     cost /= 1.06f;
                 }
