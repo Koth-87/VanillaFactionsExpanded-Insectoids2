@@ -82,10 +82,15 @@
 				<li Class="VFEInsectoids.JobGiver_HarvestTendrilmoss"/>
 				<li Class="VFEInsectoids.JobGiver_DoWork">
 					<workTypes>
-						<li>Construction</li>
-						<li>Hauling</li>
 						<li>Mining</li>
 					</workTypes>
+					<workgivers>
+						<li>ConstructFinishFrames</li>
+						<li>ConstructDeliverResourcesToFrames</li>
+						<li>ConstructDeliverResourcesToBlueprints</li>
+						<li>HaulGeneral</li>
+						<li>HaulCorpses</li>
+					</workgivers>
 				</li>
 				<li Class="JobGiver_WanderNearDutyLocation">
 					<wanderRadius>8</wanderRadius>

@@ -13,10 +13,12 @@ namespace VFEInsectoids
         {
             JobGiver_DoWork obj = (JobGiver_DoWork)base.DeepCopy(resolve);
             obj.workTypes = workTypes;
+            obj.workgivers = workgivers;
             return obj;
         }
 
         public List<WorkTypeDef> workTypes;
+        public List<WorkGiverDef> workgivers;
 
         public override float GetPriority(Pawn pawn)
         {
@@ -63,7 +65,15 @@ namespace VFEInsectoids
                 pawn.workSettings = new Pawn_WorkSettings(pawn);
                 pawn.workSettings.EnableAndInitialize();
             }
-            List<WorkGiver> list = workTypes.SelectMany(x => x.workGiversByPriority).Select(x => x.Worker).ToList();
+            List<WorkGiver> list = new List<WorkGiver>();
+            if (workTypes != null)
+            {
+                list.AddRange(workTypes.SelectMany(x => x.workGiversByPriority).Select(x => x.Worker));
+            }
+            if (workgivers != null)
+            {
+                list.AddRange(workgivers.Select(x => x.Worker));
+            }
             int num = -999;
             TargetInfo bestTargetOfLastPriority = TargetInfo.Invalid;
             WorkGiver_Scanner scannerWhoProvidedTarget = null;
