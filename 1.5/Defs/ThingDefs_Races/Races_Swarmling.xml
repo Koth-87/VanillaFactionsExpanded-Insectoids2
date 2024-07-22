@@ -29,6 +29,7 @@
 			</li>
 		</tools>
 		<race>
+			<renderTree>VFEI2_Swarmling</renderTree>
 			<deathAction Class="VFEInsectoids.DeathActionProperties_VanishInsect">
 				
 				<filth>Filth_BloodInsect</filth>

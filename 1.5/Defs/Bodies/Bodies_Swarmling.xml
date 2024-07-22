@@ -35,6 +35,9 @@
 							</groups>
 						</li>
 					</parts>
+					<groups>
+						<li>VFEI2_SwarmlingA</li>
+					</groups>
 				</li>
 				<li>
 					<def>VFEI2_Swarmling</def>
@@ -49,6 +52,9 @@
 							</groups>
 						</li>
 					</parts>
+					<groups>
+						<li>VFEI2_SwarmlingB</li>
+					</groups>
 				</li>
 				<li>
 					<def>VFEI2_Swarmling</def>
@@ -63,6 +69,9 @@
 							</groups>
 						</li>
 					</parts>
+					<groups>
+						<li>VFEI2_SwarmlingC</li>
+					</groups>
 				</li>
 				<li>
 					<def>VFEI2_Swarmling</def>
@@ -77,6 +86,9 @@
 							</groups>
 						</li>
 					</parts>
+					<groups>
+						<li>VFEI2_SwarmlingD</li>
+					</groups>
 				</li>
 			</parts>
 		</corePart>

@@ -6,4 +6,20 @@
 		<label>claws</label>
 	</BodyPartGroupDef>
 	
+	<BodyPartGroupDef>
+		<defName>VFEI2_SwarmlingA</defName>
+		<label>swarmling</label>
+	</BodyPartGroupDef>
+	<BodyPartGroupDef>
+		<defName>VFEI2_SwarmlingB</defName>
+		<label>swarmling</label>
+	</BodyPartGroupDef>
+	<BodyPartGroupDef>
+		<defName>VFEI2_SwarmlingC</defName>
+		<label>swarmling</label>
+	</BodyPartGroupDef>
+	<BodyPartGroupDef>
+		<defName>VFEI2_SwarmlingD</defName>
+		<label>swarmling</label>
+	</BodyPartGroupDef>
 </Defs>
