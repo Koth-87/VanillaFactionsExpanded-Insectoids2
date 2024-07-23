@@ -92,9 +92,9 @@ namespace VFEInsectoids
                     p.ageTracker.AgeBiologicalTicks = 30000;
                     GenSpawn.Spawn(p, this.Position, this.Map);
                     List<Pawn> pawns = new List<Pawn> { p };
-                    if (this.Map.ParentFaction == this.Faction)
+                    if (this.Map.IsInfested())
                     {
-                        LordMaker.MakeNewLord(this.Faction, new LordJob_DefendBase(this.Faction, this.Map.Center), this.Map, pawns);
+                        WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.TryAddLordJob(p, null);
                     }
                     else
                     {

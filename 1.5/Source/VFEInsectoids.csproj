@@ -76,6 +76,7 @@
     <Compile Include="Building\ThornPod.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\ArtificialHive.cs" />
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompAOE_Thing.cs" />
     <Compile Include="Comps\CompDamagedWhenUnfueled.cs" />
@@ -85,13 +86,13 @@
     <Compile Include="Comps\Properties\CompProperties_InsectCalls.cs" />
     <Compile Include="Harmony\Building_TurretGun_TryStartShootSomething.cs" />
     <Compile Include="Harmony\WorldObject_ExpandingIconColor_Patch.cs" />
+    <Compile Include="Hives\CompMaintenableHive.cs" />
     <Compile Include="Hives\JobGiver_FollowCaravan.cs" />
     <Compile Include="Hives\LordToil_PlayerHive.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherJellyFarms.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_VanishInsect.cs" />
     <Compile Include="DeathActionWorkers\Properties\DeathActionProperties_VanishInsect.cs" />
     <Compile Include="Harmony\AreaManager_AddStartingAreas_Patch.cs" />
-    <Compile Include="Harmony\CompMaintainable_CurStage_Patch.cs" />
     <Compile Include="Harmony\HarmonyInit.cs" />
     <Compile Include="Harmony\InspectPaneFiller_DrawAreaAllowed_Patch.cs" />
     <Compile Include="Harmony\Pawn_MindState_StartFleeingBecauseOfPawnAction_Patch.cs" />

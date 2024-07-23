@@ -56,7 +56,10 @@ namespace VFEInsectoids
                     var hive = map.listerThings.AllThings.OfType<Hive>().OrderBy(x => x.Position.DistanceTo(pawn.Position)).FirstOrDefault();
                     if (hive != null)
                     {
-                        pawn.SetFaction(hive.Faction);
+                        if (pawn.Faction != hive.Faction)
+                        {
+                            pawn.SetFaction(hive.Faction);
+                        }
                         var comp = hive.GetComp<CompSpawnerPawn>();
                         comp.spawnedPawns.Add(pawn);
                         Lord lord = comp.Lord;

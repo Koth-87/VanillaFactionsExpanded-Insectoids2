@@ -58,4 +58,7 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_TendrilmossSpawnSpeed>Tendril farm spawn speed</VFEI_TendrilmossSpawnSpeed>
 	<VFEI_BaseArtificalInsectCount>Base artificial hive insect count</VFEI_BaseArtificalInsectCount>
 	<VFEI_TimeUntilThornsRegrow>Time until thorns regrow: {0}</VFEI_TimeUntilThornsRegrow>
+	<VFEI_MaintainedByHivenode>Maintained by hivenode</VFEI_MaintainedByHivenode>
+	<VFEI_NeedsToBeMaintainedIn>Due for maintenance in {0}</VFEI_NeedsToBeMaintainedIn>
+	<VFEI_DueForMaintenance>Due for maintenance. {0} until it starts deteriorating.</VFEI_DueForMaintenance>
 </LanguageData>

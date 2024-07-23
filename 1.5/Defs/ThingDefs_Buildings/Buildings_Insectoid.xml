@@ -387,6 +387,7 @@
 				<ticksPerHeal>6000</ticksPerHeal>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -700,6 +701,7 @@
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>30000</ticksHealthy>
 				<ticksNeedsMaintenance>30000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -991,6 +993,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1068,6 +1071,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1145,6 +1149,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1228,6 +1233,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1271,7 +1277,7 @@
 		<defName>VFEI2_ArtificialBasicHive</defName>
 		<label>artificial basic hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning the most basic insectoids over time, as well as small amounts of valuable insect jelly. It requires no maintenance, but will still affect the maintenance of nearby hives.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/BasicHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1366,7 +1372,7 @@
 		<defName>VFEI2_ArtificialSorneHive</defName>
 		<label>artificial sorne hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning various Sorne geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/SorneHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1453,6 +1459,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1471,7 +1478,7 @@
 		<defName>VFEI2_ArtificialNuchadusHive</defName>
 		<label>artificial nuchadus hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning various Nuchadus geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/NuchadusHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1566,6 +1573,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1585,7 +1593,7 @@
 		<defName>VFEI2_ArtificialChelisHive</defName>
 		<label>artificial chelis hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning various Chelis geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/ChelisHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1673,6 +1681,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1692,7 +1701,7 @@
 		<defName>VFEI2_ArtificialKemianHive</defName>
 		<label>artificial kemian hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning various Kemian geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/KemianHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1780,6 +1789,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>
@@ -1799,7 +1809,7 @@
 		<defName>VFEI2_ArtificialXanidesHive</defName>
 		<label>artificial xanides hive</label>
 		<description>An artificially constructed hive of giant insects. It is capable of spawning various Xanides geneline insectoids over time, as well as some amount of insect jelly. It requires regular maintenance, and constructing too many hives near each other will increase the maintenance required.</description>
-		<thingClass>Hive</thingClass>
+		<thingClass>VFEInsectoids.ArtificialHive</thingClass>
 		<graphicData>
 			<texPath>Things/Building/XanidesHive</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1886,6 +1896,7 @@
 				<spawnRadius>5</spawnRadius>
 			</li>
 			<li Class="CompProperties_Maintainable">
+				<compClass>VFEInsectoids.CompMaintenableHive</compClass>
 				<ticksHealthy>60000</ticksHealthy>
 				<ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
 				<damagePerTickRare>10</damagePerTickRare>

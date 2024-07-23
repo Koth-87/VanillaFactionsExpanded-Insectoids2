@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using Verse.AI;
@@ -10,15 +11,24 @@ namespace VFEInsectoids
     {
         public override Job TryGiveJob(Pawn pawn)
         {
-            foreach (var hive in pawn.Map.listerThings.AllThings.Where(x => (x is Hive || x.def == VFEI_DefOf.VFEI2_JellyFarm)
-                && x.Faction == pawn.Faction && pawn.CanReserve(x) && pawn.CanReach(x, PathEndMode.Touch, Danger.Deadly))
-                .OrderBy(x => x.Position.DistanceTo(pawn.Position)))
+            var allMaintenables = new List<Thing>();
+            foreach (var maintainableDef in Utils.allMaintainableDefs)
             {
-                CompMaintainable compMaintainable = hive.TryGetComp<CompMaintainable>();
-                if (compMaintainable != null && compMaintainable.CurStage != MaintainableStage.Healthy)
+                foreach (var maintaineable in pawn.Map.listerThings.ThingsOfDef(maintainableDef)
+                    .Where(x => x.Faction == pawn.Faction && pawn.CanReserve(x) 
+                    && pawn.CanReach(x, PathEndMode.Touch, Danger.Deadly)))
                 {
-                    return JobMaker.MakeJob(JobDefOf.Maintain, hive);
+                    CompMaintainable compMaintainable = maintaineable.TryGetComp<CompMaintainable>();
+                    if (compMaintainable != null && compMaintainable.CurStage != MaintainableStage.Healthy)
+                    {
+                        allMaintenables.Add(maintaineable);
+                    }
                 }
+            }
+            var maintainaeable = allMaintenables.OrderBy(x => x.Position.DistanceTo(pawn.Position)).FirstOrDefault();
+            if (maintainaeable != null)
+            {
+                return JobMaker.MakeJob(JobDefOf.Maintain, maintainaeable);
             }
             return null;
         }

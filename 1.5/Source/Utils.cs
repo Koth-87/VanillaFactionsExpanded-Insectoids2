@@ -14,16 +14,27 @@ namespace VFEInsectoids
         private static readonly Texture2D WorkerIcon = ContentFinder<Texture2D>.Get("UI/InsectoidType_Worker");
 
         public static List<ThingDef> allHiveDefs = new List<ThingDef>();
+        public static List<ThingDef> allMaintainableDefs = new List<ThingDef>();
+        public static List<ThingDef> allArtificialHiveDefs = new List<ThingDef>();
+
         static Utils()
         {
             foreach (var def in DefDatabase<ThingDef>.AllDefs)
             {
-                allHiveDefs.Add(ThingDefOf.Hive);
-                allHiveDefs.Add(VFEI_DefOf.VFEI2_KemianHive);
-                allHiveDefs.Add(VFEI_DefOf.VFEI2_NuchadusHive);
-                allHiveDefs.Add(VFEI_DefOf.VFEI2_ChelisHive);
-                allHiveDefs.Add(VFEI_DefOf.VFEI2_XanidesHive);
+                if (def.thingClass != null && typeof(Hive).IsAssignableFrom(def.thingClass))
+                {
+                    allHiveDefs.Add(def);
+                }
+                if (def.HasComp<CompMaintenableHive>())
+                {
+                    allMaintainableDefs.Add(def);
+                }
+                if (def.HasComp<CompHive>() && def.race is null)
+                {
+                    allArtificialHiveDefs.Add(def);
+                }
             }
+
             VFEI_DefOf.VFEI_RoamingInsectoids.mtbDaysByBiome = new List<MTBByBiome>();
             foreach (var def in DefDatabase<BiomeDef>.AllDefs)
             {
@@ -33,6 +44,7 @@ namespace VFEInsectoids
                     mtbDays = 1f
                 });
             }
+
         }
 
         public static Texture2D GetInsectTypeTexture(this InsectType insectType)

@@ -8,7 +8,7 @@ namespace VFEInsectoids
     {
         public override IntVec3 GetFlagPosition(Pawn pawn)
         {
-            if (pawn.mindState.duty.focus.Thing is Hive { Spawned: not false } hive)
+            if (pawn.mindState.duty.focus.Thing is Thing hive)
             {
                 return hive.Position;
             }

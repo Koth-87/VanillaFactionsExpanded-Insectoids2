@@ -78,16 +78,24 @@ namespace VFEInsectoids
         public float MaintenanceMultiplier()
         {
             var mult = 1f;
-            foreach (var other in GetAllNearbyArtificialHives(parent.Position, parent.Map).Where(x => x != parent))
+            if (parent.MapHeld != null)
             {
-                mult += VFEInsectoidsSettings.stabilityHiveMaintenancePenalty;
+                foreach (var other in GetAllNearbyArtificialHives(parent.Position, parent.MapHeld).Where(x => x != parent))
+                {
+                    mult += VFEInsectoidsSettings.stabilityHiveMaintenancePenalty;
+                }
             }
             return mult;
         }
+
         public static IEnumerable<Thing> GetAllNearbyArtificialHives(IntVec3 pos, Map map)
         {
-            return map.listerThings.AllThings.Where(x => (x.def.building?.buildingTags.Contains("VFEI_ArtificialHive") ?? false)
-                            && x.Position.DistanceTo(pos) < VFEInsectoidsSettings.minHiveStabilityDistance);
+            var allNearbyHives = new List<Thing>();
+            foreach (var def in Utils.allArtificialHiveDefs)
+            {
+                allNearbyHives.AddRange(map.listerThings.ThingsOfDef(def).Where(x => x.Position.DistanceTo(pos) < VFEInsectoidsSettings.minHiveStabilityDistance));
+            }
+            return allNearbyHives;
         }
 
 
@@ -181,20 +189,23 @@ namespace VFEInsectoids
 
         public override void CompTick()
         {
-            if (CanSpawn())
+            if (parent.IsHashIntervalTick(30))
             {
-                if (nextPawnSpawnTick == -1)
+                if (CanSpawn())
                 {
-                    SetNextRespawnTick();
+                    if (nextPawnSpawnTick == -1)
+                    {
+                        SetNextRespawnTick();
+                    }
+                    if (Find.TickManager.TicksGame >= nextPawnSpawnTick)
+                    {
+                        DoSpawn();
+                    }
                 }
-                if (Find.TickManager.TicksGame >= nextPawnSpawnTick)
+                else
                 {
-                    DoSpawn();
+                    nextPawnSpawnTick = -1;
                 }
-            }
-            else
-            {
-                nextPawnSpawnTick = -1;
             }
         }
 
