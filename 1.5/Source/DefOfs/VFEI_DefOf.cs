@@ -73,6 +73,6 @@ namespace VFEInsectoids
         public static WorkGiverDef Drill;
         public static HediffDef VFEI_ToBeCocooned;
         public static ThingDef VFEI2_Hivenode;
-        public static EffecterDef VFEI_CocoonDestroyed;
+        public static EffecterDef VFEI_MaintenanceDamage;
     }
 }

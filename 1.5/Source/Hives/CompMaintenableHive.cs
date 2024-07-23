@@ -65,7 +65,7 @@ namespace VFEInsectoids
                 if (__instance is CompMaintenableHive compMaintenableHive
                     && __instance.CurStage == MaintainableStage.Damaging)
                 {
-                    VFEI_DefOf.VFEI_CocoonDestroyed.Spawn(__instance.parent, __instance.parent.Map);
+                    VFEI_DefOf.VFEI_MaintenanceDamage.Spawn(__instance.parent, __instance.parent.Map);
                 }
             }
         }
