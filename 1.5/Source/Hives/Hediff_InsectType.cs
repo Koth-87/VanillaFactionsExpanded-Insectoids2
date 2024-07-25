@@ -61,6 +61,10 @@ namespace VFEInsectoids
                 {
                     lord.RemovePawn(pawn);
                     lord2.AddPawn(pawn);
+                    if (pawn.jobs.curDriver?.asleep == true)
+                    {
+                        pawn.jobs.StopAll();
+                    }
                 }
             }
         }
