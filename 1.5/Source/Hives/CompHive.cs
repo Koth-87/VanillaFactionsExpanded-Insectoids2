@@ -44,13 +44,20 @@ namespace VFEInsectoids
             get
             {
                 var baseValue = VFEInsectoidsSettings.baseArtificalInsectCount;
-                if (VFEI_DefOf.VFEI2_StandardHivetech.IsFinished)
+                if (parent is Pawn)
                 {
-                    baseValue += 1;
+                    baseValue += 2;
                 }
-                if (VFEI_DefOf.VFEI2_ExoticHivetech.IsFinished)
+                else
                 {
-                    baseValue += 1;
+                    if (VFEI_DefOf.VFEI2_StandardHivetech.IsFinished)
+                    {
+                        baseValue += 1;
+                    }
+                    if (VFEI_DefOf.VFEI2_ExoticHivetech.IsFinished)
+                    {
+                        baseValue += 1;
+                    }
                 }
                 return Mathf.Min(baseValue + additionalCapacity, MaxInsectCapacity);
             }
