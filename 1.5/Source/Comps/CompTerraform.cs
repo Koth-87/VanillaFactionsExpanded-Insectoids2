@@ -28,8 +28,10 @@ namespace VFEInsectoids
 
         protected override bool CellValidator(IntVec3 cell)
         {
-            return cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet 
-                && cell.GetEdifice(parent.Map) is null && TerrainValidator(terrain);
+            var result = cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet
+                && TerrainValidator(terrain) && cell.GetEdifice(parent.Map) is null;
+            //Log.Message(cell + " - result: " + result);
+            return result;
         }
 
         public static bool TerrainValidator(TerrainDef terrain)
