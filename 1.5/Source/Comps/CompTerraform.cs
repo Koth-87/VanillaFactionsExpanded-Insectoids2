@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -27,8 +28,17 @@ namespace VFEInsectoids
 
         protected override bool CellValidator(IntVec3 cell)
         {
-            return cell.GetTerrain(parent.Map) is TerrainDef terrain 
-                && terrain != Props.terrainToSet && terrain.IsWater is false && terrain.natural;
+            return cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet 
+                && cell.GetEdifice(parent.Map) is null && TerrainValidator(terrain);
+        }
+
+        public static bool TerrainValidator(TerrainDef terrain)
+        {
+            return terrain.IsWater is false && terrain.layerable is false &&
+                (terrain.natural || terrain.affordances != null
+                && (terrain.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone)
+                || terrain.affordances.Contains(VFEI_DefOf.Diggable)))
+                && terrain.HasTag("Road") is false;
         }
 
         protected override List<IntVec3> GetCells()
