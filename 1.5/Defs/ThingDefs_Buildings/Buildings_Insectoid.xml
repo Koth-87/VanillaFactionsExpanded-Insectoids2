@@ -2583,7 +2583,7 @@
 				<defaultProjectile>VFEI2_Thornworm_Projectile</defaultProjectile>
 				<minRange>4.9</minRange>
 				<range>28.9</range>
-				<soundCast>VFEI_InsectThornpod_Release</soundCast>
+				<soundCast>VFEI2_InsectThornpod_Release</soundCast>
 				<muzzleFlashScale>16</muzzleFlashScale>
 				<consumeFuelPerShot>0</consumeFuelPerShot>
 			</li>
