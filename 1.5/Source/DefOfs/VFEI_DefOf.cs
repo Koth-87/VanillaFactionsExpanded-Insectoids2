@@ -74,5 +74,6 @@ namespace VFEInsectoids
         public static HediffDef VFEI_ToBeCocooned;
         public static ThingDef VFEI2_Hivenode;
         public static EffecterDef VFEI_MaintenanceDamage;
+        public static TerrainAffordanceDef Diggable;
     }
 }

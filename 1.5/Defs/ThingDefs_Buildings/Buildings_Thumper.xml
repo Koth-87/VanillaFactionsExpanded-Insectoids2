@@ -66,6 +66,7 @@
     </costList>
     <researchPrerequisites>
         <li>VFEI2_StandardHivetech</li>
+		<li>Electricity</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">
@@ -168,6 +169,7 @@
     </costList>
     <researchPrerequisites>
         <li>VFEI2_StandardHivetech</li>
+		<li>Electricity</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">
@@ -270,6 +272,7 @@
     </costList>
     <researchPrerequisites>
         <li>VFEI2_StandardHivetech</li>
+		<li>Electricity</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">
@@ -372,6 +375,7 @@
     </costList>
     <researchPrerequisites>
         <li>VFEI2_StandardHivetech</li>
+		<li>Electricity</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">
@@ -474,6 +478,7 @@
     </costList>
     <researchPrerequisites>
         <li>VFEI2_StandardHivetech</li>
+		<li>Electricity</li>
     </researchPrerequisites>
     <comps>
       <li Class="VFEInsectoids.CompProperties_Thumper">

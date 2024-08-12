@@ -51,7 +51,9 @@ namespace VFEInsectoids
         {
             "VRE_InsectFlesh",
             "VREH_Glidewings",
-            "VRE_MoveSpeed_ExtremelyQuick"
+            "VRE_MoveSpeed_ExtremelyQuick",
+            "VRE_InsectSkin",
+            "VRE_MineralRichInsectskin"
         };
 
         public static float TryChangePathCost(this Pawn pawn, float cost, TerrainDef terrain)

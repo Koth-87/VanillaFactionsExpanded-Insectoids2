@@ -18,9 +18,8 @@
 		<tab>VanillaExpanded</tab>
 		<description>The technology needed for your colony to create standard-tier hives. The construction of various thumpers will allow you to summon powerful insectoid bosses.</description>
 		<baseCost>1000</baseCost>
-		<techLevel>Industrial</techLevel>
+		<techLevel>Medieval</techLevel>
 		<prerequisites>
-			<li>Electricity</li>
 			<li>VFEI2_BasicHivetech</li>
 		</prerequisites>
 		<researchViewX>8.00</researchViewX>
