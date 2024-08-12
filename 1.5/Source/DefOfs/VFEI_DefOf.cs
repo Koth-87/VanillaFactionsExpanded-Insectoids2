@@ -75,5 +75,6 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_Hivenode;
         public static EffecterDef VFEI_MaintenanceDamage;
         public static TerrainAffordanceDef Diggable;
+        public static StorytellerDef VFEI_EmpressEvil;
     }
 }

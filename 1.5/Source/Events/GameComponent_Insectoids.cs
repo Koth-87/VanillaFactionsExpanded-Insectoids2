@@ -17,6 +17,24 @@ namespace VFEInsectoids
 
         public int lastInsectoidBossArrival;
         public Thing thumperActivated;
+        private int nextEmpressEvilFiringTick;
+        public int NextEmpressEvilFiringTick
+        {
+            get
+            {
+                if (nextEmpressEvilFiringTick <= 0)
+                {
+                    SetNextEmpressEvilFiringTick();
+                }
+                return nextEmpressEvilFiringTick;
+            }
+        }
+
+        public void SetNextEmpressEvilFiringTick()
+        {
+            nextEmpressEvilFiringTick = Find.TickManager.TicksGame + new IntRange(2200000, 3600000).RandomInRange;
+        }
+
         public Dictionary<InsectWaveDef, int> lastWavesIndices = new Dictionary<InsectWaveDef, int>();
 
         public GameComponent_Insectoids()
@@ -123,6 +141,7 @@ namespace VFEInsectoids
             Scribe_Values.Look(ref lastInsectoidBossArrival, "lastInsectoidBossArrival");
             Scribe_Collections.Look(ref lastWavesIndices, "lastWavesIndices", LookMode.Def, LookMode.Value);
             Scribe_References.Look(ref thumperActivated, "thumperActivated");
+            Scribe_Values.Look(ref nextEmpressEvilFiringTick, "nextEmpressEvilFiringTick");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insectTiles ??= new Dictionary<Settlement, InsectTerritory>();

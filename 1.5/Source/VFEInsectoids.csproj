@@ -76,7 +76,9 @@
     <Compile Include="Building\ThornPod.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\StorytellerComp_ExclusiveIncidents.cs" />
     <Compile Include="Harmony\SitePartDef_FactionCanOwn_Patch.cs" />
+    <Compile Include="Harmony\StorytellerComp_UsableIncidentsInCategory_Patch.cs" />
     <Compile Include="Hives\ArtificialHive.cs" />
     <Compile Include="Comps\CompAOE.cs" />
     <Compile Include="Comps\CompAOE_Thing.cs" />

@@ -76,10 +76,10 @@ namespace VFEInsectoids
             }
             var creepCount = map.AllCells.Count(x => x.GetTerrain(map) == VFEI_DefOf.VFEI2_Creep);
             var nonCreepCount = map.AllCells.Count(x => x.GetTerrain(map) != VFEI_DefOf.VFEI2_Creep);
-            Log.Message("mapScale: " + mapScale + " - hivesToSpawn: " + hiveSpawnAmount 
-                + " - hives: " + hives.Count
-                + " - creep: " + creepCount + " - non creep: " + nonCreepCount
-                + " - rate: " + (creepCount / (float)nonCreepCount));
+            //Log.Message("mapScale: " + mapScale + " - hivesToSpawn: " + hiveSpawnAmount 
+            //    + " - hives: " + hives.Count
+            //    + " - creep: " + creepCount + " - non creep: " + nonCreepCount
+            //    + " - rate: " + (creepCount / (float)nonCreepCount));
             badCells.Clear();
             if (map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
             {
@@ -96,7 +96,7 @@ namespace VFEInsectoids
                 }
             }
             var insects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).ToList();
-            Log.Message("Insects spawned: " + insects.Count);
+            //Log.Message("Insects spawned: " + insects.Count);
             foreach (var insect in insects)
             {
                 if (insect.Faction is null)
