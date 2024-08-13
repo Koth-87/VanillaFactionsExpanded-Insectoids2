@@ -2138,7 +2138,7 @@
 		<graphicData>
 			<texPath>Things/Skyfallers/Skyfaller_Hellpod</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutFlying</shaderType>
+			<shaderType>Transparent</shaderType>
 			<drawSize>1.9</drawSize>
 		</graphicData>
 		<skyfaller>
