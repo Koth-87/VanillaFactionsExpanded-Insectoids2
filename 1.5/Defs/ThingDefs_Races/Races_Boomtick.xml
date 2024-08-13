@@ -7,7 +7,7 @@
 		<description>A large, genetically-engineered tick. Bred for the purpose of fuel refining on the molten planet of Nuchadus, boomtick is now often seen across many planets, where it is considered a dangerous, volatile pest. Its chemfuel sack explodes on death, setting everything nearby on fire. A eusocial creature, it cannot reproduce individually.</description>
 		<statBases>
 			<MoveSpeed>3.45</MoveSpeed>
-			<Flammability>0.1</Flammability>
+			<Flammability>0</Flammability>
 			<ComfyTemperatureMin>0</ComfyTemperatureMin>
 			<ComfyTemperatureMax>120</ComfyTemperatureMax>
 			<MarketValue>100</MarketValue>

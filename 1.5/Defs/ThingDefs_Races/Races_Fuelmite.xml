@@ -4,10 +4,10 @@
 	<ThingDef ParentName="VFEI2_BaseInsect">
 		<defName>VFEI2_Fuelmite</defName>
 		<label>fuelmite</label>
-		<description>A large, genetically-engineered mite native to the planet Nachundus, where it fuels gigantic megaforges of the corporations. Fuelmites are capable of synthesising volatile chemfuel in their fuel sacks, and can eject it from their fuelglands over huge distances. While fuel itself is not dangerous, a single spark is enough to set the area on fire. It is, however, quite slow in open terrain.</description>
+		<description>A large, genetically-engineered mite native to the planet Nuchadus, where it fuels gigantic megaforges of the corporations. Fuelmites are capable of synthesising volatile chemfuel in their fuel sacks, and can eject it from their fuelglands over huge distances. While fuel itself is not dangerous, a single spark is enough to set the area on fire. It is, however, quite slow in open terrain.</description>
 		<statBases>
 			<MoveSpeed>3.75</MoveSpeed>
-			<Flammability>0.7</Flammability>
+			<Flammability>0</Flammability>
 			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
 			<ComfyTemperatureMax>160</ComfyTemperatureMax>
 			<MarketValue>650</MarketValue>
