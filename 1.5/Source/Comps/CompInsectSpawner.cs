@@ -107,7 +107,7 @@ namespace VFEInsectoids
             private static PawnKindDef RandomPawnKindDef(CompInsectSpawner insectSpawner)
             {
                 float curPoints = insectSpawner.SpawnedPawnsPoints;
-                var source = insectSpawner.Props.geneline.insects;
+                var source = insectSpawner.Props.geneline.insects.Where(x => x.kind != VFEI_DefOf.VFEI2_Queen);
                 if (insectSpawner.Props.maxSpawnedPawnsPoints > -1f)
                 {
                     source = source.Where(x => curPoints + x.kind.combatPower <= insectSpawner.Props.maxSpawnedPawnsPoints).ToList();
