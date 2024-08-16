@@ -1310,11 +1310,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
@@ -1405,11 +1400,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
@@ -1511,11 +1501,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
@@ -1627,11 +1612,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
@@ -1735,11 +1715,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
@@ -1842,11 +1817,6 @@
 			</buildingTags>
 		</building>
 		<comps>
-			<li Class="CompProperties_CanBeDormant">
-				<startsDormant>true</startsDormant>
-				<canWakeUpFogged>false</canWakeUpFogged>
-			</li>
-			<li Class="CompProperties_WakeUpDormant"/>
 			<li Class="VFEInsectoids.CompProperties_Hive">
 				<insectTypes>
 					<li>
