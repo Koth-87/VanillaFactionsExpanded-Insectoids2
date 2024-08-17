@@ -48,6 +48,7 @@
 			<isPlaceOverableWall>true</isPlaceOverableWall>
 			<ai_chillDestination>false</ai_chillDestination>
 			<supportsWallAttachments>true</supportsWallAttachments>
+			<claimable>false</claimable>
 		</building>
 		<comps>
 			<li Class="CompProperties_MeditationFocus">
@@ -226,6 +227,7 @@
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<building>
 			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+			<claimable>false</claimable>
 		</building>
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
