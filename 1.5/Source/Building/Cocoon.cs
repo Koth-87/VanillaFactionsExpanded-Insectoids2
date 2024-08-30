@@ -11,7 +11,7 @@ namespace VFEInsectoids
         private bool once = true;
         private int timeBeforeInsect;
         private int timeBeforeInsectString;
-        public WeightedInsectoids[] array = new WeightedInsectoids[5];
+        public WeightedInsectoids[] array = new WeightedInsectoids[4];
 
         public struct WeightedInsectoids
         {
@@ -48,12 +48,7 @@ namespace VFEInsectoids
                 weight = 0.05f
             };
             array[3] = insectoid;
-            insectoid = new WeightedInsectoids
-            {
-                pawn = VFEI_DefOf.VFEI2_Queen,
-                weight = 0.03f
-            };
-            array[4] = insectoid;
+            
 
         }
 

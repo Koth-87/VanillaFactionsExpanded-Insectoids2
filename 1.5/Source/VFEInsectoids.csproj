@@ -76,7 +76,10 @@
     <Compile Include="Building\ThornPod.cs" />
     <Compile Include="Building\Cocoon.cs" />
     <Compile Include="Building\StaticPod.cs" />
+    <Compile Include="Comps\CompMindfulSpawner.cs" />
+    <Compile Include="Comps\Properties\CompProperties_MindfulSpawner.cs" />
     <Compile Include="Comps\StorytellerComp_ExclusiveIncidents.cs" />
+    <Compile Include="Harmony\JobDriver_Mine_ResetTicksToPickHit.cs" />
     <Compile Include="Harmony\SitePartDef_FactionCanOwn_Patch.cs" />
     <Compile Include="Harmony\StorytellerComp_UsableIncidentsInCategory_Patch.cs" />
     <Compile Include="Harmony\WorkGiver_RemoveBuilding_HasJobOnThing_Patch.cs" />

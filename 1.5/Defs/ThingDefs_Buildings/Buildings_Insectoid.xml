@@ -48,6 +48,7 @@
 			<isPlaceOverableWall>true</isPlaceOverableWall>
 			<ai_chillDestination>false</ai_chillDestination>
 			<supportsWallAttachments>true</supportsWallAttachments>
+			<claimable>false</claimable>
 		</building>
 		<comps>
 			<li Class="CompProperties_MeditationFocus">
@@ -227,6 +228,7 @@
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<building>
 			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+			<claimable>false</claimable>
 		</building>
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
 		<repairEffect>VFEI2_ConstructSlime</repairEffect>
@@ -1307,6 +1309,7 @@
 			<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
 		</placeWorkers>
 		<building>
+			<isEdifice>true</isEdifice>
 			<buildingTags>
 				<li>VFEI_ArtificialHive</li>
 			</buildingTags>
@@ -1327,13 +1330,13 @@
 			</li>
 			<li Class="CompProperties_Spawner">
 				<thingToSpawn>InsectJelly</thingToSpawn>
-				<spawnCount>10</spawnCount>
-				<spawnIntervalRange>26000~30000</spawnIntervalRange>
+				<spawnCount>5</spawnCount>
+				<spawnIntervalRange>46000~60000</spawnIntervalRange>
 				<spawnMaxAdjacent>40</spawnMaxAdjacent>
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
@@ -1432,7 +1435,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
@@ -1541,7 +1544,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
@@ -1644,7 +1647,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
@@ -1747,7 +1750,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
@@ -1849,7 +1852,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
