@@ -52,6 +52,7 @@
 			<li Class="VFEInsectoids.CompProperties_SpawnSwarmlings">
 				<ticksBetweenSpawn>2000</ticksBetweenSpawn>
 				<numberToSpawn>2~3</numberToSpawn>
+				<defToSpawn>VFEI2_Swarmling</defToSpawn>
 			</li>
 			<li Class="AnimalBehaviours.CompProperties_FixedGender">
 				<gender>Female</gender>
