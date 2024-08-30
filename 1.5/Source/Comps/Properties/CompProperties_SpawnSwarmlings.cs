@@ -9,6 +9,8 @@ namespace VFEInsectoids
 
         public IntRange numberToSpawn;
 
+        public PawnKindDef defToSpawn;
+
 
         public CompProperties_SpawnSwarmlings()
         {
