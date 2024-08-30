@@ -1307,6 +1307,7 @@
 			<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
 		</placeWorkers>
 		<building>
+			<isEdifice>true</isEdifice>
 			<buildingTags>
 				<li>VFEI_ArtificialHive</li>
 			</buildingTags>
@@ -1333,7 +1334,7 @@
 				<spawnForbidden>false</spawnForbidden>
 				<saveKeysPrefix>jelly</saveKeysPrefix>
 			</li>
-			<li Class="CompProperties_Spawner">
+			<li Class="VFEInsectoids.CompProperties_MindfulSpawner">
 				<thingToSpawn>GlowPod</thingToSpawn>
 				<spawnCount>1</spawnCount>
 				<spawnIntervalRange>30000~60000</spawnIntervalRange>
