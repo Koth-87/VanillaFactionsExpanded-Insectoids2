@@ -113,6 +113,7 @@
     <Compile Include="Hives\JobGiver_HarvestTendrilmoss.cs" />
     <Compile Include="Hives\JobGiver_HiveDefense.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_ArtificialHivesNear.cs" />
+    <Compile Include="RecipeWorkers\Recipe_AdministerBlackPherocore.cs" />
     <Compile Include="UI\Alert_InsectWaveIncoming.cs" />
     <Compile Include="Comps\CompFueledSpawner.cs" />
     <Compile Include="Comps\CompTargetable_Hive.cs" />

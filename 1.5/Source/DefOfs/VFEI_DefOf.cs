@@ -32,6 +32,8 @@ namespace VFEInsectoids
         public static ThingDef VFEI2_PherocoreNuchadus;
         public static ThingDef VFEI2_PherocoreChelis;
         public static ThingDef VFEI2_PherocoreXanides;
+        [MayRequire("sarg.alphaanimals")]
+        public static ThingDef VFEI2_PherocoreBlack;
         public static ThingDef VFEI2_Vilelobber;
 
         public static HediffDef VFEI2_ArmorDegradation;
@@ -41,6 +43,8 @@ namespace VFEInsectoids
         public static HediffDef VFEI2_SilverfishSpawn;
         public static HediffDef VFEI2_TitantickSpawn;
         public static HediffDef VFEI2_TeramantisSpawn;
+        [MayRequire("sarg.alphaanimals")]
+        public static HediffDef VFEI2_BlackEmpressSpawn;
 
         public static PawnRenderTreeDef VFEI2_Unarmored;
 
