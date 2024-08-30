@@ -121,6 +121,11 @@ namespace VFEInsectoids
             {
                 chosenKind = AllAvailableInsects.First();
                 insectColor = VFEI_DefOf.Structure_BrownSubtle.color;
+                if (this.parent.def.defName== "VFEI2_AA_ArtificialBlackHive")
+                {
+                    insectColor = Color.white;
+                }
+                
                 if (CanSpawn())
                 {
                     SetNextRespawnTick();
