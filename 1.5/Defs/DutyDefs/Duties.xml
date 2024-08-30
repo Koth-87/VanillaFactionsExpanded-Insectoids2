@@ -88,6 +88,8 @@
 						<li>ConstructFinishFrames</li>
 						<li>ConstructDeliverResourcesToFrames</li>
 						<li>ConstructDeliverResourcesToBlueprints</li>
+						<li>Deconstruct</li>
+						<li>Repair</li>
 						<li>HaulGeneral</li>
 						<li>HaulCorpses</li>
 					</workgivers>

@@ -61,6 +61,7 @@
 			</li>
 		</comps>
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
+		<repairEffect>VFEI2_ConstructSlime</repairEffect>
 		<damageMultipliers>
 			<li>
 				<damageDef>Bomb</damageDef>
@@ -228,6 +229,7 @@
 			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
 		</building>
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
+		<repairEffect>VFEI2_ConstructSlime</repairEffect>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 	</ThingDef>
 	<ThingDef Name="VFEI2_BuildingInsectoidBase" ParentName="VFEI2_BuildingBase" Abstract="True">
