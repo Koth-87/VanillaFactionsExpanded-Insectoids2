@@ -97,6 +97,7 @@
     <Compile Include="Hives\CompMaintenableHive.cs" />
     <Compile Include="Hives\JobGiver_FollowCaravan.cs" />
     <Compile Include="Hives\LordToil_PlayerHive.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_BasicHivesNear.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_NeverCloseToOtherJellyFarms.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_VanishInsect.cs" />
     <Compile Include="DeathActionWorkers\Properties\DeathActionProperties_VanishInsect.cs" />

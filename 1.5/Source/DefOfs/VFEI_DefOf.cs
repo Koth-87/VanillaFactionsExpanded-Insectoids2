@@ -80,5 +80,6 @@ namespace VFEInsectoids
         public static EffecterDef VFEI_MaintenanceDamage;
         public static TerrainAffordanceDef Diggable;
         public static StorytellerDef VFEI_EmpressEvil;
+        public static ThingDef VFEI2_ArtificialBasicHive;
     }
 }

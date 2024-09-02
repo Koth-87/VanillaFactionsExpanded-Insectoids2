@@ -1307,6 +1307,7 @@
 		</killedLeavings>
 		<placeWorkers>
 			<li>VFEInsectoids.PlaceWorker_ArtificialHivesNear</li>
+			<li>VFEInsectoids.PlaceWorker_BasicHivesNear</li>
 		</placeWorkers>
 		<building>
 			<isEdifice>true</isEdifice>
