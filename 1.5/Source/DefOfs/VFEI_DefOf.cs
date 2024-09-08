@@ -19,6 +19,7 @@ namespace VFEInsectoids
         public static PawnKindDef Megaspider;
         public static PawnKindDef VFEI2_Queen;
         public static PawnKindDef VFEI2_Megapede;
+        public static PawnKindDef VFEI2_Patriarch;
 
         public static SoundDef Hive_Spawn;
         public static SoundDef VFEI2_Rumbling;
@@ -35,7 +36,7 @@ namespace VFEInsectoids
         [MayRequire("sarg.alphaanimals")]
         public static ThingDef VFEI2_PherocoreBlack;
         public static ThingDef VFEI2_Vilelobber;
-
+     
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;
         public static HediffDef VFEI2_EmpressSpawn;
@@ -55,6 +56,7 @@ namespace VFEInsectoids
         public static FleckDef BlastEMP;
 
         public static EffecterDef Berserk;
+        public static EffecterDef VFEI_DustCloud;
 
         public static ThingDef VFEI2_InfestedShipChunk, VFEI2_InfestedShipPart, VFEI2_InfestedShipModule, 
             VFEI_InfestedMeteorIncoming;

@@ -8,7 +8,7 @@ namespace VFEInsectoids
     {
 
         List<HediffDef> hediffs => new List<HediffDef> { VFEI_DefOf.VFEI2_EmpressSpawn, VFEI_DefOf.VFEI2_GigamiteSpawn,
-        VFEI_DefOf.VFEI2_TitantickSpawn,VFEI_DefOf.VFEI2_TeramantisSpawn,VFEI_DefOf.VFEI2_SilverfishSpawn};
+        VFEI_DefOf.VFEI2_TitantickSpawn,VFEI_DefOf.VFEI2_TeramantisSpawn,VFEI_DefOf.VFEI2_SilverfishSpawn,VFEI_DefOf.VFEI2_BlackEmpressSpawn};
 
         public float increase;
 
@@ -18,11 +18,15 @@ namespace VFEInsectoids
 
                 foreach (HediffDef hediffdef in hediffs)
                 {
-                    Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffdef);
-                    if (hediff != null)
+                    if (hediffdef != null)
                     {
-                        hediff.Severity += (increase * ingestedCount);
+                        Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffdef);
+                        if (hediff != null)
+                        {
+                            hediff.Severity += (increase * ingestedCount);
+                        }
                     }
+                    
 
                 }
 

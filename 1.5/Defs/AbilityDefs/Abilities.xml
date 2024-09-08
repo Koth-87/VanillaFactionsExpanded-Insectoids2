@@ -268,7 +268,98 @@
 		<jobDef>CastJump</jobDef>
 	</AbilityDef>
 	
+	<AbilityDef>
+		<defName>VFEI2_CreateSmallBurrow</defName>
+		<label>create small burrow</label>
+		<description>Patriarch emits vibrations that cause the royal caste of insects to dig to the surface, creating a small burrow.</description>
+		<iconPath>UI/Abilities/CreateSmallBurrow</iconPath>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>2</range>
+			<warmupTime>4.6</warmupTime>
+			<violent>true</violent>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_CreateBurrow">
+				<tunnel>VFEI2_SmallBurrowSpawner</tunnel>
+				<building>VFEI2_SmallBurrow</building>
+				<size>Small</size>
+			</li>
+		</comps>
+	</AbilityDef>
 	
+	<AbilityDef>
+		<defName>VFEI2_CreateMediumBurrow</defName>
+		<label>create burrow</label>
+		<description>Patriarch emits vibrations that cause the royal caste of insects to dig to the surface, creating a medium burrow.</description>
+		<iconPath>UI/Abilities/CreateMediumBurrow</iconPath>
+		<cooldownTicksRange>3700</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>2</range>
+			<warmupTime>7.2</warmupTime>
+			<violent>true</violent>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_CreateBurrow">
+				<tunnel>VFEI2_MediumBurrowSpawner</tunnel>
+				<building>VFEI2_MediumBurrow</building>
+				<size>Medium</size>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef>
+		<defName>VFEI2_CreateLargeBurrow</defName>
+		<label>create large burrow</label>
+		<description>Patriarch emits vibrations that cause the royal caste of insects to dig to the surface, creating a large burrow.</description>
+		<iconPath>UI/Abilities/CreateLargeBurrow</iconPath>
+		<cooldownTicksRange>3700</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>2</range>
+			<warmupTime>10</warmupTime>
+			<violent>true</violent>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VFEInsectoids.CompProperties_CreateBurrow">
+				<tunnel>VFEI2_LargeBurrowSpawner</tunnel>
+				<building>VFEI2_LargeBurrow</building>
+				<size>Large</size>
+			</li>
+		</comps>
+	</AbilityDef>
 	
 	
 </Defs>
