@@ -44,6 +44,13 @@
 			<li Class="AnimalBehaviours.CompProperties_InitialAbility">
 				<initialAbility>VFEI2_ChemfuelSpew</initialAbility>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+				<resourceDef>Chemfuel</resourceDef>
+				<gatheringIntervalDays>10</gatheringIntervalDays>
+				<resourceAmount>15</resourceAmount>
+				<customResourceString>VFEI2_Chemfuel</customResourceString>
+				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
+			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
