@@ -64,7 +64,7 @@
 			<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
 				<resourceDef>VFEI2_Chitin</resourceDef>
 				<gatheringIntervalDays>20</gatheringIntervalDays>
-				<resourceAmount>5</resourceAmount>
+				<resourceAmount>55</resourceAmount>
 				<customResourceString>VFEI2_Chitin</customResourceString>
 				<hideDisplayOnWildAnimals>true</hideDisplayOnWildAnimals>
 
