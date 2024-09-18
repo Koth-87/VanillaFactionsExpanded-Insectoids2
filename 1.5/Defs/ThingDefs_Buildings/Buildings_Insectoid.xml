@@ -240,6 +240,52 @@
 		</modExtensions>
 		<stealable>false</stealable>
 	</ThingDef>
+	<ThingDef ParentName="VFEI2_BuildingBase" Name="VFEI2_BuildingBaseDoor" Abstract="True">
+		<thingClass>Building_Door</thingClass>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>0.75</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>VFEI2_Insectoids</designationCategory>
+		<uiOrder>0</uiOrder>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+			<soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+			<blueprintClass>Blueprint_Door</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Door/Door_Blueprint</texPath>
+			</blueprintGraphicData>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+		<comps>
+			<li Class="CompProperties_Forbiddable">
+				<allowNonPlayer>true</allowNonPlayer>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_DoorLearnOpeningSpeed</li>
+		</placeWorkers>
+		<modExtensions>
+			<li Class="VFEInsectoids.InsectBuilding"/>
+		</modExtensions>
+		<stealable>false</stealable>
+		<researchPrerequisites>
+			<li>VFEI2_BasicHivetech</li>
+		</researchPrerequisites>
+	</ThingDef>
 	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
 		<defName>VFEI2_LargeGlowPod</defName>
 		<label>large glow pod</label>
@@ -2418,7 +2464,9 @@
 				<damage>1</damage>
 			</li>
 			<li Class="VFEInsectoids.CompProperties_InsectCalls">
-				<soundDefs><li>Pawn_BigInsect_Call</li></soundDefs>
+				<soundDefs>
+					<li>Pawn_BigInsect_Call</li>
+				</soundDefs>
 				<interval>6~12</interval>
 			</li>
 		</comps>
@@ -2597,5 +2645,129 @@
 			<stoppingPower>0</stoppingPower>
 			<armorPenetrationBase>0.4</armorPenetrationBase>
 		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_TurretBase">
+		<defName>VFEI2_Thornspitter</defName>
+		<label>thornspitter</label>
+		<description>A tiny mound serving as the entrance to an expansive deephive cluster below ground, topped by the emergence of a thornspitter insectoid. This creature is capable of ejecting inaccurate chitin thorns at enemies close-by, provided it is regularly fed with insect jelly. If starved, the mound will gradually deteriorate. Once completely deteriorated, the thornworm will retreat back into the deephive tunnels.</description>
+		<uiIconPath>Things/Building/InsectoidTurrets/InsectoidTurretBasic_MenuIcon</uiIconPath>
+		<graphicData>
+			<texPath>Things/Building/InsectoidTurrets/InsectoidTurretSmall_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.5,0.35,1.4)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<statBases>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			<!-- like level 8 human shooter -->
+		</statBases>
+		<costList>
+			<InsectJelly>100</InsectJelly>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<building>
+			<turretGunDef>VFEI2_Thornspitter_Gun</turretGunDef>
+			<destroySound>Hive_Spawn</destroySound>
+			<playTargetAcquiredSound>false</playTargetAcquiredSound>
+			<turretBurstCooldownTime>8</turretBurstCooldownTime>
+		</building>
+		<researchPrerequisites>
+			<li>VFEI2_BasicHivetech</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>VFEI2_Thornspitter_Gun</defName>
+		<label>thornspitter</label>
+		<description>A tiny mound serving as the entrance to an expansive deephive cluster below ground, topped by the emergence of a thornspitter insectoid. This creature is capable of ejecting inaccurate chitin thorns at enemies close-by, provided it is regularly fed with insect jelly. If starved, the mound will gradually deteriorate. Once completely deteriorated, the thornworm will retreat back into the deephive tunnels.</description>
+		<graphicData>
+			<texPath>Things/Building/InsectoidTurrets/TurretInsectoidBasic_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			
+		</graphicData>
+		<statBases>
+			<RangedWeapon_Cooldown>8</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>40</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>2.7</warmupTime>
+				<defaultCooldownTime>8</defaultCooldownTime>
+				<defaultProjectile>VFEI2_Thornspitter_Projectile</defaultProjectile>
+				<range>16.9</range>
+				<soundCast>VFEI2_InsectThornpod_Release</soundCast>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<consumeFuelPerShot>0</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFEI2_Thornspitter_Projectile</defName>
+		<label>thornspitter projectile</label>
+		<graphicData>
+			<texPath>Things/Projectile/Projectile_Thornworm_Spike</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<speed>88</speed>
+			<damageDef>Stab</damageDef>
+			<damageAmountBase>7</damageAmountBase>
+			<stoppingPower>0</stoppingPower>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="VFEI2_BuildingBaseDoor">
+		<defName>VFEI2_HiveDoor</defName>
+		<label>hive door</label>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<description>A passable insect door made from insectoid goop. Capable of holding up a roof.</description>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Beauty>0</Beauty>
+			<Flammability>1</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/HiveDoor/DoorInsectoid_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+			
+		</graphicData>
+		<uiIconPath>Things/Building/HiveDoor/DoorInsectoid_MenuIcon_south</uiIconPath>
+		
+		<size>(1, 1)</size>
+		<rotatable>true</rotatable>
+		<building>
+			<roamerCanOpen>true</roamerCanOpen>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>Things/Building/HiveDoor/DoorInsectoid_MenuIcon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>2</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>Things/Building/HiveDoor/DoorInsectoid_Top</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(2, 2)</drawSize>
+			</doorTopGraphic>
+		</building>
+		<designationHotKey>Misc3</designationHotKey>
+		
 	</ThingDef>
 </Defs>
