@@ -2563,6 +2563,7 @@
 		<uiIconPath>Things/Building/InsectoidTurrets/InsectoidTurretChelis_MenuIcon</uiIconPath>
 		<statBases>
 			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			
 			<!-- like level 8 human shooter -->
 		</statBases>
 		<costList>
@@ -2668,15 +2669,55 @@
 		<statBases>
 			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
 			<!-- like level 8 human shooter -->
+			<MaxHitPoints>80</MaxHitPoints>
+			<Flammability>1</Flammability>
+			<WorkToBuild>2000</WorkToBuild>
+			<Mass>10</Mass>
+			<Beauty>-20</Beauty>
+			<MarketValue>200</MarketValue>
 		</statBases>
 		<costList>
 			<InsectJelly>100</InsectJelly>
 		</costList>
-		<comps>
+		<comps Inherit="false">
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal>
+				<!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Insect jelly</fuelLabel>
+				<fuelGizmoLabel>Insect jelly</fuelGizmoLabel>
+				<fuelConsumptionRate>5</fuelConsumptionRate>
+				<fuelFilter>
+					<thingDefs>
+						<li>InsectJelly</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>90</fuelCapacity>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>Things/Item/Resource/AnimalProductRaw/InsectJelly/InsectJelly_c</fuelIconPath>
+			</li>
+			<li Class="VFEInsectoids.CompProperties_DamagedWhenUnfueled">
+				<interval>120</interval>
+				<damage>1</damage>
+			</li>
+			<li Class="VFEInsectoids.CompProperties_InsectCalls">
+				<soundDefs>
+					<li>Pawn_BigInsect_Call</li>
+				</soundDefs>
+				<interval>6~12</interval>
+			</li>
 			<li Class="CompProperties_Forbiddable"/>
 		</comps>
+	
 		<building>
 			<turretGunDef>VFEI2_Thornspitter_Gun</turretGunDef>
+			  <turretTopDrawSize>1.85</turretTopDrawSize>
 			<destroySound>Hive_Spawn</destroySound>
 			<playTargetAcquiredSound>false</playTargetAcquiredSound>
 			<turretBurstCooldownTime>8</turretBurstCooldownTime>
