@@ -15,7 +15,9 @@ namespace VFEInsectoids
             {
                 if (def.race.race.Insect)
                 {
-                    var record = VFEI_DefOf.VFEI_Sorne.insects.FirstOrDefault(x => x.kind == def);
+                    var record = VFEI_DefOf.VFEI_Sorne.insects
+                        .Concat(WildAnimalSpawner_SpawnRandomWildAnimalAt_Patch.royalInsects)
+                        .FirstOrDefault(x => x.kind == def);
                     if (record != null)
                     {
                         __result = record.selectionWeight;

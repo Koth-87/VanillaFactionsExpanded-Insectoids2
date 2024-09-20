@@ -96,7 +96,7 @@ namespace VFEInsectoids
                 }
             }
             var insects = map.mapPawns.AllPawns.Where(x => x.RaceProps.Insect).ToList();
-            //Log.Message("Insects spawned: " + insects.Count);
+            //Log.Message("Insects spawned: " + royalInsects.Count);
             foreach (var insect in insects)
             {
                 if (insect.Faction is null)

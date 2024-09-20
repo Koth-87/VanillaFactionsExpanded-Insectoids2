@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +37,27 @@ namespace VFEInsectoids
             }
         }
 
-        public static IEnumerable<PawnKindDef> TryOverrideWildAnimals(IEnumerable<PawnKindDef> wildAnimals, 
+        public static List<PawnGenOption> royalInsects = new List<PawnGenOption>
+        {
+            new PawnGenOption{ kind = VFEI_DefOf.VFEI2_RoyalMegascarab, selectionWeight 
+                = VFEI_DefOf.VFEI_Sorne.insects.Find(x => x.kind == PawnKindDefOf.Megascarab).selectionWeight},
+            new PawnGenOption{ kind = VFEI_DefOf.VFEI2_RoyalSpelopede, selectionWeight
+                = VFEI_DefOf.VFEI_Sorne.insects.Find(x => x.kind == PawnKindDefOf.Spelopede).selectionWeight},
+            new PawnGenOption{ kind = VFEI_DefOf.VFEI2_RoyalMegaspider, selectionWeight
+                = VFEI_DefOf.VFEI_Sorne.insects.Find(x => x.kind == PawnKindDefOf.Megaspider).selectionWeight},
+        };
+
+        public static IEnumerable<PawnKindDef> TryOverrideWildAnimals(IEnumerable<PawnKindDef> wildAnimals,
             WildAnimalSpawner spawner)
         {
             if (spawner.map.IsInfested() && Rand.Chance(0.75f))
             {
-                return VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind);
+                var insects = VFEI_DefOf.VFEI_Sorne.insects.Select(x => x.kind);
+                if (spawner.map.Parent is Settlement settlement && settlement.Faction == Faction.OfInsects)
+                {
+                    insects = insects.Concat(royalInsects.Select(x => x.kind));
+                }
+                return insects;
             }
             return wildAnimals;
         }

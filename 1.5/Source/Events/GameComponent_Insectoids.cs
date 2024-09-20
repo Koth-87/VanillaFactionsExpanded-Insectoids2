@@ -1,12 +1,32 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
-using UnityEngine;
 using Verse;
-using Verse.Noise;
 
 namespace VFEInsectoids
 {
+    public class WaveActivityDef : Def
+    {
+        public float raidSizeMultiplier;
+        public float timeUntilWaveArrives;
+        public bool includeBoss;
+        public float order;
+    }
+
+    public class WaveActivity : IExposable
+    {
+        public WaveActivityDef waveActivity;
+        public int ticksLaunch;
+        public InsectGenelineDef geneline;
+
+        public void ExposeData()
+        {
+            Scribe_Defs.Look(ref waveActivity, "waveActivity");
+            Scribe_Defs.Look(ref geneline, "geneline");
+            Scribe_Values.Look(ref ticksLaunch, "ticksLaunch");
+        }
+    }
+
     public class GameComponent_Insectoids : GameComponent
     {
         public Dictionary<Settlement, InsectTerritory> insectTiles = new();
