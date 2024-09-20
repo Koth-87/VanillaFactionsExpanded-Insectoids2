@@ -83,5 +83,8 @@ namespace VFEInsectoids
         public static TerrainAffordanceDef Diggable;
         public static StorytellerDef VFEI_EmpressEvil;
         public static ThingDef VFEI2_ArtificialBasicHive;
+
+        public static ThingDef VFEI2_SmallBurrowSpawner, VFEI2_SmallBurrow, VFEI2_MediumBurrowSpawner, 
+            VFEI2_MediumBurrow, VFEI2_LargeBurrowSpawner, VFEI2_LargeBurrow;
     }
 }

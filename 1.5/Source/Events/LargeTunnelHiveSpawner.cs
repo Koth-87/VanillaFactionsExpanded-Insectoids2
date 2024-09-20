@@ -18,7 +18,8 @@ namespace VFEInsectoids
             foreach (var def in thingsToSpawn)
             {
                 var pos = CellFinder.RandomClosewalkCellNear(loc, map, 6,
-                    (IntVec3 c) => c.GetThingList(map).Any(x => x is Hive || x is TunnelHiveSpawner) is false
+                    (IntVec3 c) => c.GetThingList(map).Any(x => x is Hive || x is TunnelHiveSpawner 
+                    || x is Building || x is Cocoon) is false
                     && otherHives.Any(x => x.OccupiedRect().ExpandedBy(2).Contains(c)) is false
                     && GenSpawn.WouldWipeAnythingWith(c, def.defaultPlacingRot, def, map, (Thing x) => true) is false);
                 var thing = ThingMaker.MakeThing(def);

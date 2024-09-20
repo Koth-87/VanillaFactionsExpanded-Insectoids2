@@ -10,12 +10,6 @@ namespace VFEInsectoids
     {
         public const float HivePoints = 220f;
 
-        public static readonly SimpleCurve PointsFactorCurve = new SimpleCurve
-        {
-            new CurvePoint(0f, 0.7f),
-            new CurvePoint(5000f, 0.45f)
-        };
-
         public override float ChanceFactorNow(IIncidentTarget target)
         {
             var mult = target is Map map && map.IsInfested() ? 2 : 1;
@@ -42,7 +36,6 @@ namespace VFEInsectoids
                 new CurvePoint(800, 2),
                 new CurvePoint(10000f, 14)
             }.Evaluate(parms.points);
-            parms.points *= PointsFactorCurve.Evaluate(parms.points);
             Thing thing = SpawnTunnels(Mathf.Max(GenMath.RoundRandom(parms.points / 220f), 1), map, additionalStructuresCount);
             SendStandardLetter(parms, thing);
             Find.TickManager.slower.SignalForceNormalSpeedShort();
