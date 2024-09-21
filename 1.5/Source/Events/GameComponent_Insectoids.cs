@@ -5,28 +5,6 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    public class WaveActivityDef : Def
-    {
-        public float raidSizeMultiplier;
-        public float timeUntilWaveArrives;
-        public bool includeBoss;
-        public float order;
-    }
-
-    public class WaveActivity : IExposable
-    {
-        public WaveActivityDef waveActivity;
-        public int ticksLaunch;
-        public InsectGenelineDef geneline;
-
-        public void ExposeData()
-        {
-            Scribe_Defs.Look(ref waveActivity, "waveActivity");
-            Scribe_Defs.Look(ref geneline, "geneline");
-            Scribe_Values.Look(ref ticksLaunch, "ticksLaunch");
-        }
-    }
-
     public class GameComponent_Insectoids : GameComponent
     {
         public Dictionary<Settlement, InsectTerritory> insectTiles = new();
@@ -57,14 +35,43 @@ namespace VFEInsectoids
 
         public Dictionary<InsectWaveDef, int> lastWavesIndices = new Dictionary<InsectWaveDef, int>();
 
+        public HordeModeManager hordeModeManager;
+
         public GameComponent_Insectoids()
         {
+            Init();
+        }
+
+        private void Init()
+        {
             Instance = this;
+            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
+            {
+                hordeModeManager ??= new HordeModeManager();
+            }
         }
 
         public GameComponent_Insectoids(Game game)
         {
-            Instance = this;
+            Init();
+        }
+
+        public override void GameComponentTick()
+        {
+            base.GameComponentTick();
+            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
+            {
+                hordeModeManager.Tick();
+            }
+        }
+
+        public override void GameComponentUpdate()
+        {
+            base.GameComponentUpdate();
+            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
+            {
+                hordeModeManager.Update();
+            }
         }
 
         public int GetNextWaveIndex(InsectWaveDef def)
@@ -162,10 +169,12 @@ namespace VFEInsectoids
             Scribe_Collections.Look(ref lastWavesIndices, "lastWavesIndices", LookMode.Def, LookMode.Value);
             Scribe_References.Look(ref thumperActivated, "thumperActivated");
             Scribe_Values.Look(ref nextEmpressEvilFiringTick, "nextEmpressEvilFiringTick");
+            Scribe_Deep.Look(ref hordeModeManager, "hordeModeManager");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 insectTiles ??= new Dictionary<Settlement, InsectTerritory>();
                 lastWavesIndices ??= new Dictionary<InsectWaveDef, int>();
+                hordeModeManager ??= new HordeModeManager();
             }
         }
 

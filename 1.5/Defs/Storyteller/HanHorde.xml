@@ -42,7 +42,7 @@
     <label>Writhing</label>
     <raidSizeMultiplier>2.0</raidSizeMultiplier>
     <timeUntilWaveArrives>0.5</timeUntilWaveArrives>
-    <includeBoss>false</includeBoss>
+    <includeBoss>true</includeBoss>
     <order>5.0</order>
   </VFEInsectoids.WaveActivityDef>
 

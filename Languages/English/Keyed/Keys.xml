@@ -67,4 +67,6 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_BurrowCollapsed>Insectoid burrow has become unstable and collapsed.</VFEI_BurrowCollapsed>
 	<VFEI_NotForPlayers>This Patriarch is under player control and therefore has no connection to a wild hive</VFEI_NotForPlayers>
 	<VFEI_BaseTimeBetweenHanHordeWaves>Base time between Han Horde-mode waves</VFEI_BaseTimeBetweenHanHordeWaves>
+	<VFEI_ResearchUnlockedForCompletingWave>{0} has been unlocked for completing the wave.</VFEI_ResearchUnlockedForCompletingWave>
+	<VFEI_CargoPodsSentForCompletingWave>Cargo pods have been sent for completing the wave.</VFEI_CargoPodsSentForCompletingWave>
 </LanguageData>
