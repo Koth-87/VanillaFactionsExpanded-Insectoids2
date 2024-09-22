@@ -2876,6 +2876,7 @@
 		<researchPrerequisites>
 			<li>VFEI2_StandardHivetech</li>
 		</researchPrerequisites>
+		<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
 	</ThingDef>
 	
 	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
@@ -2943,5 +2944,6 @@
 		<researchPrerequisites>
 			<li>VFEI2_ExoticHivetech</li>
 		</researchPrerequisites>
+		<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
 	</ThingDef>
 </Defs>
