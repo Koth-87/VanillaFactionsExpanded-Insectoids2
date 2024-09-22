@@ -2809,6 +2809,139 @@
 			</doorTopGraphic>
 		</building>
 		<designationHotKey>Misc3</designationHotKey>
-		
+	</ThingDef>
+	
+	<!--==================== Update 2.1 ==================== -->
+	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+		<defName>VFEI2_Jellyspreader</defName>
+		<label>jellyspreader</label>
+		<description>A hive-like formation of insectoid jelly that slowly pumps that jelly into the creep around it, nourishing it and creating a soft jelly terrain in a large radius. Jelly terrain created this way can support insectoid structures and in many ways behaves similar to creep, except it’s easier to clean and slows down non-insectoid movement even more. It needs to be fueled with insect jelly, otherwise it will stop transforming creep around itself.</description>
+		<graphicData>
+			<texPath>Things/Building/Jellyspreader</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<thingClass>Building</thingClass>
+		<minifiedDef Inherit="False"/>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<killedLeavings>
+			<InsectJelly>20</InsectJelly>
+		</killedLeavings>
+		<uiIconScale>0.65</uiIconScale>
+		<selectable>true</selectable>
+		<fillPercent>0.50</fillPercent>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<specialDisplayRadius>32.9</specialDisplayRadius>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>10</Mass>
+			<Flammability>1.0</Flammability>
+			<MarketValue>250</MarketValue>
+			<WorkToBuild>2700</WorkToBuild>
+		</statBases>
+		<placeWorkers>
+			<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherCreepers</li>
+		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal>
+			</li>
+			<li Class="VFEInsectoids.CompProperties_Terraform">
+				<radius>32.9</radius>
+				<terrainToSet>VFEI2_JellyFloor</terrainToSet>
+				<spawnTickRate>45000</spawnTickRate>
+			</li>
+			<li Class="CompProperties_Spawner">
+				<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
+				<thingToSpawn>InsectJelly</thingToSpawn>
+				<spawnCount>10</spawnCount>
+				<spawnIntervalRange>150000</spawnIntervalRange>
+				<spawnForbidden>false</spawnForbidden>
+				<saveKeysPrefix>jelly</saveKeysPrefix>
+			</li>
+		</comps>
+		<costList>
+			<InsectJelly>160</InsectJelly>
+		</costList>
+		<designationCategory>VFEI2_Insectoids</designationCategory>
+		<researchPrerequisites>
+			<li>VFEI2_StandardHivetech</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
+		<defName>VFEI2_RoyalJellyspreader</defName>
+		<label>royal jellyspreader</label>
+		<description>A hive-like formation of royal insectoid jelly that enriches nearby insectoid jellyfloors with the royal molecules. Royal jelly terrain created this way can support insectoid structures and in many ways behaves similar to creep, except it’s much easier to clean, cannot burn and slows down non-insectoid movement even more. It needs to be fueled with royal insect jelly, otherwise it will stop enriching jellyfloors around it.</description>
+		<graphicData>
+			<texPath>Things/Building/RoyalJellyspreader</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<thingClass>Building</thingClass>
+		<minifiedDef Inherit="False"/>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<killedLeavings>
+			<InsectJelly>20</InsectJelly>
+		</killedLeavings>
+		<uiIconScale>0.65</uiIconScale>
+		<selectable>true</selectable>
+		<fillPercent>0.50</fillPercent>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<specialDisplayRadius>32.9</specialDisplayRadius>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>10</Mass>
+			<Flammability>0</Flammability>
+			<MarketValue>500</MarketValue>
+			<WorkToBuild>3500</WorkToBuild>
+		</statBases>
+		<placeWorkers>
+			<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherCreepers</li>
+		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal>
+			</li>
+			<li Class="VFEInsectoids.CompProperties_Terraform">
+				<radius>32.9</radius>
+				<terrainToSet>VFEI2_JellyFloor</terrainToSet>
+				<spawnTickRate>45000</spawnTickRate>
+			</li>
+			<li Class="CompProperties_Spawner">
+				<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
+				<thingToSpawn>InsectJelly</thingToSpawn>
+				<spawnCount>10</spawnCount>
+				<spawnIntervalRange>150000</spawnIntervalRange>
+				<spawnForbidden>false</spawnForbidden>
+				<saveKeysPrefix>jelly</saveKeysPrefix>
+			</li>
+		</comps>
+		<costList>
+			<InsectJelly>100</InsectJelly>
+			<VFEI2_RoyalInsectJelly>30</VFEI2_RoyalInsectJelly>
+		</costList>
+		<designationCategory>VFEI2_Insectoids</designationCategory>
+		<researchPrerequisites>
+			<li>VFEI2_ExoticHivetech</li>
+		</researchPrerequisites>
 	</ThingDef>
 </Defs>
