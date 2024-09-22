@@ -113,8 +113,8 @@ namespace VFEInsectoids
             }
         }
 
-        private Vector2 waveIconSize = new Vector2(50f, 50f);
-        private Vector2 waveIntensitySize = new Vector2(50f, 50f);
+        private Vector2 waveIconSize = new Vector2(30, 30);
+        private Vector2 waveIntensitySize = new Vector2(30, 30);
 
         public void DoGUI()
         {
@@ -136,8 +136,8 @@ namespace VFEInsectoids
             int totalIcons = waveActivities.Count;
             float totalIconsWidth = totalIcons * iconWidthWithSpacing;
             var maxIntensity = waveActivities.Max(x => x.def.intensity);
-            var intensitySpacing = 13;
-            var intensityIconWithSpacing = waveIntensitySize.y + intensitySpacing;
+            var intensitySpacing = 8;
+            var intensityIconWithSpacing = waveIntensitySize.y + intensitySpacing + 5;
 
             var iconPos = new Vector2(screenWidth - totalIconsWidth, intensityIconWithSpacing);
             var waveTicks = 0;
@@ -145,7 +145,7 @@ namespace VFEInsectoids
             for (int i = 0; i < waveActivities.Count; i++)
             {
                 var curActivity = waveActivities[i];
-                var intensityPos = new Vector2(iconPos.x, iconPos.y - (10 + intensitySpacing));
+                var intensityPos = new Vector2(iconPos.x, iconPos.y - (6 + intensitySpacing));
                 for (var j = 0; j < curActivity.def.intensity; j++)
                 {
                     var intensityRect = new Rect(intensityPos.x, intensityPos.y, waveIntensitySize.x, waveIntensitySize.y);
@@ -174,12 +174,13 @@ namespace VFEInsectoids
 
             Text.Anchor = TextAnchor.UpperRight;
 
-            Rect timerRect = new Rect(screenWidth - (350 + 15), iconPos.y + waveIconSize.y + 10, 350, 70);
+            Rect timerRect = new Rect(screenWidth - (350 + 15), iconPos.y + waveIconSize.y, 350, 50);
             Text.Font = GameFont.Medium;
-            Text.CurFontStyle.fontSize += 50;
-            Widgets.Label(timerRect, $"{CurrentActivity.ticksStarting.ToStringTicksToPeriod()}");
-            Text.CurFontStyle.fontSize -= 50;
-            var enemiesComingRect = new Rect(timerRect.x, timerRect.yMax, timerRect.width, 32);
+            Text.CurFontStyle.fontSize += 40;
+            Widgets.Label(timerRect, $"{TicksToString(CurrentActivity.ticksStarting)}");
+            Text.CurFontStyle.fontSize -= 40;
+            Text.Font = GameFont.Small;
+            var enemiesComingRect = new Rect(timerRect.x, timerRect.yMax, timerRect.width, 24);
             if (CurrentActivity.insects is null)
             {
                 CurrentActivity.FormRaidComposition();
@@ -190,8 +191,24 @@ namespace VFEInsectoids
             var height = Text.CalcHeight(raidInfo, enemiesComingRect.width);
             var raidInfoRect = new Rect(enemiesComingRect.x, enemiesComingRect.yMax, enemiesComingRect.width, height);
             Widgets.Label(raidInfoRect, raidInfo);
-            Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
+        }
+
+        public static string TicksToString(int ticks)
+        {
+            int totalSeconds = ticks / 60;
+            int hours = totalSeconds / 3600;
+            int minutes = (totalSeconds % 3600) / 60;
+            int seconds = totalSeconds % 60;
+
+            if (hours > 0)
+            {
+                return $"{hours}:{minutes:D2}:{seconds:D2}";
+            }
+            else
+            {
+                return $"{minutes:D2}:{seconds:D2}";
+            }
         }
 
         public WaveActivity CurrentActivity => waveActivities[0];
