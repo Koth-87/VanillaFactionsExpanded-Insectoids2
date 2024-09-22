@@ -188,9 +188,9 @@
 		<label>hivestone wall</label>
 		<description>An impassable rock wall reinforced with thick and solidified insect goop. Much stronger than standard rock wall, but flammable. Capable of holding up a roof.</description>
 		<graphicData>
-			<texPath>Things/Building/Linked/WallHive_Atlas</texPath>
+			<texPath>Things/Building/Linked/WallHivestone_Atlas</texPath>
 		</graphicData>
-		<uiIconPath>Things/Building/Linked/WallHive_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Linked/WallHivestone_MenuIcon</uiIconPath>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0.75</Flammability>
