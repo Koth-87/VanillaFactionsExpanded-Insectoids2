@@ -89,5 +89,9 @@ namespace VFEInsectoids
         public static PawnKindDef VFEI2_RoyalMegascarab, VFEI2_RoyalMegaspider, VFEI2_RoyalSpelopede;
         public static StorytellerDef VFEI_HanHordeMode;
         public static IncidentDef VFEI_HordeWaveRaid;
+        [DefAlias("VFEI2_Creep")] public static TerrainAffordanceDef VFEI2_CreepAffordance;
+        [DefAlias("VFEI2_JellyFloor")] public static TerrainAffordanceDef VFEI2_JellyFloorAffordance;
+        public static TerrainDef VFEI2_RoyalJellyFloor, VFEI2_JellyFloor;
+
     }
 }

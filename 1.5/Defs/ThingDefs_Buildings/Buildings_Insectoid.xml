@@ -2931,7 +2931,7 @@
 				<radius>16.9</radius>
 				<requiredTerrain>VFEI2_JellyFloor</requiredTerrain>
 				<terrainToSet>VFEI2_RoyalJellyFloor</terrainToSet>
-				<spawnTickRate>180000</spawnTickRate>
+				<spawnTickRate>7500</spawnTickRate>
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>Royal insect jelly</fuelLabel>
@@ -2960,6 +2960,6 @@
 		<researchPrerequisites>
 			<li>VFEI2_ExoticHivetech</li>
 		</researchPrerequisites>
-		<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
+		<terrainAffordanceNeeded>VFEI2_JellyFloor</terrainAffordanceNeeded>
 	</ThingDef>
 </Defs>

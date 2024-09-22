@@ -8,4 +8,10 @@
     <order>1201</order>
   </TerrainAffordanceDef>
 
+  <TerrainAffordanceDef>
+    <defName>VFEI2_JellyFloor</defName>
+    <label>jellyfloor</label>
+    <order>1202</order>
+  </TerrainAffordanceDef>
+
 </Defs>

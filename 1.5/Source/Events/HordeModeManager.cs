@@ -298,7 +298,7 @@ namespace VFEInsectoids
                 }
                 else
                 {
-                    Thing thing = ThingMaker.MakeThing(thingDef);
+                    Thing thing = ThingMaker.MakeThing(thingDef, GenStuff.RandomStuffFor(thingDef));
                     things.Add(thing);
                 }
                 IntVec3 dropCell = DropCellFinder.RandomDropSpot(map);

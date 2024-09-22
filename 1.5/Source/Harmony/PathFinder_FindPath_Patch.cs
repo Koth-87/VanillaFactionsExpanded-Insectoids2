@@ -58,16 +58,39 @@ namespace VFEInsectoids
 
         public static float TryChangePathCost(this Pawn pawn, float cost, TerrainDef terrain)
         {
+            bool canWalkOnInsectTerrains = pawn.RaceProps.Insect || pawn.genes != null && pawn.genes.GenesListForReading
+                    .Any(x => allowedGenes.Contains(x.def.defName) && x.Active);
             if (terrain == VFEI_DefOf.VFEI2_Creep)
             {
-                if (pawn.RaceProps.Insect || pawn.genes != null && pawn.genes.GenesListForReading
-                    .Any(x => allowedGenes.Contains(x.def.defName) && x.Active))
+                if (canWalkOnInsectTerrains)
                 {
                     cost /= 1.06f;
                 }
                 else
                 {
                     cost /= 0.22f;
+                }
+            }
+            else if (terrain == VFEI_DefOf.VFEI2_JellyFloor)
+            {
+                if (canWalkOnInsectTerrains)
+                {
+                    cost /= 1.22f;
+                }
+                else
+                {
+                    cost /= 0.22f;
+                }
+            }
+            else if (terrain == VFEI_DefOf.VFEI2_RoyalJellyFloor)
+            {
+                if (canWalkOnInsectTerrains)
+                {
+                    cost /= 1.22f;
+                }
+                else
+                {
+                    cost /= 0.12f;
                 }
             }
             return cost;

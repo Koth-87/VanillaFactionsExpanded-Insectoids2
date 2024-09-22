@@ -74,4 +74,6 @@ Wave size multiplier: {1}.
 Time before the wave: {2}.
 Chosen geneline: {3}.</VFEI_WaveActivityOverlay>
 	<VFEI_EnemiesComing>Enemies coming:</VFEI_EnemiesComing>
+	<VFEI_RequiresFloor>{0_label} needs {1} underneath.</VFEI_RequiresFloor>
+
 </LanguageData>

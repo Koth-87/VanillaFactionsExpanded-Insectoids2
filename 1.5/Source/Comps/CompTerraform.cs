@@ -34,8 +34,9 @@ namespace VFEInsectoids
         protected override bool CellValidator(IntVec3 cell)
         {
             var result = cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet
-                && (Props.requiredTerrain is null && TerrainValidator(terrain) || Props.requiredTerrain == terrain) && cell.GetEdifice(parent.Map) is null;
-            //Log.Message(cell + " - result: " + result);
+                && (Props.requiredTerrain is null && TerrainValidator(terrain) || Props.requiredTerrain == terrain) 
+                && (cell.GetEdifice(parent.Map) is not Building building || 
+                building.def.building.isNaturalRock is false && building.def.building.isResourceRock is false);
             return result;
         }
 
