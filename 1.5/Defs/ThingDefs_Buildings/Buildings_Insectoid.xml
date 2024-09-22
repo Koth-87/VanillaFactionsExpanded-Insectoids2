@@ -2848,25 +2848,33 @@
 			<MarketValue>250</MarketValue>
 			<WorkToBuild>2700</WorkToBuild>
 		</statBases>
-		<placeWorkers>
-			<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherCreepers</li>
-		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>6000</ticksPerHeal>
 			</li>
 			<li Class="VFEInsectoids.CompProperties_Terraform">
 				<radius>32.9</radius>
+				<requiredTerrain>VFEI2_Creep</requiredTerrain>
 				<terrainToSet>VFEI2_JellyFloor</terrainToSet>
-				<spawnTickRate>45000</spawnTickRate>
+				<spawnTickRate>30000</spawnTickRate>
 			</li>
-			<li Class="CompProperties_Spawner">
-				<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
-				<thingToSpawn>InsectJelly</thingToSpawn>
-				<spawnCount>10</spawnCount>
-				<spawnIntervalRange>150000</spawnIntervalRange>
-				<spawnForbidden>false</spawnForbidden>
-				<saveKeysPrefix>jelly</saveKeysPrefix>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Insect jelly</fuelLabel>
+				<fuelGizmoLabel>Insect jelly</fuelGizmoLabel>
+				<fuelConsumptionRate>12</fuelConsumptionRate>
+				<fuelFilter>
+					<thingDefs>
+						<li>InsectJelly</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>90</fuelCapacity>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>Things/Item/Resource/AnimalProductRaw/InsectJelly/InsectJelly_c</fuelIconPath>
 			</li>
 		</comps>
 		<costList>
@@ -2907,7 +2915,7 @@
 		<fillPercent>0.50</fillPercent>
 		<rotatable>false</rotatable>
 		<tickerType>Normal</tickerType>
-		<specialDisplayRadius>32.9</specialDisplayRadius>
+		<specialDisplayRadius>16.9</specialDisplayRadius>
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Mass>10</Mass>
@@ -2915,25 +2923,33 @@
 			<MarketValue>500</MarketValue>
 			<WorkToBuild>3500</WorkToBuild>
 		</statBases>
-		<placeWorkers>
-			<li>VFEInsectoids.PlaceWorker_NeverCloseToOtherCreepers</li>
-		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>6000</ticksPerHeal>
 			</li>
 			<li Class="VFEInsectoids.CompProperties_Terraform">
-				<radius>32.9</radius>
-				<terrainToSet>VFEI2_JellyFloor</terrainToSet>
-				<spawnTickRate>45000</spawnTickRate>
+				<radius>16.9</radius>
+				<requiredTerrain>VFEI2_JellyFloor</requiredTerrain>
+				<terrainToSet>VFEI2_RoyalJellyFloor</terrainToSet>
+				<spawnTickRate>180000</spawnTickRate>
 			</li>
-			<li Class="CompProperties_Spawner">
-				<compClass>VFEInsectoids.CompSpawnerDisableable</compClass>
-				<thingToSpawn>InsectJelly</thingToSpawn>
-				<spawnCount>10</spawnCount>
-				<spawnIntervalRange>150000</spawnIntervalRange>
-				<spawnForbidden>false</spawnForbidden>
-				<saveKeysPrefix>jelly</saveKeysPrefix>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Royal insect jelly</fuelLabel>
+				<fuelGizmoLabel>Royal insect jelly</fuelGizmoLabel>
+				<fuelConsumptionRate>24</fuelConsumptionRate>
+				<fuelFilter>
+					<thingDefs>
+						<li>VFEI2_RoyalInsectJelly</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>30</fuelCapacity>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>Things/Item/RoyalJelly/RoyalJelly_c</fuelIconPath>
 			</li>
 		</comps>
 		<costList>

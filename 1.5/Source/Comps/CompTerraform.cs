@@ -7,6 +7,7 @@ namespace VFEInsectoids
 {
     public class CompProperties_Terraform : CompProperties_AOE
     {
+        public TerrainDef requiredTerrain;
         public TerrainDef terrainToSet;
         public CompProperties_Terraform()
         {
@@ -17,6 +18,9 @@ namespace VFEInsectoids
     public class CompTerraform : CompAOE_Cell
     {
         public CompProperties_Terraform Props => base.props as CompProperties_Terraform;
+        public CompRefuelable compFuel;
+        protected override bool Active => base.Active && (compFuel is null || compFuel.HasFuel);
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -24,12 +28,13 @@ namespace VFEInsectoids
             {
                 parent.Map.terrainGrid.SetTerrain(parent.Position, Props.terrainToSet);
             }
+            compFuel = parent.GetComp<CompRefuelable>();
         }
 
         protected override bool CellValidator(IntVec3 cell)
         {
             var result = cell.GetTerrain(parent.Map) is TerrainDef terrain && terrain != Props.terrainToSet
-                && TerrainValidator(terrain) && cell.GetEdifice(parent.Map) is null;
+                && (Props.requiredTerrain is null && TerrainValidator(terrain) || Props.requiredTerrain == terrain) && cell.GetEdifice(parent.Map) is null;
             //Log.Message(cell + " - result: " + result);
             return result;
         }
@@ -46,7 +51,10 @@ namespace VFEInsectoids
         protected override List<IntVec3> GetCells()
         {
             var cells = base.GetCells();
-            compSpawner.canSpawn = cells.Any() is false;
+            if (compSpawner != null)
+            {
+                compSpawner.canSpawn = cells.Any() is false;
+            }
             return cells;
         }
 

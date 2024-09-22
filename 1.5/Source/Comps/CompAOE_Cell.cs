@@ -31,6 +31,10 @@ namespace VFEInsectoids
                     nextTickEffect = NextTickEffect;
                 }
             }
+            else
+            {
+                nextTickEffect++;
+            }
         }
 
         protected virtual bool TryGetCell(List<IntVec3> cells, out IntVec3 cell)
