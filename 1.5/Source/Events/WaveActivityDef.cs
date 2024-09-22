@@ -7,6 +7,6 @@ namespace VFEInsectoids
         public float raidSizeMultiplier;
         public float timeUntilWaveArrives;
         public bool includeBoss;
-        public float order;
+        public int intensity;
     }
 }

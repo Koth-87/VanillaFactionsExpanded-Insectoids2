@@ -177,7 +177,7 @@
     <description>Han Horde-mode has served numerous tours on Sorne and cannot imagine a life without a worthy adversary. As such, his story will be that of the endless waves of insectoids crashing against the bulwark of the valiant defense. The insectoid waves will follow a regular pattern of low-to-high activity, and each defeated wave will reward you with technological progression.</description>
     <portraitLarge>UI/Storyteller/HanHelldiver</portraitLarge>
     <portraitTiny>UI/Storyteller/HanHelldiverTiny</portraitTiny>
-    <listOrder>20</listOrder>
+    <listOrder>41</listOrder>
     <comps>
       <!-- Intro -->
       <li Class="StorytellerCompProperties_ClassicIntro"/>

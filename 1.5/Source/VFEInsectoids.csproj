@@ -88,6 +88,7 @@
     <Compile Include="Comps\StorytellerComp_ExclusiveIncidents.cs" />
     <Compile Include="Events\HordeModeManager.cs" />
     <Compile Include="Events\IncidentWorker_BurrowSiege.cs" />
+    <Compile Include="Events\IncidentWorker_HordeWaveRaid.cs" />
     <Compile Include="Events\WaveActivity.cs" />
     <Compile Include="Events\WaveActivityDef.cs" />
     <Compile Include="Harmony\JobDriver_Mine_ResetTicksToPickHit.cs" />

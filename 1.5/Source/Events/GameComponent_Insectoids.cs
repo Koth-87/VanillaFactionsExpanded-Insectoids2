@@ -45,10 +45,7 @@ namespace VFEInsectoids
         private void Init()
         {
             Instance = this;
-            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
-            {
-                hordeModeManager ??= new HordeModeManager();
-            }
+            hordeModeManager ??= new HordeModeManager();
         }
 
         public GameComponent_Insectoids(Game game)
@@ -56,21 +53,33 @@ namespace VFEInsectoids
             Init();
         }
 
+        public override void StartedNewGame()
+        {
+            base.StartedNewGame();
+            Init();
+        }
+
+        public override void LoadedGame()
+        {
+            base.LoadedGame();
+            Init();
+        }
+
         public override void GameComponentTick()
         {
             base.GameComponentTick();
-            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
+            if (Find.Storyteller?.def == VFEI_DefOf.VFEI_HanHordeMode)
             {
                 hordeModeManager.Tick();
             }
         }
 
-        public override void GameComponentUpdate()
+        public override void GameComponentOnGUI()
         {
-            base.GameComponentUpdate();
-            if (Find.Storyteller.def == VFEI_DefOf.VFEI_HanHordeMode)
+            base.GameComponentOnGUI();
+            if (Find.Storyteller?.def == VFEI_DefOf.VFEI_HanHordeMode)
             {
-                hordeModeManager.Update();
+                hordeModeManager.DoGUI();
             }
         }
 

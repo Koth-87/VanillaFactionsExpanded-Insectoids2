@@ -88,5 +88,6 @@ namespace VFEInsectoids
             VFEI2_MediumBurrow, VFEI2_LargeBurrowSpawner, VFEI2_LargeBurrow;
         public static PawnKindDef VFEI2_RoyalMegascarab, VFEI2_RoyalMegaspider, VFEI2_RoyalSpelopede;
         public static StorytellerDef VFEI_HanHordeMode;
+        public static IncidentDef VFEI_HordeWaveRaid;
     }
 }

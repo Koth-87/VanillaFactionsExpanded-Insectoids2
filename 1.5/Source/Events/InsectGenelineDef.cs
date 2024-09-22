@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace VFEInsectoids
@@ -10,5 +11,21 @@ namespace VFEInsectoids
         public PawnKindDef boss;
         public ThingDef hive;
         public float spawnWeight;
+        public string waveIconPath;
+
+        [Unsaved(false)]
+        public Texture2D waveIcon = BaseContent.BadTex;
+
+        public override void PostLoad()
+        {
+            base.PostLoad();
+            if (!waveIconPath.NullOrEmpty())
+            {
+                LongEventHandler.ExecuteWhenFinished(delegate
+                {
+                    waveIcon = ContentFinder<Texture2D>.Get(waveIconPath);
+                });
+            }
+        }
     }
 }

@@ -69,4 +69,9 @@ Areas around insectoid hives are often teeming with insects, with various insect
 	<VFEI_BaseTimeBetweenHanHordeWaves>Base time between Han Horde-mode waves</VFEI_BaseTimeBetweenHanHordeWaves>
 	<VFEI_ResearchUnlockedForCompletingWave>{0} has been unlocked for completing the wave.</VFEI_ResearchUnlockedForCompletingWave>
 	<VFEI_CargoPodsSentForCompletingWave>Cargo pods have been sent for completing the wave.</VFEI_CargoPodsSentForCompletingWave>
+	<VFEI_WaveActivityOverlay>Activity: {0}.
+Wave size multiplier: {1}.
+Time before the wave: {2}.
+Chosen geneline: {3}.</VFEI_WaveActivityOverlay>
+	<VFEI_EnemiesComing>Enemies coming:</VFEI_EnemiesComing>
 </LanguageData>

@@ -113,7 +113,7 @@ namespace VFEInsectoids
                     }
                     if (lord == null || !lord.CanAddPawn(p))
                     {
-                        lord = LordMaker.MakeNewLord(Faction.OfInsects, new LordJob_AssaultColony(Faction.OfInsects, canKidnap: true, canTimeoutOrFlee: false), Find.CurrentMap);
+                        lord = LordMaker.MakeNewLord(Faction.OfInsects, new LordJob_AssaultColony(Faction.OfInsects, canKidnap: true, canTimeoutOrFlee: false), parent.Map);
                     }
                     if (lord != null && lord.LordJob.CanAutoAddPawns)
                     {

@@ -37,7 +37,7 @@ namespace VFEInsectoids
             return insects;
         }
 
-        private static void GenerateInsects(PawnGroupMakerParms parms, InsectGenelineDef genelineDef, List<Pawn> __result, float points)
+        public static void GenerateInsects(this PawnGroupMakerParms parms, InsectGenelineDef genelineDef, List<Pawn> __result, float points)
         {
             while (true)
             {

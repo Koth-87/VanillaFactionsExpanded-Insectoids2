@@ -61,7 +61,6 @@ namespace VFEInsectoids
         public static IntRange tendrilmossSpawnSpeed = new IntRange(15000, 25000);
         public static int baseArtificalInsectCount = 2;
         public static float baseTimeBetweenHanHordeWaves = 5f;
-
         public static void DoSettingsWindowContents(Rect inRect)
         {
             var ls = new Listing_Standard();
@@ -72,7 +71,19 @@ namespace VFEInsectoids
             creeperSpawnSpeed = (int)ls.SliderLabeled("VFEI_CreeperSpawnSpeed".Translate() + ": " + creeperSpawnSpeed.ToStringTicksToPeriod(), creeperSpawnSpeed, 2500, 120000);
             IntRange(ls, "VFEI_TendrilmossSpawnSpeed".Translate(), ref tendrilmossSpawnSpeed, 2500, 120000);
             baseArtificalInsectCount = (int)ls.SliderLabeled("VFEI_BaseArtificalInsectCount".Translate() + ": " + baseArtificalInsectCount.ToString(), baseArtificalInsectCount, 1, 5);
+            var oldValue = baseTimeBetweenHanHordeWaves;
             baseTimeBetweenHanHordeWaves = ls.SliderLabeled("VFEI_BaseTimeBetweenHanHordeWaves".Translate() + ": " + ((int)(baseTimeBetweenHanHordeWaves * GenDate.TicksPerDay)).ToStringTicksToPeriod(), baseTimeBetweenHanHordeWaves, 0.1f, 10f);
+            if (oldValue != baseTimeBetweenHanHordeWaves)
+            {
+                if (Current.Game != null)
+                {
+                    var horde = GameComponent_Insectoids.Instance.hordeModeManager;
+                    foreach (var activity in horde.waveActivities)
+                    {
+                        activity.SetTicksStarting();
+                    }
+                }
+            }
             ls.End();
         }
 

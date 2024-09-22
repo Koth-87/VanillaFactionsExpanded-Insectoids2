@@ -145,4 +145,16 @@
 		<tale>Infestation</tale>
 	</IncidentDef>
 
+	<IncidentDef>
+		<defName>VFEI_HordeWaveRaid</defName>
+		<label>horde wave raid</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>VFEInsectoids.IncidentWorker_HordeWaveRaid</workerClass>
+		<letterDef>ThreatBig</letterDef>
+		<baseChance>0</baseChance>
+		<category>ThreatBig</category>
+		<tale>Raid</tale>
+	</IncidentDef>
 </Defs>

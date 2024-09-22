@@ -7,7 +7,7 @@
     <raidSizeMultiplier>0.5</raidSizeMultiplier>
     <timeUntilWaveArrives>2.0</timeUntilWaveArrives>
     <includeBoss>false</includeBoss>
-    <order>1.0</order>
+    <intensity>1</intensity>
   </VFEInsectoids.WaveActivityDef>
 
   <VFEInsectoids.WaveActivityDef>
@@ -16,7 +16,7 @@
     <raidSizeMultiplier>0.75</raidSizeMultiplier>
     <timeUntilWaveArrives>1.5</timeUntilWaveArrives>
     <includeBoss>false</includeBoss>
-    <order>2.0</order>
+    <intensity>2</intensity>
   </VFEInsectoids.WaveActivityDef>
 
   <VFEInsectoids.WaveActivityDef>
@@ -25,7 +25,7 @@
     <raidSizeMultiplier>1.0</raidSizeMultiplier>
     <timeUntilWaveArrives>1.0</timeUntilWaveArrives>
     <includeBoss>false</includeBoss>
-    <order>3.0</order>
+    <intensity>3</intensity>
   </VFEInsectoids.WaveActivityDef>
 
   <VFEInsectoids.WaveActivityDef>
@@ -34,7 +34,7 @@
     <raidSizeMultiplier>1.5</raidSizeMultiplier>
     <timeUntilWaveArrives>0.75</timeUntilWaveArrives>
     <includeBoss>false</includeBoss>
-    <order>4.0</order>
+    <intensity>4</intensity>
   </VFEInsectoids.WaveActivityDef>
 
   <VFEInsectoids.WaveActivityDef>
@@ -43,7 +43,7 @@
     <raidSizeMultiplier>2.0</raidSizeMultiplier>
     <timeUntilWaveArrives>0.5</timeUntilWaveArrives>
     <includeBoss>true</includeBoss>
-    <order>5.0</order>
+    <intensity>5</intensity>
   </VFEInsectoids.WaveActivityDef>
 
 </Defs>
