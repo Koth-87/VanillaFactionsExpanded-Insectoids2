@@ -22,5 +22,5 @@
 			<flightSpeed>8</flightSpeed>
 			<stunDurationTicksRange>60~180</stunDurationTicksRange>
 		</pawnFlyer>
-	</ThingDef>
+	</ThingDef> 
 </Defs>
