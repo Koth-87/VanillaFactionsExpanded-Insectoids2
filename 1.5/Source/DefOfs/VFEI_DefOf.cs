@@ -36,7 +36,8 @@ namespace VFEInsectoids
         [MayRequire("sarg.alphaanimals")]
         public static ThingDef VFEI2_PherocoreBlack;
         public static ThingDef VFEI2_Vilelobber;
-     
+        public static ThingDef VFEI2_PawnFlyer_Stun;
+
         public static HediffDef VFEI2_ArmorDegradation;
         public static HediffDef VFEI2_TeramantisStun;
         public static HediffDef VFEI2_EmpressSpawn;

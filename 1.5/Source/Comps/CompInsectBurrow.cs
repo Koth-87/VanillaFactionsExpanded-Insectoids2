@@ -87,7 +87,7 @@ namespace VFEInsectoids
             if (CellFinder.TryFindRandomCellNear(this.parent.Position, this.parent.Map, 3, (IntVec3 c) => !c.Fogged(this.parent.Map) && c.Walkable(this.parent.Map) && !c.Impassable(this.parent.Map), out IntVec3 result))
             {
                 p.rotationTracker.FaceCell(result);
-                list.Add(PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer_Stun, p, result, null, null, flyWithCarriedThing: false, randomCell.ToVector3()));
+                list.Add(PawnFlyer.MakeFlyer(VFEI_DefOf.VFEI2_PawnFlyer_Stun, p, result, null, null, flyWithCarriedThing: false, randomCell.ToVector3()));
                 list2.Add(randomCell);
             }
 
