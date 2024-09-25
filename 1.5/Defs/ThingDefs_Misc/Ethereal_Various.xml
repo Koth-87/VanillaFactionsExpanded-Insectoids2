@@ -16,7 +16,7 @@
 		</pawnFlyer>
 	</ThingDef>
 	<ThingDef ParentName="PawnFlyerBase">
-		<defName>VFEI2_PawnFlyer_Stun</defName>
+		<defName>VFEI2_PawnFlyer_Stun</defName> 
 		<pawnFlyer>
 			<flightDurationMin>0.75</flightDurationMin>
 			<flightSpeed>8</flightSpeed>
