@@ -131,7 +131,7 @@ namespace VFEInsectoids
                 InitializeWaveActivities();
             }
 
-            float screenWidth = Screen.width;
+            float screenWidth = UI.screenWidth;
             float iconWidthWithSpacing = waveIconSize.x + 5f;
             int totalIcons = waveActivities.Count;
             float totalIconsWidth = totalIcons * iconWidthWithSpacing;
