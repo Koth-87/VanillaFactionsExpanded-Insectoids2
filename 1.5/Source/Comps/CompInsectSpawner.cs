@@ -25,7 +25,7 @@ namespace VFEInsectoids
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
             if (nextPawnSpawnTick != -1 && parent is not Hive)
             {
-                foreach (var building in parent.Map.listerThings.AllThings.Where(x => x != parent && x is Building
+                foreach (var building in parent.Map.listerThings.AllThings.Where(x => x is Building 
                     && x is not Hive).ToList())
                 {
                     var comp = building.TryGetComp<CompInsectSpawner>();
