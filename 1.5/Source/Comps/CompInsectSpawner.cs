@@ -29,7 +29,7 @@ namespace VFEInsectoids
                     && x is not Hive).ToList())
                 {
                     var comp = building.TryGetComp<CompInsectSpawner>();
-                    if (comp != null)
+                    if (comp != null && comp.nextPawnSpawnTick != -1)
                     {
                         comp.SpawnInsects();
                     }
