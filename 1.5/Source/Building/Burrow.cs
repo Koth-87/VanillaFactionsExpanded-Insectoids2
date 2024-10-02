@@ -65,7 +65,7 @@ namespace VFEInsectoids
         }
         public override void ExposeData()
         {
-
+            base.ExposeData();
 
             Scribe_Values.Look(ref size, "size");
         
