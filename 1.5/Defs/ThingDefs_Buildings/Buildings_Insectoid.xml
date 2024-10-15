@@ -794,10 +794,9 @@
 			<Beauty>-20</Beauty>
 			<WorkToBuild>12000</WorkToBuild>
 		</statBases>
-		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
 			<ChunkSlagSteel>2</ChunkSlagSteel>
-			<ComponentIndustrial>1</ComponentIndustrial>
 			<InsectJelly>10</InsectJelly>
 		</killedLeavings>
 		<costList>
@@ -806,7 +805,8 @@
 		</costList>
 		<building>
 			<claimable>false</claimable>
-			<alwaysDeconstructible>true</alwaysDeconstructible>
+			<alwaysDeconstructible>false</alwaysDeconstructible>
+			<deconstructible>false</deconstructible>
 		</building>
 		<selectable>true</selectable>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
