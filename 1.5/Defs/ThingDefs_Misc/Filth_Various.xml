@@ -53,7 +53,7 @@
 			<Flammability>2.0</Flammability>
 		</statBases>
 		<graphicData>
-			<texPath>Things/Filth/FlammableBile</texPath>
+			<texPath>Things/Filth/LiquidFuel</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 			<drawSize>1.5</drawSize>
 		</graphicData>
