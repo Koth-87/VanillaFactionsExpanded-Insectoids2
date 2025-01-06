@@ -26,7 +26,7 @@ namespace VFEInsectoids
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 41);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 42);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 46);
-                    yield return new CodeInstruction(OpCodes.Call, typeof(PathFinder_FindPath_Patch).GetMethod(nameof(PathFinder_FindPath_Patch.ChangePathCostIfNeeded)));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(PathFinder_FindPath_Patch).GetMethod(nameof(ChangePathCostIfNeeded)));
                     yield return new CodeInstruction(OpCodes.Stloc_S, 46);
                 }
             }
@@ -60,7 +60,7 @@ namespace VFEInsectoids
         {
             bool canWalkOnInsectTerrains = pawn.RaceProps.Insect || pawn.genes != null && pawn.genes.GenesListForReading
                     .Any(x => allowedGenes.Contains(x.def.defName) && x.Active);
-            if (terrain == VFEI_DefOf.VFEI2_Creep)
+            if (terrain == VFEI_DefOf.VFEI2_Creep || terrain == VFEI_DefOf.AA_BlackCreep)
             {
                 if (canWalkOnInsectTerrains)
                 {

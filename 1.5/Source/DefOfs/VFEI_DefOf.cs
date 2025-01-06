@@ -63,6 +63,8 @@ namespace VFEInsectoids
             VFEI_InfestedMeteorIncoming;
         public static InsectGenelineDef VFEI_Sorne;
         public static TerrainDef VFEI2_Creep;
+        [MayRequire("sarg.alphaanimals")]
+        public static TerrainDef AA_BlackCreep;
         public static IncidentDef VFEI_RoamingInsectoids;
         public static ThingDef VFEI2_LargeGlowPod, VFEI2_GlowPodFormation, VFEI2_FoamPod, VFEI2_TendrilFarm,
             VFEI2_Creeper, VFEI2_JellyFarm, VFEI2_LargeTunnelHiveSpawner;
