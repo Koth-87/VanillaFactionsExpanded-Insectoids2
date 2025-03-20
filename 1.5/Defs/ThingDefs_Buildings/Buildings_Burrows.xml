@@ -20,7 +20,8 @@
 		<fillPercent>0</fillPercent>
 		<category>Building</category>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
-		<passability>Impassable</passability>
+		<passability>PassThroughOnly</passability>
+		<pathCost>100</pathCost>
 		<selectable>true</selectable>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<rotatable>false</rotatable>
@@ -78,10 +79,11 @@
 		<fillPercent>0</fillPercent>
 		<category>Building</category>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
-		<passability>Impassable</passability>
+		<passability>PassThroughOnly</passability>
 		<selectable>true</selectable>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<rotatable>false</rotatable>
+		<pathCost>100</pathCost>
 		<tickerType>Normal</tickerType>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<canOverlapZones>false</canOverlapZones>
@@ -138,10 +140,11 @@
 		<fillPercent>0</fillPercent>
 		<category>Building</category>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
-		<passability>Impassable</passability>
+		<passability>PassThroughOnly</passability>
 		<selectable>true</selectable>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<rotatable>false</rotatable>
+		<pathCost>100</pathCost>
 		<tickerType>Normal</tickerType>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<canOverlapZones>false</canOverlapZones>
