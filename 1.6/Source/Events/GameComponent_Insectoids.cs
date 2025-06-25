@@ -117,7 +117,7 @@ namespace VFEInsectoids
             return def.waves[GetNextWaveIndex(def)];
         }
 
-        private List<int> tmpTiles = new List<int>();
+        private List<PlanetTile> tmpTiles = new List<PlanetTile>();
 
         public void AddInsectHive(Settlement hive)
         {
@@ -126,29 +126,31 @@ namespace VFEInsectoids
             tmpTiles.Clear();
             var radius = 30 * insectTerritoryScale;
             var tilesCountMax = 50 * insectTerritoryScale;
-            Find.WorldFloodFiller.FloodFill(hiveTile, (int curTile) => 
-            Find.WorldGrid.ApproxDistanceInTiles(hiveTile, curTile) 
-            <= radius && !Find.World.Impassable(curTile), delegate (int curTile, int dist)
-            {
-                if (dist <= 1)
+            hiveTile.Layer.filler.FloodFill(hiveTile,
+                curTile => Find.WorldGrid.ApproxDistanceInTiles(hiveTile, curTile) <= radius && !Find.World.Impassable(curTile),
+                (curTile, dist) =>
                 {
-                    tmpTiles.Add(curTile);
-                }
-                else if (Rand.Chance((2f * insectTerritoryScale) / (float)dist))
-                {
-                    var neighbors = new List<int>();
-                    Find.WorldGrid.GetTileNeighbors(curTile, neighbors);
-                    if (neighbors.Any(x => tmpTiles.Contains(x)))
+                    if (dist <= 1)
                     {
                         tmpTiles.Add(curTile);
                     }
-                }
-                if (tmpTiles.Count >= tilesCountMax)
-                {
-                    return true;
-                }
-                return false;
-            });
+                    else if (Rand.Chance((2f * insectTerritoryScale) / (float)dist))
+                    {
+                        var neighbors = new List<PlanetTile>();
+                        Find.WorldGrid.GetTileNeighbors(curTile, neighbors);
+                        if (neighbors.Any(x => tmpTiles.Contains(x)))
+                        {
+                            tmpTiles.Add(curTile);
+                        }
+                    }
+
+                    if (tmpTiles.Count >= tilesCountMax)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                });
             for (int j = 0; j < tmpTiles.Count; j++)
             {
                 insectTerritory.tiles.Add(tmpTiles[j]);
@@ -156,7 +158,7 @@ namespace VFEInsectoids
             tmpTiles.Clear();
         }
 
-        public float InfestationMtbDays(int tile)
+        public float InfestationMtbDays(PlanetTile tile)
         {
             foreach (var insectData in insectTiles)
             {

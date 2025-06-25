@@ -53,7 +53,7 @@ namespace VFEInsectoids
                 GenSpawn.Spawn(SkyfallerMaker.MakeSkyfaller(ThingDefOf.ShipChunkIncoming, thing), intVec, map);
                 takenCells.AddRange(GenAdj.OccupiedRect(intVec, thing.def.defaultPlacingRot, thing.def.Size).ExpandedBy(3));
                 list.Add(thing);
-                if (CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.ShipChunkIncoming, map, out intVec, 10,
+                if (CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.ShipChunkIncoming, map, VFEI_DefOf.VFEI2_InfestedShipChunk.terrainAffordanceNeeded, out intVec, 10,
                     nearLoc: center, nearLocMaxDist: 2 * count, extraValidator: CanPlaceAt) is false)
                 {
                     return false;

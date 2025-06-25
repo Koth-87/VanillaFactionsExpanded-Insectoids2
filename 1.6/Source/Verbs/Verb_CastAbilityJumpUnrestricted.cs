@@ -46,7 +46,7 @@ namespace VFEInsectoids
 
         public override void OnGUI(LocalTargetInfo target)
         {
-            if (JumpUtility.ValidJumpTarget(caster.Map, target.Cell))
+            if (JumpUtility.ValidJumpTarget(caster, caster.Map, target.Cell))
             {
                 base.OnGUI(target);
             }
@@ -78,7 +78,7 @@ namespace VFEInsectoids
             {
                 return false;
             }
-            if (!JumpUtility.ValidJumpTarget(caster.Map, target.Cell))
+            if (!JumpUtility.ValidJumpTarget(caster, caster.Map, target.Cell))
             {
                 return false;
             }

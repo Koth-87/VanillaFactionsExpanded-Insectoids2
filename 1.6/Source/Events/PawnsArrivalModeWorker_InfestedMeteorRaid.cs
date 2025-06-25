@@ -23,7 +23,7 @@ namespace VFEInsectoids
             for (int i = 0; i < numberOfMeteor; i++)
             {
                 var insects = groups[i];
-                if (CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.ShipChunkIncoming, map, out intVec, 10,
+                if (CellFinderLoose.TryFindSkyfallerCell(ThingDefOf.ShipChunkIncoming, map, TerrainAffordanceDefOf.Walkable, out intVec, 10,
                     nearLoc: center, nearLocMaxDist: 2 * numberOfMeteor, extraValidator: CanPlaceAt))
                 {
                     var chunk = DefDatabase<ThingDef>.AllDefsListForReading.Where(x => !x.thingCategories.NullOrEmpty()

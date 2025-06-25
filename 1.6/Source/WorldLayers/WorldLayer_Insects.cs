@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    public class WorldLayer_Insects : WorldLayer
+    public class WorldLayer_Insects : WorldDrawLayer
     {
         private static readonly Color DefaultTileColor = Color.white;
 
@@ -40,9 +40,9 @@ namespace VFEInsectoids
             }
         }
 
-        private int GetRegionIdForTile(int tileId)
+        private PlanetTile GetRegionIdForTile(PlanetTile tile)
         {
-            return Mathf.FloorToInt((float)tileId / 500f);
+            return Mathf.FloorToInt(tile.tileId / 500f);
         }
 
         public List<LayerSubMesh> GetSubMeshesForRegion(int regionId)
@@ -125,22 +125,22 @@ namespace VFEInsectoids
             FinalizeMesh(MeshParts.All);
         }
 
-        private bool TryAddMeshForTile(int tileId)
+        private bool TryAddMeshForTile(PlanetTile tile)
         {
             var hives = Find.WorldObjects.Settlements.Where(x => x.Faction == Faction.OfInsects);
             foreach (var hive in hives)
             {
-                if (GameComponent_Insectoids.Instance.insectTiles.TryGetValue(hive, out var insectTerritory) && insectTerritory.tiles.Contains(tileId))
+                if (GameComponent_Insectoids.Instance.insectTiles.TryGetValue(hive, out var insectTerritory) && insectTerritory.tiles.Contains(tile))
                 {
                     Material mat = OverlayMat;
                     if (mat == null)
                     {
                         return false;
                     }
-                    int regionIdForTile = GetRegionIdForTile(tileId);
+                    int regionIdForTile = GetRegionIdForTile(tile);
                     LayerSubMesh subMeshForMaterialAndRegion = GetSubMeshForMaterialAndRegion(mat, regionIdForTile);
-                    Find.WorldGrid.GetTileVertices(tileId, verts);
-                    Find.WorldGrid.GetTileNeighbors(tileId, tmpNeighbors);
+                    Find.WorldGrid.GetTileVertices(tile, verts);
+                    Find.WorldGrid.GetTileNeighbors(tile, tmpNeighbors);
                     int count = subMeshForMaterialAndRegion.verts.Count;
                     tmpBordersUninsectVerts.Clear();
                     tmpVerts.Clear();
@@ -184,14 +184,14 @@ namespace VFEInsectoids
             return false;
         }
 
-        public void Notify_TilePollutionChanged(int tileId)
+        public void Notify_TilePollutionChanged(PlanetTile tile)
         {
-            int regionIdForTile = GetRegionIdForTile(tileId);
+            PlanetTile regionIdForTile = GetRegionIdForTile(tile);
             if (!regionsToRegenerate.Contains(regionIdForTile))
             {
                 regionsToRegenerate.Enqueue(regionIdForTile);
             }
-            Find.WorldGrid.GetTileNeighbors(tileId, tmpChangedNeighbours);
+            Find.WorldGrid.GetTileNeighbors(tile, tmpChangedNeighbours);
             for (int i = 0; i < tmpChangedNeighbours.Count; i++)
             {
                 int regionIdForTile2 = GetRegionIdForTile(tmpChangedNeighbours[i]);

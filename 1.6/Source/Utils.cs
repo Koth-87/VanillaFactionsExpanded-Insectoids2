@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 
@@ -102,9 +103,9 @@ namespace VFEInsectoids
             return splits.ToList();
         }
 
-        public static bool IsInfestedTile(this int tile)
+        public static bool IsInfestedTile(this PlanetTile tile)
         {
-            if (tile <= 0) return false;
+            if (!tile.Valid) return false;
             foreach (var insectData in GameComponent_Insectoids.Instance.insectTiles)
             {
                 if (insectData.Value.tiles.Contains(tile))

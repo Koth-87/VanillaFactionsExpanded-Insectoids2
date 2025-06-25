@@ -51,7 +51,7 @@ namespace VFEInsectoids
             {
                 return false;
             }
-            if (pawn.IsMutant && !giver.def.canBeDoneByMutants)
+            if (pawn.IsMutant)
             {
                 return false;
             }

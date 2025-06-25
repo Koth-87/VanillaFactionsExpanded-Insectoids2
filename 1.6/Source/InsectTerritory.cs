@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RimWorld.Planet;
 using Verse;
 
 namespace VFEInsectoids
@@ -6,14 +7,14 @@ namespace VFEInsectoids
 
     public class InsectTerritory : IExposable
     {
-        public HashSet<int> tiles = new HashSet<int>();
+        public HashSet<PlanetTile> tiles = new HashSet<PlanetTile>();
 
         public void ExposeData()
         {
             Scribe_Collections.Look(ref tiles, "tiles", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                tiles ??= new HashSet<int>();
+                tiles ??= new HashSet<PlanetTile>();
             }
         }
     }
