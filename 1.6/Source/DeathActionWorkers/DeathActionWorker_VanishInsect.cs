@@ -1,9 +1,7 @@
 ﻿
 using RimWorld;
-using UnityEngine;
 using Verse;
 using Verse.AI.Group;
-using Verse.Noise;
 
 namespace VFEInsectoids
 {

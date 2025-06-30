@@ -1,8 +1,5 @@
-﻿using RimWorld;
-using System.Linq;
-using Verse;
+﻿using Verse;
 using System.Collections.Generic;
-using static VFEInsectoids.Cocoon;
 
 namespace VFEInsectoids
 {

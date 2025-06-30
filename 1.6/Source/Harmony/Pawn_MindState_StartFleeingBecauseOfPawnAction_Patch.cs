@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using Verse.AI;
-using Verse.AI.Group;
 
 namespace VFEInsectoids
 {

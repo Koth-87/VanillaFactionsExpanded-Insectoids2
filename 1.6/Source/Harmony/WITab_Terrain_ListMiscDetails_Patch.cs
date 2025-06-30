@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld.Planet;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 using Verse;
 
 namespace VFEInsectoids

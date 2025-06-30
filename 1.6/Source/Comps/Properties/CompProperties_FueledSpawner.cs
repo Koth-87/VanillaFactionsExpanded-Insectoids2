@@ -1,6 +1,6 @@
 ﻿
 using RimWorld;
-using Verse;
+
 namespace VFEInsectoids
 {
     public class CompProperties_FueledSpawner : CompProperties_Spawner

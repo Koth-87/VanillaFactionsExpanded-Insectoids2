@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
-using Verse.AI.Group;
-using Verse.Sound;
 
 namespace VFEInsectoids
 {

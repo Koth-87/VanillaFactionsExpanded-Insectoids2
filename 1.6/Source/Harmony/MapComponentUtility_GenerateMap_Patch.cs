@@ -1,7 +1,4 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Xml;
 using Verse;
 
 namespace VFEInsectoids

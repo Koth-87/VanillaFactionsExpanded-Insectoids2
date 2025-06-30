@@ -1,12 +1,6 @@
 ﻿
 using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Verse;
-using Verse.AI.Group;
-using Verse.Noise;
-using static HarmonyLib.Code;
 
 namespace VFEInsectoids
 {

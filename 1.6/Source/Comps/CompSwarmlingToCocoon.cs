@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using Verse;
 using Verse.Sound;
-using VFEInsectoids;
 
 namespace VFEInsectoids
 {

@@ -1,11 +1,9 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using Verse;
-using Verse.AI.Group;
 
 namespace VFEInsectoids
 {

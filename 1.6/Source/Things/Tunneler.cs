@@ -1,13 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using RimWorld;
 
 using UnityEngine;
 using Verse;
 using Verse.Sound;
-using static HarmonyLib.Code;
 
 
 namespace VFEInsectoids

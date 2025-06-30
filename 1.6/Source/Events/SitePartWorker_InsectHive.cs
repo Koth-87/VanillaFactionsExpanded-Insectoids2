@@ -3,7 +3,6 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System.Collections.Generic;
 using UnityEngine;
-using Verse;
 using Verse.Grammar;
 
 namespace VFEInsectoids

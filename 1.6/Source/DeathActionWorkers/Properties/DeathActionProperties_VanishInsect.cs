@@ -1,6 +1,4 @@
-﻿
-using RimWorld;
-using Verse;
+﻿using Verse;
 namespace VFEInsectoids
 {
     public class DeathActionProperties_VanishInsect : DeathActionProperties

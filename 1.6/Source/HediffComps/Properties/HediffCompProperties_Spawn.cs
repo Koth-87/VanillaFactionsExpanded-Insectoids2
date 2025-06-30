@@ -1,6 +1,4 @@
-﻿using System;
-using Verse;
-using System.Collections.Generic;
+﻿using Verse;
 
 namespace VFEInsectoids
 {

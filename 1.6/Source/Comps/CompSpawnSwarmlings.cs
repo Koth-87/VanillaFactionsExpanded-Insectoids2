@@ -2,7 +2,6 @@
 using Verse;
 using Verse.AI.Group;
 using Verse.Sound;
-using VFEInsectoids;
 
 namespace VFEInsectoids
 {
