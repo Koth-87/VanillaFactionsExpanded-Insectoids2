@@ -130,7 +130,7 @@
 		<label>royal jelly addiction</label>
 		<description>A chemical addiction to royal jelly. Regular consumption of royal jelly has caused immunological adaptations at the genetic level, so the immune system can no longer function properly without the drug. Whenever an infection happen, the addicted person will not be able to overcome it without royal jelly. However, extended abstinence will force the immune system to adapt back to its normal state, resolving the addiction.</description>
 		<hediffClass>Hediff_Addiction</hediffClass>
-		<causesNeed>VFEI2_Chemical_RoyalJelly</causesNeed>
+		<chemicalNeed>VFEI2_Chemical_RoyalJelly</chemicalNeed>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.0125</severityPerDay>

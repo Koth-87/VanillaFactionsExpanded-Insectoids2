@@ -35,7 +35,7 @@ namespace VFEInsectoids
 
         private static void AddHostilePawnGroup(Faction faction, Map map, ResolveParams parms, PawnGroupKindDef pawnGroup)
         {
-            Lord singlePawnLord = parms.singlePawnLord ?? LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, parms.rect.CenterCell, 0), map, null);
+            Lord singlePawnLord = parms.singlePawnLord ?? LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, parms.rect.CenterCell, 250000), map, null);
             TraverseParms tp = TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false);
             ResolveParams rp = parms;
             rp.rect = parms.rect;

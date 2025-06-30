@@ -8,6 +8,7 @@
 		<edgeType>FadeRough</edgeType>
 		<renderPrecedence>70</renderPrecedence>
 		<isPaintable>false</isPaintable>
+		<pathCost>46</pathCost>
 		<statBases>
 			<Beauty>-1</Beauty>
 			<Cleanliness>-2</Cleanliness>
@@ -27,6 +28,9 @@
 		<uiOrder>2020</uiOrder>
 		<designationCategory inherit="False"/>
 		<burnedDef>VFEI2_BurnedCreep</burnedDef>
+		<tags>
+			<li>VFEI2_Creep</li>
+		</tags>
 	</TerrainDef>
 	<TerrainDef ParentName="BurnedFloorBase">
 		<defName>VFEI2_BurnedCreep</defName>
@@ -49,6 +53,7 @@
 		<edgeType>FadeRough</edgeType>
 		<renderPrecedence>70</renderPrecedence>
 		<isPaintable>false</isPaintable>
+		<pathCost>46</pathCost>
 		<statBases>
 			<Beauty>0</Beauty>
 			<Cleanliness>-1</Cleanliness>
@@ -69,6 +74,9 @@
 		<uiOrder>2020</uiOrder>
 		<designationCategory inherit="False"/>
 		<burnedDef>VFEI2_BurnedJellyFloor</burnedDef>
+		<tags>
+			<li>VFEI2_JellyFloor</li>
+		</tags>
 	</TerrainDef>
 	<TerrainDef ParentName="BurnedFloorBase">
 		<defName>VFEI2_BurnedJellyFloor</defName>
@@ -91,6 +99,7 @@
 		<edgeType>FadeRough</edgeType>
 		<renderPrecedence>70</renderPrecedence>
 		<isPaintable>false</isPaintable>
+		<pathCost>101</pathCost>
 		<statBases>
 			<Beauty>1</Beauty>
 			<Cleanliness>0.3</Cleanliness>
@@ -110,5 +119,8 @@
 		<constructEffect>VFEI2_ConstructSlime</constructEffect>
 		<uiOrder>2020</uiOrder>
 		<designationCategory inherit="False"/>
+		<tags>
+			<li>VFEI2_RoyalJellyFloor</li>
+		</tags>
 	</TerrainDef>
 </Defs>

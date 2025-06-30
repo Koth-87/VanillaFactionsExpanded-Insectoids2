@@ -18,9 +18,9 @@ namespace VFEInsectoids
                 .FirstOrDefault(x => x.Name.Contains("<RandomSettlementTileFor>") && x.ReturnType == typeof(float));
         }
 
-        public static bool Prefix(ref float __result, int x)
+        public static bool Prefix(ref float __result, int x, Faction ___faction)
         {
-            if (RandomSettlementTileFor_Patch.factionToCheck?.def == FactionDefOf.Insect)
+            if (___faction?.def == FactionDefOf.Insect)
             {
                 Tile tile = Find.WorldGrid[x];
                 if (!tile.biome.canBuildBase || !tile.biome.implemented || tile.hilliness == Hilliness.Impassable)
@@ -34,21 +34,6 @@ namespace VFEInsectoids
                 return false;
             }
             return true;
-        }
-
-        [HarmonyPatch(typeof(TileFinder), nameof(TileFinder.RandomSettlementTileFor))]
-        public static class RandomSettlementTileFor_Patch
-        {
-            public static Faction factionToCheck;
-            public static void Prefix(Faction faction)
-            {
-                factionToCheck = faction;
-            }
-
-            public static void Postfix()
-            {
-                factionToCheck = null;
-            }
         }
     }
 }

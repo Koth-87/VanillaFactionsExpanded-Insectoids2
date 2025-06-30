@@ -2131,7 +2131,7 @@
 		<label>hellpod</label>
 		<category>Item</category>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<thingClass>ActiveDropPod</thingClass>
+		<thingClass>ActiveTransporter</thingClass>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<tickerType>Normal</tickerType>
 		<graphicData>
@@ -2599,7 +2599,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>VWEMakeshift.Verb_MakeshiftShoot</verbClass>
+				<verbClass>VEF.Weapons.Verb_MakeshiftShoot</verbClass>
 				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
 				<warmupTime>7</warmupTime>
 				<ticksBetweenBurstShots>17</ticksBetweenBurstShots>
@@ -2614,7 +2614,7 @@
 			</li>
 		</verbs>
 		<modExtensions>
-			<li Class="VWEMakeshift.MoteProperties">
+			<li Class="VEF.Weapons.MoteProperties">
 				<fleckDef>DustPuffThick</fleckDef>
 				<size>0.5</size>
 				<!-- Multiplier -->
@@ -2627,7 +2627,7 @@
 				<numTimesThrown>1</numTimesThrown>
 				<!-- Fixed amount -->
 			</li>
-			<li Class="VWEMakeshift.MakeshiftProperties">
+			<li Class="VEF.Weapons.MakeshiftProperties">
 				<shots>3~6</shots>
 			</li>
 		</modExtensions>

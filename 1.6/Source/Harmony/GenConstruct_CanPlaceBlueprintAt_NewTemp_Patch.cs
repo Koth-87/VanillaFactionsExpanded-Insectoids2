@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    [HarmonyPatch(typeof(GenConstruct), "CanPlaceBlueprintAt_NewTemp")]
+    [HarmonyPatch(typeof(GenConstruct), nameof(GenConstruct.CanPlaceBlueprintAt))]
     public static class GenConstruct_CanPlaceBlueprintAt_NewTemp_Patch
     {
         public static TaggedString GetAffordanceString(TaggedString originalString, BuildableDef entDef, ThingDef stuffDef)

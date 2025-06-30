@@ -26,7 +26,7 @@
 		</defenseOptions>
 	</KCSG.SettlementLayoutDef>
 	
-	<ScenarioDef>
+	<ScenarioDef ParentName="ScenarioBase">
 		<defName>VFEI2_MercenarySquad</defName>
 		<label>New Squad</label>
 		<description>The four of you, armed to the teeth, drop on an emerging insectoid nest. Eliminating this bug menace will be imperative to secure the local area.</description>
