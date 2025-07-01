@@ -15,7 +15,7 @@ namespace VFEInsectoids
                 if (settlement.Faction?.def == FactionDefOf.Insect)
                 {
                     GameComponent_Insectoids.Instance.AddInsectHive(settlement);
-                    Find.World.renderer.SetDirty<WorldLayer_Insects>(settlement.Tile.Layer);
+                    Find.World.renderer.SetDirty<WorldDrawLayer_Insects>(settlement.Tile.Layer);
                 }
             }
         }

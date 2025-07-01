@@ -12,7 +12,7 @@ namespace VFEInsectoids
         {
             if (o is Settlement settlement && settlement.Faction == Faction.OfInsects)
             {
-                Find.World.renderer.SetDirty<WorldLayer_Insects>(settlement.Tile.Layer);
+                Find.World.renderer.SetDirty<WorldDrawLayer_Insects>(settlement.Tile.Layer);
             }
         }
     }

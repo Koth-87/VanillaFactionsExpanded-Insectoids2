@@ -249,7 +249,7 @@
     <Compile Include="Harmony\JobGiver_AIGotoNearestHostile_TryGiveJob_Patch.cs" />
     <Compile Include="Verbs\Verb_CastAbilityJumpUnrestricted.cs" />
     <Compile Include="Verbs\Verb_CastAbilityWideTunnels.cs" />
-    <Compile Include="WorldLayers\WorldLayer_Insects.cs" />
+    <Compile Include="WorldDrawLayers\WorldDrawLayer_Insects.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Add_Patch.cs" />
     <Compile Include="Harmony\WorldObjectsHolder_Remove_Patch.cs" />
   </ItemGroup>

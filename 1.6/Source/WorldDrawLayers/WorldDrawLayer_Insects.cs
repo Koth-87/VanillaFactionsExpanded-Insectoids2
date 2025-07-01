@@ -8,25 +8,25 @@ using Verse;
 
 namespace VFEInsectoids
 {
-    public class WorldLayer_Insects : WorldDrawLayer
+    public class WorldDrawLayer_Insects : WorldDrawLayer
     {
         private static readonly Color DefaultTileColor = Color.white;
 
-        private List<Vector3> verts = new List<Vector3>();
+        private readonly List<Vector3> verts = [];
 
-        private Dictionary<int, List<LayerSubMesh>> subMeshesByRegion = new Dictionary<int, List<LayerSubMesh>>();
+        private readonly Dictionary<int, List<LayerSubMesh>> subMeshesByRegion = new();
 
-        private Queue<int> regionsToRegenerate = new Queue<int>();
+        private readonly Queue<int> regionsToRegenerate = new();
 
         private Material overlayMat;
 
-        private List<PlanetTile> tmpNeighbors = new List<PlanetTile>();
+        private readonly List<PlanetTile> tmpNeighbors = [];
 
-        private HashSet<Vector3> tmpBordersUninsectVerts = new HashSet<Vector3>();
+        private readonly HashSet<Vector3> tmpBordersUninsectVerts = [];
 
-        private List<Vector3> tmpVerts = new List<Vector3>();
+        private readonly List<Vector3> tmpVerts = [];
 
-        private static List<PlanetTile> tmpChangedNeighbours = new List<PlanetTile>();
+        private static readonly List<PlanetTile> tmpChangedNeighbours = [];
 
         private Material OverlayMat
         {
@@ -47,81 +47,80 @@ namespace VFEInsectoids
 
         public List<LayerSubMesh> GetSubMeshesForRegion(int regionId)
         {
-            if (!subMeshesByRegion.ContainsKey(regionId))
+            if (!subMeshesByRegion.TryGetValue(regionId, out var meshes))
             {
-                subMeshesByRegion[regionId] = new List<LayerSubMesh>();
+                subMeshesByRegion[regionId] = meshes = [];
             }
-            return subMeshesByRegion[regionId];
+            return meshes;
         }
 
         public LayerSubMesh GetSubMeshForMaterialAndRegion(Material material, int regionId)
         {
-            List<LayerSubMesh> subMeshesForRegion = GetSubMeshesForRegion(regionId);
-            for (int i = 0; i < subMeshesForRegion.Count; i++)
+            var subMeshesForRegion = GetSubMeshesForRegion(regionId);
+            for (var i = 0; i < subMeshesForRegion.Count; i++)
             {
                 if (subMeshesForRegion[i].material == material)
                 {
                     return subMeshesForRegion[i];
                 }
             }
-            Mesh mesh = new Mesh();
+            var mesh = new Mesh();
             if (UnityData.isEditor)
             {
                 mesh.name = "WorldLayerSubMesh_" + GetType().Name + "_" + Find.World.info.seedString;
             }
-            LayerSubMesh layerSubMesh = new LayerSubMesh(mesh, material);
+            var layerSubMesh = new LayerSubMesh(mesh, material);
             subMeshesForRegion.Add(layerSubMesh);
             subMeshes.Add(layerSubMesh);
             return layerSubMesh;
         }
 
-        private void RegnerateRegion(int regionId)
+        private void RegenerateRegion(int regionId)
         {
-            List<LayerSubMesh> subMeshesForRegion = GetSubMeshesForRegion(regionId);
-            for (int i = 0; i < subMeshesForRegion.Count; i++)
-            {
+            var subMeshesForRegion = GetSubMeshesForRegion(regionId);
+            for (var i = 0; i < subMeshesForRegion.Count; i++)
                 subMeshesForRegion[i].Clear(MeshParts.All);
-            }
-            int num = regionId * 500;
-            int num2 = num + 500;
-            for (int j = num; j < num2 && Find.World.grid.InBounds(j); j++)
+
+            var start = regionId * 500;
+            var max = start + 500;
+            for (var j = start; j < max; j++)
             {
+                var planetTile = new PlanetTile(j, planetLayer);
+                if (!Find.World.grid.InBounds(planetTile))
+                    break;
+
                 TryAddMeshForTile(j);
             }
-            for (int k = 0; k < subMeshesForRegion.Count; k++)
+
+            for (var k = 0; k < subMeshesForRegion.Count; k++)
             {
                 if (subMeshesForRegion[k].verts.Count > 0)
-                {
                     subMeshesForRegion[k].FinalizeMesh(MeshParts.All);
-                }
             }
         }
 
         public override IEnumerable Regenerate()
         {
-            foreach (object item in base.Regenerate())
+            foreach (var item in base.Regenerate())
             {
                 yield return item;
             }
-            int num = 500;
-            Mathf.CeilToInt((float)Find.WorldGrid.TilesCount / (float)num);
-            WorldGrid worldGrid = Find.WorldGrid;
-            int tilesCount = worldGrid.TilesCount;
-            int insectMeshesPrinted = 0;
+
+            var insectMeshesPrinted = 0;
             verts.Clear();
             subMeshesByRegion.Clear();
             regionsToRegenerate.Clear();
-            for (int i = 0; i < tilesCount; i++)
+
+            for (var i = 0; i < planetLayer.TilesCount; i++)
             {
-                if (TryAddMeshForTile(i))
+                if (TryAddMeshForTile(planetLayer.PlanetTileForID(i)))
                 {
                     insectMeshesPrinted++;
                     if (insectMeshesPrinted % 1000 == 0)
-                    {
                         yield return null;
-                    }
                 }
             }
+
             FinalizeMesh(MeshParts.All);
         }
 
@@ -132,28 +131,28 @@ namespace VFEInsectoids
             {
                 if (GameComponent_Insectoids.Instance.insectTiles.TryGetValue(hive, out var insectTerritory) && insectTerritory.tiles.Contains(tile))
                 {
-                    Material mat = OverlayMat;
+                    var mat = OverlayMat;
                     if (mat == null)
                     {
                         return false;
                     }
                     int regionIdForTile = GetRegionIdForTile(tile);
-                    LayerSubMesh subMeshForMaterialAndRegion = GetSubMeshForMaterialAndRegion(mat, regionIdForTile);
+                    var subMeshForMaterialAndRegion = GetSubMeshForMaterialAndRegion(mat, regionIdForTile);
                     Find.WorldGrid.GetTileVertices(tile, verts);
                     Find.WorldGrid.GetTileNeighbors(tile, tmpNeighbors);
-                    int count = subMeshForMaterialAndRegion.verts.Count;
+                    var count = subMeshForMaterialAndRegion.verts.Count;
                     tmpBordersUninsectVerts.Clear();
                     tmpVerts.Clear();
-                    for (int i = 0; i < tmpNeighbors.Count; i++)
+                    for (var i = 0; i < tmpNeighbors.Count; i++)
                     {
                         if (Find.World.grid[tmpNeighbors[i]].PollutionLevel() >= PollutionLevel.Moderate)
                         {
                             continue;
                         }
-                        Vector3 center = Find.WorldGrid.GetTileCenter(tmpNeighbors[i]);
+                        var center = Find.WorldGrid.GetTileCenter(tmpNeighbors[i]);
                         tmpVerts.AddRange(verts);
                         tmpVerts.SortBy((Vector3 v) => Vector2.Distance(center, v));
-                        for (int j = 0; j < 2; j++)
+                        for (var j = 0; j < 2; j++)
                         {
                             if (!tmpBordersUninsectVerts.Contains(tmpVerts[j]))
                             {
@@ -161,13 +160,13 @@ namespace VFEInsectoids
                             }
                         }
                     }
-                    int k = 0;
-                    for (int count2 = verts.Count; k < count2; k++)
+                    var k = 0;
+                    for (var count2 = verts.Count; k < count2; k++)
                     {
-                        Vector3 vector = verts[k] + verts[k].normalized * 0.012f;
+                        var vector = verts[k] + verts[k].normalized * 0.012f;
                         subMeshForMaterialAndRegion.verts.Add(vector);
                         subMeshForMaterialAndRegion.uvs.Add(vector * 0.1f);
-                        Color color = DefaultTileColor;// (tmpBordersUninsectVerts.Contains(verts[k]) ? BordersUninsectTileColor : DefaultTileColor);
+                        var color = DefaultTileColor;// (tmpBordersUninsectVerts.Contains(verts[k]) ? BordersUninsectTileColor : DefaultTileColor);
                         subMeshForMaterialAndRegion.colors.Add(color);
                         if (k < count2 - 2)
                         {
@@ -186,13 +185,13 @@ namespace VFEInsectoids
 
         public void Notify_TilePollutionChanged(PlanetTile tile)
         {
-            PlanetTile regionIdForTile = GetRegionIdForTile(tile);
+            var regionIdForTile = GetRegionIdForTile(tile);
             if (!regionsToRegenerate.Contains(regionIdForTile))
             {
                 regionsToRegenerate.Enqueue(regionIdForTile);
             }
             Find.WorldGrid.GetTileNeighbors(tile, tmpChangedNeighbours);
-            for (int i = 0; i < tmpChangedNeighbours.Count; i++)
+            for (var i = 0; i < tmpChangedNeighbours.Count; i++)
             {
                 int regionIdForTile2 = GetRegionIdForTile(tmpChangedNeighbours[i]);
                 if (!regionsToRegenerate.Contains(regionIdForTile2))
@@ -207,9 +206,10 @@ namespace VFEInsectoids
         {
             if (regionsToRegenerate.Count > 0)
             {
-                int regionId = regionsToRegenerate.Dequeue();
-                RegnerateRegion(regionId);
+                var regionId = regionsToRegenerate.Dequeue();
+                RegenerateRegion(regionId);
             }
+
             base.Render();
         }
     }
