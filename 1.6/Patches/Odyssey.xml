@@ -5,7 +5,7 @@
 			<li>Odyssey</li>
 		</mods>
 		<match Class="PatchOperationSequence">
-			<Operations>
+			<operations>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/VFEInsectoids.InsectGenelineDef[defName="VFEI_Sorne"]/insects</xpath>
 					<value>
@@ -124,7 +124,7 @@
 						</li>
 					</value>
 				</li>
-			</Operations>
+			</operations>
 		</match>
 	</Operation>
 </Patch>
