@@ -111,6 +111,7 @@
     <Compile Include="Events\WaveActivityDef.cs" />
     <Compile Include="Harmony\GenConstruct_CanPlaceBlueprintAt_NewTemp_Patch.cs" />
     <Compile Include="Harmony\JobDriver_Mine_ResetTicksToPickHit.cs" />
+    <Compile Include="Harmony\PawnRenderNode_EnsureInitialized_Patch.cs" />
     <Compile Include="Harmony\SitePartDef_FactionCanOwn_Patch.cs" />
     <Compile Include="Harmony\StorytellerComp_UsableIncidentsInCategory_Patch.cs" />
     <Compile Include="Harmony\WorkGiver_RemoveBuilding_HasJobOnThing_Patch.cs" />

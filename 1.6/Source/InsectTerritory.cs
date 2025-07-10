@@ -4,17 +4,16 @@ using Verse;
 
 namespace VFEInsectoids
 {
-
     public class InsectTerritory : IExposable
     {
-        public HashSet<PlanetTile> tiles = new HashSet<PlanetTile>();
+        public HashSet<int> tiles = new HashSet<int>();
 
         public void ExposeData()
         {
             Scribe_Collections.Look(ref tiles, "tiles", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                tiles ??= new HashSet<PlanetTile>();
+                tiles ??= new HashSet<int>();
             }
         }
     }
