@@ -127,7 +127,7 @@
 					<Megascarab>10</Megascarab>
 				</insects>
 			</li>
-			<li>
+			<li Name="Wave6">
 				<insects>
 					<VFEI2_Empress>1</VFEI2_Empress>
 					<VFEI2_Patriarch>1</VFEI2_Patriarch>
@@ -137,7 +137,7 @@
 					<Megascarab>20</Megascarab>
 				</insects>
 			</li>
-			<li>
+			<li Name="Wave7">
 				<insects>
 					<VFEI2_Empress>1</VFEI2_Empress>
 					<VFEI2_Patriarch>1</VFEI2_Patriarch>
@@ -147,7 +147,7 @@
 					<Spelopede>18</Spelopede>
 				</insects>
 			</li>
-			<li>
+			<li Name="Wave8">
 				<insects>
 					<VFEI2_Empress>1</VFEI2_Empress>
 					<VFEI2_Patriarch>2</VFEI2_Patriarch>

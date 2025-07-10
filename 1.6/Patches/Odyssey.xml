@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Odyssey</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<Operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/VFEInsectoids.InsectGenelineDef[defName="VFEI_Sorne"]/insects</xpath>
+					<value>
+						<Locust>2</Locust>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFEI2_ArtificialSorneHive"]/comps/li[@Class="VFEInsectoids.CompProperties_Hive"]/insectTypes</xpath>
+					<value>
+						<li>
+							<insect>Locust</insect>
+							<insectType>Hunter</insectType>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<ThingDef ParentName="VFEI2_InsectoidWallBase">
+							<defName>VFEI_BurrowWall</defName>
+							<label>burrow wall</label>
+							<description>A compact mix of dirt, rock, and insect secretion.</description>
+							<uiIconPath>Things/Building/Linked/BurrowWall_MenuIcon</uiIconPath>
+							<graphicData>
+								<texPath>Things/Building/Linked/BurrowWall_Atlas</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<linkType>CornerFiller</linkType>
+								<linkFlags Inherit="false">
+									<li>BurrowWall</li>
+								</linkFlags>
+							</graphicData>
+							<statBases>
+								<MaxHitPoints>60</MaxHitPoints>
+								<WorkToBuild>3500</WorkToBuild>
+								<Flammability>0.4</Flammability>
+								<Beauty>-3</Beauty>
+							</statBases>
+							<building>
+								<blueprintGraphicData>
+									<texPath>Things/Building/Linked/WallHive_Blueprint_Atlas</texPath>
+								</blueprintGraphicData>
+								<destroySound>BurrowWall_Destroyed</destroySound>
+							</building>
+							<researchPrerequisites>
+								<li>VFEI2_StandardHivetech</li>
+							</researchPrerequisites>
+							<uiOrder>2000</uiOrder>
+							<comps>
+								<li Class="VFEInsectoids.CompProperties_OnDestroyWall">
+									<filthSpawnAmount>2~3</filthSpawnAmount>
+									<radius>1.5</radius>
+									<filth>Filth_BloodInsect</filth>
+									<chaining>true</chaining>
+								</li>
+							</comps>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VFEI2_Queen"]/label</xpath>
+					<value>
+						<label>insectoid princess</label>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VFEI2_Queen"]/description</xpath>
+					<value>
+						<description>A giant, genetically-engineered insectoid responsible for creating new spawn. A broodmother to the insects in her hive, the princess doesn’t do heavy work, and tries to avoid combat if possible. As massive as an adult thrumbo, the princess instills fear in most opponents. Her thick chitinous armor makes her hard to kill, whilst long, deadly blades can tear through plasteel shielding in seconds. Despite being quite slow in open terrain, an insectoid princess is capable of creating new swarmlings at a rapid pace, and should never be allowed to settle down.</description>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFEInsectoids.InsectWaveDef[defName="VFEI2_Thumper_Empress"]/waves/li[@Name="Wave6"]</xpath>
+					<value>
+						<li Name="Wave6">
+							<insects>
+								<VFEI2_Empress>1</VFEI2_Empress>
+								<VFEI2_Patriarch>1</VFEI2_Patriarch>
+								<VFEI2_Megapede>2</VFEI2_Megapede>
+								<VFEI2_Queen>2</VFEI2_Queen>
+								<Megaspider>8</Megaspider>
+								<Spelopede>10</Spelopede>
+								<Megascarab>20</Megascarab>
+							</insects>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFEInsectoids.InsectWaveDef[defName="VFEI2_Thumper_Empress"]/waves/li[@Name="Wave7"]</xpath>
+					<value>
+						<li Name="Wave7">
+							<insects>
+								<VFEI2_Empress>1</VFEI2_Empress>
+								<VFEI2_Patriarch>1</VFEI2_Patriarch>
+								<HiveQueen>1</HiveQueen>
+								<VFEI2_Queen>2</VFEI2_Queen>
+								<VFEI2_Megapede>2</VFEI2_Megapede>
+								<Megaspider>10</Megaspider>
+								<Spelopede>18</Spelopede>
+							</insects>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/VFEInsectoids.InsectWaveDef[defName="VFEI2_Thumper_Empress"]/waves/li[@Name="Wave8"]</xpath>
+					<value>
+						<li Name="Wave8">
+							<insects>
+								<VFEI2_Empress>1</VFEI2_Empress>
+								<VFEI2_Patriarch>2</VFEI2_Patriarch>
+								<HiveQueen>1</HiveQueen>
+								<VFEI2_Queen>2</VFEI2_Queen>
+								<VFEI2_Megapede>4</VFEI2_Megapede>
+								<Megaspider>16</Megaspider>
+								<Spelopede>20</Spelopede>
+							</insects>
+						</li>
+					</value>
+				</li>
+			</Operations>
+		</match>
+	</Operation>
+</Patch>
