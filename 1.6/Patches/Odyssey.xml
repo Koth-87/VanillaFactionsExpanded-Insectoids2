@@ -71,6 +71,12 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/PawnKindDef[defName="VFEI2_Queen"]/label</xpath>
+					<value>
+						<label>insectoid princess</label>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="VFEI2_Queen"]/description</xpath>
 					<value>
 						<description>A giant, genetically-engineered insectoid responsible for creating new spawn. A broodmother to the insects in her hive, the princess doesn’t do heavy work, and tries to avoid combat if possible. As massive as an adult thrumbo, the princess instills fear in most opponents. Her thick chitinous armor makes her hard to kill, whilst long, deadly blades can tear through plasteel shielding in seconds. Despite being quite slow in open terrain, an insectoid princess is capable of creating new swarmlings at a rapid pace, and should never be allowed to settle down.</description>
