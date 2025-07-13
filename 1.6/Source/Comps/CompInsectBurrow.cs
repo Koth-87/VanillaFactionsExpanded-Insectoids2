@@ -101,9 +101,9 @@ namespace VFEInsectoids
                 {
 
                     Lord lord = null;
-                    if (this.parent.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfInsects).Any((Pawn x) => x != p))
+                    if (this.parent.Map?.mapPawns.SpawnedPawnsInFaction(Faction.OfInsects).Any((Pawn x) => x != p)==true)
                     {
-                        lord = ((Pawn)GenClosest.ClosestThing_Global(this.parent.Position, this.parent.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfInsects), 99999f, (Thing x) => x != p && ((Pawn)p).GetLord() != null)).GetLord();
+                        lord = ((Pawn)GenClosest.ClosestThing_Global(this.parent.Position, this.parent.Map.mapPawns.SpawnedPawnsInFaction(Faction.OfInsects), 99999f, (Thing x) => x != p && ((Pawn)p).GetLord() != null))?.GetLord();
                     }
                     if (lord == null || !lord.CanAddPawn(p))
                     {
