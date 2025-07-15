@@ -5,6 +5,7 @@
 			<ToxicResistance>1</ToxicResistance>
 			<ComfyTemperatureMax>60</ComfyTemperatureMax>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.8</ToxicEnvironmentResistance>
+			 <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
 		</statBases>
 		<race>
 			<fleshType>Insectoid</fleshType>
@@ -14,6 +15,7 @@
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
 			<manhunterOnDamageChance>0.50</manhunterOnDamageChance>
 			<soundEating>Insectoid_Eat</soundEating>
+			  <canBeVacuumBurnt>false</canBeVacuumBurnt>
 		</race>
 		<ingredient>
 			<mergeCompatibilityTags>
