@@ -105,7 +105,7 @@ namespace VFEInsectoids
 
         public static bool IsInfestedTile(this PlanetTile tile)
         {
-            if (!tile.Valid) return false;
+            if (!tile.Valid || tile.LayerDef != PlanetLayerDefOf.Surface) return false;
             foreach (var insectData in GameComponent_Insectoids.Instance.insectTiles)
             {
                 if (insectData.Value.tiles.Contains(tile))

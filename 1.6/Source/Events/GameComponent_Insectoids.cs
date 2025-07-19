@@ -1,4 +1,5 @@
-﻿using RimWorld.Planet;
+﻿using RimWorld;
+using RimWorld.Planet;
 using System.Collections.Generic;
 using Verse;
 
@@ -159,6 +160,10 @@ namespace VFEInsectoids
 
         public float InfestationMtbDays(PlanetTile tile)
         {
+            if (tile.LayerDef != PlanetLayerDefOf.Surface || !tile.Valid)
+            {
+                return -1f;
+            }
             foreach (var insectData in insectTiles)
             {
                 if (insectData.Value.tiles.Contains(tile))
