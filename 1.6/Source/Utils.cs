@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld.Planet;
@@ -105,7 +105,7 @@ namespace VFEInsectoids
 
         public static bool IsInfestedTile(this PlanetTile tile)
         {
-            if (!tile.Valid || tile.LayerDef != PlanetLayerDefOf.Surface) return false;
+            if (tile == null || !tile.Valid || tile.LayerDef != PlanetLayerDefOf.Surface) return false;
             foreach (var insectData in GameComponent_Insectoids.Instance.insectTiles)
             {
                 if (insectData.Value.tiles.Contains(tile))
@@ -118,7 +118,7 @@ namespace VFEInsectoids
 
         public static bool IsInfested(this Map map)
         {
-            return map.Tile.IsInfestedTile();
+            return map?.Tile.IsInfestedTile() ?? false;
         }
     }
 }
