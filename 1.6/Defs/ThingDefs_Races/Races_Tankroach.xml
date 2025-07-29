@@ -111,14 +111,12 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_Tankroach</defName>
 		<label>tankroach</label>
 		<race>VFEI2_Tankroach</race>
 		<combatPower>300</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

@@ -100,14 +100,12 @@
 			<VFEI2_PherocoreNuchadus>1</VFEI2_PherocoreNuchadus>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_Titantick</defName>
 		<label>titantick</label>
 		<race>VFEI2_Titantick</race>
 		<combatPower>800</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

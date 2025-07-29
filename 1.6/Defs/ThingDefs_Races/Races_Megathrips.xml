@@ -13,7 +13,7 @@
 			<MarketValue>100</MarketValue>
 			<ArmorRating_Blunt>0.16</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.64</ArmorRating_Sharp>
-			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<LeatherAmount>5</LeatherAmount>
 			<Wildness>0.2</Wildness>
 		</statBases>
@@ -84,15 +84,13 @@
 			</li>
 		</comps>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_Megathrips</defName>
 		<label>megathrips</label>
 		<race>VFEI2_Megathrips</race>
 	
 		<combatPower>40</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

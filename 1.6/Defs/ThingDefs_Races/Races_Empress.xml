@@ -127,14 +127,12 @@
       
     </killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_Empress</defName>
 		<label>empress</label>
 		<race>VFEI2_Empress</race>
 		<combatPower>800</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

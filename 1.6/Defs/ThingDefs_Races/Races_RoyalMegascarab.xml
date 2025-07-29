@@ -75,14 +75,12 @@
 			<VFEI2_RoyalInsectJelly>1</VFEI2_RoyalInsectJelly>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_RoyalMegascarab</defName>
 		<label>royal megascarab</label>
 		<race>VFEI2_RoyalMegascarab</race>
 		<combatPower>75</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

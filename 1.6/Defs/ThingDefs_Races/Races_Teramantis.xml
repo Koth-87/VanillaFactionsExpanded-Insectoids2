@@ -112,14 +112,12 @@
 			<VFEI2_PherocoreChelis>1</VFEI2_PherocoreChelis>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 	<defName>VFEI2_Teramantis</defName>
 		<label>teramantis</label>
 		<race>VFEI2_Teramantis</race>
 		<combatPower>700</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

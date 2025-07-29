@@ -13,7 +13,7 @@
 			<ArmorRating_Blunt>0.23</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.44</ArmorRating_Sharp>
 			<LeatherAmount>30</LeatherAmount>
-			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<Wildness>0.8</Wildness>
 		</statBases>
 		<tools>
@@ -98,14 +98,12 @@
 			<VFEI2_PherocoreKemian>1</VFEI2_PherocoreKemian>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 	<defName>VFEI2_Gigamite</defName>
 		<label>gigamite</label>
 		<race>VFEI2_Gigamite</race>
 		<combatPower>700</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

@@ -13,7 +13,7 @@
 			<MarketValue>500</MarketValue>
 			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.24</ArmorRating_Sharp>
-			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 			<LeatherAmount>29</LeatherAmount>
 			<Wildness>0.4</Wildness>
 		</statBases>
@@ -88,14 +88,12 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_Venomite</defName>
 		<label>venomite</label>
 		<race>VFEI2_Venomite</race>
 		<combatPower>200</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

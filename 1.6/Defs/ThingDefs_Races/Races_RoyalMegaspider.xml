@@ -102,14 +102,12 @@
 			<VFEI2_RoyalInsectJelly>5</VFEI2_RoyalInsectJelly>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_RoyalMegaspider</defName>
 		<label>royal megaspider</label>
 		<race>VFEI2_RoyalMegaspider</race>
 		<combatPower>300</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>

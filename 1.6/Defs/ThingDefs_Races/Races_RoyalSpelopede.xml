@@ -75,14 +75,12 @@
 			<VFEI2_RoyalInsectJelly>3</VFEI2_RoyalInsectJelly>
 		</killedLeavings>
 	</ThingDef>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="InsectKindBase">
 		<defName>VFEI2_RoyalSpelopede</defName>
 		<label>royal spelopede</label>
 		<race>VFEI2_RoyalSpelopede</race>
 		<combatPower>150</combatPower>
-		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
-		<defaultFactionType>Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<lifeStages>
