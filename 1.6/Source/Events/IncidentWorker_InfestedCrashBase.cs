@@ -93,7 +93,7 @@ namespace VFEInsectoids
         {
             for (int i = 0; i < 200; i++)
             {
-                IntVec3 intVec = RCellFinder.FindSiegePositionFrom(DropCellFinder.FindRaidDropCenterDistant(map, allowRoofed: true), map, allowRoofed: true);
+                IntVec3 intVec = RCellFinder.FindSiegePositionFrom(DropCellFinder.FindRaidDropCenterDistant(map, allowRoofed: true, allowWater: true), map, allowRoofed: true);
                 if (validator(intVec))
                 {
                     return intVec;
