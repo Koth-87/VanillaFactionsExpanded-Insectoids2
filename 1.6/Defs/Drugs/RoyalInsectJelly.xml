@@ -104,6 +104,8 @@
 		<addictionHediff>VFEI2_RoyalJellyAddiction</addictionHediff>
 		<toleranceHediff>VFEI2_RoyalJellyTolerance</toleranceHediff>
 		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
+		<geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+		<geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
 	</ChemicalDef>
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>VFEI2_Chemical_RoyalJelly</defName>
