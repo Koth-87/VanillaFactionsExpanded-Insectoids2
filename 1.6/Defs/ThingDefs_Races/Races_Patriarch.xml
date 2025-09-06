@@ -66,6 +66,11 @@
 			<li Class="VEF.AnimalBehaviours.CompProperties_InitialAbility">
 				<initialAbility>VFEI2_CreateLargeBurrow</initialAbility>
 			</li>
+			<li Class="VEF.AnimalBehaviours.CompProperties_Untameable">
+				<message>VFEI2_PatriarchNotTameable</message>
+				<sendMessage>true</sendMessage>
+				<goesManhunter>true</goesManhunter>
+			</li>
 			
 		</comps>
 		<race>
