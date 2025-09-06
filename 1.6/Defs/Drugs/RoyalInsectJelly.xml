@@ -44,6 +44,7 @@
 					<severity>0</severity>
 					<divideByBodySize>true</divideByBodySize>
 					<multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+					<toleranceChemical>VFEI2_RoyalJellyChemical</toleranceChemical>
 				</li>
 				<li Class="VFEInsectoids.IngestionOutcomeDoer_Immunity">
 					<percent>5</percent>
