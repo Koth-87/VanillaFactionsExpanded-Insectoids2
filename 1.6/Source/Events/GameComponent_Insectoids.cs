@@ -178,6 +178,10 @@ namespace VFEInsectoids
         public override void ExposeData()
         {
             base.ExposeData();
+            if (insectTiles != null)
+            {
+                insectTiles.RemoveAll(x => x.Key is null || Find.World.worldObjects.Contains(x.Key) is false);
+            }
             Scribe_Collections.Look(ref insectTiles, "insectTiles", LookMode.Reference, LookMode.Deep, ref settlementsTmp, ref insectTerritoriesTmp);
             Scribe_Values.Look(ref insectTerritoryScale, "insectTerritoryScale", 1f);
             Scribe_Values.Look(ref lastInsectoidBossArrival, "lastInsectoidBossArrival");
