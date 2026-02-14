@@ -30,7 +30,7 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>1</fillPercent>
 		<coversFloor>true</coversFloor>
-		 <drawStyleCategory>Walls</drawStyleCategory>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<tickerType>Never</tickerType>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>
@@ -802,13 +802,13 @@
 			<InsectJelly>10</InsectJelly>
 		</killedLeavings>
 		<costList>
-			<ComponentIndustrial>11</ComponentIndustrial>
-			<Steel>40</Steel>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<InsectJelly>10</InsectJelly>
 		</costList>
 		<building>
 			<claimable>false</claimable>
-			<alwaysDeconstructible>false</alwaysDeconstructible>
-			<deconstructible>false</deconstructible>
+			<alwaysDeconstructible>true</alwaysDeconstructible>
+			<deconstructible>true</deconstructible>
 		</building>
 		<selectable>true</selectable>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
@@ -2565,7 +2565,6 @@
 		<uiIconPath>Things/Building/InsectoidTurrets/InsectoidTurretChelis_MenuIcon</uiIconPath>
 		<statBases>
 			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
-			
 			<!-- like level 8 human shooter -->
 		</statBases>
 		<costList>
@@ -2716,10 +2715,9 @@
 			</li>
 			<li Class="CompProperties_Forbiddable"/>
 		</comps>
-	
 		<building>
 			<turretGunDef>VFEI2_Thornspitter_Gun</turretGunDef>
-			  <turretTopDrawSize>1.85</turretTopDrawSize>
+			<turretTopDrawSize>1.85</turretTopDrawSize>
 			<destroySound>Hive_Spawn</destroySound>
 			<playTargetAcquiredSound>false</playTargetAcquiredSound>
 			<turretBurstCooldownTime>8</turretBurstCooldownTime>
@@ -2735,7 +2733,6 @@
 		<graphicData>
 			<texPath>Things/Building/InsectoidTurrets/TurretInsectoidBasic_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			
 		</graphicData>
 		<statBases>
 			<RangedWeapon_Cooldown>8</RangedWeapon_Cooldown>
@@ -2789,10 +2786,8 @@
 			<damageData>
 				<enabled>false</enabled>
 			</damageData>
-			
 		</graphicData>
 		<uiIconPath>Things/Building/HiveDoor/DoorInsectoid_MenuIcon_south</uiIconPath>
-		
 		<size>(1, 1)</size>
 		<rotatable>true</rotatable>
 		<building>
@@ -2812,7 +2807,6 @@
 		</building>
 		<designationHotKey>Misc3</designationHotKey>
 	</ThingDef>
-	
 	<!--==================== Update 2.1 ==================== -->
 	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
 		<defName>VFEI2_Jellyspreader</defName>
@@ -2888,7 +2882,6 @@
 		</researchPrerequisites>
 		<terrainAffordanceNeeded>VFEI2_Creep</terrainAffordanceNeeded>
 	</ThingDef>
-	
 	<ThingDef ParentName="VFEI2_BuildingInsectoidBase">
 		<defName>VFEI2_RoyalJellyspreader</defName>
 		<label>royal jellyspreader</label>
