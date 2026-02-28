@@ -3,17 +3,24 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
 
 namespace VFEInsectoids
 {
-    [HarmonyPatch(typeof(GenConstruct), nameof(GenConstruct.CanPlaceBlueprintAt))]
-    public static class GenConstruct_CanPlaceBlueprintAt_NewTemp_Patch
+    [HarmonyPatch]
+    public static class GenConstruct_CanPlaceBlueprintAt_Patch
     {
+        public static MethodBase TargetMethod()
+        {
+            return typeof(GenConstruct).DeclaredMethod(nameof(GenConstruct.CanPlaceBlueprintAt_NewTemp))
+                   ?? typeof(GenConstruct).DeclaredMethod(nameof(GenConstruct.CanPlaceBlueprintAt));
+        }
+
         public static TaggedString GetAffordanceString(TaggedString originalString, BuildableDef entDef, ThingDef stuffDef)
         {
-            var affordance = ThingUtility.GetTerrainAffordanceNeed(entDef, stuffDef);
+            var affordance = entDef.GetTerrainAffordanceNeed(stuffDef);
             if (affordance != null && (affordance == VFEI_DefOf.VFEI2_CreepAffordance || affordance == VFEI_DefOf.VFEI2_JellyFloorAffordance))
             {
                 return "VFEI_RequiresFloor".Translate(entDef, affordance.label);
@@ -23,7 +30,7 @@ namespace VFEInsectoids
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            var helperMethod = AccessTools.Method(typeof(GenConstruct_CanPlaceBlueprintAt_NewTemp_Patch), 
+            var helperMethod = AccessTools.Method(typeof(GenConstruct_CanPlaceBlueprintAt_Patch), 
                 nameof(GetAffordanceString));
             var translateMethod = AccessTools.Method(typeof(TranslatorFormattedStringExtensions), "Translate", 
                 new Type[] { typeof(string), typeof(NamedArgument), typeof(NamedArgument) });
@@ -43,6 +50,9 @@ namespace VFEInsectoids
                     yield return new CodeInstruction(OpCodes.Call, helperMethod);
                 }
             }
+
+            if (!foundTranslate)
+                Log.Warning("[VFE-I2] Failed to patch GenConstruct:CanPlaceBlueprintAt - you may get incorrect info about terrain affordance.");
         }
     }
 }
