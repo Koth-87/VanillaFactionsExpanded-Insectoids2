@@ -33,6 +33,7 @@ namespace VFEInsectoids
     {
         public GraphicData topGraphic;
         public InsectWaveDef wave;
+        public bool needsOrbit = false;
         public CompProperties_Thumper()
         {
             compClass = typeof(CompThumper);
@@ -50,6 +51,7 @@ namespace VFEInsectoids
         public bool isLowering;
         public SoundDef soundThumping;
         public Graphic TopGraphic => _topGraphic ??= Props.topGraphic.Graphic;
+
 
         public CompProperties_Thumper Props => (CompProperties_Thumper)props;
 
@@ -89,6 +91,10 @@ namespace VFEInsectoids
 
         public override AcceptanceReport CanBeUsedBy(Pawn p)
         {
+            if(Props.needsOrbit && !p.Map.Biome.inVacuum)
+            {
+                return "VFEI_NotInOrbit".Translate();
+            }
             if (activated)
             {
                 return "VFEI_AlreadyActivated".Translate();
