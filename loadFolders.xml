@@ -10,8 +10,8 @@
 	</v1.6>
 	<v1.7>
 		<li>/</li>
-		<li>1.6</li>
-		<li IfModActive="vanillaexpanded.achievements">1.6/Mods/Achievements</li>
+		<li>1.7</li>
+		<li IfModActive="vanillaexpanded.achievements">1.7/Mods/Achievements</li>
 	</v1.7>
 </loadFolders>
 
