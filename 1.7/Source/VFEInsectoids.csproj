@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>../../Assemblies</OutputPath>
+    <OutputPath>../Assemblies</OutputPath>
     <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -30,6 +30,11 @@
 	   <CopyLocal>false</CopyLocal>
       <Private>False</Private>
     </Reference>
+    <Reference Include="KCSG">
+      <HintPath>..\..\..\VanillaExpandedFramework\1.7\Assemblies\KCSG.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityStubs">
       <HintPath>..\..\..\..\UnityStubs.dll</HintPath>
 	   <CopyLocal>false</CopyLocal>
@@ -40,6 +45,9 @@
 	   <CopyLocal>false</CopyLocal>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <Target Name="KillRimWorld" BeforeTargets="Clean;Build">
     <Exec Command="tasklist /FI &quot;IMAGENAME eq RimWorld.exe&quot; | find /I &quot;RimWorld.exe&quot; &gt;nul &amp;&amp; taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" />

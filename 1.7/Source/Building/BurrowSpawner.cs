@@ -11,7 +11,7 @@ namespace VFEInsectoids
         public FactionDef faction;
         public BurrowSize size;
         public int radiusOfSpawn = 2;
-        protected override void Spawn(Map map, IntVec3 loc)
+        public override void Spawn(Map map, IntVec3 loc)
         {
             base.Spawn(map, loc);
             foreach (var def in thingsToSpawn)
